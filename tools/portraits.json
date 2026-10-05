@@ -631,20 +631,44 @@
   "grabcut": true
  },
  "lovelace": {
-  "src": "src/lovelace.jpg",
+  "src": "src/lovelace_ref.jpg",
   "crop": [
-   0.05,
-   0.02,
-   0.95,
-   0.8
+   0.03,
+   0.0,
+   0.99,
+   0.955
   ],
   "face": [
-   0.47,
-   0.33,
-   0.14,
-   0.13
+   0.66,
+   0.45,
+   0.13,
+   0.14
   ],
-  "grabcut": true
+  "lineart": true,
+  "grabcut": false,
+  "silhouette": false,
+  "skip_ratio": 60,
+  "min_face": 8,
+  "min_body": 40,
+  "rdp": 0.6,
+  "smooth": 5,
+  "hatch": true,
+  "hatch_band": [
+   0,
+   14
+  ],
+  "hatch_wmin": 0.0,
+  "wash_pct": 32,
+  "shade_density": 0.6,
+  "shade_core": 0.7,
+  "shade_sigma": 0.03,
+  "fill": 0.93,
+  "width": 1200,
+  "keep_fine": true,
+  "ink_thresh": 150,
+  "step": 2.0,
+  "light": "right",
+  "hatch_wmax": 0.45
  },
  "al-khwarizmi": {
   "src": "src/al-khwarizmi.jpg",

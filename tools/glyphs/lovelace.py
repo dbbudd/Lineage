@@ -2,7 +2,7 @@
 def glyph(g):
     np, math = g.np, g.math
     x, y, w, h = g.box
-    cx0, cy0, cw, ch = x + 2.0, y + h * 0.40, w * 0.52, h * 0.46
+    cx0, cy0, cw, ch = x + w * 0.13, y + h * 0.34, w * 0.46, h * 0.42
     g.path([(cx0, cy0), (cx0 + cw - 2, cy0), (cx0 + cw, cy0 + 2), (cx0 + cw, cy0 + ch), (cx0, cy0 + ch)], g.lw * 1.5, g.ink, close=True)
     rng = np.random.RandomState(1843)
     for j in range(3):

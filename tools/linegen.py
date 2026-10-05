@@ -386,6 +386,7 @@ def portrait_path(cfg, debug_prefix=None):
         ff = fig.copy(); cv2.floodFill(ff, None, (0, 0), 2); body = (ff != 2).astype(np.uint8)
         dist = cv2.distanceTransform(body, cv2.DIST_L2, 5)
         xx = np.tile(np.linspace(0, 1, w), (h, 1))
+        if cfg.get("light") == "right": xx = 1 - xx      # lit from the right: core shadow falls down the left side
         core = np.clip(1 - dist / (w * 0.06), 0, 1) * body * np.clip((xx - 0.45) * 2.5, 0, 1)
         tone = np.clip(1 - (cfg.get("shade_density", 0.9) * dens + cfg.get("shade_core", 0.35) * core), 0, 1)
         gray = (tone * 255).astype(np.uint8)
@@ -427,7 +428,7 @@ def portrait_path(cfg, debug_prefix=None):
     kinds = [1] * len(keep)
     shade = np.zeros_like(m); wash = np.zeros_like(m)
     if cfg.get("hatch", False):
-        shade = shadow_mask(gray, m, W, *cfg.get("hatch_band", [6, 30]), cfg.get("hatch_wmin", 0.35), min_area=cfg.get("hatch_min_area", 300))
+        shade = shadow_mask(gray, m * (W < cfg.get("hatch_wmax", 9)).astype(np.uint8), W, *cfg.get("hatch_band", [6, 30]), cfg.get("hatch_wmin", 0.35), min_area=cfg.get("hatch_min_area", 300))
         hs = [rdp(x, 0.8) for x in hatch_strokes(shade, cfg.get("hatch_angle", 40), cfg.get("hatch_spacing", 7.0))]
         keep += hs; kinds += [2] * len(hs)
     wash = shadow_mask(gray, m, W, 0, cfg.get("wash_pct", 28), 0.0, blur=5, min_area=400)

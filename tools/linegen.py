@@ -318,7 +318,7 @@ def line_widths(path, kinds, gray, cfg):
 
 # ---------------------------------------------------------------- main entry
 def portrait_path(cfg, debug_prefix=None):
-    img = load_crop(cfg["src"], cfg["crop"])
+    img = load_crop(cfg["src"], cfg["crop"], cfg.get("width", 700))
     h, w = img.shape[:2]
     face = cfg["face"]  # cx, cy, rx, ry as fractions of the crop
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -378,7 +378,7 @@ def portrait_path(cfg, debug_prefix=None):
         # the reference is already a line drawing: trace its own ink, and derive shadow from line density
         raw = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         lines = (raw < cfg.get("ink_thresh", 160)).astype(np.uint8)
-        lines = cv2.morphologyEx(lines, cv2.MORPH_CLOSE, np.ones((3, 3), np.uint8))
+        if not cfg.get("keep_fine"): lines = cv2.morphologyEx(lines, cv2.MORPH_CLOSE, np.ones((3, 3), np.uint8))
         dens = cv2.GaussianBlur(lines.astype(np.float32), (0, 0), w * cfg.get("shade_sigma", 0.018))
         dens = dens / (dens.max() + 1e-6)
         # light from the upper left: add a soft core shadow down the figure's right side

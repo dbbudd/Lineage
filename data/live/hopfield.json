@@ -1,0 +1,21 @@
+{
+ "thesis": "John Hopfield showed in 1982 that a network of connected units can store memories as valleys in an energy landscape, rebuilding a whole memory from a fragment. He shared the 2024 Nobel Prize in Physics, and his modern networks share their maths with transformer attention.",
+ "story": [
+  {
+   "tag": "1982",
+   "title": "Memory as a valley",
+   "text": "Hopfield described a network where every neuron is on (+1) or off (−1) and connected to every other. Memories are stored in the connection strengths by Hebb's rule. He showed the network has an energy, borrowed from physics models of magnets, that can only fall as neurons update. Stored patterns sit at the bottoms of valleys."
+  },
+  {
+   "tag": "the idea",
+   "title": "Rolling downhill",
+   "text": "Given a noisy pattern, one neuron at a time adds up its weighted inputs and takes their sign. Each flip can only lower the energy, so the network slides downhill until it settles into the nearest stored memory. If too many similar patterns are stored, it can settle into the wrong one or a spurious mix of several."
+  },
+  {
+   "tag": "2024",
+   "title": "Nobel Prize, and attention",
+   "text": "Hopfield shared the 2024 Nobel Prize in Physics with Geoffrey Hinton. In 2020 the paper 'Hopfield Networks is All You Need' showed that modern Hopfield networks, with a sharper energy, retrieve memories with a softmax look-up that is the same maths as attention in transformers. Attention looks up the stored patterns that best match a query."
+  }
+ ],
+ "hint": "Click or drag on the grid to scribble over the letter and watch it repair itself. Then store 5 or more letters: recall starts to fail."
+}

@@ -1,0 +1,21 @@
+{
+ "thesis": "Radia Perlman invented the Spanning Tree Protocol in 1984, letting network switches agree on their own which links to switch off so spare cables never create loops. Building large networks that configure and heal themselves is now central to AI data centres.",
+ "story": [
+  {
+   "tag": "1984",
+   "title": "Loops that jam a network",
+   "text": "At Digital Equipment Corporation, Radia Perlman was asked to stop messages circling forever in networks with spare links. Her Spanning Tree Protocol lets bridges agree, with no central controller, on which links to use. It became a standard that kept Ethernet networks running for decades."
+  },
+  {
+   "tag": "the idea",
+   "title": "Elect a root, grow a tree",
+   "text": "The bridge with the lowest ID becomes the root. Every other bridge keeps its shortest path towards the root and blocks its other links, so no loops remain. When a link breaks, the bridges notice, run the same rules again and a new tree spreads out from the root, with no central controller."
+  },
+  {
+   "tag": "today",
+   "title": "Networks for AI",
+   "text": "Training a large AI model links thousands of GPUs that constantly swap results. Modern AI data centres mostly use routed leaf–spine fabrics that keep all paths active, rather than spanning tree. Link-state routing, which Perlman helped make robust with protocols like IS-IS, is closer to how those networks work."
+  }
+ ],
+ "hint": "Cut links one at a time and watch which blocked links wake up to keep every bridge connected; cut too many and part of the network is stranded."
+}

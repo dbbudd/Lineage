@@ -1,0 +1,21 @@
+{
+ "thesis": "In 1905 Albert Einstein explained why tiny grains jiggle in water: invisible molecules strike them at random. He worked out the mathematics of this random walk, which helped prove atoms are real. Diffusion models, the AI behind many image generators, use the same mathematics.",
+ "story": [
+  {
+   "tag": "1905",
+   "title": "Kicked by invisible molecules",
+   "text": "Tiny grains floating in water, like the particles botanist Robert Brown saw from pollen, never sit still. Einstein explained why: water molecules, far too small to see, hit them from every side. By chance, a few more hit one side than the other, so the grain staggers about in a random walk."
+  },
+  {
+   "tag": "the idea",
+   "title": "Spread grows with time",
+   "text": "A single grain's path is unpredictable, but the average of many is not. The mean squared distance travelled grows in a straight line with time, at a rate set by temperature, the water's stickiness and the grain's size. Jean Perrin measured this in 1908 and helped prove atoms are real."
+  },
+  {
+   "tag": "2020",
+   "title": "Diffusion models run it backwards",
+   "text": "Diffusion models, introduced in their modern form in 2020 and behind image generators such as Stable Diffusion, are trained by adding small amounts of Gaussian noise to pictures, step by step, until only static is left. A neural network learns to undo one step at a time. New images start as fresh noise that is removed gradually."
+  }
+ ],
+ "hint": "Warm the water or shrink the grain and watch it jiggle harder: the dots on the graph climb a steeper straight line."
+}

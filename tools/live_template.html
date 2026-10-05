@@ -1,0 +1,330 @@
+<title>Tesla's Line</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one wide drawing stage (the card's line, alive), then a quiet two-column
+   reading row — the story of the line on the left, the remix bench on the right.
+   Deliberately single-theme: warm paper + graphite, after The Way of Code. */
+:root {
+  --paper: #F1EDE4;
+  --paper-deep: #E7E1D4;
+  --ink: #4A4843;
+  --ink-soft: #85817A;
+  --rule: #D6CEBF;
+  --volt: #BF4B28;          /* Engineering suit — the future lighting up */
+  --display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --body: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--body); font-size: 1.0625rem; line-height: 1.6;
+  padding-inline: clamp(16px, 4vw, 48px); padding-block: 0 48px;
+}
+.wrap { max-width: 1120px; margin: 0 auto; display: grid; gap: clamp(20px, 3vw, 36px); }
+header { display: grid; gap: 6px; padding-top: clamp(24px, 4vw, 48px); }
+.eyebrow { font-family: var(--mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.eyebrow b { color: var(--volt); font-weight: 500; }
+h1 { font-family: var(--display); font-weight: 300; font-style: italic; font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1; margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+.thesis { margin: 6px 0 0; max-width: 60ch; color: var(--ink); font-size: 1.15rem; }
+.stage { position: relative; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+canvas { display: block; width: 100%; height: auto; touch-action: manipulation; }
+.stagebar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px 12px; padding-block: 10px; }
+
+.btns { display: flex; gap: 8px; }
+button {
+  font-family: var(--mono); font-size: .75rem; letter-spacing: .06em; text-transform: uppercase;
+  background: var(--paper); color: var(--ink); border: 1px solid var(--ink-soft); border-radius: 999px;
+  padding: 7px 14px; cursor: pointer;
+}
+button:hover { border-color: var(--volt); color: var(--volt); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--volt); outline-offset: 2px; }
+.readout { font-family: var(--mono); font-size: .72rem; color: var(--ink-soft); background: color-mix(in srgb, var(--paper) 85%, transparent); padding: 4px 8px; border-radius: 6px; font-variant-numeric: tabular-nums; }
+.row { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); }
+@media (max-width: 760px) { .row { grid-template-columns: 1fr; } }
+h2 { font-family: var(--mono); font-size: .75rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 14px; }
+ol.story { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+ol.story li { display: grid; grid-template-columns: 5.2rem minmax(0, 1fr); gap: 14px; padding-top: 14px; border-top: 1px solid var(--rule); transition: color .6s; color: var(--ink-soft); }
+ol.story li.on { color: var(--ink); }
+ol.story .yr { font-family: var(--mono); font-size: .8rem; padding-top: 4px; font-variant-numeric: tabular-nums; }
+ol.story li.on .yr { color: var(--volt); }
+ol.story h3 { font-family: var(--display); font-weight: 500; font-size: 1.2rem; margin: 0 0 4px; line-height: 1.25; }
+ol.story p { margin: 0; max-width: 52ch; }
+.bench { display: grid; gap: 16px; align-content: start; }
+.ctrl { display: grid; gap: 6px; }
+.ctrl label { display: flex; justify-content: space-between; font-family: var(--mono); font-size: .78rem; color: var(--ink); }
+.ctrl label span { color: var(--volt); font-variant-numeric: tabular-nums; }
+input[type=range] { width: 100%; accent-color: var(--volt); }
+input[type=text] { width: 100%; font-family: var(--body); font-size: 1.05rem; background: var(--paper-deep); color: var(--ink); border: 1px solid var(--rule); border-radius: 8px; padding: 8px 10px; }
+.hint { font-size: .9rem; color: var(--ink-soft); margin: 0; }
+pre { margin: 0; overflow-x: auto; background: var(--paper-deep); border-radius: 8px; padding: 14px 16px; font-family: var(--mono); font-size: .8rem; line-height: 1.7; color: var(--ink); }
+pre .c { color: var(--ink-soft); } pre .v { color: var(--volt); }
+footer { font-size: .85rem; color: var(--ink-soft); border-top: 1px solid var(--rule); padding-top: 14px; }
+footer p { margin: 0 0 4px; max-width: 80ch; }
+@media (prefers-reduced-motion: reduce) { ol.story li { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><b>K · Engineering</b><span>STEM Cards</span><span>One continuous line</span></div>
+    <h1>Nikola Tesla</h1>
+    <p class="thesis">The pen never lifts. It draws the man, circles into his rotating field, and runs out toward the way today's language models keep track of word order.</p>
+  </header>
+
+  <section class="stage" aria-label="Animated drawing: Tesla's portrait becomes a rotating phasor, a travelling wave, and rotating word vectors">
+    <canvas id="cv" width="1120" height="700"></canvas>
+    <div class="stagebar">
+      <div class="readout" id="readout" aria-live="polite"></div>
+      <div class="btns">
+        <button id="pause" type="button">Pause</button>
+        <button id="again" type="button">Draw again</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="row">
+    <section>
+      <h2>Where the line goes</h2>
+      <ol class="story" id="story">
+        <li data-stage="1"><div class="yr">1888</div><div><h3>A field that turns</h3><p>Tesla patents the AC induction motor. Three out-of-step currents make a magnetic field that rotates, and the rotor simply follows it. The halo behind his head is that field.</p></div></li>
+        <li data-stage="2"><div class="yr">phasor</div><div><h3>A wave is a circle seen side-on</h3><p>Follow the tip of the spinning arm and read only its height. You get the sine wave of alternating current. Engineers still calculate the grid this way, with rotating arrows called phasors.</p></div></li>
+        <li data-stage="3"><div class="yr">2021</div><div><h3>Position is a rotation</h3><p>Rotary position embedding (RoPE) tells a language model where each word sits by turning its vector: word <i>m</i> turns by <i>m</i>&nbsp;×&nbsp;θ. Spin the whole sentence and the angle between any two words stays the same, so the model reads relative position. Many open models, including Llama, use it.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="bench">
+      <h2>Remix the line</h2>
+      <div class="ctrl">
+        <label for="theta">θ — turn per word <span id="thetaV"></span></label>
+        <input id="theta" type="range" min="0.15" max="1.2" step="0.01" value="0.62">
+      </div>
+      <div class="ctrl">
+        <label for="speed">Field speed <span id="speedV"></span></label>
+        <input id="speed" type="range" min="0" max="2" step="0.05" value="1">
+      </div>
+      <div class="ctrl">
+        <label for="words">Sentence (up to 8 words)</label>
+        <input id="words" type="text" value="position is just a rotation" maxlength="80" autocomplete="off">
+      </div>
+      <pre id="code" aria-label="Live code"></pre>
+      <p class="hint">Change θ and every word's arrow re-turns. The gap between the two highlighted words stays fixed while the field spins.</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>Portrait line generated from Napoleon Sarony's photograph of Tesla, c. 1890 (public domain), drawn as a single unbroken path. Line weight follows the photo's tone, pen travel thins to a hairline, and zig-zag hatching in the shadows is part of the same line.</p>
+    <p>RoPE: Su et al., “RoFormer: Enhanced Transformer with Rotary Position Embedding”, 2021.</p>
+  </footer>
+</div>
+
+<script>
+const DATA = __DATA__;
+(() => {
+  const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+  const css = getComputedStyle(document.documentElement);
+  const C = { ink: css.getPropertyValue('--ink').trim(), soft: css.getPropertyValue('--ink-soft').trim(),
+              volt: css.getPropertyValue('--volt').trim(), paper: css.getPropertyValue('--paper').trim() };
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = id => document.getElementById(id);
+  const P = []; for (let i = 0; i < DATA.pts.length; i += 2) P.push([DATA.pts[i], DATA.pts[i+1]]);
+  const WASH = DATA.wash.map(a => { const q = []; for (let i = 0; i < a.length; i += 2) q.push([a[i], a[i+1]]); return q; });
+  const ink = document.createElement('canvas'), ictx = ink.getContext('2d'); let drawn = 0;
+  const HEAD = [0.47, 0.20];            // halo centre in portrait units
+  let W = 0, H = 0, L = null;
+  let theta = 0.62, speed = 1, words = [];
+  let t0 = performance.now(), paused = false, pauseAt = 0, fieldT = 0, last = performance.now();
+
+  const hex = h => { h = h.replace('#',''); return [0,2,4].map(i => parseInt(h.slice(i,i+2),16)); };
+  const mix = (a, b, k) => { const A = hex(a), B = hex(b); return `rgb(${A.map((v,i)=>Math.round(v+(B[i]-v)*k)).join(',')})`; };
+
+  function layout() {
+    const w = cv.clientWidth; const narrow = w < 640;
+    W = w; H = Math.round(narrow ? w * 1.32 : Math.min(w * 0.6, 700));
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    cv.width = W * dpr; cv.height = H * dpr; cv.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ink.width = W * dpr; ink.height = H * dpr; ictx.setTransform(dpr, 0, 0, dpr, 0, 0); drawn = 0;
+    const asp = DATA.aspect;
+    let s, x0, y0, vp;
+    if (narrow) { s = W * 0.78; x0 = W * 0.02; y0 = H - asp * s; vp = [W * 0.94, H * 0.05]; }
+    else { s = H * 0.98 / asp; x0 = W * 0.03; y0 = H - asp * s; vp = [W * 0.97, y0 + HEAD[1] * s - H * 0.02]; }
+    const pts = P.map(([x, y]) => [x0 + x * s, y0 + y * s]);
+    const c = [x0 + HEAD[0] * s, y0 + HEAD[1] * s], r = 0.2 * s;
+    let d = [vp[0] - c[0], vp[1] - c[1]]; const dl = Math.hypot(...d); d = [d[0]/dl, d[1]/dl];
+    const n = [-d[1], d[0]];
+    const S = [c[0] + d[0] * r * 1.18, c[1] + d[1] * r * 1.18];
+    // cumulative lengths of the portrait line
+    const cum = [0]; for (let i = 1; i < pts.length; i++) cum.push(cum[i-1] + Math.hypot(pts[i][0]-pts[i-1][0], pts[i][1]-pts[i-1][1]));
+    // connector: from the line's last point, a soft swoop out to the halo's rim (angle -150°)
+    const e = pts[pts.length - 1], a0 = Math.atan2(-d[1], -d[0]) + 0.9;
+    const hs = [c[0] + r * Math.cos(a0), c[1] + r * Math.sin(a0)];
+    const mid = [(e[0]+hs[0])/2, (e[1]+hs[1])/2], ctrl = [mid[0] + (mid[0]-c[0])*0.35, mid[1] + (mid[1]-c[1])*0.35];
+    const conn = []; for (let k = 0; k <= 40; k++) { const u = k/40, v = 1-u;
+      conn.push([v*v*e[0] + 2*v*u*ctrl[0] + u*u*hs[0], v*v*e[1] + 2*v*u*ctrl[1] + u*u*hs[1]]); }
+    const wash = WASH.map(q => q.map(([x, y]) => [x0 + x * s, y0 + y * s]));
+    L = { s, pts, cum, wash, c, r, d, n, S, vp, conn, a0, narrow, len: Math.hypot(vp[0]-S[0], vp[1]-S[1]) };
+  }
+
+  // perspective along the wave: u in [0,1] world depth -> screen fraction + scale
+  const K = 3.2;
+  const scr = u => (1 - 1/(1 + K*u)) / (1 - 1/(1 + K));
+  const sc = u => 1 / (1 + K*u);
+  const base = u => { const f = scr(u); return [L.S[0] + (L.vp[0]-L.S[0]) * f, L.S[1] + (L.vp[1]-L.S[1]) * f]; };
+
+  function strokePath(pts, upto, color, w) {
+    if (pts.length < 2) return;
+    ctx.strokeStyle = color; ctx.lineWidth = w; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    ctx.beginPath(); ctx.moveTo(pts[0][0], pts[0][1]);
+    for (let i = 1; i < upto; i++) ctx.lineTo(pts[i][0], pts[i][1]);
+    ctx.stroke();
+  }
+  const ease = x => x < 0 ? 0 : x > 1 ? 1 : x < .5 ? 2*x*x : 1 - Math.pow(-2*x + 2, 2)/2;
+
+  function frame(now) {
+    const dt = Math.min(0.05, (now - last) / 1000); last = now;
+    const t = reduce ? 99 : (paused ? pauseAt : (now - t0) / 1000);
+    if (!paused && !reduce) fieldT += dt * speed;
+    const omega = 1.4, ph = reduce ? 0.9 : fieldT * omega;
+    ctx.clearRect(0, 0, W, H);
+    const lw = Math.max(1.1, L.s * 0.0028);
+    const iw = Math.max(2.4, L.s * 0.007);   // idea-layer weight: bolder than the portrait so the future reads first
+
+    // 1. portrait — drawn by arc length, like a hand moving
+    const Tp = 6.5, kp = ease(t / Tp), tot = L.cum[L.cum.length-1], target = kp * tot;
+    let idx = 1; while (idx < L.pts.length && L.cum[idx] <= target) idx++;
+    // shadow wash: flat graphite shapes, slightly off-register, fading in as the drawing builds
+    ctx.globalAlpha = 0.10 * kp; ctx.fillStyle = C.ink;
+    const ox = L.s * 0.01, oy = L.s * 0.007;
+    for (const q of L.wash) { ctx.beginPath(); q.forEach(([x, y], i) => i ? ctx.lineTo(x + ox, y + oy) : ctx.moveTo(x + ox, y + oy)); ctx.closePath(); ctx.fill(); }
+    ctx.globalAlpha = 1;
+    // the weighted line: new segments are added to a persistent ink layer, like real ink
+    if (idx < drawn) { ictx.clearRect(0, 0, W, H); drawn = 0; }
+    const lineBase = L.s * 0.0075;
+    ictx.strokeStyle = C.ink; ictx.lineCap = 'round'; ictx.lineJoin = 'round';
+    for (let i = Math.max(1, drawn); i < idx; i++) {
+      ictx.lineWidth = Math.max(0.35, DATA.w[i] * lineBase);
+      ictx.beginPath(); ictx.moveTo(L.pts[i-1][0], L.pts[i-1][1]); ictx.lineTo(L.pts[i][0], L.pts[i][1]); ictx.stroke();
+    }
+    drawn = Math.max(drawn, idx);
+    ctx.drawImage(ink, 0, 0, W, H);
+    if (t < Tp) { const p = L.pts[Math.min(idx, L.pts.length-1)]; ctx.beginPath(); ctx.arc(p[0], p[1], lw*1.6, 0, 7); ctx.fillStyle = C.ink; ctx.fill(); }
+
+    // 2. connector — graphite warming into volt
+    const kc = ease((t - Tp) / 0.9);
+    if (kc > 0) { const m = Math.max(2, Math.round(kc * L.conn.length));
+      for (let i = 1; i < m; i++) { ctx.strokeStyle = mix(C.ink, C.volt, i / L.conn.length); ctx.lineWidth = lw; ctx.lineCap = 'round';
+        ctx.beginPath(); ctx.moveTo(...L.conn[i-1]); ctx.lineTo(...L.conn[i]); ctx.stroke(); } }
+
+    // 3. halo — the rotating field (phasor circle)
+    const kh = ease((t - Tp - 0.9) / 1.3);
+    const { c, r, d, n } = L;
+    if (kh > 0) {
+      ctx.strokeStyle = C.volt; ctx.lineWidth = iw * 0.85;
+      ctx.beginPath(); ctx.arc(c[0], c[1], r, L.a0, L.a0 + kh * Math.PI * 2); ctx.stroke();
+      // faint inner rings: the three phases of Tesla's polyphase field
+      ctx.globalAlpha = 0.35 * kh; ctx.lineWidth = iw * 0.45;
+      for (let k = 0; k < 3; k++) { const a = ph + k * 2 * Math.PI / 3;
+        ctx.beginPath(); ctx.moveTo(c[0], c[1]); ctx.lineTo(c[0] + r*0.82*Math.cos(a), c[1] + r*0.82*Math.sin(a)); ctx.stroke(); }
+      ctx.globalAlpha = 1;
+    }
+    // 4. phasor arm + travelling wave in perspective
+    const kw = ease((t - Tp - 2.2) / 2.2);
+    if (kw > 0) {
+      // arm angle measured in the (d, n) frame so its n-component feeds the wave
+      const ax = Math.cos(ph), ay = Math.sin(ph);
+      const tip = [c[0] + r*(ax*d[0] + ay*n[0]), c[1] + r*(ax*d[1] + ay*n[1])];
+      ctx.strokeStyle = C.volt; ctx.lineWidth = iw * 1.15;
+      ctx.beginPath(); ctx.moveTo(...c); ctx.lineTo(...tip); ctx.stroke();
+      ctx.fillStyle = C.volt; ctx.beginPath(); ctx.arc(tip[0], tip[1], iw*1.5, 0, 7); ctx.fill();
+      // projection guide: tip -> wave start (dashed)
+      const w0 = [L.S[0] + n[0]*r*ay, L.S[1] + n[1]*r*ay];
+      ctx.setLineDash([iw*1.6, iw*1.8]); ctx.globalAlpha = .7; ctx.lineWidth = iw * .55;
+      ctx.beginPath(); ctx.moveTo(...tip); ctx.lineTo(...w0); ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1;
+      // centre line receding to the vanishing point
+      ctx.globalAlpha = .35; ctx.lineWidth = iw * .4; ctx.beginPath(); ctx.moveTo(...L.S); ctx.lineTo(...L.vp); ctx.stroke(); ctx.globalAlpha = 1;
+      // the wave
+      const cycles = 7, N = 420, umax = kw;
+      ctx.strokeStyle = mix(C.volt, C.paper, 0.45 * ease((t - Tp - 3.6) / 1.6)); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      const wp = []; for (let i = 0; i <= N; i++) { const u = umax * i / N, b = base(u), A = r * sc(u) * Math.sin(ph - u * cycles * 2 * Math.PI);
+        wp.push([b[0] + n[0]*A, b[1] + n[1]*A, u]); }
+      for (let j = 0; j < wp.length - 1; j += 14) {          // short runs: weight steps down with depth
+        ctx.lineWidth = Math.max(0.8, iw * 1.25 * Math.sqrt(sc(wp[j][2])));
+        ctx.beginPath(); ctx.moveTo(wp[j][0], wp[j][1]);
+        for (let q = j + 1; q <= Math.min(j + 14, wp.length - 1); q++) ctx.lineTo(wp[q][0], wp[q][1]);
+        ctx.stroke(); }
+      ctx.fillStyle = C.volt; ctx.beginPath(); ctx.arc(L.vp[0], L.vp[1], iw * 1.2, 0, 7); ctx.fill();
+    }
+    // 5. RoPE — each word's vector turns by m·θ, all spinning together
+    const kr = ease((t - Tp - 3.6) / 1.6);
+    let rel = '';
+    if (kr > 0 && words.length) {
+      const M = words.length, spin = ph * 0.35;
+      const hi = [Math.min(1, M-1), Math.min(M-1, Math.max(1, M-1))];
+      const fs = Math.max(14, L.s * 0.05);
+      for (let m = 0; m < M; m++) {
+        const u = (m + 0.6) / (M + 0.4) * 0.92, b = base(u), k = sc(u);
+        const ang = spin + m * theta, len = Math.max(18, r * 1.3 * k);
+        const ex = b[0] + len * (Math.cos(ang)*d[0] + Math.sin(ang)*n[0]);
+        const ey = b[1] + len * (Math.cos(ang)*d[1] + Math.sin(ang)*n[1]);
+        const isHi = (m === hi[0] || m === hi[1]);
+        ctx.globalAlpha = kr;
+        ctx.strokeStyle = isHi ? C.volt : C.ink; ctx.fillStyle = ctx.strokeStyle; ctx.lineWidth = Math.max(1.4, iw * (isHi ? 1.35 : 1.0) * Math.sqrt(k)); ctx.lineCap = 'round';
+        ctx.beginPath(); ctx.moveTo(...b); ctx.lineTo(ex, ey); ctx.stroke();
+        const ha = Math.atan2(ey - b[1], ex - b[0]), hl = Math.max(7, iw * 5 * Math.sqrt(k));
+        ctx.beginPath(); ctx.moveTo(ex, ey);
+        ctx.lineTo(ex - hl*Math.cos(ha - .45), ey - hl*Math.sin(ha - .45));
+        ctx.lineTo(ex - hl*Math.cos(ha + .45), ey - hl*Math.sin(ha + .45)); ctx.closePath(); ctx.fill();
+        ctx.beginPath(); ctx.arc(b[0], b[1], Math.max(2.2, iw * 1.3 * Math.sqrt(k)), 0, 7); ctx.fill();
+        const fsz = Math.max(12, fs * (0.6 + 0.4*k)); ctx.font = `italic ${isHi ? 500 : 400} ${fsz.toFixed(1)}px Newsreader, Georgia, serif`;
+        ctx.fillStyle = isHi ? C.volt : C.ink; ctx.textAlign = 'center';
+        const off = Math.max(18, r * 1.3 * k) + fs * 0.9;
+        const tx = b[0] - n[0]*off*0.2, ty = b[1] + off;
+        ctx.lineJoin = 'round'; ctx.lineWidth = fsz * 0.45; ctx.strokeStyle = C.paper; ctx.strokeText(words[m], tx, ty);   // paper halo
+        ctx.fillText(words[m], tx, ty);
+      }
+      ctx.globalAlpha = 1;
+      const gap = (hi[1] - hi[0]) * theta;
+      rel = `“${words[hi[0]]}” → “${words[hi[1]]}”: ${hi[1]-hi[0]}θ = ${gap.toFixed(2)} rad, constant while the field spins`;
+    }
+    // story highlighting
+    const stage = t < Tp + 0.9 ? 0 : t < Tp + 2.2 ? 1 : t < Tp + 3.6 ? 2 : 3;
+    document.querySelectorAll('#story li').forEach(li => li.classList.toggle('on', +li.dataset.stage <= stage || stage === 0 && false));
+    $('readout').textContent = rel || (t < Tp ? 'drawing: one unbroken line' : '');
+    requestAnimationFrame(frame);
+  }
+
+  function renderCode() {
+    $('thetaV').textContent = theta.toFixed(2) + ' rad';
+    $('speedV').textContent = speed.toFixed(2) + '×';
+    const list = words.map(w => `"${w}"`).join(', ');
+    const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+    $('code').innerHTML =
+`<span class="c"># rotary position embedding, one 2-D slice</span>
+θ = <span class="v">${theta.toFixed(2)}</span>
+words = [${esc(list)}]
+
+for m, word in enumerate(words):
+    angle = m * θ          <span class="c"># ${words.map((w,m)=>(m*theta).toFixed(2)).join(', ')}</span>
+    q[m] = rotate(q[m], angle)`;
+  }
+  function readWords() {
+    words = $('words').value.trim().split(/\s+/).filter(Boolean).slice(0, 8);
+    if (!words.length) words = ['position'];
+    renderCode();
+  }
+  $('theta').addEventListener('input', e => { theta = +e.target.value; renderCode(); });
+  $('speed').addEventListener('input', e => { speed = +e.target.value; renderCode(); });
+  $('words').addEventListener('input', readWords);
+  $('again').addEventListener('click', () => { t0 = performance.now(); ictx.clearRect(0, 0, W, H); drawn = 0; paused = false; $('pause').textContent = 'Pause'; });
+  $('pause').addEventListener('click', () => {
+    if (!paused) { pauseAt = (performance.now() - t0) / 1000; paused = true; $('pause').textContent = 'Play'; }
+    else { t0 = performance.now() - pauseAt * 1000; paused = false; $('pause').textContent = 'Pause'; }
+  });
+  if (reduce) { $('pause').hidden = true; $('again').hidden = true; }
+  addEventListener('resize', layout);
+  readWords(); layout(); requestAnimationFrame(frame);
+})();
+</script>

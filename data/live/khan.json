@@ -1,0 +1,21 @@
+{
+ "thesis": "Fazlur Rahman Khan made skyscrapers cheaper and taller by treating a building's outer wall as one stiff tube, the idea behind Chicago's Willis Tower. He also pioneered computers in structural engineering, a path that leads to today's AI-assisted generative design.",
+ "story": [
+  {
+   "tag": "1965",
+   "title": "The building as a tube",
+   "text": "Fazlur Khan realised that a tall building's outer wall, with closely spaced columns tied by stiff beams, could act like one hollow tube. His first framed tube in Chicago opened in 1965. Bundling nine tubes let the Sears Tower, now the Willis Tower, reach 442 metres in 1973."
+  },
+  {
+   "tag": "the idea",
+   "title": "Racking versus bending",
+   "text": "Wind pushes a tall building sideways. A rigid frame racks like a bookshelf, each floor shearing over the one beneath. A tube makes the whole outer wall work together, so the building only bends like a stiff pole. That stiffness needed far less steel per floor, making very tall towers affordable."
+  },
+  {
+   "tag": "today",
+   "title": "Computers that design",
+   "text": "Khan was an early user of computers to calculate the forces in his buildings. Today generative design software builds on that: it analyses thousands of candidate structures, sometimes using machine learning to speed up the search, and suggests efficient options for engineers to check."
+  }
+ ],
+ "hint": "Make the building taller and watch the frame's sway grow much faster than the height; switch the tube off to see what Khan was up against."
+}

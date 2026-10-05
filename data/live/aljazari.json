@@ -1,0 +1,21 @@
+{
+ "thesis": "Ismail al-Jazari's 1206 Book of Knowledge of Ingenious Mechanical Devices described 50 machines, including a boat of mechanical musicians run by pegs on a turning drum. Storing a sequence in physical form for a machine to follow leads indirectly to robots that learn.",
+ "story": [
+  {
+   "tag": "1206",
+   "title": "A band that plays itself",
+   "text": "In his Book of Knowledge of Ingenious Mechanical Devices, written for the Artuqid court in Diyarbakır, al-Jazari described a boat of four mechanical musicians for royal parties. Water power turned a drum. Pegs on the drum pushed levers, and the levers made the drummers strike. He gave building instructions so others could make it."
+  },
+  {
+   "tag": "the idea",
+   "title": "Move the pegs, change the tune",
+   "text": "Each peg lifts a lever as the drum turns past it, and when the peg moves on, the drummer's arm falls and strikes. The pegs are a stored sequence of instructions. Moved to new holes, they make the same machine play a different rhythm, just as a modern drum machine follows a grid of steps."
+  },
+  {
+   "tag": "today",
+   "title": "From pegs to policies",
+   "text": "Roboticist Noel Sharkey argues this was an early programmable automaton. The link to AI is long and indirect, but the idea holds: a stored sequence that a machine carries out. Robots once ran fixed code; now many learn their movements from data, as a neural network policy."
+  }
+ ],
+ "hint": "Click cells in the unrolled grid to add or remove pegs, then watch the same pegs come round on the drum and the drummers play your new rhythm."
+}

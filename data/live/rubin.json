@@ -1,0 +1,21 @@
+{
+ "thesis": "Record producer Rick Rubin built a career on taste rather than technique, and in 2025 made The Way of Code with Anthropic. He became the face of vibe coding: describing software in plain language to an AI model and judging the results by feel.",
+ "story": [
+  {
+   "tag": "2025",
+   "title": "The Way of Code",
+   "text": "Rick Rubin, who says he cannot really play an instrument or work a mixing desk, made The Way of Code with Anthropic. It reworks the 81 chapters of Lao Tzu's Tao Te Ching for programmers, and each chapter comes with a generative artwork that readers can reshape by describing changes to Claude."
+  },
+  {
+   "tag": "the idea",
+   "title": "Taste over technique",
+   "text": "Rubin co-founded Def Jam and produced records for Run-DMC, the Beastie Boys and Johnny Cash. His method is to strip a song back to what matters. He listens with his eyes closed, asks whether something moves him, and guides musicians towards that feeling rather than mastering the equipment himself."
+  },
+  {
+   "tag": "Feb 2025",
+   "title": "Vibe coding",
+   "text": "The AI researcher Andrej Karpathy coined 'vibe coding' for describing what is wanted to an AI model in plain language and judging the result by feel. A photo of Rubin in headphones, eyes closed, hand on a mouse, became the internet's favourite image of the idea: clear taste matters more than mastering every tool."
+  }
+ ],
+ "hint": "Slide from calm to chaos and watch the breathing field break into gusts, then try typing a mood and pressing Enter."
+}

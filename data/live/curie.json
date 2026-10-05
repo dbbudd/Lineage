@@ -1,0 +1,21 @@
+{
+ "thesis": "Marie Curie discovered that radioactivity comes from inside atoms, found polonium and radium, and won Nobel Prizes in two sciences. The exponential decay she measured appears throughout machine learning, and telling it apart from power-law curves led researchers to neural scaling laws.",
+ "story": [
+  {
+   "tag": "1898",
+   "title": "Radiation from inside the atom",
+   "text": "Curie measured the faint rays given off by uranium and found their strength depended only on how much uranium was present. The radiation came from inside the atoms themselves. She named this radioactivity, and with Pierre Curie went on to discover two new radioactive elements, polonium and radium."
+  },
+  {
+   "tag": "the idea",
+   "title": "Half, then half again",
+   "text": "No one can say when a single atom will decay. Each one simply has the same small chance every second. Yet across a large sample the count falls in a regular way: after one half-life about half are left, then a quarter, then an eighth. This steady halving is called exponential decay."
+  },
+  {
+   "tag": "2020",
+   "title": "A curve that looks familiar",
+   "text": "A neural network's training loss also falls fast and then flattens, so it can look like a decay curve. The link is mathematical, not historical. In 2020, OpenAI researchers showed that language-model loss follows a power law instead, which flattens more slowly. Those scaling laws guide how big today's models are made."
+  }
+ ],
+ "hint": "Shorten the half-life or use fewer atoms: the count still halves at every tick mark, but with fewer atoms it wobbles more around the smooth curve."
+}

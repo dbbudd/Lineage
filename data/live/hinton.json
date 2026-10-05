@@ -1,0 +1,21 @@
+{
+ "thesis": "Geoffrey Hinton helped show in 1986 how backpropagation lets neural networks learn by sending errors backwards to adjust every weight. With his students he built AlexNet in 2012, sparking the deep learning boom, and he shared the 2024 Nobel Prize in Physics.",
+ "story": [
+  {
+   "tag": "1986",
+   "title": "Send the error backwards",
+   "text": "In a famous Nature paper, Rumelhart, Hinton and Williams showed how a network with hidden units can learn. Measure the error at the output, pass it backwards through the network to find how much each weight was to blame, then nudge every weight a little to reduce it. Repeat."
+  },
+  {
+   "tag": "the idea",
+   "title": "Sharing out the blame",
+   "text": "A network makes a guess and the error is measured at the output. Backpropagation uses the chain rule from calculus to pass that error backwards, layer by layer, working out how much each weight contributed. Every weight is nudged a little to reduce the error. With enough hidden units, repeated nudges let a network learn tangled boundaries between categories."
+  },
+  {
+   "tag": "2012",
+   "title": "The same rule, scaled up",
+   "text": "Hinton's students Alex Krizhevsky and Ilya Sutskever trained AlexNet, a deep network with 60 million weights, on GPUs and won the 2012 ImageNet challenge by a wide margin. Every large model since, including language models with billions of weights, is trained by backpropagation and gradient descent."
+  }
+ ],
+ "hint": "Try two spirals with 3 hidden units, then 12. Raise the learning rate, or click to add a point it gets wrong and watch it adjust."
+}

@@ -1,0 +1,21 @@
+{
+ "thesis": "Nikola Tesla patented the AC induction motor in 1888, using alternating currents to create a magnetic field that spins with no moving parts. The rotating arrows engineers use to describe AC now help large language models track the order of words.",
+ "story": [
+  {
+   "tag": "1888",
+   "title": "A field that turns",
+   "text": "In 1888 Tesla patented an alternating current induction motor and licensed his AC patents to George Westinghouse. Coils fed with out-of-step currents create a magnetic field that rotates, and a metal rotor is pulled round with it. With no sparking brushes, the motor was simple and tough, and the design still runs most electric motors today."
+  },
+  {
+   "tag": "phasor",
+   "title": "A wave is a circle seen side-on",
+   "text": "Picture an arrow spinning at a steady rate. Its height rises and falls in a smooth sine wave, exactly the shape of alternating current. Engineers call these rotating arrows phasors. Adding two currents becomes adding two arrows, so the whole power grid can be calculated with simple geometry instead of messy waves."
+  },
+  {
+   "tag": "2021",
+   "title": "Position is a rotation",
+   "text": "Rotary position embedding (RoPE), introduced in 2021, tells a language model where each word sits by rotating pairs of numbers in its vector by an angle m × θ, where m is the word's position. Because rotations combine neatly, the attention between two words depends only on how far apart they are. Meta's Llama models use it."
+  }
+ ],
+ "hint": "Change θ and every word's arrow re-turns. The gap between the two highlighted words stays fixed while the field spins."
+}

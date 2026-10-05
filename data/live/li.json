@@ -1,0 +1,21 @@
+{
+ "thesis": "Fei-Fei Li built ImageNet, more than 14 million labelled photos in about 22,000 categories, arguing that computers learn to see from data. AlexNet's 2012 win in her ImageNet challenge launched the deep learning boom that led to today's AI.",
+ "story": [
+  {
+   "tag": "2007",
+   "title": "A map of everything to see",
+   "text": "Li's team took the categories of WordNet, a dictionary arranged as a tree, and set out to find hundreds of photos for each one. Crowd workers online checked every label. By 2010 ImageNet had more than 14 million photos in about 22,000 categories, far bigger than any image collection before it."
+  },
+  {
+   "tag": "the idea",
+   "title": "Data is the teacher",
+   "text": "Li argued that children learn to see from millions of examples, so computers might too. Several crowd workers checked each label before a photo joined its category. Her yearly challenge measured top-5 error: the share of test photos where the right answer is not among a program's five best guesses. Falling error showed which methods worked."
+  },
+  {
+   "tag": "2012",
+   "title": "The deep learning boom",
+   "text": "In 2012 AlexNet, a deep convolutional network trained on GPUs, cut the error from about 26% to 15.3%. Within a few years networks beat the roughly 5% error of a careful human tester. The lesson that huge labelled datasets plus deep networks win carried on to today's language models."
+  }
+ ],
+ "hint": "Drag the year from 2010 to 2017 and watch the 2012 leap; switch the human line on to see when machines passed it."
+}

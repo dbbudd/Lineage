@@ -1,0 +1,21 @@
+{
+ "thesis": "Gladys West programmed computers at the US Navy's Dahlgren base to build precise models of the Earth's lumpy shape from satellite data. Accurate GPS depends on such models, and drones, delivery robots and self-driving cars rely on that accuracy.",
+ "story": [
+  {
+   "tag": "1978",
+   "title": "Measuring a lumpy planet",
+   "text": "At the US Navy base in Dahlgren, Virginia, Gladys West programmed computers to process satellite data, including radar measurements from Seasat and later Geosat, into ever more precise models of the Earth's shape. Those models of the geoid helped make satellite positioning accurate."
+  },
+  {
+   "tag": "the idea",
+   "title": "Ranges, then a model",
+   "text": "Each satellite's signal gives a distance, so the receiver lies somewhere on a sphere around that satellite. Where the spheres meet is the position, and a fourth satellite fixes the receiver's clock error. A model of the Earth then turns that point into a height. Treating the Earth as a perfect sphere would be out by over a kilometre."
+  },
+  {
+   "tag": "today",
+   "title": "Knowing where the ground is",
+   "text": "Drones, delivery robots and self-driving cars combine satellite positioning with cameras, lidar and motion sensors. Satellite fixes are only useful to them if the Earth model behind them is right to within metres. That accuracy rests on decades of geodesy, including West's work."
+  }
+ ],
+ "hint": "Switch the Earth model to a sphere and watch the drone's idea of its height go wrong; drop to three satellites and the model also shifts the position."
+}

@@ -1,0 +1,21 @@
+{
+ "thesis": "George Boole showed in 1854 that logic can be written as algebra, with true as 1, false as 0, and statements joined by AND, OR and NOT. His algebra became the logic gates inside every digital chip, including those that train AI.",
+ "story": [
+  {
+   "tag": "1854",
+   "title": "The laws of thought",
+   "text": "In The Laws of Thought, Boole treated every statement as true (1) or false (0) and combined them with AND, OR and NOT. AND behaves like multiplication, and NOT x is simply 1 − x. Reasoning became a kind of algebra that could be calculated."
+  },
+  {
+   "tag": "the idea",
+   "title": "Logic in wires",
+   "text": "Each logical expression can be built as a small circuit of gates. A wire carrying current stands for 1 and a dead wire for 0. An AND gate outputs 1 only when both inputs are 1; an OR gate does so when either is. Listing every combination of inputs gives a truth table that describes the circuit exactly."
+  },
+  {
+   "tag": "1937",
+   "title": "From algebra to chips",
+   "text": "In his 1937 master's thesis, Claude Shannon showed that switching circuits follow Boole's algebra exactly, so circuits could be designed on paper. Modern chips, including the GPUs that train AI, contain tens of billions of transistors wired into gates like these."
+  }
+ ],
+ "hint": "Pick an expression and click A, B or C to flip a switch; follow the lit wires to the output and watch each row of the truth table appear."
+}

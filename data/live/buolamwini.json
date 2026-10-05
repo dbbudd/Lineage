@@ -1,0 +1,21 @@
+{
+ "thesis": "Joy Buolamwini's 2018 Gender Shades study with Timnit Gebru showed that commercial face-analysis systems were nearly perfect on lighter-skinned men but wrong on up to a third of darker-skinned women. It made bias auditing, testing AI separately on every group, standard practice.",
+ "story": [
+  {
+   "tag": "2018",
+   "title": "Gender Shades",
+   "text": "Buolamwini and Timnit Gebru tested face-analysis systems from IBM, Microsoft and Face++ on 1,270 photos of parliamentarians from three African and three European countries. The systems guessed gender almost perfectly for lighter-skinned men but got up to about a third of darker-skinned women wrong."
+  },
+  {
+   "tag": "the idea",
+   "title": "Split the score",
+   "text": "A single overall accuracy figure can look acceptable while hiding large failures. Gender Shades split the results into four groups by skin type and gender. Errors were under 1 per cent for lighter-skinned men but up to about a third for darker-skinned women, a gap that the average had concealed."
+  },
+  {
+   "tag": "today",
+   "title": "Bias audits",
+   "text": "After the study, all three companies released improved systems; a 2019 re-audit by Inioluwa Deborah Raji and Buolamwini measured the change. Testing a model separately on different groups is now standard in responsible AI, from model cards to proposed laws."
+  }
+ ],
+ "hint": "Switch company to compare the three systems, then turn on the 2018 re-audit: the faded outlines show how far the errors fell once the gap was made public."
+}

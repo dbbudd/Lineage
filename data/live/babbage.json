@@ -1,0 +1,21 @@
+{
+ "thesis": "Charles Babbage designed the Difference Engine to calculate error-free tables by addition alone, then the Analytical Engine, the first design for a general-purpose programmable computer. Its store and mill match the memory and processor of every machine that trains AI today.",
+ "story": [
+  {
+   "tag": "1822",
+   "title": "A machine for tables",
+   "text": "Printed tables for navigation and engineering were full of human errors. Babbage designed the Difference Engine: columns of numbered wheels, each holding one digit. Turning a crank adds one column into the next and carries the tens, so the machine calculates and prints each line of a table without a single slip."
+  },
+  {
+   "tag": "the idea",
+   "title": "Polynomials by adding",
+   "text": "The method of finite differences turns a polynomial into repeated addition. For x² + x + 41 the second difference is always 2. Adding it to the first difference, then adding that to the previous value, gives the next value with no multiplying. Babbage showed visitors this very formula, which gives primes for x from 0 to 39."
+  },
+  {
+   "tag": "1837",
+   "title": "Store and mill",
+   "text": "Babbage then described the Analytical Engine: a store for numbers, a mill to work on them, and punched cards, borrowed from the Jacquard loom, for instructions. It could loop and branch on its results. That is the plan of every modern computer, and training an AI repeats simple arithmetic billions of times, as he hoped to automate."
+  }
+ ],
+ "hint": "Change the coefficients and the starting wheels reset: the 2nd difference column always holds 2a, and the table is still built from additions alone."
+}

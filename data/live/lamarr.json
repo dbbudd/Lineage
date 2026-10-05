@@ -1,0 +1,21 @@
+{
+ "thesis": "Hollywood star Hedy Lamarr patented a frequency-hopping system with composer George Antheil in 1942, designed to stop radio-guided torpedoes being jammed. It was never built, but related hopping now carries Bluetooth data between devices and AI services.",
+ "story": [
+  {
+   "tag": "1942",
+   "title": "A secret pattern",
+   "text": "Hedy Lamarr and the composer George Antheil patented a way to guide torpedoes by radio without being jammed. The signal kept switching between 88 frequencies, the number of keys on a piano. Matching punched paper rolls, like those in player pianos, kept the transmitter and receiver hopping in step."
+  },
+  {
+   "tag": "the idea",
+   "title": "A jammer hits only a few hops",
+   "text": "A jammer works by finding a signal's frequency and blasting noise on it. If the signal hops between many channels in a pattern only the sender and receiver know, an eavesdropper hears only fragments. Jamming one channel spoils just the brief moments the signal lands on it, and the rest of the message gets through."
+  },
+  {
+   "tag": "today",
+   "title": "An honest, weak link",
+   "text": "Their design was never built, and spread-spectrum radio grew separately later. Still, classic Bluetooth hops over 79 channels using a pattern both ends share, and Wi-Fi uses related ideas. These links carry data between phones, sensors and AI services. Shared random seeds also let AI researchers repeat training runs exactly."
+  }
+ ],
+ "hint": "Turn hopping off and watch every letter die; turn it back on and add channels, and fewer letters are lost because the jammer catches fewer hops."
+}

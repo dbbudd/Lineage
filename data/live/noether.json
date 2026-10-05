@@ -1,0 +1,21 @@
+{
+ "thesis": "Emmy Noether proved that every continuous symmetry in physics comes with a conserved quantity, linking energy to time and momentum to space, and helped modernise abstract algebra. Her mathematics of symmetry now shapes neural networks designed to respect rotations and shifts.",
+ "story": [
+  {
+   "tag": "1918",
+   "title": "Symmetry means conservation",
+   "text": "Noether proved that every continuous symmetry of a physical system comes with a conserved quantity. Laws that are the same in every direction conserve angular momentum. Laws that are the same at every moment conserve energy. Physicists still use her theorem to find new conservation laws."
+  },
+  {
+   "tag": "the idea",
+   "title": "Round bowl, steady spin",
+   "text": "A puck rolling in a perfectly round bowl feels the same forces however the bowl is turned. That rotational symmetry keeps its angular momentum fixed, so it sweeps out equal areas in equal times. In an oval bowl the symmetry breaks: angular momentum swings, but energy is still conserved because the laws do not change over time."
+  },
+  {
+   "tag": "today",
+   "title": "Symmetry built into AI",
+   "text": "The link to AI is indirect, a shared idea rather than her theorem. Equivariant neural networks build symmetry into their design using group theory, the mathematics Noether helped modernise. When a molecule is turned, the predicted forces turn with it, so the network never has to learn every angle separately."
+  }
+ ],
+ "hint": "Untick the round bowl and push the oval-ness up: watch L start to wobble while E stays flat. Click inside the bowl to launch the puck from a new spot."
+}

@@ -1,0 +1,71 @@
+[
+ {
+  "slug": "rubin",
+  "suit": "Joker",
+  "rank": "Joker",
+  "name": "Rick Rubin",
+  "years": "b. 1963",
+  "born": "Long Beach, New York, USA",
+  "field": "Music Production & Creativity",
+  "known_for": "Legendary record producer who became the face of vibe coding",
+  "bio": "Rick Rubin co-founded Def Jam Recordings with Russell Simmons in 1984 while still a student at New York University. He produced landmark records for Run-DMC, the Beastie Boys, the Red Hot Chili Peppers and Johnny Cash, working across hip-hop, metal, rock and country. He says he cannot play an instrument well or work a mixing desk. His skill is listening and knowing what feels right. In 2023 he published The Creative Act: A Way of Being, a book about creativity as a practice anyone can learn.",
+  "big_idea": "Rubin's approach is to strip a song back to what matters and trust taste over technique. He listens with his eyes closed and asks whether something moves him, then guides musicians towards that feeling. In 2025 he applied the same idea to software with The Way of Code, made with Anthropic. It reworks the 81 chapters of Lao Tzu's Tao Te Ching for programmers, and each chapter comes with a generative artwork you can remix by describing changes in plain language to Claude.",
+  "line_to_ai": "In February 2025 the AI researcher Andrej Karpathy coined the term vibe coding: describing what you want to an AI model in plain language, then judging the results by feel rather than writing every line yourself. A photo of Rubin in headphones, eyes closed, hand on a mouse, became the internet's favourite image of the idea. It fits: like Rubin in the studio, a vibe coder may not master every tool, but needs clear taste and the judgement to say 'not yet'.",
+  "line_becomes": "The cable from his headphones becomes a sound waveform, which flattens into a line of plain-language prompt text, which blooms into a swaying grid of generative code art like the artworks in The Way of Code.",
+  "think_about": "If AI can write the code, what skills still matter most: taste, judgement, knowing the subject, or checking the output? Can taste be taught?",
+  "wild_card": "Not a scientist, engineer or mathematician at all, which is exactly why he's the wild card: proof that in the age of AI, knowing what is good may matter as much as knowing how to build it.",
+  "sources": [
+   {
+    "title": "The Way of Code (Rick Rubin with Anthropic)",
+    "url": "https://www.thewayofcode.com/"
+   },
+   {
+    "title": "Rick Rubin (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Rick_Rubin"
+   },
+   {
+    "title": "Rick Rubin and Anthropic launch The Way of Code (DesignRush News)",
+    "url": "https://news.designrush.com/rick-rubin-anthropic-ai-coding"
+   }
+  ],
+  "portrait": {
+   "commons_file": null,
+   "license": "Traced from a stylised line-drawing reference supplied by Daniel Budd (the vibe-coding pose)."
+  }
+ },
+ {
+  "slug": "musk",
+  "suit": "Joker",
+  "rank": "Joker",
+  "name": "Elon Musk",
+  "years": "b. 1971",
+  "born": "Pretoria, South Africa",
+  "field": "Engineering & Technology Entrepreneurship",
+  "known_for": "Reusable rockets at SpaceX, Tesla electric cars, and AI ventures",
+  "bio": "Elon Musk grew up in Pretoria, South Africa, moved to Canada at 17 and studied physics and economics at the University of Pennsylvania. He made his first fortune from internet companies, including the business that became PayPal. He founded SpaceX in 2002, and in 2004 became the largest early investor in Tesla, a carmaker named after Nikola Tesla, later becoming its CEO. He co-founded OpenAI in 2015, left its board in 2018, and launched the rival AI company xAI in 2023. He is one of the world's wealthiest and most polarising people.",
+  "big_idea": "Rockets were traditionally thrown away after one flight, like flying a jet once and scrapping it. SpaceX engineers built the Falcon 9 so its first stage flies back and lands upright using engine burns and steerable fins, then flies again. The first successful landing came in 2015. Reuse has cut launch costs and made SpaceX the world's busiest launch provider. Tesla, meanwhile, helped make long-range electric cars mainstream, pushing the car industry towards batteries.",
+  "line_to_ai": "Musk is tied to AI in several direct ways. He was a co-founder and early funder of OpenAI, which went on to build the GPT models and ChatGPT after he left. His company xAI builds the Grok large language models, trained on a huge cluster of Nvidia GPUs in Memphis. Tesla trains neural networks on camera video for its driver-assistance software and Optimus robot, and Neuralink uses machine learning to decode brain signals from implanted electrodes.",
+  "line_becomes": "The line of his jaw becomes a Falcon 9 booster's landing trajectory, curving down under a feedback controller, which turns into the loss curve of a neural network descending towards its minimum.",
+  "think_about": "Musk has repeatedly warned about the dangers of AI while also racing to build it. Can a person or company be both a critic and a competitor in the same field? What would you want from them?",
+  "wild_card": "A century after Edison, Musk is the Joker in his mirror: a showman engineer who sells the future, picks public fights, and named his car company after the man Edison battled over AC.",
+  "controversies": "Musk's record includes well-documented controversies. In 2018 the US Securities and Exchange Commission sued him over a tweet about taking Tesla private; he settled, paying a fine and stepping down as Tesla's chairman for three years. After he bought Twitter in 2022 and renamed it X, researchers and journalists reported rises in hate speech and misinformation. His 2025 role leading the US government's Department of Government Efficiency cuts was widely criticised. In 2024 he sued OpenAI over its move towards profit; in May 2026 a jury found his claims were filed too late.",
+  "sources": [
+   {
+    "title": "Elon Musk (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Elon_Musk"
+   },
+   {
+    "title": "Falcon 9 (SpaceX)",
+    "url": "https://www.spacex.com/vehicles/falcon-9/"
+   },
+   {
+    "title": "Musk v. Altman (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Musk_v._Altman"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Elon_Musk_(54816836217)_(cropped_5).jpg",
+   "license": "CC BY-SA 4.0"
+  }
+ }
+]

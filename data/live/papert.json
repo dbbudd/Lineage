@@ -1,0 +1,21 @@
+{
+ "thesis": "Seymour Papert co-created Logo, in which children program a turtle to make shapes, and argued that people learn best by building and debugging, an idea he called constructionism. That idea shapes debates about whether AI tutors should give answers or help students build.",
+ "story": [
+  {
+   "tag": "1967",
+   "title": "Logo and the turtle",
+   "text": "With Wally Feurzeig and Cynthia Solomon, Papert created Logo, a language children use to command a turtle that leaves a trail as it moves. Making a shape means thinking like the turtle: walk forward, turn, repeat. His 1980 book Mindstorms argued that children should program computers, not the other way round."
+  },
+  {
+   "tag": "the idea",
+   "title": "Turns add up to circles",
+   "text": "Every closed turtle path turns through a whole number of full turns. A square is 4 × 90°, one full turn, while a five-pointed star made with 144° turns adds up to two full turns, 720°. Children discover this by building and debugging rather than memorising, which is real geometry learned through making."
+  },
+  {
+   "tag": "today",
+   "title": "Learning by building",
+   "text": "Papert called this constructionism: people learn best by making things and debugging their mistakes. Now children can ask AI to write code for them. A tutor in his spirit asks questions and lets students predict, test and fix their own work, instead of simply handing over the answer."
+  }
+ ],
+ "hint": "Change 170 to 144 or 160 and predict the shape before the turtle draws it; watch how many full turns the dial counts before the path closes."
+}

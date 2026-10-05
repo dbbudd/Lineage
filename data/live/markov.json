@@ -1,0 +1,21 @@
+{
+ "thesis": "Andrey Markov developed Markov chains, sequences where the next step depends only on the current one, and tested them in 1913 on the letters of Pushkin's Eugene Onegin. Predicting the next symbol from what came before is a direct ancestor of today's language models.",
+ "story": [
+  {
+   "tag": "1913",
+   "title": "Counting Pushkin",
+   "text": "Markov took the first 20,000 letters of Eugene Onegin and marked each one as a vowel or a consonant: 8,638 vowels and 11,362 consonants. Then he counted pairs. A vowel was followed by another vowel only about 13% of the time, a consonant by a consonant about 34%. Letters were not independent coin tosses."
+  },
+  {
+   "tag": "the idea",
+   "title": "Two states, four arrows",
+   "text": "The chain has two states, vowel and consonant, and four possible steps between them, each with a fixed probability taken from Pushkin's counts. The next letter depends only on the current one. Left running for a long time, the chain settles at about 43% vowels, the same share as in the poem."
+  },
+  {
+   "tag": "today",
+   "title": "Guess the next token",
+   "text": "Predicting the next symbol from what came before is a direct ancestor of language models. Shannon used letter and word chains in 1948, and n-gram models were Markov chains over words. Models like GPT also predict the next token, but they look back over thousands of tokens, not just one."
+  }
+ ],
+ "hint": "Type your own sentence to see its vowel and consonant odds, press \"Use my text's odds\", then drag the sliders and watch the arrows thicken and the vowel share change."
+}

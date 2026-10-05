@@ -1,0 +1,21 @@
+{
+ "thesis": "Charles Darwin explained how living things change through natural selection: variation, inheritance and the survival of the best suited, repeated over many generations with no designer needed. Genetic algorithms copy that loop in software to evolve solutions, from antenna shapes to neural network designs.",
+ "story": [
+  {
+   "tag": "1859",
+   "title": "Variation, inheritance, selection",
+   "text": "In On the Origin of Species, Darwin argued that living things vary, that offspring inherit many of those differences, and that more are born than can survive. Those that happen to suit their surroundings leave more young. He had spent more than twenty years gathering evidence, much of it begun on the voyage of HMS Beagle."
+  },
+  {
+   "tag": "the idea",
+   "title": "No designer needed",
+   "text": "In a population of beetles living on dark bark, birds catch the ones that stand out most. Survivors breed, and each young beetle's colour is its parent's plus a small random change. Nobody aims for camouflage, yet over many generations the average colour creeps toward the bark. Without selection, the colour would simply drift at random."
+  },
+  {
+   "tag": "1975",
+   "title": "Evolution inside a computer",
+   "text": "John Holland's 1975 book Adaptation in Natural and Artificial Systems set out how to copy this loop in software. A population of candidate answers is scored by a fitness function, and the best are kept, mixed together and mutated. Genetic algorithms now evolve antenna shapes, schedules and neural networks, and in 2025 DeepMind's AlphaEvolve used this loop to improve algorithms."
+  }
+ ],
+ "hint": "Drag the bark from dark to pale and watch the beetles follow over a few dozen generations; then set selection strength to zero and see the colour wander with no direction."
+}

@@ -1,0 +1,21 @@
+{
+ "thesis": "Rudolf Kálmán's 1960 filter estimates something hidden, like a spacecraft's position, by blending predictions with noisy measurements and tracking its own uncertainty. It helped navigate Apollo to the Moon and now tells drones, robots and self-driving cars where they are.",
+ "story": [
+  {
+   "tag": "1960",
+   "title": "Truth from noisy numbers",
+   "text": "Rudolf Kálmán published a new way to estimate something that cannot be seen directly, such as a spacecraft's position, from measurements that are always a little wrong. That year he visited Stanley Schmidt at NASA Ames, and Schmidt's team adapted the filter for Apollo's navigation to the Moon."
+  },
+  {
+   "tag": "the idea",
+   "title": "Predict, then update",
+   "text": "Each step, the filter predicts where the craft has moved using what it knows about its motion, and its uncertainty grows. Then a measurement arrives and the filter blends the two, trusting whichever is less uncertain, so the uncertainty shrinks. Repeated many times a second, a jagged track of readings becomes smooth and accurate."
+  },
+  {
+   "tag": "today",
+   "title": "How robots know where they are",
+   "text": "Phones, drones, robots and self-driving cars run the same loop many times a second, fusing GPS, wheel sensors, cameras and lidar into one estimate. The filter is not machine learning itself, but the AI that plans a robot's next move depends on knowing where it is."
+  }
+ ],
+ "hint": "Raise the measurement noise and the raw dots scatter wildly while the estimate stays close; turn the filter off to see what you would have without it."
+}

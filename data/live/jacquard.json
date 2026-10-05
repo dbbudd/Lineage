@@ -1,0 +1,21 @@
+{
+ "thesis": "Joseph-Marie Jacquard built a loom that wove complex patterns automatically by reading a chain of punched cards, each hole lifting one thread. Holes and no-holes are binary, and his cards led through Babbage and IBM to the stored numbers inside AI models.",
+ "story": [
+  {
+   "tag": "1804",
+   "title": "Cards that weave",
+   "text": "Jacquard demonstrated a loom attachment that read a chain of punched cards. Where a card had a hole, a hook passed through and lifted its warp thread; where it had none, the thread stayed down. The shuttle carried the weft under the lifted threads, and the next card set up the next row."
+  },
+  {
+   "tag": "the idea",
+   "title": "Change the cards, change the cloth",
+   "text": "Weaving a pattern means lifting a different set of warp threads for every pass of the shuttle. Before Jacquard, a helper lifted them by hand. Each card holds one row of the pattern, and the chain repeats. Swapping or re-punching the cards makes the same loom weave a completely different design."
+  },
+  {
+   "tag": "today",
+   "title": "Holes, bits, pixels",
+   "text": "Holes and no-holes are binary. Babbage planned to program his Analytical Engine with Jacquard cards, and Herman Hollerith's punched cards processed the 1890 US census, a business that grew into IBM. A woven picture is a grid of 1s and 0s, like the pixels an image AI reads, and a trained model is a vast stored pattern."
+  }
+ ],
+ "hint": "Click holes on the current card to punch or fill them, and watch that row of the cloth and its 1s and 0s change on the next repeat."
+}

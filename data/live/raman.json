@@ -1,0 +1,21 @@
+{
+ "thesis": "C. V. Raman discovered that a tiny fraction of scattered light changes colour by trading energy with molecular vibrations, giving every substance a unique fingerprint. He won the 1930 Nobel Prize in Physics, and machine-learning models now read these fingerprints to identify substances.",
+ "story": [
+  {
+   "tag": "1928",
+   "title": "A new colour in scattered light",
+   "text": "In Calcutta, Raman and his student K. S. Krishnan shone filtered sunlight through pure liquids and saw faint light of a different colour in the scattered beam. The light had swapped energy with the molecules' vibrations. Raman won the 1930 Nobel Prize in Physics, the first Asian to win a science Nobel."
+  },
+  {
+   "tag": "the idea",
+   "title": "Shifts make a fingerprint",
+   "text": "Most photons keep the laser's colour (Rayleigh scattering). About one in ten million gives some energy to a vibration and comes out redder (Stokes scattering). Plotting how far each photon shifted, in cm⁻¹, gives peaks at each molecule's own vibrations. A different laser moves the colours, but the shifts stay the same, so they identify the molecule."
+  },
+  {
+   "tag": "today",
+   "title": "Machine learning reads spectra",
+   "text": "Real spectra are noisy and similar molecules look alike. Researchers train machine-learning models, including convolutional neural networks that treat a spectrum like a one-dimensional image, to identify bacteria, spot cancerous tissue, catch counterfeit medicines and find microplastics. The networks learn which peaks and patterns tell one substance from another."
+  }
+ ],
+ "hint": "Switch the molecule and watch new peaks grow. Try a short exposure and the spectrum turns noisy. Change the laser colour: the nm values move but the cm⁻¹ shifts stay put."
+}

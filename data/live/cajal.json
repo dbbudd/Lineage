@@ -1,0 +1,21 @@
+{
+ "thesis": "Santiago Ramón y Cajal showed that the nervous system is built from separate cells, neurons, that pass signals in one direction across tiny gaps. Artificial neural networks borrow this picture in simplified form: separate units, weighted connections and one-way signal flow.",
+ "story": [
+  {
+   "tag": "1888",
+   "title": "Separate cells, tiny gaps",
+   "text": "Using Golgi's silver stain, which turns a few nerve cells black, Cajal drew thousands of them by hand. He showed the nervous system is made of separate cells, now called neurons, that almost touch at small gaps later named synapses. He shared the 1906 Nobel Prize with Golgi, who disagreed."
+  },
+  {
+   "tag": "the idea",
+   "title": "In through dendrites, out along the axon",
+   "text": "Cajal argued that signals flow one way: into the branching dendrites, through the cell body and out along the axon. A neuron receives pulses from many others at its synapses. Their charge adds up in the cell body and slowly leaks away; if it crosses a threshold, the neuron fires a spike down its axon to the next cells."
+  },
+  {
+   "tag": "1943",
+   "title": "The artificial neuron",
+   "text": "Warren McCulloch and Walter Pitts boiled this down to maths: multiply each input by a weight, add them up, and fire if the total passes a threshold. Rosenblatt's perceptron (1958) learned the weights. Modern networks stack billions of such units, though real neurons are far more complex."
+  }
+ ],
+ "hint": "Turn up one synapse's strength or lower the threshold and the cell fires more often; set all three low and it falls silent, however many signals arrive."
+}

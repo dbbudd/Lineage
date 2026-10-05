@@ -1,0 +1,21 @@
+{
+ "thesis": "Margaret Hamilton led the team that wrote the on-board flight software for NASA's Apollo missions, designed to detect overload and keep vital jobs running. That habit of building systems that fail safely is now central to reliable AI in cars, medicine and robots.",
+ "story": [
+  {
+   "tag": "1969",
+   "title": "Software that expects trouble",
+   "text": "Hamilton led the MIT team that wrote Apollo's on-board flight software. Every job in the guidance computer had a priority. During Apollo 11's landing, a radar was stealing computer time, alarms 1202 and 1201 flashed, and the software restarted, dropped minor work and kept flying the descent."
+  },
+  {
+   "tag": "the idea",
+   "title": "Shed the least vital",
+   "text": "Every job in the guidance computer had a priority. When extra work pushed the load past what the computer could handle, it raised an alarm, restarted and dropped the lowest-priority jobs. Guidance, attitude control and the landing radar kept their computer time, so the descent carried on safely to the surface of the Moon."
+  },
+  {
+   "tag": "today",
+   "title": "Fail safely under pressure",
+   "text": "Self-driving cars, medical AI and robots need the same discipline: know what must never fail, monitor for overload or strange inputs, and fall back to something safe. Her habit of imagining every way a mission could go wrong is now part of testing AI systems."
+  }
+ ],
+ "hint": "Turn priority scheduling off and every job slows down together, so guidance falls behind and the landing aborts. Push the extra load past 30 per cent and even shedding is not enough."
+}

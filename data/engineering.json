@@ -1,0 +1,440 @@
+[
+ {
+  "slug": "watt",
+  "suit": "Engineering",
+  "rank": "A",
+  "name": "James Watt",
+  "years": "1736–1819",
+  "born": "Greenock, Scotland",
+  "field": "Mechanical Engineering",
+  "known_for": "Transforming the steam engine with the separate condenser",
+  "bio": "James Watt was a Scottish instrument maker at the University of Glasgow when he was asked to repair a model of Thomas Newcomen's steam engine. He saw that it wasted huge amounts of fuel. Turning his fix into a business took years of debt and failed partnerships until he teamed up with the Birmingham manufacturer Matthew Boulton in 1775. Boulton and Watt engines then powered mines, mills and factories across Britain. The unit of power, the watt, is named after him.",
+  "big_idea": "Newcomen's engine heated and cooled the same cylinder every stroke, so most of the steam's energy was lost. Watt added a separate condenser, a second chamber kept cold, so the main cylinder could stay hot. This made engines several times more fuel efficient. He also made engines turn wheels, not just pump water. In 1788, at Boulton's suggestion, he fitted a spinning centrifugal governor, a device already used on windmills, that automatically eased the steam valve when the engine sped up.",
+  "line_to_ai": "Watt did not invent the centrifugal governor, but his steam engines made it famous. It is a feedback controller: measure the output, compare it with a target, correct the input. In 1868 James Clerk Maxwell analysed governors mathematically, a founding paper of control theory. Norbert Wiener later named his science of feedback 'cybernetics' from the Greek word for steersman. Reinforcement learning, used to train game-playing AIs and to fine-tune chatbots, is also a feedback loop: act, receive a reward signal, adjust.",
+  "line_becomes": "The curls of his hair become the two spinning balls of a centrifugal governor, whose arms trace a feedback loop diagram (sensor, comparator, valve) that closes into the agent–environment–reward cycle of reinforcement learning.",
+  "think_about": "A governor needs no human to keep an engine steady. Which decisions should we happily hand to automatic feedback systems, and which should always keep a person in the loop?",
+  "sources": [
+   {
+    "title": "James Watt (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/James_Watt"
+   },
+   {
+    "title": "Centrifugal governor (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Centrifugal_governor"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Watt_James_von_Breda.jpg",
+   "license": "Public domain"
+  }
+ },
+ {
+  "slug": "tesla",
+  "suit": "Engineering",
+  "rank": "K",
+  "name": "Nikola Tesla",
+  "years": "1856–1943",
+  "born": "Smiljan, Austrian Empire (now Croatia)",
+  "field": "Electrical Engineering",
+  "known_for": "Rotating magnetic field and the AC induction motor",
+  "bio": "Nikola Tesla was born to a Serbian family in Smiljan and studied engineering in Graz before emigrating to the United States in 1884. After a short time working for Thomas Edison's company, he set up his own laboratory in New York. In 1888 he patented an alternating current (AC) induction motor and licensed his AC patents to George Westinghouse. He was a brilliant showman and inventor, but many later projects, such as wireless power transmission, ran out of money, and he died with little wealth.",
+  "big_idea": "Feed two or three coils with alternating currents that are out of step, and the magnetic field between them spins around without anything physically moving. That rotating magnetic field drags a metal rotor round with it, giving a simple motor with no sparking brushes. Galileo Ferraris discovered the same principle independently. Combined with transformers, Tesla's polyphase AC system made it practical to send power over long distances, and it still runs most electric motors and power grids today.",
+  "line_to_ai": "This link is mathematical rather than historical. Engineers describe AC with phasors: an arrow rotating at a steady rate whose height traces a sine wave. Rotary position embedding (RoPE), used in many large language models such as Meta's Llama, uses exactly this idea. Each pair of numbers in a word's vector is rotated by an angle m·θ, where m is the word's position. Because rotations combine neatly, the attention score between two words depends on how far apart they are.",
+  "line_becomes": "The halo behind his head becomes a rotating phasor whose height traces an AC sine wave, which recedes into word vectors turning by m·θ (rotary position embedding).",
+  "think_about": "Tesla's rotating field and RoPE share the same mathematics a century apart. Why do you think a single idea, like rotation, turns up in such different parts of science and engineering?",
+  "sources": [
+   {
+    "title": "Nikola Tesla (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Nikola_Tesla"
+   },
+   {
+    "title": "Nikola Tesla (Engineering and Technology History Wiki)",
+    "url": "https://ethw.org/Nikola_Tesla"
+   },
+   {
+    "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding (arXiv)",
+    "url": "https://arxiv.org/abs/2104.09864"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Tesla_circa_1890.jpeg",
+   "license": "Public domain"
+  },
+  "live": {
+   "thesis": "The pen never lifts. It draws the man, circles into his rotating field, and runs out toward the way today's language models keep track of word order.",
+   "story": [
+    {
+     "tag": "1888",
+     "title": "A field that turns",
+     "text": "Tesla patents the AC induction motor. Three out-of-step currents make a magnetic field that rotates, and the rotor simply follows it. The halo behind his head is that field."
+    },
+    {
+     "tag": "phasor",
+     "title": "A wave is a circle seen side-on",
+     "text": "Follow the tip of the spinning arm and read only its height. You get the sine wave of alternating current. Engineers still calculate the grid this way, with rotating arrows called phasors."
+    },
+    {
+     "tag": "2021",
+     "title": "Position is a rotation",
+     "text": "Rotary position embedding (RoPE) tells a language model where each word sits by turning its vector: word m turns by m × θ. Spin the whole sentence and the angle between any two words stays the same, so the model reads relative position. Many open models, including Llama, use it."
+    }
+   ],
+   "hint": "Change θ and every word's arrow re-turns. The gap between the two highlighted words stays fixed while the field spins."
+  }
+ },
+ {
+  "slug": "babbage",
+  "suit": "Engineering",
+  "rank": "Q",
+  "name": "Charles Babbage",
+  "years": "1791–1871",
+  "born": "London, England",
+  "field": "Mathematics & Mechanical Engineering",
+  "known_for": "Designing the Difference Engine and the programmable Analytical Engine",
+  "bio": "Charles Babbage was an English mathematician who held the same Cambridge professorship once held by Isaac Newton. Frustrated by errors in hand-calculated mathematical tables, he spent decades designing calculating machines. The British government funded his first Difference Engine, but disputes and engineering difficulties meant it was never finished. His design for the far more ambitious Analytical Engine was never built either. In 1991 London's Science Museum completed his Difference Engine No. 2 from his drawings, and it worked.",
+  "big_idea": "The Difference Engine used gears to compute tables of numbers automatically using the method of finite differences, which turns polynomials into repeated addition. The Analytical Engine went further. It separated a 'store' (memory) from a 'mill' (processor), read instructions from punched cards borrowed from the Jacquard loom, and could loop and branch depending on its results. Ada Lovelace wrote notes on it, including a method for computing Bernoulli numbers, and saw that such a machine could handle symbols, not just numbers.",
+  "line_to_ai": "Every AI system runs on a general-purpose programmable computer, and the Analytical Engine was the first design for one. Its store and mill match the memory and processor of a modern machine, and its loops and conditional branches are the control flow every training program uses. When a GPU repeats the same multiply-and-add step billions of times to train a neural network, it is doing at enormous speed the kind of mechanical repetition Babbage wanted to automate.",
+  "line_becomes": "The line of his coat becomes the stacked number wheels of the Difference Engine, which unroll into a column of finite differences that flattens into a matrix multiplication, the core operation of a neural network.",
+  "think_about": "Babbage's engines were never completed in his lifetime. Is an invention that is never built still an invention? What makes an idea important if no one can use it yet?",
+  "sources": [
+   {
+    "title": "Charles Babbage (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Charles_Babbage"
+   },
+   {
+    "title": "The Babbage Engine (Computer History Museum)",
+    "url": "https://www.computerhistory.org/babbage/"
+   },
+   {
+    "title": "Charles Babbage's Difference Engines and the Science Museum",
+    "url": "https://www.sciencemuseum.org.uk/objects-and-stories/charles-babbages-difference-engines-and-science-museum"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Charles_Babbage_-_1860.jpg",
+   "license": "Public domain"
+  }
+ },
+ {
+  "slug": "vonneumann",
+  "suit": "Engineering",
+  "rank": "J",
+  "name": "John von Neumann",
+  "years": "1903–1957",
+  "born": "Budapest, Hungary",
+  "field": "Mathematics, Physics & Computing",
+  "known_for": "Stored-program computer architecture and game theory",
+  "bio": "John von Neumann was a Hungarian-born mathematician who moved to the United States in the 1930s and joined the Institute for Advanced Study in Princeton. He worked across pure mathematics, quantum physics, economics and computing, and served on the Manhattan Project during the Second World War. In 1945, while consulting on the EDVAC computer, he wrote a report describing its design. The ideas drew heavily on the work of ENIAC's builders, J. Presper Eckert and John Mauchly, who felt they did not receive enough credit.",
+  "big_idea": "Early computers like ENIAC were reprogrammed by rewiring cables and setting switches, which could take days. The 'First Draft of a Report on the EDVAC' described a machine that keeps its program in the same memory as its data, so changing the task just means loading new instructions. A processor fetches each instruction, carries it out, then fetches the next. Separately, von Neumann proved the minimax theorem and, with Oskar Morgenstern, wrote the 1944 book that founded game theory.",
+  "line_to_ai": "Almost every computer that trains or runs AI uses the stored-program design described in the EDVAC report, so programs, model weights and training data all sit in memory. The constant shuttling of data between memory and processor, called the von Neumann bottleneck, is a major limit on AI speed today, which is why AI chips pack fast memory close to their cores. His minimax idea also underpins classic game-playing AI, such as the search used by chess engines like Deep Blue.",
+  "line_becomes": "The line of his collar becomes a block diagram of memory, processor and input/output joined by a single bus, and the bus thickens into the high-bandwidth memory stacks that sit beside an AI accelerator.",
+  "think_about": "The 'von Neumann architecture' is named after one person, but it came from a team. How should we decide who gets credit for ideas that grow out of group work?",
+  "sources": [
+   {
+    "title": "John von Neumann (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/John_von_Neumann"
+   },
+   {
+    "title": "First Draft of a Report on the EDVAC (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/First_Draft_of_a_Report_on_the_EDVAC"
+   },
+   {
+    "title": "John von Neumann (Engineering and Technology History Wiki)",
+    "url": "https://ethw.org/John_von_Neumann"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:JohnvonNeumann-LosAlamos.gif",
+   "license": "Attribution (Los Alamos National Laboratory)"
+  }
+ },
+ {
+  "slug": "kilby",
+  "suit": "Engineering",
+  "rank": "10",
+  "name": "Jack Kilby",
+  "years": "1923–2005",
+  "born": "Jefferson City, Missouri, USA",
+  "field": "Electrical Engineering",
+  "known_for": "Building the first working integrated circuit in 1958",
+  "bio": "Jack Kilby grew up in Kansas, where an ice storm that cut the power lines sparked his interest in radio and electronics. After serving as an army electronics technician in the Second World War, he studied electrical engineering and joined Texas Instruments in 1958. As a new employee without holiday leave, he worked through the summer on the problem of wiring together ever more components. He later co-invented the handheld calculator. He shared the 2000 Nobel Prize in Physics with Zhores Alferov and Herbert Kroemer.",
+  "big_idea": "By the 1950s, electronic circuits needed thousands of separate transistors, resistors and capacitors soldered together by hand, and every joint could fail. Engineers called this the 'tyranny of numbers'. Kilby's answer was to make all the components from one piece of semiconductor. On 12 September 1958 he showed a sliver of germanium producing a steady sine wave on an oscilloscope. A few months later, Robert Noyce at Fairchild independently invented a silicon version that was easier to mass-produce. Both are credited as inventors.",
+  "line_to_ai": "Modern AI runs on integrated circuits. A single high-end AI chip, such as Nvidia's H100 GPU, holds about 80 billion transistors on one piece of silicon, all made together rather than wired by hand. Training a large language model means running thousands of these chips for weeks, performing trillions of multiply-and-add operations per second each. Kilby's germanium chip had only a handful of components, but the principle of building a whole circuit on one slab is what makes that scale possible.",
+  "line_becomes": "The lines of his face become the few hand-drawn wires on Kilby's germanium chip, which multiply and shrink into the dense grid of a GPU die tiled with thousands of matrix-multiply cores.",
+  "think_about": "Kilby and Noyce invented the integrated circuit independently within months of each other. Why do you think inventions often appear in several places at once?",
+  "sources": [
+   {
+    "title": "Jack S. Kilby: Facts (Nobel Prize)",
+    "url": "https://www.nobelprize.org/prizes/physics/2000/kilby/facts/"
+   },
+   {
+    "title": "Jack Kilby (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Jack_Kilby"
+   },
+   {
+    "title": "Jack Kilby (Engineering and Technology History Wiki)",
+    "url": "https://ethw.org/Jack_Kilby"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Jack_Kilby_(cropped).png",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
+  "slug": "lamarr",
+  "suit": "Engineering",
+  "rank": "9",
+  "name": "Hedy Lamarr",
+  "years": "1914–2000",
+  "born": "Vienna, Austria",
+  "field": "Invention & Radio Engineering",
+  "known_for": "Co-inventing frequency hopping for jam-resistant radio guidance",
+  "bio": "Hedy Lamarr, born Hedwig Kiesler, was a Viennese actress who became a major Hollywood star in the late 1930s and 1940s. She was also a self-taught inventor who tinkered between film shoots. During the Second World War she and the composer George Antheil designed a secret radio system for guiding torpedoes. Their patent was granted in 1942, but the US Navy did not adopt it. Her work as an inventor was largely ignored until the 1990s. She was inducted into the National Inventors Hall of Fame in 2014.",
+  "big_idea": "A radio-controlled torpedo can be jammed if the enemy finds its frequency and blasts noise on it. Lamarr and Antheil's idea was to keep switching frequency, hopping between 88 channels in a pattern that only the sender and receiver know. Antheil suggested synchronising the hops using punched paper rolls like those in player pianos, an idea from his music. An eavesdropper hears only fragments, and jamming one channel barely matters because the signal is there only briefly.",
+  "line_to_ai": "Honestly, this is one of the most indirect links in the deck. Frequency hopping existed before their patent, and their design was never built. Later spread-spectrum systems developed separately, though their patent is recognised as an early example. Today, Bluetooth uses frequency hopping, and Wi-Fi uses related spread-spectrum ideas. These links carry data between phones, sensors, robots and cloud AI services. There is also a neat parallel: both ends must share the same pseudo-random sequence, just as AI researchers share random seeds to reproduce training runs.",
+  "line_becomes": "The curve of her hair becomes a staircase of frequency hops on a time–frequency grid, and the scattered steps settle into the seeded pseudo-random number stream that initialises a neural network's weights.",
+  "think_about": "Lamarr was famous for her looks, and her inventions were overlooked for decades. What stops people's ideas from being taken seriously, and how can we notice when it is happening?",
+  "sources": [
+   {
+    "title": "Hedy Lamarr (National Inventors Hall of Fame)",
+    "url": "https://www.invent.org/inductees/hedy-lamarr"
+   },
+   {
+    "title": "Hedy Lamarr (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Hedy_Lamarr"
+   },
+   {
+    "title": "Frequency-hopping spread spectrum (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Frequency-hopping_spread_spectrum"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Hedy_Lamarr_Publicity_Photo_for_The_Heavenly_Body_1944.jpg",
+   "license": "Public domain"
+  }
+ },
+ {
+  "slug": "aljazari",
+  "suit": "Engineering",
+  "rank": "8",
+  "name": "Ismail al-Jazari",
+  "years": "c. 1136–1206",
+  "born": "Upper Mesopotamia (al-Jazira); exact place uncertain",
+  "field": "Mechanical Engineering",
+  "known_for": "Book of ingenious machines, automata and water clocks (1206)",
+  "bio": "Ismail al-Jazari was chief engineer to the Artuqid rulers in the region of Upper Mesopotamia, in what is now south-eastern Turkey, as his father had been before him. Almost everything known about his life comes from his own book, completed in 1206, The Book of Knowledge of Ingenious Mechanical Devices. It describes 50 machines with detailed drawings and step-by-step building instructions, so that others could make them. Copies of the illustrated manuscript survive in museums and libraries around the world.",
+  "big_idea": "Al-Jazari's machines included water clocks, water-raising pumps and moving figures called automata. His famous elephant clock used a float sinking in water to trigger a sequence of moving parts every half hour. He used camshafts, rotating shafts with bumps that push levers in turn, to turn steady motion into a timed sequence of actions. One device was a boat with four mechanical musicians, built to entertain guests at royal parties.",
+  "line_to_ai": "Roboticist Noel Sharkey has argued that al-Jazari's musical boat was probably an early programmable automaton: pegs on a rotating drum hit levers to play the drums, and moving the pegs changes the rhythm. This is a long and indirect line to AI, but the core idea is real: store a sequence of instructions in a physical form and let a machine carry them out. Modern robots replace pegs with code, and increasingly with neural network policies learned from data.",
+  "line_becomes": "The folds of a turban become a rotating peg drum whose pegs trip a row of levers, and the peg pattern unrolls into a timeline of robot joint angles produced by a learned control policy.",
+  "think_about": "Al-Jazari wrote clear instructions so other people could build his machines. Why might sharing how something works, rather than keeping it secret, matter so much for progress?",
+  "sources": [
+   {
+    "title": "Ismail al-Jazari (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Ismail_al-Jazari"
+   },
+   {
+    "title": "The Book of Knowledge of Ingenious Mechanical Devices (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Book_of_Knowledge_of_Ingenious_Mechanical_Devices"
+   }
+  ],
+  "portrait": {
+   "commons_file": null,
+   "license": "Traced from a stylised line-drawing reference supplied by Daniel Budd. An imagined likeness: no portrait of al-Jazari survives."
+  }
+ },
+ {
+  "slug": "jacquard",
+  "suit": "Engineering",
+  "rank": "7",
+  "name": "Joseph-Marie Jacquard",
+  "years": "1752–1834",
+  "born": "Lyon, France",
+  "field": "Textile Engineering",
+  "known_for": "Punched-card loom that wove complex patterns automatically",
+  "bio": "Joseph-Marie Jacquard was the son of a master silk weaver in Lyon, the centre of France's silk industry. He had no formal schooling and could not read until he was 13. After years of failed ventures he began work on an automatic loom, improving earlier designs by Basile Bouchon, Jean-Baptiste Falcon and Jacques de Vaucanson. The French government declared his loom public property in 1805 and paid him a pension and a royalty on each machine. By the time he died, thousands were in use.",
+  "big_idea": "Weaving a pattern means lifting a different set of warp threads for every pass of the shuttle. Before Jacquard, a helper had to lift them by hand. Jacquard's loom read a chain of punched cards: where a card had a hole, a hook passed through and lifted its thread; where it did not, the thread stayed down. Each card was one row of the pattern, and changing the cards changed the design. Babbage owned a silk portrait of Jacquard woven this way using thousands of cards.",
+  "line_to_ai": "Jacquard's cards were a program stored as holes and no-holes, which is binary. Babbage planned to use them to program his Analytical Engine, and Herman Hollerith used punched cards to process the 1890 US census, a business that grew into IBM. Early computers and programmers worked with punched cards for decades. Today an AI model is itself a giant stored pattern: billions of numbers in memory that decide which outputs light up, just as holes decided which threads lifted.",
+  "line_becomes": "The line of his shoulder becomes a chain of punched cards feeding a loom, and the hole pattern sharpens into a binary matrix of 1s and 0s that becomes a layer of neural network weights.",
+  "think_about": "Jacquard's loom changed the work of skilled weavers. How do you think new automation, including AI, should be introduced so that the people whose jobs change are treated fairly?",
+  "sources": [
+   {
+    "title": "Joseph Marie Jacquard (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Joseph_Marie_Jacquard"
+   },
+   {
+    "title": "Punched cards (Computer History Museum)",
+    "url": "https://www.computerhistory.org/revolution/punched-cards/2/2"
+   },
+   {
+    "title": "Jacquard machine (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Jacquard_machine"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:LW_SCMU_1921_1078-001.jpg",
+   "license": "Public domain"
+  }
+ },
+ {
+  "slug": "conway",
+  "suit": "Engineering",
+  "rank": "6",
+  "name": "Lynn Conway",
+  "years": "1938–2024",
+  "born": "Mount Vernon, New York, USA",
+  "field": "Computer Engineering",
+  "known_for": "Co-leading the Mead–Conway revolution in microchip design",
+  "bio": "Lynn Conway studied at MIT and Columbia and joined IBM, where in the 1960s she invented a method for processors to run instructions out of order, a technique used in most modern processors. In 1968 IBM fired her after she revealed she intended to undergo gender transition. She rebuilt her career from scratch under a new name, keeping her past private. At Xerox PARC she transformed chip design, then became a professor at the University of Michigan. She told her story publicly in 1999, became a transgender rights advocate, and received an apology from IBM in 2020.",
+  "big_idea": "In the 1970s only a few specialists inside chip companies could design microchips. Working with Carver Mead of Caltech, Conway created simple, scalable design rules that let engineers lay out circuits without knowing every detail of the factory process. Their 1980 textbook, Introduction to VLSI Systems, was used in over a hundred universities. She also invented a way to put many students' designs onto one shared silicon wafer, so classes could have real chips made cheaply.",
+  "line_to_ai": "The Mead–Conway approach separated chip design from chip manufacturing. That separation made it possible for companies to design chips without owning a factory and send the designs to a foundry, the 'fabless' model behind Nvidia and Google's TPU teams. Their idea of building complex chips from simple, rule-based layers also shaped the design software engineers still use. Every AI accelerator, with its thousands of repeated matrix-multiply units, is designed using descendants of these methods.",
+  "line_becomes": "The line of her profile becomes a stick diagram of a transistor laid out on a grid measured in units of λ, which tiles outward into the repeated systolic array of an AI accelerator.",
+  "think_about": "Conway's work was almost lost because of discrimination against her. How might science and technology be different if everyone with talent had a fair chance to contribute?",
+  "sources": [
+   {
+    "title": "Lynn Conway (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Lynn_Conway"
+   },
+   {
+    "title": "Lynn Conway (Computer History Museum Fellow)",
+    "url": "https://www.computerhistory.org/fellowawards/hall/lynn-conway/"
+   },
+   {
+    "title": "Lynn Conway (Engineering and Technology History Wiki)",
+    "url": "https://ethw.org/Lynn_Conway"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Lynn_Conway_July_2006.jpg",
+   "license": "CC BY-SA 2.5"
+  }
+ },
+ {
+  "slug": "kalman",
+  "suit": "Engineering",
+  "rank": "5",
+  "name": "Rudolf E. Kálmán",
+  "years": "1930–2016",
+  "born": "Budapest, Hungary",
+  "field": "Electrical Engineering & Control Theory",
+  "known_for": "The Kalman filter, which finds the truth hidden in noisy measurements",
+  "bio": "Rudolf Kálmán was born in Budapest and emigrated with his family to the United States in 1943, during the Second World War. He studied electrical engineering at MIT and earned a doctorate from Columbia University in 1957. While working at a research institute in Baltimore he published his famous 1960 paper on filtering and prediction. He later taught at Stanford, the University of Florida and ETH Zurich. He won the Kyoto Prize in 1985 and the US National Medal of Science in 2009. He died in Gainesville, Florida, in 2016.",
+  "big_idea": "Every sensor is a little wrong. A Kalman filter combines two imperfect guesses to get a better one. First it predicts where something should be, using what it knows about how it moves. Then a new measurement arrives and it blends the two, trusting whichever is less uncertain. It keeps track of its own uncertainty too, so it knows how much to trust itself. Repeat this many times a second and a noisy track becomes smooth and accurate.",
+  "line_to_ai": "In 1960 Kálmán visited Stanley Schmidt at NASA Ames, and Schmidt's team adapted the filter to estimate a spacecraft's position; it became part of Apollo's navigation to the Moon. Today the same predict-and-update loop runs in phones, GPS receivers, drones, robots and self-driving cars, fusing GPS, wheel sensors, cameras and lidar into one estimate. It is not machine learning itself, but state estimation is the backbone that robots using AI rely on to know where they are.",
+  "line_becomes": "The line of his brow becomes a spacecraft's true path, scattered with noisy measurement dots, which a predict-and-update estimate follows inside a shrinking uncertainty ellipse, ending in a self-driving car fusing its sensors into one confident position.",
+  "think_about": "A Kalman filter decides how much to trust a prediction versus a new measurement. When you hear new evidence, how do you decide how much to change your mind?",
+  "sources": [
+   {
+    "title": "Rudolf E. Kálmán (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Rudolf_E._K%C3%A1lm%C3%A1n"
+   },
+   {
+    "title": "Rudolf Kalman (MacTutor History of Mathematics)",
+    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Kalman/"
+   },
+   {
+    "title": "Rudolf Emil Kalman (Kyoto Prize)",
+    "url": "https://www.kyotoprize.org/en/laureates/rudolf_emil_kalman/"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Rudolf_Kalman.jpg",
+   "license": "CC BY-SA 2.0 de (Gert-Martin Greuel, Oberwolfach Photo Collection, 2009)"
+  }
+ },
+ {
+  "slug": "khan",
+  "suit": "Engineering",
+  "rank": "4",
+  "name": "Fazlur Rahman Khan",
+  "years": "1929–1982",
+  "born": "Dhaka, British India (now Bangladesh)",
+  "field": "Structural Engineering",
+  "known_for": "Tube structures for skyscrapers, including the Sears (Willis) Tower",
+  "bio": "Fazlur Rahman Khan studied engineering in Dhaka and won a Fulbright scholarship to the University of Illinois, where in three years he earned two master's degrees and a PhD. In 1955 he joined the Chicago architecture firm Skidmore, Owings & Merrill, working closely with architect Bruce Graham. Together they designed the 100-storey John Hancock Center and the Sears Tower, now the Willis Tower, the world's tallest building from 1973 to 1998. He died of a heart attack in 1982, aged 52.",
+  "big_idea": "Tall buildings must resist wind, which pushes sideways and tries to bend them. Older skyscrapers used a heavy steel skeleton throughout. Khan's insight was to treat the whole outside wall as a hollow tube, like a stiff cardboard tube standing on end. The Hancock Center uses giant X-braces on its outer walls; the Sears Tower bundles nine tubes together. These designs used far less steel per floor, making very tall buildings affordable.",
+  "line_to_ai": "Khan was an early champion of using computers in structural engineering. He persuaded his firm to buy a mainframe and programmed it to calculate structural forces, and later to help produce drawings. That shift from hand calculation to software led to today's computer-aided design and simulation. Engineers now also use generative design, where algorithms, sometimes combined with machine learning, explore thousands of possible structures and suggest efficient shapes that meet the loads and safety rules.",
+  "line_becomes": "The line of his jaw becomes the X-braced tube of the John Hancock Center, whose members turn into a finite-element mesh coloured by stress, which then branches into the organic, optimised shapes of generative design.",
+  "think_about": "If an algorithm suggests a building design that no human fully understands, who is responsible for making sure it is safe?",
+  "sources": [
+   {
+    "title": "Fazlur Rahman Khan (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Fazlur_Rahman_Khan"
+   },
+   {
+    "title": "Willis Tower (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Willis_Tower"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Fazlur Khan (14396319747).jpg",
+   "license": "CC BY-SA 2.0 (Teresa Grau Ros, Flickr)"
+  }
+ },
+ {
+  "slug": "west",
+  "suit": "Engineering",
+  "rank": "3",
+  "name": "Gladys West",
+  "years": "1930–2026",
+  "born": "Sutherland, Virginia, USA",
+  "field": "Mathematics & Geodesy",
+  "known_for": "Precise mathematical models of the Earth's shape used for GPS",
+  "bio": "Gladys West grew up on a farm in rural Virginia in a family of African American sharecroppers. Finishing top of her high school class won her a scholarship to Virginia State College, where she studied mathematics. In 1956 she joined the US Navy's base at Dahlgren, Virginia, as one of only four Black employees, and worked there for 42 years. Her contribution became widely known only after she retired. She was inducted into the US Air Force Space and Missile Pioneers Hall of Fame in 2018, and died in 2026 aged 95.",
+  "big_idea": "The Earth is not a perfect sphere. It bulges at the equator, and because gravity varies, even 'sea level' is lumpy. This bumpy surface is called the geoid. From the 1970s, West programmed computers to process satellite measurements and build increasingly precise models of the geoid, including work on data from the Seasat and Geosat radar satellites. Knowing the Earth's exact shape is essential for working out exactly where a satellite, or a person, is.",
+  "line_to_ai": "GPS receivers work out position from satellite signals, but the answer is only as good as the model of the Earth behind it. West was one of many people whose geodesy work fed into those models. Self-driving cars, delivery drones and field robots use satellite positioning as one input, fused with cameras, lidar and motion sensors using algorithms such as the Kalman filter, while neural networks interpret what the cameras see.",
+  "line_becomes": "The line of her shoulders becomes the bumpy outline of the geoid, ringed by satellite orbits, which narrows to a self-driving car's position estimate shrinking inside a cloud of uncertainty as sensor data are fused.",
+  "think_about": "West's work was used by millions of people for decades before most of them knew her name. Whose hidden work do you rely on every day without realising it?",
+  "sources": [
+   {
+    "title": "Gladys West (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Gladys_West"
+   },
+   {
+    "title": "Black mathematician Gladys West, who helped develop GPS, has died at age 95 (NEPM/NPR)",
+    "url": "https://www.nepm.org/2026-01-24/black-mathematician-gladys-west-who-helped-develop-gps-has-died-at-age-95"
+   },
+   {
+    "title": "Geoid (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Geoid"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:181206-F-DT527-087_(cropped).jpg",
+   "license": "Public domain"
+  }
+ },
+ {
+  "slug": "perlman",
+  "suit": "Engineering",
+  "rank": "2",
+  "name": "Radia Perlman",
+  "years": "b. 1951",
+  "born": "Portsmouth, Virginia, USA",
+  "field": "Computer Networking",
+  "known_for": "Inventing the Spanning Tree Protocol that keeps networks loop-free",
+  "bio": "Radia Perlman studied mathematics at MIT, where she was often the only woman in the room. Her first programming job was at the MIT AI Lab's Logo group, designing a way for young children to program a robot turtle with physical buttons. She later joined Digital Equipment Corporation, where she invented the Spanning Tree Protocol and designed robust link-state routing protocols, including IS-IS, still used on large networks. She holds over 100 patents and was inducted into the Internet Hall of Fame in 2014 and the National Inventors Hall of Fame in 2016.",
+  "big_idea": "Engineers add extra cables between network switches so that if one link fails, data can take another route. But extra links create loops, and a message can circle forever, multiplying until the network jams. In 1984 Perlman designed a protocol in which switches talk to each other, elect a 'root', and switch off just enough links to leave a tree with no loops. If a link breaks, the network automatically rebuilds the tree. She even summed it up in a poem, 'Algorhyme'.",
+  "line_to_ai": "Training a large AI model spreads the work across thousands of GPUs that must constantly swap results, so the network between them is as important as the chips. Perlman's central question, how to make big networks with spare links that configure and heal themselves, is exactly the challenge in AI data centres. To be accurate, those clusters mostly use routed designs with many parallel paths rather than spanning tree itself, but link-state routing ideas she helped develop remain part of that toolkit.",
+  "line_becomes": "The strands of her hair become a tangled mesh of network links, from which a spanning tree lights up and loops fade away, before the tree widens into the leaf–spine fabric linking racks of GPUs.",
+  "think_about": "Perlman says good engineering means making things simple enough that they work without experts. Can you think of a technology you use that 'just works' because someone did the hard thinking for you?",
+  "sources": [
+   {
+    "title": "Radia Perlman (National Inventors Hall of Fame)",
+    "url": "https://www.invent.org/inductees/radia-perlman"
+   },
+   {
+    "title": "Radia Perlman (Internet Hall of Fame)",
+    "url": "https://internethalloffame.org/inductee/radia-perlman/"
+   },
+   {
+    "title": "Radia Perlman (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Radia_Perlman"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Radia_Perlman_2009.jpg",
+   "license": "Public domain"
+  }
+ }
+]

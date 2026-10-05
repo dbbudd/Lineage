@@ -1,0 +1,21 @@
+{
+ "thesis": "Joseph Weizenbaum wrote ELIZA, the first chatbot, which convinced many users it understood them using only keywords and templates. That tendency, now called the ELIZA effect, is stronger than ever with modern chatbots, as he warned in Computer Power and Human Reason.",
+ "story": [
+  {
+   "tag": "1966",
+   "title": "ELIZA",
+   "text": "At MIT, Weizenbaum wrote ELIZA, a program people could type to, described in a 1966 paper. Its DOCTOR script copied a style of therapist who reflects a patient's words back. ELIZA understood nothing, yet Weizenbaum was shocked that people confided in it as if it understood them, and he became a leading critic."
+  },
+  {
+   "tag": "the idea",
+   "title": "Keyword, pattern, template",
+   "text": "ELIZA looks for the highest-ranked keyword it knows, cuts the sentence around it, swaps I for you and my for your, and pours the pieces into a stock template. A sentence about feeling sad about one's family might get a request to say more about family. There is no meaning anywhere in the process."
+  },
+  {
+   "tag": "today",
+   "title": "The ELIZA effect",
+   "text": "Reading understanding into a program is now called the ELIZA effect. Large language models are vastly more capable than keyword rules, which makes the effect stronger: people trust their answers and form attachments to them. Weizenbaum argued some human judgements should never be handed to machines."
+  }
+ ],
+ "hint": "Type a sentence with my, I feel or a family word and press Enter, then watch which rule wins and how the reply is stitched together from your own words."
+}

@@ -1,0 +1,21 @@
+{
+ "thesis": "Claude Shannon founded information theory in 1948, showing that information can be measured in bits and that surprise, or entropy, sets the limits of compression and communication. Language models are trained with cross-entropy loss, built directly on his measure of surprise.",
+ "story": [
+  {
+   "tag": "1948",
+   "title": "Fake English from statistics",
+   "text": "In A Mathematical Theory of Communication, Shannon built text by chance. Letters picked at random give noise. Letters picked by how often they occur, then by which letter tends to follow which, start to form words. His examples ran from XFOML RXKHRJFFJUJ to phrases that look almost like English."
+  },
+  {
+   "tag": "the idea",
+   "title": "Surprise, counted in bits",
+   "text": "A letter that is easy to guess carries little information; a surprising one carries a lot. Shannon measured the surprise of an outcome with probability p as −log₂ p bits, and called the average surprise of a source its entropy, H. The more context there is, the easier the next letter is to guess, so fewer bits are needed."
+  },
+  {
+   "tag": "today",
+   "title": "Next-token prediction",
+   "text": "A large language model plays Shannon's guessing game with tokens instead of letters, looking thousands of tokens back. It is trained with cross-entropy loss: the average surprise, in bits or nats, at each real next token. Learning means becoming less surprised by human writing."
+  }
+ ],
+ "hint": "Raise the order from 0 to 3 and watch nonsense turn into almost-words while the entropy falls; then push the temperature up or down."
+}

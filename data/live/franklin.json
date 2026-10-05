@@ -1,0 +1,21 @@
+{
+ "thesis": "Rosalind Franklin produced the clearest X-ray images of DNA, including Photo 51, which revealed its helix shape. X-ray crystallography, the method she helped pioneer, solved most of the protein structures that AlphaFold learned from to predict how proteins fold.",
+ "story": [
+  {
+   "tag": "1952",
+   "title": "Photo 51",
+   "text": "At King's College London, Franklin and her student Raymond Gosling shone X-rays through thin, stretched fibres of DNA. Photo 51 showed a sharp X made of smudged layer lines. Franklin measured such images with great care: the X meant a helix, and the spacings gave its 3.4 nm turn and the 0.34 nm step between bases."
+  },
+  {
+   "tag": "the idea",
+   "title": "A helix writes an X",
+   "text": "X-rays scattered by a helix fall on layer lines spaced by one over its pitch, the length of one turn. The bright smudges step outward layer by layer, tracing an X whose arms sit at right angles to the strands. A longer pitch crowds the layers together. A missing fourth layer line comes from DNA's two offset strands."
+  },
+  {
+   "tag": "2020",
+   "title": "From diffraction to AlphaFold",
+   "text": "Decades of X-ray crystallography filled the Protein Data Bank with more than 200,000 solved structures. AlphaFold 2 trained on them and learned to predict how a chain of amino acids folds. Hassabis and Jumper shared the 2024 Nobel Prize in Chemistry. Franklin worked on DNA and viruses, so the link is through her method."
+  }
+ ],
+ "hint": "Drag the pitch and radius: the layer lines spread or crowd and the X opens or closes. Set the strand offset to 0 and the missing fourth line comes back."
+}

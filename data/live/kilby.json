@@ -1,0 +1,21 @@
+{
+ "thesis": "Jack Kilby built the first working integrated circuit in 1958, making every component of a circuit from one piece of semiconductor instead of wiring parts together by hand. Today a single AI chip holds about 80 billion transistors made the same way.",
+ "story": [
+  {
+   "tag": "1958",
+   "title": "A whole circuit on one slab",
+   "text": "On 12 September 1958 at Texas Instruments, Kilby showed his managers a sliver of germanium holding a transistor, resistors and a capacitor, joined by tiny gold wires. Connected as a phase-shift oscillator, it put a steady sine wave on an oscilloscope. Every part was made from the same piece of semiconductor."
+  },
+  {
+   "tag": "the idea",
+   "title": "Beating the tyranny of numbers",
+   "text": "By the 1950s circuits needed thousands of separate parts soldered together by hand, and every joint could fail. Engineers called this the tyranny of numbers. Making all the parts together on one slab removed the joints. Months later Robert Noyce at Fairchild independently made a silicon version that was easier to mass-produce."
+  },
+  {
+   "tag": "2022",
+   "title": "Eighty billion on one chip",
+   "text": "AlexNet, the 2012 network that sparked deep learning, was trained on two gaming GPUs with about 3 billion transistors each. Nvidia's H100 AI chip, announced in 2022, holds about 80 billion, all made together on one piece of silicon. Training a large language model runs thousands of these chips for weeks."
+  }
+ ],
+ "hint": "Slide R or C to change the oscillator's frequency, then drag the year to see how many transistors fit on one chip at that point in history."
+}

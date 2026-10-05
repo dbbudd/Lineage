@@ -1,0 +1,21 @@
+{
+ "thesis": "Elon Musk founded SpaceX, whose Falcon 9 boosters land upright and fly again, cutting launch costs, and led Tesla's push into electric cars. He co-founded OpenAI and later launched xAI, which builds the Grok large language models.",
+ "story": [
+  {
+   "tag": "2015",
+   "title": "A rocket that comes back",
+   "text": "SpaceX, which Musk founded in 2002, built the Falcon 9 so its first stage flies back and lands upright using engine burns and steerable grid fins. The first successful landing came in December 2015, and boosters now regularly land on droneships at sea and fly again."
+  },
+  {
+   "tag": "the idea",
+   "title": "The hoverslam",
+   "text": "Even at its lowest throttle, a Falcon 9 engine pushes harder than the nearly empty booster weighs, so it cannot hover. The burn must start at exactly the right height: too late and the booster hits the deck too fast, too early and it stops in mid-air and falls. A good burn reaches zero speed at the deck."
+  },
+  {
+   "tag": "today",
+   "title": "Computers that steer, and AI",
+   "text": "No pilot could time this by hand, so onboard guidance computers recalculate the burn and steering many times a second. Musk is also tied to AI directly: he co-founded OpenAI in 2015, left its board in 2018 and launched xAI in 2023, while Tesla trains neural networks on camera video for driver assistance."
+  }
+ ],
+ "hint": "Lower the ignition altitude until the booster crashes, then raise it until it stops in mid-air; add crosswind and see why lighting a little early can help."
+}

@@ -1,0 +1,21 @@
+{
+ "thesis": "Leonhard Euler proved in 1735 that no walk crosses each of Königsberg's seven bridges exactly once, by reducing the map to dots and lines. That idea founded graph theory, and graph neural networks now learn directly on such networks of nodes and edges.",
+ "story": [
+  {
+   "tag": "1735",
+   "title": "Seven bridges, one walk",
+   "text": "People in Königsberg asked whether anyone could stroll across all seven bridges over the Pregel river exactly once. Euler showed in 1735 that it cannot be done. He ignored distances and street shapes and kept only which pieces of land each bridge joined."
+  },
+  {
+   "tag": "the idea",
+   "title": "Count the lines at each dot",
+   "text": "Each piece of land becomes a dot and each bridge a line. Every time a walker passes through a dot, two lines are used, so only the start and finish can have an odd number. Königsberg had four odd dots, so the walker always gets stuck."
+  },
+  {
+   "tag": "today",
+   "title": "Graphs that learn",
+   "text": "Dots joined by lines are now called graphs. Knowledge graphs store facts as linked nodes, and graph neural networks learn on them: each node holds a vector and, layer by layer, passes messages to its neighbours. They help predict molecule properties and traffic, and power Google DeepMind's GraphCast weather model."
+  }
+ ],
+ "hint": "Click a bridge to remove it, or click two dots to add one, and watch the degrees: when 0 or 2 dots are odd, the walker crosses every bridge."
+}

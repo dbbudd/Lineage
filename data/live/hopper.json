@@ -1,0 +1,21 @@
+{
+ "thesis": "Grace Hopper built A-0, an early compiler, in 1952 and championed programming in English words, which led to COBOL. AI coding assistants carry her idea further, turning plain English requests into code, though they predict likely code rather than follow strict rules.",
+ "story": [
+  {
+   "tag": "1952",
+   "title": "Let the computer translate",
+   "text": "Programmers once wrote long strings of numbers by hand. Hopper built A-0, an early compiler: a program that turns human-friendly instructions into machine code. Her team's FLOW-MATIC used English words, and COBOL, which she helped shape in 1959, still reads like MULTIPLY HOURS BY RATE GIVING PAY."
+  },
+  {
+   "tag": "the idea",
+   "title": "Tokens, tree, instructions",
+   "text": "A compiler first splits a sentence into tokens and tags each one as a verb, keyword or name. A parser checks the grammar and builds a tree, then each part becomes a simple machine instruction: load, multiply, store. Hopper handed out 30 cm wires to show a nanosecond: how far light travels in a billionth of a second."
+  },
+  {
+   "tag": "today",
+   "title": "English is the new language",
+   "text": "AI coding assistants go a step further than Hopper's compilers: a person describes what they want in plain English and a language model writes the code. Unlike a compiler, which follows strict rules, the model predicts likely code, so its work still has to be read and tested by people."
+  }
+ ],
+ "hint": "Edit the statement (try SUBTRACT TAX FROM PAY or DIVIDE PAY BY HOURS GIVING RATE) and switch on binary to see what the machine actually reads."
+}

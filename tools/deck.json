@@ -1,0 +1,6 @@
+[
+  {"key": "curie",     "suit": "Science",     "rank": "Q", "name": "Marie Curie",         "field": "Physics & Chemistry",    "years": "1867–1934"},
+  {"key": "hopper",    "suit": "Technology",  "rank": "Q", "name": "Grace Hopper",        "field": "Computer Science",       "years": "1906–1992"},
+  {"key": "tesla",     "suit": "Engineering", "rank": "K", "name": "Nikola Tesla",        "field": "Electrical Engineering", "years": "1856–1943"},
+  {"key": "ramanujan", "suit": "Mathematics", "rank": "K", "name": "Srinivasa Ramanujan", "field": "Mathematics",            "years": "1887–1920", "name_size": 3.4}
+]

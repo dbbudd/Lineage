@@ -1,0 +1,5 @@
+# generator scratch output
+tools/out/
+__pycache__/
+.DS_Store
+tools/out_portraits.log

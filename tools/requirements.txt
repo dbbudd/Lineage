@@ -1,0 +1,6 @@
+# Only needed for the portrait/print generators. build_site.py needs nothing but Python 3.
+opencv-python
+scikit-image
+numpy
+cairosvg
+qrcode

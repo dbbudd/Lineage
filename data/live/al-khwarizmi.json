@@ -1,0 +1,21 @@
+{
+ "thesis": "Al-Khwarizmi wrote Al-Jabr in Baghdad around 820, giving the first systematic method for solving linear and quadratic equations; the word algebra comes from its title. His name gave us the word algorithm, and every AI system is built from algorithms.",
+ "story": [
+  {
+   "tag": "c. 820",
+   "title": "A square and ten roots",
+   "text": "In Al-Jabr, al-Khwarizmi solves \"a square and ten roots equal thirty-nine\", which is written today as x² + 10x = 39. He used no symbols. He proved his recipe with geometry: a square of side x and rectangles of 5 by x, laid out on the page."
+  },
+  {
+   "tag": "the idea",
+   "title": "Complete the square",
+   "text": "Two 5-by-x rectangles sit against the sides of the x-by-x square. Together they cover 39, but a 5-by-5 corner is missing. Adding 25 gives a full square of area 64, so its side is 8 and x is 8 minus 5, which is 3."
+  },
+  {
+   "tag": "today",
+   "title": "A recipe is an algorithm",
+   "text": "His steps work for any equation of this type: halve, square, add, take the root, subtract. Fixed steps that always work are called algorithms, a word made from Algoritmi, the Latin form of his name. Every AI model, from training to answering, is an algorithm."
+  }
+ ],
+ "hint": "Change b and c and the pieces slide together again; the recipe on the right recalculates, and if c is zero or negative there is no positive solution."
+}

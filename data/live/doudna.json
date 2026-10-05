@@ -1,0 +1,21 @@
+{
+ "thesis": "Jennifer Doudna and Emmanuelle Charpentier turned a bacterial defence into CRISPR-Cas9, a programmable tool that cuts DNA wherever a short guide RNA matches, and shared the 2020 Nobel Prize in Chemistry. Protein language models now design new gene editors based on it.",
+ "story": [
+  {
+   "tag": "2012",
+   "title": "A programmable cutter",
+   "text": "Doudna and Emmanuelle Charpentier, with their teams, studied how bacteria fight viruses. A protein called Cas9 carries a short RNA copied from an old virus and cuts any DNA that matches it. They showed that scientists can write that guide themselves, so Cas9 cuts the sequence they choose. They shared the 2020 Nobel Prize in Chemistry."
+  },
+  {
+   "tag": "the idea",
+   "title": "Search, check, cut",
+   "text": "Cas9 slides along the DNA and only stops where it finds a PAM, the letters NGG. There it compares its guide letter by letter, starting next to the PAM. If all 20 letters match, it cuts both strands. An exact match with no PAM beside it is never checked, which stops Cas9 cutting the bacterium's own stored copies."
+  },
+  {
+   "tag": "2025",
+   "title": "An editor designed by AI",
+   "text": "The company Profluent trained protein language models on a huge collection of natural CRISPR proteins, then asked them to write new ones. One AI-designed editor, OpenCRISPR-1, differs from natural Cas9 by hundreds of changes, yet it edited human cells, as reported in Nature in 2025. It was released openly for research."
+  }
+ ],
+ "hint": "Change one letter of the guide and watch the target get rejected, then allow 2 mismatches and see Cas9 also cut a near-match elsewhere: an off-target cut."
+}

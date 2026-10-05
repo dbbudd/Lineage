@@ -1,0 +1,399 @@
+[
+  {
+    "slug": "turing",
+    "suit": "Technology",
+    "rank": "A",
+    "name": "Alan Turing",
+    "years": "1912–1954",
+    "born": "Maida Vale, London, England",
+    "field": "Mathematics & Computer Science",
+    "known_for": "The Turing machine, computability, Enigma codebreaking and the Turing test",
+    "bio": "Alan Turing was an English mathematician who is widely regarded as the father of theoretical computer science. In 1936, aged 24, he described an imaginary machine that could carry out any calculation that can be written as step-by-step rules. During the Second World War he worked at Bletchley Park, where his methods helped break German Enigma messages. In 1952 he was prosecuted for homosexuality, which was then a crime in Britain, and he died two years later aged 41. He received a posthumous royal pardon in 2013.",
+    "big_idea": "Turing asked: what can be computed at all? He imagined a simple machine that reads and writes symbols on an endless strip of tape, following a small table of rules. He showed that one universal machine could imitate any other just by being fed the right rules as data. That is the idea behind every modern computer. He also proved some problems no machine can ever solve. In 1950 he proposed a test: can a machine hold a text conversation well enough to pass as a human?",
+    "line_to_ai": "Every neural network, including large language models, runs on universal computers of the kind Turing described in 1936, where the program is just more data stored in memory. His 1950 paper, Computing Machinery and Intelligence, asked directly whether machines could think and even suggested building a child machine that learns rather than being fully programmed, which is the core idea of machine learning. The Turing test is still argued over today as chatbots produce human-like text, though most researchers now see it as an incomplete measure of intelligence.",
+    "line_becomes": "The line of his collar unrolls into a strip of tape whose squares are read and rewritten by a moving head stepping through a state diagram, and the tape lengthens into a stream of tokens fed into a chatbot asked whether it is human (the Turing test).",
+    "think_about": "If a chatbot can fool you into thinking it is human, does that mean it understands what it is saying? What else would you want to test?",
+    "sources": [
+      {
+        "title": "Alan Turing (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Alan_Turing"
+      },
+      {
+        "title": "The Alan Turing Internet Scrapbook (Andrew Hodges)",
+        "url": "https://www.turing.org.uk/"
+      }
+    ],
+    "portrait": {
+      "commons_file": "File:Alan turing header.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "slug": "shannon",
+    "suit": "Technology",
+    "rank": "K",
+    "name": "Claude Shannon",
+    "years": "1916–2001",
+    "born": "Petoskey, Michigan, USA",
+    "field": "Mathematics & Electrical Engineering",
+    "known_for": "Founding information theory and measuring information in bits",
+    "bio": "Claude Shannon grew up in a small Michigan town, tinkering with radios and model planes. In his 1937 master's thesis at MIT he showed that the true-or-false logic of Boolean algebra could be built from electrical switches, an insight at the heart of every digital circuit. At Bell Labs he published A Mathematical Theory of Communication in 1948, which founded the field of information theory. He was also famously playful, building juggling machines and a mechanical mouse called Theseus that could learn its way through a maze.",
+    "big_idea": "Shannon showed that information can be measured, just like length or mass. The unit is the bit: the answer to one yes-or-no question. A message is only informative if it is surprising. If you can easily guess the next letter, it carries little information. He called the average surprise of a source its entropy. This let engineers calculate exactly how much a message can be compressed and how fast data can be sent reliably through a noisy channel, from phone lines to Wi-Fi.",
+    "line_to_ai": "Large language models are trained with cross-entropy loss, a measure built directly on Shannon's entropy: it counts, in bits, how surprised the model is by each real next token. Training means nudging the model to be less surprised. Shannon also anticipated language models. His 1948 paper generated fake English from letter and word statistics, and in his 1951 paper Prediction and Entropy of Printed English, people guessed text one letter at a time so he could estimate how predictable English is. Next-token prediction is exactly that game.",
+    "line_becomes": "His hairline becomes a branching probability tree of letters, each branch weighted by p, whose surprises -log p are summed into an entropy curve that flows into a language model's falling cross-entropy loss as it learns to predict the next token.",
+    "think_about": "Shannon's theory measures how surprising a message is, not what it means. Can a system that only predicts the next word ever truly understand meaning?",
+    "sources": [
+      {
+        "title": "Claude Shannon (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Claude_Shannon"
+      },
+      {
+        "title": "Claude Shannon (Engineering and Technology History Wiki, IEEE)",
+        "url": "https://ethw.org/Claude_Shannon"
+      }
+    ],
+    "portrait": {
+      "commons_file": "File:C.E. Shannon. Tekniska museet 43069 (2x3 crop).jpg",
+      "license": "CC BY 2.0"
+    }
+  },
+  {
+    "slug": "lovelace",
+    "suit": "Technology",
+    "rank": "Q",
+    "name": "Ada Lovelace",
+    "years": "1815–1852",
+    "born": "London, England",
+    "field": "Mathematics",
+    "known_for": "First published computer algorithm, for Babbage's Analytical Engine",
+    "bio": "Ada Lovelace was the daughter of the poet Lord Byron and Anne Isabella Milbanke, who encouraged her to study mathematics and science, unusual for a girl in the early 1800s. At 17 she met the inventor Charles Babbage and became fascinated by his designs for calculating machines. In 1843 she translated an Italian article by Luigi Menabrea about Babbage's Analytical Engine and added her own notes, which ended up much longer than the article itself. She suffered poor health for much of her life and died aged 36.",
+    "big_idea": "Babbage's Analytical Engine was a mechanical computer, designed but never built, controlled by punched cards. In her Note G, Lovelace wrote out step by step how the engine could calculate a sequence called the Bernoulli numbers, including loops that repeat operations. This is often called the first published computer program. She also saw something bigger: if symbols could stand for things like musical notes, a machine could work with far more than just numbers.",
+    "line_to_ai": "Lovelace also argued that the engine could not originate anything new; it could only do what we know how to order it to do. In 1950 Alan Turing answered this directly in his paper on machine intelligence, naming it Lady Lovelace's Objection and pointing out that machines can still surprise us. The same debate is alive today when people ask whether image generators and language models are truly creative or are recombining patterns from their training data.",
+    "line_becomes": "The ringlets of her hair become a looping punched-card program for the Bernoulli numbers, whose loop arrows spiral outward into a generative model sampling new images and melodies, posing the question of machine creativity.",
+    "think_about": "Lovelace said a machine can only do what we order it to do. When an AI writes a poem nobody asked for word by word, has it created something, or just followed orders?",
+    "sources": [
+      {
+        "title": "Ada Lovelace (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Ada_Lovelace"
+      },
+      {
+        "title": "Note G (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Note_G"
+      }
+    ],
+    "portrait": {
+      "commons_file": "File:Ada Lovelace daguerreotype by Antoine Claudet 1843 - cropped.png",
+      "license": "Public domain"
+    }
+  },
+  {
+    "slug": "berners-lee",
+    "suit": "Technology",
+    "rank": "J",
+    "name": "Tim Berners-Lee",
+    "years": "b. 1955",
+    "born": "London, England",
+    "field": "Computer Science",
+    "known_for": "Inventing the World Wide Web, HTML, URLs and HTTP",
+    "bio": "Tim Berners-Lee is an English computer scientist whose parents both worked on one of the first commercial computers. Working at CERN, the European physics laboratory near Geneva, he was frustrated that scientists could not easily share information across different computers. In 1989 he proposed a system of linked documents, and by 1991 the first website was online. CERN made the web's technology freely available in 1993, with no patents or fees. He later founded the World Wide Web Consortium and received the Turing Award for 2016.",
+    "big_idea": "The internet already connected computers, but finding and linking information was hard. Berners-Lee combined three simple ideas. HTML is a way to write pages with links. A URL is an address for every page. HTTP is the set of rules browsers and servers use to request and send pages. Click a link and your browser fetches another page from anywhere in the world. Because he gave it away freely, anyone could build a website, and the web grew to billions of pages.",
+    "line_to_ai": "Large language models learn from enormous collections of text, and much of that text is the public web. Datasets such as Common Crawl are built by programs that follow links from page to page and save what they find, exactly the linked structure Berners-Lee designed. So the web is, quite literally, the raw material of modern chatbots. This raises live questions about consent and credit, and Berners-Lee himself campaigns for people to have more control over their own data.",
+    "line_becomes": "His outline becomes a graph of pages joined by hyperlinks, which a crawler traverses edge by edge, pouring each page's text into a growing stack of tokens that becomes the training corpus of a large language model.",
+    "think_about": "Much AI training data comes from web pages people wrote without knowing it would be used that way. Should writers be asked for permission or paid?",
+    "sources": [
+      {
+        "title": "Tim Berners-Lee (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Tim_Berners-Lee"
+      },
+      {
+        "title": "A short history of the Web (CERN)",
+        "url": "https://home.cern/science/computing/the-birth-of-the-web/short-history-web/"
+      }
+    ],
+    "portrait": {
+      "commons_file": "File:Tim Berners-Lee at the 2025 Web Summit (Cropped).jpg",
+      "license": "CC BY 4.0"
+    }
+  },
+  {
+    "slug": "hopper",
+    "suit": "Technology",
+    "rank": "10",
+    "name": "Grace Hopper",
+    "years": "1906–1992",
+    "born": "New York City, USA",
+    "field": "Computer Science",
+    "known_for": "The first compiler, A-0, and English-like programming that led to COBOL",
+    "bio": "Grace Hopper earned a PhD in mathematics from Yale in 1934 and taught at Vassar College. In 1943 she joined the US Navy Reserve and was assigned to program the Harvard Mark I, one of the earliest computers. Many people at the time believed computers could only understand numbers and symbols. She kept arguing otherwise, and was proved right. She served in the Navy for 43 years, retiring in 1986 as a rear admiral, and was one of the best-known computing pioneers of her time.",
+    "big_idea": "Early computers had to be programmed in machine code, long strings of numbers that were slow to write and easy to get wrong. In 1952 Hopper built A-0, an early compiler: a program that translates human-friendly instructions into machine code automatically. She then led work on FLOW-MATIC, a language using English words like ADD and IF, and served as a technical consultant on COBOL in 1959. Her big idea was that people should write programs in words, and let the computer do the translating.",
+    "line_to_ai": "Hopper's compiler moved programming one step closer to human language. Today AI coding assistants go further, turning a plain English request into working code. Under the hood, a language model first breaks your words into tokens, a kind of translation step, then generates code, which is itself compiled down to machine instructions. The link is a real continuation of her idea, though the method is very different: a compiler follows strict rules, while a language model predicts likely code and can make mistakes that need checking.",
+    "line_becomes": "Her words pass through a compiler stack, from English sentence to parse tree to assembly to binary, and the stack turns sideways into a tokeniser that chops a plain English prompt into tokens and returns working code.",
+    "think_about": "If anyone can write software just by describing it in English, does everyone still need to learn to code? What skills would matter most?",
+    "sources": [
+      {
+        "title": "Grace Hopper (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Grace_Hopper"
+      },
+      {
+        "title": "A-0 System (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/A-0_System"
+      }
+    ],
+    "portrait": {
+      "commons_file": "File:Commodore Grace M. Hopper, USN (covered) head and shoulders crop.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "slug": "hinton",
+    "suit": "Technology",
+    "rank": "9",
+    "name": "Geoffrey Hinton",
+    "years": "b. 1947",
+    "born": "London, England",
+    "field": "Computer Science & Cognitive Science",
+    "known_for": "Backpropagation, deep learning and the 2024 Nobel Prize in Physics",
+    "bio": "Geoffrey Hinton is a British-Canadian computer scientist who studied experimental psychology at Cambridge before a PhD in artificial intelligence at Edinburgh. For decades neural networks were unfashionable, and he kept working on them anyway, largely at the University of Toronto. He shared the 2018 Turing Award with Yoshua Bengio and Yann LeCun, and the 2024 Nobel Prize in Physics with John Hopfield. In 2023 he left Google so he could speak openly about the risks of AI.",
+    "big_idea": "A neural network is made of many simple units connected by numbers called weights. When it makes a mistake, how do you know which of the millions of weights to change? In 1986 Hinton, David Rumelhart and Ronald Williams showed in a famous Nature paper how backpropagation answers this. You measure the error at the output, then pass it backwards through the network, working out how much each weight contributed. Each weight is then nudged slightly to reduce the error. Repeat millions of times and the network learns.",
+    "line_to_ai": "Backpropagation combined with gradient descent is how almost every modern neural network is trained, from image recognisers to large language models. In 2012 Hinton's students Alex Krizhevsky and Ilya Sutskever built AlexNet with him, training a deep convolutional network on GPUs; it won the ImageNet challenge by a wide margin and sparked the deep learning boom. Since 2023 Hinton has warned publicly about risks such as misuse, job loss and AI systems that might become hard for humans to control.",
+    "line_becomes": "The lines of his face become a layered network of nodes, and an error signal flows backwards along every edge as glowing gradients while a ball rolls down a loss surface (gradient descent), which settles into the trained weights of a deep network.",
+    "think_about": "Hinton helped invent the methods behind modern AI, then warned about its dangers. When should scientists speak up about the risks of their own work?",
+    "sources": [
+      {
+        "title": "Geoffrey Hinton (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Geoffrey_Hinton"
+      },
+      {
+        "title": "Geoffrey Hinton, Nobel Prize in Physics 2024 (NobelPrize.org)",
+        "url": "https://www.nobelprize.org/prizes/physics/2024/hinton/facts/"
+      }
+    ],
+    "portrait": {
+      "commons_file": "File:Geoffrey Hinton in 2026.jpg",
+      "license": "CC BY-SA 4.0"
+    }
+  },
+  {
+    "slug": "li",
+    "suit": "Technology",
+    "rank": "8",
+    "name": "Fei-Fei Li",
+    "years": "b. 1976",
+    "born": "Beijing, China",
+    "field": "Computer Science",
+    "known_for": "Creating ImageNet, the dataset that launched deep learning in vision",
+    "bio": "Fei-Fei Li was born in Beijing and moved to Parsippany, New Jersey, at 16 with her mother to join her father. She spoke little English at first, and while studying physics at Princeton she went home most weekends to help run the family's dry-cleaning shop. She earned her PhD at Caltech in 2005. As a professor at Princeton and later Stanford, she built ImageNet, and she became a founding co-director of Stanford's Institute for Human-Centered Artificial Intelligence.",
+    "big_idea": "Around 2006 most computer vision researchers focused on cleverer algorithms. Li argued the missing ingredient was data: children learn to see from millions of examples, so computers might too. Starting in 2007, her team built ImageNet, eventually more than 14 million photos labelled across about 22,000 categories, with much of the labelling done by crowd workers online. From 2010 she ran a yearly competition, challenging teams to build programs that could recognise objects in its images.",
+    "line_to_ai": "In 2012 the ImageNet competition was won by AlexNet, a deep convolutional neural network trained on GPUs, which cut the error rate far below every rival. That result convinced the field that deep learning works when given enough data, and it kicked off the modern AI boom. The lesson that scale of data matters carried straight on to large language models, trained on vast text collections. Li also argues that AI should be designed around human needs.",
+    "line_becomes": "Her outline becomes a grid of thousands of tiny labelled photo tiles, which funnel into a falling error-rate graph from the yearly ImageNet challenge that drops sharply in 2012 as a convolutional network takes over.",
+    "think_about": "ImageNet's labels were made by people, and some later turned out to be biased or offensive. Who should be responsible for checking the data an AI learns from?",
+    "sources": [
+      {
+        "title": "Fei-Fei Li (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Fei-Fei_Li"
+      },
+      {
+        "title": "Fei-Fei Li (Stanford HAI)",
+        "url": "https://hai.stanford.edu/people/fei-fei-li"
+      },
+      {
+        "title": "ImageNet (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/ImageNet"
+      }
+    ],
+    "portrait": {
+      "commons_file": "File:Fei-Fei Li at AI for Good 2017.jpg",
+      "license": "CC BY 2.0"
+    }
+  },
+  {
+    "slug": "hassabis",
+    "suit": "Technology",
+    "rank": "7",
+    "name": "Demis Hassabis",
+    "years": "b. 1976",
+    "born": "London, England",
+    "field": "Artificial Intelligence & Neuroscience",
+    "known_for": "DeepMind, AlphaGo and AlphaFold; 2024 Nobel Prize in Chemistry",
+    "bio": "Demis Hassabis was a chess prodigy who reached master standard at 13. At 17 he co-designed and programmed the video game Theme Park. After studying computer science at Cambridge and running his own games company, he earned a PhD in cognitive neuroscience at University College London, studying memory and imagination. In 2010 he co-founded DeepMind with Shane Legg and Mustafa Suleyman; Google bought it in 2014. He shared half of the 2024 Nobel Prize in Chemistry with John Jumper, and David Baker received the other half.",
+    "big_idea": "DeepMind builds systems that learn to solve hard problems by themselves. AlphaGo learned the board game Go, which has more possible positions than there are atoms in the observable universe, and beat world champion Lee Sedol 4 to 1 in 2016. Then the team turned to biology. Proteins are chains of building blocks that fold into 3D shapes, and the shape decides what a protein does. Working this out in a lab could take years. AlphaFold predicts the shape from the chain's sequence, often in minutes.",
+    "line_to_ai": "AlphaGo combined deep neural networks with reinforcement learning, improving by playing millions of games against itself, plus a search through possible moves. AlphaFold 2, led by Hassabis and John Jumper, uses attention mechanisms related to transformers to reason about which parts of a protein chain sit close together. DeepMind released predicted structures for about 200 million proteins in a free database, now used by researchers worldwide for work on drugs, enzymes and diseases. It is one of the clearest examples of AI speeding up science.",
+    "line_becomes": "His line becomes a Go board whose stones branch into a game search tree, and the tree's branches twist into a folding protein chain, a ribbon of amino acids snapping into a 3D shape (AlphaFold).",
+    "think_about": "AlphaFold predicts protein shapes that scientists once spent years measuring. If AI makes discoveries, who deserves the credit: the AI, its builders, or the scientists whose data trained it?",
+    "sources": [
+      {
+        "title": "Demis Hassabis (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Demis_Hassabis"
+      },
+      {
+        "title": "Demis Hassabis, Nobel Prize in Chemistry 2024 (NobelPrize.org)",
+        "url": "https://www.nobelprize.org/prizes/chemistry/2024/hassabis/facts/"
+      },
+      {
+        "title": "AlphaFold (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/AlphaFold"
+      }
+    ],
+    "portrait": {
+      "commons_file": "File:Demis Hassabis, 2024 Nobel Prize Laureate in Chemistry 7 (cropped).jpg",
+      "license": "CC BY-SA 4.0"
+    }
+  },
+  {
+    "slug": "hamilton",
+    "suit": "Technology",
+    "rank": "6",
+    "name": "Margaret Hamilton",
+    "years": "b. 1936",
+    "born": "Paoli, Indiana, USA",
+    "field": "Software Engineering",
+    "known_for": "Leading the Apollo on-board flight software that landed astronauts on the Moon",
+    "bio": "Margaret Hamilton studied mathematics and began programming at MIT in the early 1960s, at a time when software was barely treated as a real discipline. She went on to direct the Software Engineering Division at the MIT Instrumentation Laboratory, leading the team that wrote the on-board flight software for NASA's Apollo missions. She pushed for the term software engineering so that programming would be taken as seriously as other branches of engineering. In 2016 she received the Presidential Medal of Freedom.",
+    "big_idea": "The Apollo Guidance Computer had less memory than a modern calculator, yet it had to fly a spacecraft. Hamilton's team designed the software to expect things to go wrong. Jobs were given priorities, so if the computer became overloaded it could drop less important tasks and keep the vital ones running. During the Apollo 11 landing in 1969, alarm codes 1201 and 1202 flashed as the computer was overloaded. The software restarted, kept the landing tasks going, and the astronauts landed safely.",
+    "line_to_ai": "Hamilton's approach, designing software to detect errors and fail safely instead of assuming everything works, is now central to building reliable AI. Self-driving cars, medical AI and robots need monitors, fallbacks and clear priorities for what must never fail. AI safety researchers also test systems against unusual inputs, much as her team tried to imagine every way a mission could go wrong. The connection is about engineering discipline rather than a specific algorithm, but it matters more as AI controls real machines.",
+    "line_becomes": "Her line becomes a tall stack of printed code listings that rearranges into a priority queue, with low-priority jobs dropping away while the critical landing task stays on top, which flows into the safety monitor and fallback path of an autonomous system.",
+    "think_about": "Hamilton planned for things to go wrong. What failures should we plan for before letting AI drive cars or help doctors make decisions?",
+    "sources": [
+      {
+        "title": "Margaret Hamilton (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Margaret_Hamilton_(software_engineer)"
+      },
+      {
+        "title": "Margaret Hamilton led the NASA software team that landed astronauts on the Moon (Smithsonian Magazine)",
+        "url": "https://www.smithsonianmag.com/smithsonian-institution/margaret-hamilton-led-nasa-software-team-landed-astronauts-moon-180971575/"
+      }
+    ],
+    "portrait": {
+      "commons_file": "File:Margaret Hamilton 1995.jpg",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  {
+    "slug": "lecun",
+    "suit": "Technology",
+    "rank": "5",
+    "name": "Yann LeCun",
+    "years": "b. 1960",
+    "born": "Soisy-sous-Montmorency, France",
+    "field": "Computer Science",
+    "known_for": "Convolutional neural networks and LeNet, which read handwritten cheques",
+    "bio": "Yann LeCun is a French-American computer scientist who studied engineering in Paris and earned his PhD at Sorbonne University (then Pierre and Marie Curie University) in 1987. He joined Bell Labs in 1988, where he developed neural networks that could read handwriting. In the years when most researchers had given up on neural networks, he kept improving them. He later became a professor at New York University and Chief AI Scientist at Meta, and shared the 2018 Turing Award with Geoffrey Hinton and Yoshua Bengio.",
+    "big_idea": "How do you teach a computer to recognise a handwritten 7, however it is written? LeCun's convolutional neural network slides small filters across an image, each one looking for a simple pattern like an edge or a curve. Layer by layer, simple patterns combine into strokes, then digits. Because the same filter is reused everywhere, the network can find a feature wherever it appears. His LeNet system was trained with backpropagation, and by around 2001 it was reading about 10 per cent of all cheques in the United States.",
+    "line_to_ai": "Convolutional networks became the standard tool for computer vision. AlexNet, which won the 2012 ImageNet challenge, was a much larger convolutional network trained on GPUs. Face unlock on phones, medical scan analysis and the vision systems of self-driving cars have all relied on them. The handwritten digit dataset his group released, MNIST, became the classic first exercise for people learning machine learning. Newer vision transformers now compete with convolutional networks, but many systems still use convolution layers.",
+    "line_becomes": "His glasses become a small convolution filter sliding across a pixel grid of a handwritten digit, producing stacked feature maps that shrink layer by layer into ten output nodes, one lighting up for the digit (LeNet).",
+    "think_about": "A convolutional network can read handwriting without anyone telling it what a stroke or loop is. How can it learn features that nobody programmed?",
+    "sources": [
+      {
+        "title": "Yann LeCun (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Yann_LeCun"
+      },
+      {
+        "title": "LeNet (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/LeNet"
+      }
+    ],
+    "portrait": {
+      "commons_file": "File:Laura Chaubard & Yann Le Cun - 2024 (53814052697) (cropped).jpg",
+      "license": "CC BY-SA 2.0"
+    }
+  },
+  {
+    "slug": "weizenbaum",
+    "suit": "Technology",
+    "rank": "4",
+    "name": "Joseph Weizenbaum",
+    "years": "1923–2008",
+    "born": "Berlin, Germany",
+    "field": "Computer Science",
+    "known_for": "ELIZA, the first chatbot, and warnings about trusting computers",
+    "bio": "Joseph Weizenbaum was born in Berlin to a Jewish family, which fled Nazi Germany for the United States in 1936. After serving in the US Army Air Corps during the Second World War, he studied mathematics and worked on early computers, including a banking computer system. He became a professor at MIT, where he wrote ELIZA. Shocked by how people reacted to it, he became one of the first and most outspoken critics of over-trusting computers, especially in his 1976 book Computer Power and Human Reason.",
+    "big_idea": "ELIZA, written in the mid-1960s and described in a 1966 paper, was a program you could type to. Its best-known script, DOCTOR, imitated a style of therapist who mostly reflects your words back. ELIZA had no understanding at all. It spotted keywords and rearranged your sentence using simple templates, so typing that you feel sad about your family might get a reply asking you to tell it more about your family. Even so, many users became convinced that it understood them.",
+    "line_to_ai": "People's tendency to believe a program understands them when it does not is now called the ELIZA effect. Modern chatbots are vastly more capable than ELIZA because they are large language models trained on huge amounts of text, not simple keyword rules. But the effect is stronger than ever: people form emotional attachments to chatbots and may trust their answers too much. Weizenbaum argued that some decisions, such as judgements involving care and respect, should never be handed to computers.",
+    "line_becomes": "His beard becomes a branching keyword-matching flowchart that reflects a sentence back through a simple template, and the flowchart expands into a modern chat window where a user leans in, trusting the reply (the ELIZA effect).",
+    "think_about": "Is it harmful for people to feel that a chatbot understands or cares about them? Where would you draw the line?",
+    "sources": [
+      {
+        "title": "Joseph Weizenbaum (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Joseph_Weizenbaum"
+      },
+      {
+        "title": "Joseph Weizenbaum, professor emeritus of computer science, 85 (MIT News)",
+        "url": "https://news.mit.edu/2008/obit-weizenbaum-0310"
+      },
+      {
+        "title": "ELIZA (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/ELIZA"
+      }
+    ],
+    "portrait": {
+      "commons_file": "File:Weizenbaum 1982.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "slug": "buolamwini",
+    "suit": "Technology",
+    "rank": "3",
+    "name": "Joy Buolamwini",
+    "years": "b. 1990",
+    "born": "Edmonton, Alberta, Canada",
+    "field": "Computer Science & Digital Activism",
+    "known_for": "Gender Shades study exposing bias in face analysis; Algorithmic Justice League",
+    "bio": "Joy Buolamwini is a Canadian-American computer scientist who studied at Georgia Tech and was a Rhodes Scholar at Oxford. As a graduate student at the MIT Media Lab, she found that face-tracking software would not detect her face until she put on a white mask. That experience led to her research on bias in AI. In 2016 she founded the Algorithmic Justice League, which uses research, art and advocacy to expose harms from AI. Her work features in the documentary Coded Bias and her book Unmasking AI.",
+    "big_idea": "In the 2018 Gender Shades study, Buolamwini and Timnit Gebru tested commercial AI systems from IBM, Microsoft and Face++ that guessed whether a face was male or female. They built a balanced set of photos of parliamentarians from three African and three European countries. The systems were almost perfect on lighter-skinned men, with errors under 1 per cent, but got up to about a third of darker-skinned women wrong. Looking at skin type and gender together revealed failures that overall accuracy figures hid.",
+    "line_to_ai": "Gender Shades helped create the practice of bias auditing: testing an AI system separately on different groups of people instead of reporting a single accuracy number. After the study, the companies tested released improved systems, and several large firms later paused or limited sales of face recognition to police. Today, audits that break down results by group are a standard part of responsible AI, including in proposed laws and company model cards. The lesson applies to any model trained on unbalanced data.",
+    "line_becomes": "Her line becomes a grid of faces sorted by skin type and gender, beneath which a bar chart of error rates climbs steeply for one group, and the chart becomes a fairness audit table comparing a model's accuracy across groups.",
+    "think_about": "An AI can be 95 per cent accurate overall and still fail badly for some people. How should we decide whether a system is fair enough to use?",
+    "sources": [
+      {
+        "title": "Joy Buolamwini (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Joy_Buolamwini"
+      },
+      {
+        "title": "Gender Shades (MIT Media Lab)",
+        "url": "https://www.media.mit.edu/projects/gender-shades/overview/"
+      },
+      {
+        "title": "Algorithmic Justice League",
+        "url": "https://www.ajl.org/"
+      }
+    ],
+    "portrait": {
+      "commons_file": "File:Joy Buolamwini - Wikimania 2018 01.jpg",
+      "license": "CC BY-SA 4.0"
+    }
+  },
+  {
+    "slug": "papert",
+    "suit": "Technology",
+    "rank": "2",
+    "name": "Seymour Papert",
+    "years": "1928–2016",
+    "born": "Pretoria, South Africa",
+    "field": "Mathematics, Computer Science & Education",
+    "known_for": "Logo, turtle geometry and constructionism; co-author of Perceptrons",
+    "bio": "Seymour Papert grew up in South Africa, where he was active in the anti-apartheid movement as a student. After earning doctorates in mathematics, he worked in Geneva with the psychologist Jean Piaget, studying how children build understanding. At MIT he co-directed the Artificial Intelligence Laboratory with Marvin Minsky. With Wally Feurzeig and Cynthia Solomon he co-created the Logo programming language in 1967. His 1980 book Mindstorms argued that children should program computers, not the other way round. LEGO later named its robotics kits after it.",
+    "big_idea": "In Logo, children give commands to a turtle, a small robot or screen cursor that draws as it moves: FORWARD 100, RIGHT 90. To draw a square, you must think like the turtle. Repeating four times shows why the turns add up to 360 degrees. Papert called this constructionism: people learn best by building things they care about and debugging their mistakes. With Minsky he also wrote Perceptrons in 1969, proving that single-layer neural networks cannot solve some simple problems, such as XOR.",
+    "line_to_ai": "Perceptrons is often said to have slowed neural network research in the 1970s, though how much blame it deserves is debated. Its limits applied to single-layer networks; multi-layer networks trained with backpropagation, popularised in 1986, overcame them, and that is what deep learning is built on. Papert's constructionism shapes debates about AI tutors today: does a chatbot that gives answers help students learn, or is it better used as something students build with, test and debug?",
+    "line_becomes": "His line becomes a turtle tracing a square with four 90-degree turns, the path splitting into an XOR plot that no single straight line can separate, which a second hidden layer of a neural network finally divides.",
+    "think_about": "If an AI tutor can explain anything instantly, what is still worth learning by building and debugging it yourself?",
+    "sources": [
+      {
+        "title": "Seymour Papert (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Seymour_Papert"
+      },
+      {
+        "title": "Seymour Papert, pioneer of constructionist learning, dies at 88 (MIT News)",
+        "url": "https://news.mit.edu/2016/seymour-papert-pioneer-of-constructionist-learning-dies-0801"
+      },
+      {
+        "title": "Perceptrons (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Perceptrons_(book)"
+      }
+    ],
+    "portrait": {
+      "commons_file": "File:Seymour Papert.jpg",
+      "license": "CC BY-SA 3.0"
+    }
+  }
+]

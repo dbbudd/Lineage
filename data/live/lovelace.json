@@ -1,0 +1,21 @@
+{
+ "thesis": "In 1843 Ada Lovelace published Note G, a step-by-step method for Babbage's Analytical Engine to calculate the Bernoulli numbers, often called the first computer program. Her claim that machines cannot originate anything is still debated about creative AI today.",
+ "story": [
+  {
+   "tag": "1843",
+   "title": "Note G",
+   "text": "Lovelace translated an article on the Analytical Engine and added her own notes, three times longer. In Note G she set out, as a table of numbered operations on the engine's variables V1, V2, V3 and so on, how it could calculate the Bernoulli numbers, including a loop that repeats. It is often called the first published program."
+  },
+  {
+   "tag": "the idea",
+   "title": "Each answer feeds the next",
+   "text": "Each row of her table took two variables from the engine's store, combined them and wrote the result to another variable. Every Bernoulli number is built from the ones before, so a loop reused earlier results. Her B7 is today's B8, because she numbered only the Bernoulli numbers that are not zero. Both equal −1/30."
+  },
+  {
+   "tag": "today",
+   "title": "Lady Lovelace's Objection",
+   "text": "She wrote that the engine has no pretensions to originate anything: it does only what we know how to order it to do. In 1950 Turing named this Lady Lovelace's Objection and replied that machines can still surprise us. People now ask the same of AI that writes stories and makes pictures."
+  }
+ ],
+ "hint": "Choose which Bernoulli number to compute and follow the highlighted operation as the engine loops back over the earlier results."
+}

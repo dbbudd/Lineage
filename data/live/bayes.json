@@ -1,0 +1,21 @@
+{
+ "thesis": "Thomas Bayes worked out how to update a belief when new evidence arrives, combining a prior with the likelihood of the evidence. Published after his death in 1763, his theorem underpins probabilistic machine learning, from spam filters to AI that reports its own uncertainty.",
+ "story": [
+  {
+   "tag": "1763",
+   "title": "An essay found after his death",
+   "text": "Bayes died in 1761. His friend Richard Price found his essay on chance and read it to the Royal Society in 1763. It imagines a ball rolled onto a table out of sight, then more balls rolled, and asks what the results reveal about where the first one lies."
+  },
+  {
+   "tag": "the idea",
+   "title": "Belief that narrows",
+   "text": "The hidden ball is never seen. Each new ball reports only whether it stopped to the left or right of it. Belief about the hidden ball's position starts flat, then becomes a hump that grows narrower with every roll and settles over the true spot. Mathematicians call this curve a Beta distribution."
+  },
+  {
+   "tag": "today",
+   "title": "Learning from evidence",
+   "text": "Updating a belief as evidence arrives is the heart of probabilistic machine learning. Early spam filters used naive Bayes: each word nudges the chance an email is spam up or down. Bayesian methods also let AI systems say how unsure they are."
+  }
+ ],
+ "hint": "Move the hidden ball or roll more balls and watch the belief curve narrow around it; with only a few rolls the curve stays wide, and that width is honest uncertainty."
+}

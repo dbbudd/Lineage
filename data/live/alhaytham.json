@@ -1,0 +1,21 @@
+{
+ "thesis": "Ibn al-Haytham showed that light travels in straight lines from objects into the eye, testing his ideas with careful experiments. His camera obscura is the pinhole camera model that computer vision still uses to link the pixels in an image to the real world.",
+ "story": [
+  {
+   "tag": "c. 1020",
+   "title": "A dark room with a tiny hole",
+   "text": "In his Book of Optics, written in Cairo, Ibn al-Haytham argued that light travels from objects into the eye in straight lines. He tested it with lamps or candles outside a darkened room: light from each flame passed through a small opening and made its own spot on the far wall, upside down."
+  },
+  {
+   "tag": "the idea",
+   "title": "Rays cross at the hole",
+   "text": "Light from the top of the flame travels down through the hole and lands low on the wall; light from the base lands high. So the picture is inverted. A wider hole lets in more light but each point becomes a bigger spot, so the image is brighter yet blurrier. A deeper room makes it larger."
+  },
+  {
+   "tag": "2012",
+   "title": "Pixels for a neural network",
+   "text": "A digital camera is a camera obscura with a grid of light sensors on the back wall. Computer vision still uses this pinhole model. In 2012 a convolutional network called AlexNet won the ImageNet contest by sliding small learned filters over pixels, finding edges first, then shapes, then whole objects."
+  }
+ ],
+ "hint": "Widen the pinhole and the image grows brighter but blurrier; deepen the room and the upside-down candle grows larger."
+}

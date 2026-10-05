@@ -1,0 +1,21 @@
+{
+ "thesis": "Isaac Newton set out the laws of motion and universal gravitation, and developed calculus, the mathematics of change. Training a neural network is a calculus problem: gradient descent follows slopes to nudge millions of weights downhill, and momentum treats them like a rolling Newtonian ball.",
+ "story": [
+  {
+   "tag": "1687",
+   "title": "A cannon on a mountain",
+   "text": "In a thought experiment published with the Principia, Newton imagined firing a cannon sideways from a very high mountain. A slow ball falls nearby. Each faster ball lands further away, until one falls so far that the curved ground drops away beneath it. It never lands. That is an orbit."
+  },
+  {
+   "tag": "the idea",
+   "title": "Falling all the way round",
+   "text": "Newton's law of gravity can be worked out in small steps: find the pull toward the Earth's centre, nudge the velocity by it, move, and repeat. From a high mountain, a ball slower than about 7.9 km/s hits the ground, one at that speed circles, and one faster than about 11.2 km/s escapes. Stronger gravity raises both speeds."
+  },
+  {
+   "tag": "1986",
+   "title": "The same nudge trains AI",
+   "text": "Neural networks learn by gradient descent: find the slope of the error and nudge every weight downhill. Adding momentum, popularised for backpropagation in 1986, makes the rule look exactly like the cannonball's: velocity gets nudged by the slope, then position by velocity. The weights roll, overshoot and settle at the minimum."
+  }
+ ],
+ "hint": "Slide the launch speed from 3 to 13 km/s and watch the shot fall back, circle the Earth, stretch into an ellipse and finally escape; then raise gravity and find the new orbit speed."
+}

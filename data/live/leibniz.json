@@ -1,0 +1,21 @@
+{
+ "thesis": "Gottfried Wilhelm Leibniz developed calculus independently of Newton, gave it the notation dy/dx, and published binary arithmetic in 1703. Neural networks learn by applying the chain rule, written in his notation, layer by layer, on chips that store every number in binary.",
+ "story": [
+  {
+   "tag": "1703",
+   "title": "Only 0 and 1",
+   "text": "Leibniz published his explanation of binary arithmetic in 1703. Every number can be written with just two digits, and each place is worth twice the one to its right. He was delighted to find that the six-line hexagrams of the Chinese I Ching, sent to him by a missionary, match binary counting."
+  },
+  {
+   "tag": "the idea",
+   "title": "1 + 1 = 10",
+   "text": "Binary counting goes 0, 1, 10, 11, 100. Addition works column by column from right to left, as in ordinary arithmetic. In binary, 1 + 1 makes 10, so the column shows 0 and a 1 carries to the next column. That same tiny rule, repeated, adds any two numbers, and it is how a chip's circuits add."
+  },
+  {
+   "tag": "today",
+   "title": "The chain rule, again and again",
+   "text": "Leibniz's notation makes the chain rule look like fractions cancelling: dy/dx = dy/du · du/dx. Backpropagation, the way neural networks learn, multiplies these rates backwards through every layer to find how each weight affects the error. All of it runs on chips that store every number in binary."
+  }
+ ],
+ "hint": "Change the two numbers and watch the carries ripple from right to left; the sum's six digits also appear as an I Ching hexagram, solid for 1 and broken for 0."
+}

@@ -1,0 +1,21 @@
+{
+ "thesis": "Tu Youyou discovered artemisinin, a malaria drug that has saved millions of lives, after an ancient text led her to extract sweet wormwood without heat. AI now searches huge libraries of molecules and research papers for overlooked clues, a search related in spirit to hers.",
+ "story": [
+  {
+   "tag": "1971",
+   "title": "A clue in an old book",
+   "text": "Leading a team in Project 523, a secret malaria-drug search, Tu tested hundreds of herbal extracts. Sweet wormwood worked only sometimes. A text by Ge Hong from around 340 CE said to soak the herb and wring out the juice, not boil it. She switched to low-temperature extraction with ether, and sample 191 cleared malaria in mice and monkeys."
+  },
+  {
+   "tag": "the idea",
+   "title": "Heat breaks the medicine",
+   "text": "Artemisinin carries a fragile oxygen-oxygen bridge that it needs to kill the malaria parasite. Heating the herb breaks those bridges, so the parasites inside red blood cells keep multiplying. A cool extraction keeps the bridges intact, and the extract clears the parasites from the blood. That is why Ge Hong's advice not to boil the herb mattered."
+  },
+  {
+   "tag": "2020",
+   "title": "Searching at scale",
+   "text": "AI now screens huge libraries of molecules. In 2020 an MIT team trained a neural network on molecules tested against bacteria, then let it score thousands more. It picked out halicin, a compound first studied for diabetes, as a powerful new antibiotic. Like Tu's search, it hunts for one useful clue, though it is not descended from her method."
+  }
+ ],
+ "hint": "Push the temperature towards boiling: the bridges break, and the infected cells keep spreading. Cool it down, or raise the dose, and they are cleared."
+}

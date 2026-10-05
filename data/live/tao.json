@@ -1,0 +1,21 @@
+{
+ "thesis": "Terence Tao, born in Adelaide, won the Fields Medal in 2006 and with Ben Green proved that the primes contain evenly spaced runs of every length. He is now a pioneer of using proof assistants and AI tools to check and extend mathematics.",
+ "story": [
+  {
+   "tag": "2004",
+   "title": "Primes in a row",
+   "text": "Ben Green and Terence Tao proved that the prime numbers contain arithmetic progressions of every length: runs like 5, 11, 17, 23, 29, where each step is the same. However long a run is wanted, one exists somewhere among the primes. Tao was awarded the Fields Medal in 2006."
+  },
+  {
+   "tag": "the idea",
+   "title": "Search for a run",
+   "text": "An arithmetic progression is a run of numbers with the same step, such as 3, 5, 7. Among the primes, longer runs become rarer and spread further apart, and finding long ones takes huge computer searches. The Green–Tao theorem proves that runs of every length still exist, however rare they become."
+  },
+  {
+   "tag": "today",
+   "title": "A co-mathematician",
+   "text": "Tao uses Lean, a proof assistant that checks every step of a proof. In his Equational Theories Project, volunteers, automated provers and AI tools settled about 22 million algebra questions, all verified in Lean. In 2025 he co-authored work testing Google DeepMind's AlphaEvolve. He sees AI as an assistant, with humans directing."
+  }
+ ],
+ "hint": "Raise k and widen the search range, then press \"Find another\" to step through the runs. Look how far you must search for eight primes in a row."
+}

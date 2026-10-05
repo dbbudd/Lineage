@@ -1,0 +1,21 @@
+{
+ "thesis": "Katherine Johnson calculated orbital paths for NASA's first crewed spaceflights, and John Glenn asked her to check the computer's numbers before his 1962 orbit. Her hand calculations matched. AI outputs need the same independent checking before people act on them.",
+ "story": [
+  {
+   "tag": "1962",
+   "title": "Check the numbers",
+   "text": "Johnson calculated trajectories at Langley, including Alan Shepard's 1961 flight. For John Glenn's Friendship 7 orbit, NASA used new IBM electronic computers. Glenn asked for Johnson to check the computer's numbers by hand, saying that if she said they were good, he was ready to go. They matched, and he flew."
+  },
+  {
+   "tag": "the idea",
+   "title": "One step at a time",
+   "text": "A path under gravity can be worked out in small steps: each step moves the craft a little at its current speed, then gravity changes the speed, and the process repeats. This is Euler's method. Large steps drift outward and miss the true orbit, while small steps follow it closely but need far more arithmetic."
+  },
+  {
+   "tag": "today",
+   "title": "Trust, then verify",
+   "text": "This is a story about checking, not a technique inside AI. An AI answer deserves the same treatment: a test against known results or an independent method. In fields like medicine and engineering, a human expert checks the output before anyone acts on it."
+  }
+ ],
+ "hint": "Drag the step size up and watch the capsule drift and splash down far from the target, and the hand column stop matching. Move the burn to change where it lands."
+}

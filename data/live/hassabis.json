@@ -1,0 +1,21 @@
+{
+ "thesis": "Demis Hassabis co-founded DeepMind, whose AlphaGo beat world Go champion Lee Sedol in 2016 and whose AlphaFold predicts a protein's shape from its sequence. He shared the 2024 Nobel Prize in Chemistry, and AlphaFold's 200 million predicted structures now speed up research worldwide.",
+ "story": [
+  {
+   "tag": "2016",
+   "title": "From Go to biology",
+   "text": "After AlphaGo beat Lee Sedol, Hassabis turned DeepMind to a 50-year-old puzzle in biology. A protein is a chain of amino acids, and the 3D shape it folds into decides what it does. Measuring one shape in a lab could take years."
+  },
+  {
+   "tag": "the idea",
+   "title": "Why folding is hard",
+   "text": "Proteins fold so that water-fearing amino acids hide in a core while water-loving ones face outward. The HP model, a teaching simplification on a flat grid, captures this: water-fearing H beads score a point each time they touch. A chain that keeps random moves which lower its energy gathers its H beads into a compact core."
+  },
+  {
+   "tag": "2020",
+   "title": "AlphaFold 2",
+   "text": "AlphaFold 2 learned from known structures to predict which parts of a real chain sit close together, then built the full 3D shape, often to near lab accuracy. Its database now holds about 200 million predicted structures. Hassabis and John Jumper shared the 2024 Nobel Prize in Chemistry."
+  }
+ ],
+ "hint": "Type your own string of H and P, then raise the temperature: a hot chain shakes loose its contacts, a cool one settles into a tight core."
+}

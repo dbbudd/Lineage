@@ -1,0 +1,21 @@
+{
+ "thesis": "Carl Friedrich Gauss developed least squares, choosing the curve with the smallest total of squared errors, and used it in 1801 to predict where the lost dwarf planet Ceres would reappear. Mean squared error, which trains many neural networks, is the same idea.",
+ "story": [
+  {
+   "tag": "1801",
+   "title": "Finding a lost planet",
+   "text": "Ceres was spotted in January 1801, then lost in the Sun's glare. From a few weeks of noisy sightings, the 24-year-old Gauss predicted where it would reappear, and it was found there on the last night of the year. His method, least squares, appeared in print in 1809."
+  },
+  {
+   "tag": "the idea",
+   "title": "Make the squares smallest",
+   "text": "Each error is the gap between an observation and the fitted curve. The best fit is the one whose squared gaps add up to the smallest total. Squaring stops positive and negative errors cancelling and punishes big misses most. Gauss linked the method to the bell-shaped normal distribution of errors."
+  },
+  {
+   "tag": "today",
+   "title": "The loss that trains AI",
+   "text": "Mean squared error, the average of those squared gaps, is the loss used to train linear regression and many neural networks. Training does not solve it in one go as Gauss did. It steps downhill, again and again, and the loss falls."
+  }
+ ],
+ "hint": "Drag any point or press Throw the line, then watch the squares shrink and the loss curve fall to Gauss's dashed answer; more noise means a higher floor."
+}

@@ -1,0 +1,21 @@
+{
+ "thesis": "Tim Berners-Lee invented the World Wide Web at CERN, combining HTML, URLs and HTTP into linked pages that anyone could publish, and gave it away freely. Crawlers following those links have gathered most of the text that large language models learn from.",
+ "story": [
+  {
+   "tag": "1989",
+   "title": "A web of notes",
+   "text": "At CERN, Berners-Lee wrote Information Management: A Proposal. Instead of filing documents in a fixed tree, he argued, a web of notes with links between them would grow as people added to it. By 1991 he had built the first web server, browser and pages, using URLs, HTTP and HTML."
+  },
+  {
+   "tag": "the idea",
+   "title": "Follow the links",
+   "text": "The web is a graph: each page is a node and each hyperlink is an arrow to another page. A reader hops from page to page along links. A crawler starts at one page, saves it, adds every link it finds to a queue and visits them in turn, breadth first, until it has reached every page it can."
+  },
+  {
+   "tag": "today",
+   "title": "The web becomes a corpus",
+   "text": "Crawlers like Common Crawl have collected billions of web pages since 2008. Filtered web text makes up most of the training data for large language models such as GPT-3, so the open, linked web he gave away for free is a large part of what these models have learned from."
+  }
+ ],
+ "hint": "Add pages or links and watch how fast the crawler spreads; click any page to send the reader there."
+}

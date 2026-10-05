@@ -1,0 +1,21 @@
+{
+ "thesis": "In 628 CE Brahmagupta gave the first rules for calculating with zero and negative numbers, treating them as fortunes and debts. Neural networks depend on that arithmetic: their weights are positive and negative, and AI chips perform trillions of signed calculations every second.",
+ "story": [
+  {
+   "tag": "628 CE",
+   "title": "A book in verse",
+   "text": "In the Brahmasphutasiddhanta, Brahmagupta gave the area of any four-sided figure whose corners sit on a circle: halve the perimeter to get s, then take the square root of (s − a)(s − b)(s − c)(s − d). In the same book he set out rules for zero and negative numbers."
+  },
+  {
+   "tag": "the idea",
+   "title": "Fortunes and debts",
+   "text": "Brahmagupta treated zero as a number in its own right, not just an empty place. His rules read like a ledger: a debt minus zero is still a debt, a debt times a debt is a fortune, and a number minus itself is zero. Not every rule survived: he said zero divided by zero is zero."
+  },
+  {
+   "tag": "today",
+   "title": "Positive and negative weights",
+   "text": "A neural network adds up its inputs, each multiplied by a weight, and those weights can be positive or negative. A negative weight works like a debt: it pulls the total down, telling the network to want less of that input. Training depends on arithmetic with signs."
+  }
+ ],
+ "hint": "Drag the four corners around the circle and watch the area follow the formula; pick a rule to see fortunes and debts move along the number line."
+}

@@ -1,0 +1,21 @@
+{
+ "thesis": "Chien-Shiung Wu's 1956 cobalt-60 experiment proved that the weak nuclear force can tell left from right, overturning the belief that nature behaves identically in a mirror. Her lesson, to test which symmetries really hold, guides how AI networks are built to respect symmetry.",
+ "story": [
+  {
+   "tag": "1956",
+   "title": "Cobalt in the cold",
+   "text": "At the National Bureau of Standards in Washington, Wu and her colleagues cooled cobalt-60 to within about 0.003 degrees of absolute zero and lined up its spinning nuclei with a magnetic field. They counted the electrons from its beta decay. More came out opposite the spin than along it. The result was announced in January 1957."
+  },
+  {
+   "tag": "the idea",
+   "title": "The mirror gets it wrong",
+   "text": "A mirror reverses the way the nucleus turns, so in the reflection its spin points the other way, yet the electrons still fly the same way. In that mirror world, electrons would favour the spin direction. Real cobalt never does that, so the weak force can tell left from right. Warmer nuclei lose their alignment and the difference fades."
+  },
+  {
+   "tag": "today",
+   "title": "Symmetry by design",
+   "text": "AI designers now build symmetry into networks. Equivariant networks for molecules turn their outputs when the molecule turns. Wu's lesson applies: build in only the symmetries nature keeps. Proteins are chiral, so AlphaFold 2 respects rotations but not reflections. This is a shared idea, not a direct line from her experiment."
+  }
+ ],
+ "hint": "Flip the field and watch the electrons swap ends, always against the spin. Warm the cobalt and the counts drift to 50:50."
+}

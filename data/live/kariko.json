@@ -1,0 +1,21 @@
+{
+ "thesis": "Katalin Karikó and Drew Weissman found that swapping one building block of mRNA for a modified version stops it setting off the immune alarm, which made the COVID-19 mRNA vaccines possible. Algorithms borrowed from language processing now help design stable mRNA sequences.",
+ "story": [
+  {
+   "tag": "2005",
+   "title": "One letter, modified",
+   "text": "Injected mRNA set off the body's immune alarm, so most scientists gave up on it. Karikó and Drew Weissman found that swapping the building block uridine (U) for a natural modified version, pseudouridine (Ψ), let mRNA slip past the cell's sensors. Later work showed it also made more protein. The COVID-19 vaccines used a close relative of Ψ."
+  },
+  {
+   "tag": "the idea",
+   "title": "Reading codons",
+   "text": "A ribosome reads mRNA three letters at a time. Each triplet, called a codon, stands for one amino acid: AUG is Met and UUU is Phe, the first two in the coronavirus spike protein. Pseudouridine (Ψ) reads just like U, so the protein is unchanged, but sensors that react to plain U stay quiet."
+  },
+  {
+   "tag": "2023",
+   "title": "Searching the codon choices",
+   "text": "Most amino acids have several codons, so one protein can be spelt by an astronomical number of mRNAs, around 10^632 for the whole spike protein. LinearDesign, published in Nature in 2023, borrows a parsing method from language processing to search them for stable sequences. Machine learning is now also used in mRNA design."
+  }
+ ],
+ "hint": "Slide the Ψ share from 0% to 100% and watch the sensors go quiet and output rise. Switch to GC-rich codons: the same protein, fewer U's to begin with."
+}

@@ -1,0 +1,21 @@
+{
+ "thesis": "Lynn Conway, with Carver Mead, created simple, scalable rules that let engineers design microchips without knowing every detail of the factory. Separating design from manufacturing let companies like Nvidia design chips without owning a factory, including today's AI accelerators.",
+ "story": [
+  {
+   "tag": "1978",
+   "title": "Rules anyone can follow",
+   "text": "Working with Carver Mead, Lynn Conway wrote chip design rules in one unit, λ. Wires, gaps and transistors are all whole multiples of it. She taught the method at MIT in 1978, and their 1980 textbook spread it to over a hundred universities. She also fitted many students' designs onto one shared wafer, so classes got real chips cheaply."
+  },
+  {
+   "tag": "λ",
+   "title": "One design, any size",
+   "text": "Every feature is measured in λ: a polysilicon gate might be 2λ wide and a metal wire 3λ. When factories learn to make smaller features, engineers simply shrink λ and the same design still works. Halving λ fits four times as many circuits on the same area of silicon, because area shrinks with the square."
+  },
+  {
+   "tag": "today",
+   "title": "Tiles of AI",
+   "text": "Because simple rules made design separate from manufacturing, far more people could design chips and send them to a foundry, the fabless model behind Nvidia and Google's TPU teams. An AI accelerator takes the idea to the extreme: one small multiply-add tile repeated thousands of times across the chip."
+  }
+ ],
+ "hint": "Drag λ down and watch the die fill with inverters; the count grows with 1/λ², not 1/λ."
+}

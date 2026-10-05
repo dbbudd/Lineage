@@ -1,0 +1,21 @@
+{
+ "thesis": "Yann LeCun developed convolutional neural networks, which slide small learned filters across an image to find edges, strokes and shapes. His LeNet read about one in ten US cheques, and convolutional networks became the standard tool that lets computers see.",
+ "story": [
+  {
+   "tag": "1989",
+   "title": "Reading handwriting",
+   "text": "At Bell Labs, LeCun trained neural networks with backpropagation to read handwritten digits. His LeNet systems were later used by banks, and by around 2001 they were reading roughly one in ten cheques written in the United States. His group's handwritten digit dataset, MNIST, became the classic first exercise in machine learning."
+  },
+  {
+   "tag": "the idea",
+   "title": "One small filter, everywhere",
+   "text": "A small grid of numbers called a kernel, often 3×3, slides across the pixels and scores how well each patch matches its pattern, such as an edge. The scores make a feature map. Max-pooling keeps the strongest score in each small block, so the feature survives small shifts. Stacked layers combine edges into strokes, then whole digits."
+  },
+  {
+   "tag": "2012",
+   "title": "Machines that see",
+   "text": "LeNet learned its own kernels from thousands of examples. Much bigger convolutional networks, such as AlexNet in 2012, trained on GPUs, made image recognition work at scale. They have powered face unlock, medical scan analysis and the vision systems of self-driving cars."
+  }
+ ],
+ "hint": "Draw your own digit on the grid, then switch the kernel: each filter lights up different strokes, and stride 2 makes the map four times smaller."
+}

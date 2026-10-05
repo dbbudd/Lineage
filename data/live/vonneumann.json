@@ -1,0 +1,21 @@
+{
+ "thesis": "John von Neumann designed the stored-program computer: a processor and a memory that hold both instructions and data, so a machine can switch tasks just by loading a new program. Nearly every computer that trains AI still follows his 1945 blueprint.",
+ "story": [
+  {
+   "tag": "1945",
+   "title": "Programs live in memory",
+   "text": "ENIAC was reprogrammed by moving cables and switches, which could take days. Von Neumann's First Draft of a Report on the EDVAC, built on ideas shared with J. Presper Eckert and John Mauchly, put the program in the same memory as the data. Changing the task just means loading new numbers."
+  },
+  {
+   "tag": "the idea",
+   "title": "Fetch, decode, execute",
+   "text": "A program counter holds the address of the next instruction. The processor fetches that instruction from memory over a shared path called the bus, decodes it, then executes it, often fetching data over the same bus. A jump instruction sends the counter back to an earlier address, so a few instructions can repeat many times."
+  },
+  {
+   "tag": "today",
+   "title": "The bottleneck",
+   "text": "Almost every computer that trains or runs AI still works this way, with programs, model weights and data all held in memory. Everything must squeeze through the one path between memory and processor. This von Neumann bottleneck limits AI speed, so AI chips stack high-bandwidth memory right beside their compute cores."
+  }
+ ],
+ "hint": "Switch to the loop program, then click the 3 in cell 11 to multiply by a bigger number and watch the bus trips pile up."
+}

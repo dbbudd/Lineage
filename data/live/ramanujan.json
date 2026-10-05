@@ -1,0 +1,21 @@
+{
+ "thesis": "Srinivasa Ramanujan, largely self-taught, discovered thousands of results by intuition, including 1914 series for 1/π that add about eight correct digits per term. The 2021 Ramanujan Machine hunts for formulas in his style, asking whether intuition can be automated.",
+ "story": [
+  {
+   "tag": "1914",
+   "title": "Eight digits per term",
+   "text": "Ramanujan published a series for 1/π built from factorials and the numbers 1103, 26390 and 396. The first term alone gives π to six decimal places, and each further term adds about eight more correct digits. Improved versions of his series have computed π to trillions of digits."
+  },
+  {
+   "tag": "the idea",
+   "title": "Closing in on π",
+   "text": "Each term of an infinite series adds a smaller correction, so the running total closes in on a target. Most series for π crawl: the Leibniz series, 1 − 1/3 + 1/5 − 1/7 and so on, needs hundreds of terms to pin down 3.14. Ramanujan's series gains about eight digits with every term."
+  },
+  {
+   "tag": "2021",
+   "title": "The Ramanujan Machine",
+   "text": "A Technion team published the Ramanujan Machine in Nature. Its software searches by computer for formulas, such as continued fractions, that match constants like π to many digits, then offers them to people to prove. It uses numerical search, not a neural network, but asks whether intuition can be automated."
+  }
+ ],
+ "hint": "Slide the number of terms from 1 to 6 and count the coloured digits: about eight more each time, while Leibniz is still stuck on the first digit or two."
+}

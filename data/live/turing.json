@@ -1,0 +1,21 @@
+{
+ "thesis": "In 1936 Alan Turing described a simple rule-following machine and showed that one universal machine can imitate any other when fed its rules as data. Every computer that runs AI works this way, and his 1950 paper asked whether machines could think and learn.",
+ "story": [
+  {
+   "tag": "1936",
+   "title": "A machine made of rules",
+   "text": "In On Computable Numbers, Turing imagined a machine with an endless tape of squares, a head that reads one square, and a short table of rules. Each rule says: in this state, seeing this symbol, write a symbol, step left or right, and change state. That is all it can do."
+  },
+  {
+   "tag": "the idea",
+   "title": "Simple rules, real work",
+   "text": "A Turing machine needs only a few rules to do real work. One rule table adds 1 to a binary number by carrying a 1 leftwards. Another keeps track of whether it has seen an odd or even number of 1s. Turing also proved that some problems, such as deciding whether every program will halt, no machine can solve."
+  },
+  {
+   "tag": "today",
+   "title": "Program as data",
+   "text": "Turing also described a universal machine that reads another machine's rules from its tape and imitates it. Every computer works this way. A large language model is a program like any other: its weights are data, and the text it reads arrives as a stream of tokens. In 1950 he even suggested building machines that learn."
+  }
+ ],
+ "hint": "Switch programs and edit the input tape, then follow the highlighted rule as the head steps along."
+}

@@ -1,0 +1,431 @@
+[
+ {
+  "slug": "newton",
+  "suit": "Science",
+  "rank": "A",
+  "name": "Isaac Newton",
+  "years": "1643–1727",
+  "born": "Woolsthorpe, Lincolnshire, England",
+  "field": "Physics & Mathematics",
+  "known_for": "Laws of motion, universal gravitation, calculus and the nature of light",
+  "bio": "Isaac Newton was born on a farm in Lincolnshire shortly after his father died, and was raised largely by his grandmother. He studied at Trinity College, Cambridge. When the university closed during the plague of 1665 to 1666, he worked at home on calculus, optics and gravity. His Principia (1687) set out the laws of motion and universal gravitation. He showed that white light is a mixture of colours and built the first practical reflecting telescope. He later ran the Royal Mint and was President of the Royal Society.",
+  "big_idea": "Newton showed that the same simple rules govern a falling apple and the orbiting Moon. A force changes an object's motion (F = ma), and every mass pulls on every other mass with a force that weakens with the square of the distance. To work with quantities that change continuously, like speed and position, he developed calculus, which Gottfried Leibniz also invented independently. Calculus lets you find the slope of a curve at any point, which tells you how fast something is changing right now.",
+  "line_to_ai": "Training a neural network is a calculus problem. The network's error, or loss, is a function of millions of weights, and backpropagation uses derivatives to find which direction each weight should move to reduce it. That is gradient descent. A popular improvement, momentum, treats the weights like a heavy ball rolling downhill under Newtonian dynamics, so it keeps speed through flat regions. Newton's own root-finding method also inspires second-order optimisers that use curvature, not just slope.",
+  "line_becomes": "The curl of his wig becomes a smooth valley-shaped loss surface, and a ball rolls down it with momentum, its tangent-line slope arrows shrinking as it settles at the minimum (gradient descent).",
+  "think_about": "Newton said he could see further by standing on the shoulders of giants. Whose shoulders are today's AI systems standing on, and should those people get credit?",
+  "sources": [
+   {
+    "title": "Isaac Newton (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Isaac_Newton"
+   },
+   {
+    "title": "Isaac Newton (Britannica)",
+    "url": "https://www.britannica.com/biography/Isaac-Newton"
+   },
+   {
+    "title": "Gradient descent (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Gradient_descent"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Portrait of Sir Isaac Newton, 1689 (brightened).jpg",
+   "license": "Public domain"
+  }
+ },
+ {
+  "slug": "einstein",
+  "suit": "Science",
+  "rank": "K",
+  "name": "Albert Einstein",
+  "years": "1879–1955",
+  "born": "Ulm, Germany",
+  "field": "Theoretical Physics",
+  "known_for": "Relativity, the photoelectric effect and the theory of Brownian motion",
+  "bio": "Albert Einstein grew up in Munich and studied physics in Zurich. Unable at first to get a university post, he worked as a clerk in the Swiss patent office in Bern. In 1905, while still working there, he published four papers that changed physics, covering the photoelectric effect, Brownian motion, special relativity and E = mc². General relativity followed in 1915. He received the 1921 Nobel Prize in Physics for the photoelectric effect. Being Jewish, he left Germany when the Nazis came to power in 1933 and settled in Princeton, USA.",
+  "big_idea": "Under a microscope, pollen grains in water jiggle about randomly. In 1905 Einstein explained why: invisible water molecules constantly bump into them from all sides. He worked out the mathematics of this random walk, showing that the spread of a particle grows with the square root of time, and his predictions helped convince scientists that atoms are real. In another 1905 paper he proposed that light comes in packets of energy, later called photons, explaining why light can knock electrons out of metals.",
+  "line_to_ai": "Diffusion models, the AI behind many image generators, use the mathematics of Brownian motion directly. During training, an image is gradually destroyed by adding small random Gaussian noise, step by step, just like a particle drifting in a random walk. A neural network then learns to reverse each step, removing noise. To generate a new image, the model starts from pure static and denoises it. Separately, his photon idea underpins the physics of the semiconductor chips that run AI.",
+  "line_becomes": "His wild hair breaks into hundreds of jittering random-walk paths that spread like a bell curve, then run backwards, gathering noise into a sharp picture (a diffusion model denoising an image).",
+  "think_about": "A diffusion model learns to turn random noise into a picture. Is that creativity, or something else? What would count as evidence either way?",
+  "sources": [
+   {
+    "title": "Albert Einstein, Nobel Prize in Physics 1921 (NobelPrize.org)",
+    "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/facts/"
+   },
+   {
+    "title": "Brownian motion (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Brownian_motion"
+   },
+   {
+    "title": "Diffusion model (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Diffusion_model"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Albert Einstein Head cleaned.jpg",
+   "license": "Public domain"
+  }
+ },
+ {
+  "slug": "curie",
+  "suit": "Science",
+  "rank": "Q",
+  "name": "Marie Curie",
+  "years": "1867–1934",
+  "born": "Warsaw, Poland (then Russian Empire)",
+  "field": "Physics & Chemistry",
+  "known_for": "Pioneering research on radioactivity; discovered polonium and radium",
+  "bio": "Maria Skłodowska grew up in Russian-ruled Warsaw, where women could not attend university. She studied at a secret 'Flying University', worked as a governess to fund her sister's studies, then moved to Paris in 1891 to study at the Sorbonne. With her husband Pierre Curie she discovered polonium and radium. She shared the 1903 Nobel Prize in Physics with Pierre and Henri Becquerel, and won the 1911 Nobel Prize in Chemistry alone. She was the first person to win Nobel Prizes in two sciences.",
+  "big_idea": "Curie found that some elements give off invisible radiation from inside their atoms, and she named this radioactivity. Each radioactive atom has a fixed chance of decaying in any given second, so a large sample shrinks in a very regular way: after one half-life, half is left, then a quarter, then an eighth. This is exponential decay. Measuring that radiation precisely let her detect elements present in tiny amounts and prove that radioactivity is a property of atoms themselves.",
+  "line_to_ai": "The link here is mathematical, not historical. Exponential decay appears all through machine learning: learning-rate schedules shrink the step size exponentially, weight decay steadily pulls weights towards zero, and the Adam optimiser keeps exponentially decaying averages of past gradients. Training-loss curves look similar to decay curves, falling fast then levelling off, although in large language models they usually follow power laws rather than true exponentials. Telling those two curve shapes apart is how researchers discovered neural scaling laws.",
+  "line_becomes": "The glow from the vial in her hands traces a half-life decay curve, halving at each tick mark, which smoothly becomes a falling training-loss curve that flattens as a neural network learns.",
+  "think_about": "Curie did not patent her method for isolating radium so that others could use it freely. Should important AI models be released openly, or kept closed? What are the trade-offs?",
+  "sources": [
+   {
+    "title": "Marie Curie, Nobel Prize in Physics 1903 (NobelPrize.org)",
+    "url": "https://www.nobelprize.org/prizes/physics/1903/marie-curie/facts/"
+   },
+   {
+    "title": "Marie Curie, Nobel Prize in Chemistry 1911 (NobelPrize.org)",
+    "url": "https://www.nobelprize.org/prizes/chemistry/1911/marie-curie/facts/"
+   },
+   {
+    "title": "Marie Curie (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Marie_Curie"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Marie Curie c. 1920s.jpg",
+   "license": "Public domain"
+  }
+ },
+ {
+  "slug": "darwin",
+  "suit": "Science",
+  "rank": "J",
+  "name": "Charles Darwin",
+  "years": "1809–1882",
+  "born": "Shrewsbury, Shropshire, England",
+  "field": "Natural History & Biology",
+  "known_for": "The theory of evolution by natural selection",
+  "bio": "Charles Darwin abandoned medical studies in Edinburgh and trained for the clergy at Cambridge, but his real passion was natural history. From 1831 to 1836 he sailed around the world on HMS Beagle, collecting fossils, plants and animals, including in the Galápagos Islands. He spent over twenty years building evidence for his theory. When Alfred Russel Wallace independently reached the same idea, their work was presented together in 1858. Darwin published On the Origin of Species in 1859, and faced fierce religious and scientific debate.",
+  "big_idea": "Living things vary, and many of those differences are inherited. More offspring are born than can survive, so individuals with traits that suit their environment slightly better tend to survive and have more young. Over many generations those helpful traits become common, and populations change. Darwin called this natural selection. No designer is needed: just variation, inheritance and selection, repeated over and over, can produce the astonishing complexity of life.",
+  "line_to_ai": "Genetic algorithms, developed by John Holland and others from the 1960s and 1970s, copy natural selection inside a computer. A population of candidate solutions is scored by a fitness function, the best are kept, then they are combined (crossover) and randomly mutated to form the next generation. Neuroevolution evolves neural network designs and weights this way. In 2025 Google DeepMind's AlphaEvolve used a language model to propose code changes inside an evolutionary loop, discovering improved algorithms.",
+  "line_becomes": "His long beard branches into a tree of life whose twigs become a population of candidate solutions, mutating and recombining while the fittest climb a fitness landscape (a genetic algorithm).",
+  "think_about": "Evolution has no goal, but a genetic algorithm has a fitness function chosen by a person. What could go wrong if that fitness function measures the wrong thing?",
+  "sources": [
+   {
+    "title": "Charles Darwin (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Charles_Darwin"
+   },
+   {
+    "title": "Charles Darwin (Britannica)",
+    "url": "https://www.britannica.com/biography/Charles-Darwin"
+   },
+   {
+    "title": "Genetic algorithm (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Genetic_algorithm"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Charles Darwin seated crop.jpg",
+   "license": "Public domain"
+  }
+ },
+ {
+  "slug": "alhaytham",
+  "suit": "Science",
+  "rank": "10",
+  "name": "Ibn al-Haytham",
+  "years": "c. 965–c. 1040",
+  "born": "Basra, Iraq",
+  "field": "Optics, Physics & Mathematics",
+  "known_for": "Book of Optics, explained vision and championed controlled experiments",
+  "bio": "Abu Ali al-Hasan ibn al-Haytham, known in Europe as Alhazen, was born in Basra and later worked in Cairo under the Fatimid caliphate. He wrote on mathematics, astronomy and physics, but is best known for his seven-volume Book of Optics, written in the early eleventh century. Translated into Latin, it influenced European scientists for centuries, including Roger Bacon and Johannes Kepler. Many details of his life, such as the story that he feigned madness to escape a caliph, come from later accounts and are uncertain.",
+  "big_idea": "Many ancient thinkers believed eyes send out rays to see. Ibn al-Haytham argued the reverse: light travels in straight lines from objects into the eye. He tested his ideas with careful, repeatable experiments rather than relying on authority, an approach central to modern science. He described the camera obscura, a dark room with a tiny hole, where light from each point of a scene passes through the hole and forms an upside-down image on the far wall.",
+  "line_to_ai": "Computer vision still begins with his geometry. The standard 'pinhole camera model' describes how every point in a 3D scene projects along a straight line through a single point onto a flat image, exactly the camera obscura. Algorithms for 3D reconstruction, self-driving car perception and augmented reality use this projection, written as a camera matrix, to relate pixels to the real world. Convolutional neural networks and vision transformers then learn to recognise what those pixels show.",
+  "line_becomes": "Light rays from his turban converge through a pinhole and flip into an inverted image on a grid of pixels, which feed into the stacked filters of a convolutional neural network.",
+  "think_about": "Ibn al-Haytham warned that the seeker of truth should test even the books he admires. How should we test the answers an AI gives us?",
+  "sources": [
+   {
+    "title": "Ibn al-Haytham (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Ibn_al-Haytham"
+   },
+   {
+    "title": "Ibn al-Haytham (Britannica)",
+    "url": "https://www.britannica.com/biography/Ibn-al-Haytham"
+   },
+   {
+    "title": "Pinhole camera model (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Pinhole_camera_model"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Ibn al-Haytham crop.jpg",
+   "license": "Public domain"
+  }
+ },
+ {
+  "slug": "cajal",
+  "suit": "Science",
+  "rank": "9",
+  "name": "Santiago Ramón y Cajal",
+  "years": "1852–1934",
+  "born": "Petilla de Aragón, Navarre, Spain",
+  "field": "Neuroscience & Histology",
+  "known_for": "The neuron doctrine and detailed drawings of brain cells",
+  "bio": "Santiago Ramón y Cajal was a rebellious boy who wanted to be an artist, but his father, a doctor, pushed him into medicine. He served as an army doctor in Cuba before becoming a professor in Spain. Using a silver-staining method invented by Camillo Golgi, which he improved, he studied nerve tissue under the microscope and made thousands of detailed drawings. He shared the 1906 Nobel Prize in Physiology or Medicine with Golgi, even though the two disagreed about how the nervous system is built.",
+  "big_idea": "Golgi thought the nervous system was one continuous web. Cajal showed it is made of separate cells, now called neurons, that nearly touch at tiny gaps (later named synapses). He also argued that signals flow in one direction: in through the branching dendrites, through the cell body, and out along the axon. This 'neuron doctrine' became the foundation of modern neuroscience.",
+  "line_to_ai": "Artificial neural networks borrow Cajal's picture, loosely. In 1943 Warren McCulloch and Walter Pitts modelled a neuron as a unit that adds up weighted inputs and fires if the total passes a threshold. Frank Rosenblatt's perceptron (1958) learned those weights. Today's deep networks still use separate units, connection weights like synapse strengths, and one-way signal flow. The link is a simplification: real neurons are far more complex than an artificial neuron's weighted sum and activation function.",
+  "line_becomes": "The line of his collar sprouts branching dendrites that converge on a cell body and run down an axon, which straightens into a diagram of weighted inputs, a summation node and an activation curve (an artificial neuron).",
+  "think_about": "Cajal was also an artist. Did drawing by hand help him see things a photograph might not? What might we lose if AI does all our observing for us?",
+  "sources": [
+   {
+    "title": "Santiago Ramón y Cajal, Nobel Prize 1906 (NobelPrize.org)",
+    "url": "https://www.nobelprize.org/prizes/medicine/1906/cajal/facts/"
+   },
+   {
+    "title": "Santiago Ramón y Cajal (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Santiago_Ram%C3%B3n_y_Cajal"
+   },
+   {
+    "title": "Neuron doctrine (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Neuron_doctrine"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Santiago Ramón y Cajal (1852-1934) portrait (restored).jpg",
+   "license": "Public domain"
+  }
+ },
+ {
+  "slug": "franklin",
+  "suit": "Science",
+  "rank": "8",
+  "name": "Rosalind Franklin",
+  "years": "1920–1958",
+  "born": "Notting Hill, London, England",
+  "field": "Chemistry & X-ray Crystallography",
+  "known_for": "X-ray images of DNA, including Photo 51; virus structures",
+  "bio": "Rosalind Franklin studied chemistry at Cambridge, researched coal during the Second World War, and learned X-ray diffraction in Paris. At King's College London from 1951 she produced the clearest X-ray images of DNA. Photo 51, taken in 1952 by her student Raymond Gosling under her direction, was shown to James Watson without her knowledge and helped him and Francis Crick build their double-helix model. She then led pioneering work on virus structure. She died of ovarian cancer at 37, before the 1962 Nobel Prize was awarded for DNA's structure.",
+  "big_idea": "Molecules are far too small to photograph directly. Instead, X-rays are shone through a sample, and the atoms scatter them into a pattern of spots. The pattern is a kind of mathematical fingerprint of the structure, and working backwards from it reveals where the atoms are. The X shape in Photo 51 showed that DNA is a helix, and the spacing of the spots revealed its dimensions.",
+  "line_to_ai": "AlphaFold, which predicts a protein's 3D shape from its sequence of amino acids, was trained on structures in the Protein Data Bank, most of them solved by X-ray crystallography, the technique Franklin helped pioneer. Her own work was on DNA and viruses rather than the protein crystals AlphaFold learned from, so the link is through the method. Demis Hassabis and John Jumper shared the 2024 Nobel Prize in Chemistry for AlphaFold, with David Baker for protein design.",
+  "line_becomes": "The edge of her face dissolves into the X-shaped diffraction pattern of Photo 51, whose spots resolve into a twisting helix and then fold into the ribbon diagram of a protein (AlphaFold).",
+  "think_about": "AlphaFold learned from decades of experiments by thousands of scientists. How should their contribution be recognised when an AI system wins the prize?",
+  "sources": [
+   {
+    "title": "Rosalind Franklin (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Rosalind_Franklin"
+   },
+   {
+    "title": "Photo 51 (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Photo_51"
+   },
+   {
+    "title": "Nobel Prize in Chemistry 2024 (NobelPrize.org)",
+    "url": "https://www.nobelprize.org/prizes/chemistry/2024/summary/"
+   }
+  ],
+  "portrait": {
+   "commons_file": null,
+   "license": "Traced from a stylised line-drawing reference supplied by Daniel Budd."
+  }
+ },
+ {
+  "slug": "wu",
+  "suit": "Science",
+  "rank": "7",
+  "name": "Chien-Shiung Wu",
+  "years": "1912–1997",
+  "born": "Liuhe, Jiangsu, China",
+  "field": "Experimental Nuclear & Particle Physics",
+  "known_for": "The Wu experiment, which showed nature can tell left from right",
+  "bio": "Chien-Shiung Wu grew up in a town near Shanghai where her father ran a school for girls. She studied physics in Nanjing, then moved to the United States in 1936 and earned her PhD at the University of California, Berkeley. She worked on the Manhattan Project and became a leading experimental physicist at Columbia University, known for extremely precise measurements. Her 1956 experiment confirmed a theory by Tsung-Dao Lee and Chen-Ning Yang, who won the 1957 Nobel Prize. Wu was not included.",
+  "big_idea": "Physicists assumed the laws of nature work identically in a mirror world. This is called parity symmetry. Lee and Yang suggested this might fail for the weak nuclear force. Wu, working with a team at the US National Bureau of Standards, tested it by cooling radioactive cobalt-60 to near absolute zero and lining up its nuclei in a magnetic field. Electrons from the decay shot out more in one direction than the other. Her mirror-image experiment would behave differently, so nature, at this level, can tell left from right.",
+  "line_to_ai": "Symmetry is a big idea in AI design. Convolutional networks are built so that shifting an image shifts their features the same way, which is called equivariance. Equivariant networks for molecules respect rotations. Wu's lesson is to test which symmetries actually hold. Proteins are chiral, so AlphaFold 2's structure module is designed to respect rotations and translations but not mirror reflections. The connection is a shared principle, not a direct line from her experiment.",
+  "line_becomes": "Her face and its reflection are drawn either side of a mirror line, but the electron arrows from a spinning nucleus point one way only, and the arrows become a rotating molecule fed into a network that turns with it (an equivariant neural network).",
+  "think_about": "Wu's experiment overturned something everyone assumed was obviously true. What assumptions built into AI systems might also turn out to be wrong?",
+  "sources": [
+   {
+    "title": "Chien-Shiung Wu (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Chien-Shiung_Wu"
+   },
+   {
+    "title": "Wu experiment (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Wu_experiment"
+   },
+   {
+    "title": "Chien-Shiung Wu (Britannica)",
+    "url": "https://www.britannica.com/biography/Chien-Shiung-Wu"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Chien-shiung Wu (1912-1997) C.jpg",
+   "license": "No known copyright restrictions (Smithsonian Institution)"
+  }
+ },
+ {
+  "slug": "tu",
+  "suit": "Science",
+  "rank": "6",
+  "name": "Tu Youyou",
+  "years": "b. 1930",
+  "born": "Ningbo, Zhejiang, China",
+  "field": "Pharmaceutical Chemistry",
+  "known_for": "Discovering artemisinin, a life-saving malaria drug, guided by an ancient text",
+  "bio": "Tu Youyou studied pharmacology at Beijing Medical College and joined the China Academy of Traditional Chinese Medicine. In 1969 she was appointed to lead a team in Project 523, a secret national programme to find a new malaria treatment. She had no postgraduate degree and no overseas training, which was unusual for a Nobel laureate. She volunteered to be among the first people to test the extract's safety. In 2015 she shared the Nobel Prize in Physiology or Medicine with William Campbell and Satoshi Ōmura.",
+  "big_idea": "Tu's team screened thousands of traditional remedies. Sweet wormwood (qinghao) showed promise, but results were inconsistent. In a text by Ge Hong from around 340 CE, she found instructions to soak the herb in cold water and drink the juice, not boil it. She reasoned that heat might destroy the active ingredient, so she switched to a low-temperature extraction using ether. The new extract worked strikingly well against malaria parasites, leading to artemisinin, now used in treatments that have saved millions of lives.",
+  "line_to_ai": "Tu's breakthrough came from searching a huge store of old knowledge for one useful clue. AI now does a version of this at scale. Language models read millions of research papers to suggest overlooked links between drugs and diseases, and machine-learning models screen enormous libraries of molecules. In 2020 an MIT team trained a neural network that identified halicin, a compound originally studied for diabetes, as a new antibiotic. The AI approach is related in spirit, not descended from her method.",
+  "line_becomes": "A sprig of sweet wormwood unfurls from her collar into a scroll of ancient text, whose characters become points in a vast embedding space where a search vector lights up one promising molecule (AI-driven drug discovery).",
+  "think_about": "Tu found her clue in a 1,600-year-old book. What valuable knowledge might be missing from the data AI is trained on, and whose knowledge is it?",
+  "sources": [
+   {
+    "title": "Tu Youyou, Nobel Prize 2015 (NobelPrize.org)",
+    "url": "https://www.nobelprize.org/prizes/medicine/2015/tu/facts/"
+   },
+   {
+    "title": "Tu Youyou (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Tu_Youyou"
+   },
+   {
+    "title": "Halicin (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Halicin"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:D810 4987 Tu Youyou, medicine (22945001843) (cropped).jpg",
+   "license": "CC BY 2.0"
+  }
+ },
+ {
+  "slug": "doudna",
+  "suit": "Science",
+  "rank": "5",
+  "name": "Jennifer Doudna",
+  "years": "b. 1964",
+  "born": "Washington, D.C., USA",
+  "field": "Biochemistry",
+  "known_for": "Co-developing CRISPR-Cas9 gene editing with Emmanuelle Charpentier",
+  "bio": "Jennifer Doudna grew up in Hilo, Hawaii, and became fascinated by chemistry in high school. She earned her PhD at Harvard and became an expert in RNA structure, later working at the University of California, Berkeley. In 2012 she and French microbiologist Emmanuelle Charpentier, with their teams, showed how a bacterial defence system could be turned into a programmable tool for cutting DNA. The two shared the 2020 Nobel Prize in Chemistry, the first time two women shared a science Nobel.",
+  "big_idea": "Bacteria defend themselves against viruses using CRISPR: they store snippets of viral DNA and use a protein called Cas9 to cut matching DNA if the virus returns. Doudna and Charpentier showed that Cas9 can be guided by a short piece of RNA that you design. Change the guide and Cas9 will cut almost any DNA sequence you choose. Cells then repair the cut, which lets scientists switch off or rewrite genes. It works like find-and-replace for the genome.",
+  "line_to_ai": "Researchers now use AI to design new gene editors. The company Profluent trained protein language models, similar to the models behind chatbots but trained on protein sequences, on a huge collection of CRISPR systems found in nature. The models generated new Cas9-like proteins. One, called OpenCRISPR-1, differs from the natural Cas9 by hundreds of mutations yet successfully edited human cells, as reported in Nature in 2025. It was released openly for research use.",
+  "line_becomes": "A strand of her hair becomes a DNA double helix, a guide RNA slides along it and Cas9 snips at the matching letters, and the letters stream into a protein language model that writes a brand-new editor (OpenCRISPR-1).",
+  "think_about": "CRISPR can edit genes in ways that pass to future generations. Who should decide which edits are allowed, and should AI-designed editors be shared openly?",
+  "sources": [
+   {
+    "title": "Jennifer Doudna, Nobel Prize in Chemistry 2020 (NobelPrize.org)",
+    "url": "https://www.nobelprize.org/prizes/chemistry/2020/doudna/facts/"
+   },
+   {
+    "title": "Jennifer Doudna (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Jennifer_Doudna"
+   },
+   {
+    "title": "Design of highly functional genome editors by modelling CRISPR–Cas sequences (Nature, 2025)",
+    "url": "https://www.nature.com/articles/s41586-025-09298-z"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Jennifer Doudna by Christopher Michel in 2023 01.jpg",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
+  "slug": "kariko",
+  "suit": "Science",
+  "rank": "4",
+  "name": "Katalin Karikó",
+  "years": "b. 1955",
+  "born": "Szolnok, Hungary",
+  "field": "Biochemistry",
+  "known_for": "Modified mRNA, which made COVID-19 mRNA vaccines possible",
+  "bio": "Katalin Karikó grew up in a small Hungarian town and studied at the University of Szeged. In 1985 she moved to the United States with her husband and daughter. At the University of Pennsylvania she spent years pursuing mRNA as a medicine, repeatedly failing to win grants, and she was demoted. Working with immunologist Drew Weissman, she published a key breakthrough in 2005. That work made the Pfizer-BioNTech and Moderna COVID-19 vaccines possible. Karikó and Weissman shared the 2023 Nobel Prize in Physiology or Medicine.",
+  "big_idea": "Messenger RNA (mRNA) carries instructions from a cell's DNA to its protein-making machinery. Injecting mRNA could, in principle, make the body produce any protein, such as a piece of a virus to train the immune system. But injected mRNA triggered harmful inflammation. Karikó and Weissman discovered that swapping one of its building blocks, uridine, for a slightly modified version, pseudouridine, let the mRNA slip past the immune alarm and make far more protein.",
+  "line_to_ai": "Many different mRNA sequences code for the same protein, because several codons spell each amino acid. The number of options is astronomically large, and choices affect how stable the mRNA is. In 2023 a team led by Liang Huang and Baidu Research published LinearDesign in Nature. It borrows a parsing technique from natural-language processing to search these options efficiently. It is an algorithm, not a trained model, though machine-learning methods are now also used for mRNA design.",
+  "line_becomes": "The curve of her shoulder becomes a single mRNA strand that folds into hairpin loops, and a branching lattice of codon choices grows beneath it, one highlighted path picking the most stable sequence (LinearDesign).",
+  "think_about": "Karikó kept going for decades with little funding or recognition. How should we decide which unproven ideas, in science or in AI, deserve support?",
+  "sources": [
+   {
+    "title": "Katalin Karikó, Nobel Prize 2023 (NobelPrize.org)",
+    "url": "https://www.nobelprize.org/prizes/medicine/2023/kariko/facts/"
+   },
+   {
+    "title": "Katalin Karikó (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Katalin_Karik%C3%B3"
+   },
+   {
+    "title": "Algorithm for optimized mRNA design improves stability and immunogenicity (Nature, 2023)",
+    "url": "https://www.nature.com/articles/s41586-023-06127-z"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Katalin Karikó by Christopher Michel in 2024 02.jpg",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
+  "slug": "hopfield",
+  "suit": "Science",
+  "rank": "3",
+  "name": "John Hopfield",
+  "years": "b. 1933",
+  "born": "Chicago, Illinois, USA",
+  "field": "Physics, Biology & Neuroscience",
+  "known_for": "The Hopfield network, an associative memory built from physics",
+  "bio": "John Hopfield was the son of two physicists. He studied at Swarthmore College and Cornell University and worked in solid-state physics before moving into biology. He held posts at Berkeley, Princeton and Caltech, and helped found Caltech's programme in computation and neural systems. Throughout his career he crossed boundaries between physics, chemistry, biology and computing. In 2024 he shared the Nobel Prize in Physics with Geoffrey Hinton for foundational discoveries that enable machine learning with artificial neural networks.",
+  "big_idea": "In 1982 Hopfield described a network of simple connected units that can store memories. Each stored pattern, such as a picture, becomes a low point in an 'energy landscape', like a valley. Give the network a noisy or incomplete version and it rolls downhill to the nearest valley, recovering the full memory. This is associative memory: a fragment brings back the whole, much as a few notes can bring back an entire song. He borrowed the mathematics from physics models of magnetic materials.",
+  "line_to_ai": "Hopfield's energy-based network inspired Geoffrey Hinton's Boltzmann machine, which helped launch deep learning. The link to today's AI is also direct: in 2020 researchers showed that 'modern Hopfield networks', with a sharper energy function, retrieve memories using the same mathematical update as the attention mechanism in transformers, the architecture behind large language models. Attention can be seen as looking up stored patterns that best match a query.",
+  "line_becomes": "His furrowed brow becomes a rolling energy landscape where a noisy pattern slides into its nearest valley and snaps into a clean memory, and the valleys rearrange into a grid of query-key weights (transformer attention).",
+  "think_about": "A Hopfield network recalls the closest memory, even from a fragment. When is that useful, and when might filling in the gaps produce something false?",
+  "sources": [
+   {
+    "title": "John J. Hopfield, Nobel Prize in Physics 2024 (NobelPrize.org)",
+    "url": "https://www.nobelprize.org/prizes/physics/2024/hopfield/facts/"
+   },
+   {
+    "title": "John Hopfield (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/John_Hopfield"
+   },
+   {
+    "title": "Hopfield network (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Hopfield_network"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:John J. Hopfield delivering his lecture at the 2024 Nobel Prize Lectures in Stockholm.jpg",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
+  "slug": "raman",
+  "suit": "Science",
+  "rank": "2",
+  "name": "C. V. Raman",
+  "years": "1888–1970",
+  "born": "Tiruchirappalli, Tamil Nadu, India",
+  "field": "Physics",
+  "known_for": "Discovering Raman scattering, the colour-shifting of scattered light",
+  "bio": "Chandrasekhara Venkata Raman excelled at school and graduated from Presidency College, Madras, as a teenager. Because Indians had few research posts, he worked as a government accountant in Calcutta while doing physics experiments in his spare time at a local science association. He later became a professor at the University of Calcutta. With his student K. S. Krishnan he discovered a new light-scattering effect in 1928. In 1930 he won the Nobel Prize in Physics, the first Asian to win a Nobel Prize in science.",
+  "big_idea": "When light hits molecules, almost all of it bounces off with the same colour. But a tiny fraction, around one photon in millions, comes back with a slightly different colour, because it has given energy to, or taken energy from, the molecule's vibrations. Since every type of molecule vibrates in its own way, the pattern of colour shifts is a unique fingerprint. This Raman spectrum lets scientists identify substances by shining a laser at them, without touching or destroying the sample.",
+  "line_to_ai": "Raman spectra are complex, noisy curves, and telling similar molecules apart by eye is hard. Researchers now train machine-learning models, including convolutional neural networks, to read Raman spectra. These systems classify bacteria to help choose antibiotics, spot cancerous tissue, check medicines for counterfeits and identify microplastics. A spectrum is treated like a one-dimensional image, and the network learns which peaks and patterns distinguish one substance from another.",
+  "line_becomes": "A beam of light glancing off his turban splits into a spectrum of sharp peaks, which slides into the input layer of a one-dimensional convolutional network that labels the molecule.",
+  "think_about": "Raman did world-class research on simple equipment in his spare time. Does cutting-edge AI research now require resources only a few organisations have? What could change that?",
+  "sources": [
+   {
+    "title": "Sir C. V. Raman, Nobel Prize in Physics 1930 (NobelPrize.org)",
+    "url": "https://www.nobelprize.org/prizes/physics/1930/raman/facts/"
+   },
+   {
+    "title": "C. V. Raman (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/C._V._Raman"
+   },
+   {
+    "title": "Raman spectroscopy (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Raman_spectroscopy"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Sir CV Raman.JPG",
+   "license": "Public domain"
+  }
+ }
+]

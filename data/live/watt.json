@@ -1,0 +1,21 @@
+{
+ "thesis": "James Watt made the steam engine several times more fuel efficient by adding a separate condenser, and his engines made the centrifugal governor famous. Its feedback loop of measuring and correcting lives on in control theory and in reinforcement learning, which trains AI by reward.",
+ "story": [
+  {
+   "tag": "1788",
+   "title": "Balls that hold the speed",
+   "text": "At Matthew Boulton's suggestion, Watt fitted a centrifugal governor, already used on windmills, to his rotative steam engines. A belt spun two heavy balls. Faster spinning flung them outward, which lifted a sleeve, tipped a lever and eased the steam valve shut. Slower spinning opened it again, holding the speed steady."
+  },
+  {
+   "tag": "the idea",
+   "title": "Measure, compare, correct",
+   "text": "When the load on the engine increases, it slows, the balls drop, the valve opens and the speed recovers. A governor that reacts too strongly overcorrects, so the speed swings back and forth around its target. Engineers called this hunting. Every feedback controller balances quick correction against this kind of instability."
+  },
+  {
+   "tag": "today",
+   "title": "Learning from feedback",
+   "text": "In 1868 James Clerk Maxwell explained hunting with mathematics, a founding paper of control theory. Reinforcement learning uses the same loop: an agent acts, measures a reward, and corrects what it does next. It trains game-playing AIs and helps fine-tune chatbots."
+  }
+ ],
+ "hint": "Raise the governor gain above about 4.5 and the speed starts hunting around the set point; lower it and the engine settles, but a little below target under heavy load."
+}

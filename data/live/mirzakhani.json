@@ -1,0 +1,21 @@
+{
+ "thesis": "Maryam Mirzakhani became the first woman to win the Fields Medal, in 2014, for her work on hyperbolic surfaces and the paths on them. Her work was pure mathematics, but hyperbolic geometry now helps some AI models store tree-like hierarchies of ideas.",
+ "story": [
+  {
+   "tag": "2014",
+   "title": "Paths on surfaces",
+   "text": "Mirzakhani won the Fields Medal for her work on hyperbolic surfaces and their moduli spaces, the space of all shapes a surface can take. With Alex Eskin she proved a deep result about how straight paths move through these spaces, now nicknamed the magic wand theorem, which answers questions about billiards in polygons."
+  },
+  {
+   "tag": "the idea",
+   "title": "Unfold the table",
+   "text": "A billiard ball bouncing in a polygon can be studied by reflecting the table across each edge it hits instead of bouncing the ball. The zigzag becomes one straight path through mirrored copies, and gluing the copies together forms a surface. Questions about billiards become questions about straight paths on surfaces, the dynamics Mirzakhani studied."
+  },
+  {
+   "tag": "2017",
+   "title": "Room for a hierarchy",
+   "text": "The link to AI is indirect. Nickel and Kiela's Poincaré embeddings place words inside a hyperbolic disc, with general ideas near the centre and specific ones near the rim. There is exponentially more room towards the edge, so tree-like hierarchies such as animal, mammal, dog fit far better than in flat space."
+  }
+ ],
+ "hint": "Change the table shape or click inside the table to aim the ball. Watch the zigzag on the left stay a single straight line in the unfolded copies."
+}

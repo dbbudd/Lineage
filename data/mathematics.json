@@ -1,0 +1,427 @@
+[
+ {
+  "slug": "al-khwarizmi",
+  "suit": "Mathematics",
+  "rank": "A",
+  "name": "Muhammad ibn Musa al-Khwarizmi",
+  "years": "c. 780–c. 850",
+  "born": "Khwarazm, Central Asia (probably)",
+  "field": "Mathematics & Astronomy",
+  "known_for": "Founding algebra; his name gave us the word algorithm",
+  "bio": "Al-Khwarizmi was a scholar of the Islamic Golden Age who worked at the House of Wisdom in Baghdad, the Abbasid capital, around 820. Few details of his life survive, and his name suggests his family came from Khwarazm, a region in Central Asia. He wrote influential books on mathematics, astronomy and geography in Arabic. His book on Indian numerals, translated into Latin as Algoritmi de numero Indorum, spread the decimal place-value system, with its zero, across Europe. No portrait from his lifetime exists.",
+  "big_idea": "His book Al-Jabr, written between 813 and 833, gave the first systematic method for solving linear and quadratic equations. He used two moves: al-jabr (restoring), which moves a subtracted term to the other side, and al-muqabala (balancing), which cancels like terms on both sides. He justified completing the square with actual squares drawn in geometry. The key idea is a recipe: follow fixed steps and any equation of that type falls open. The word algebra comes from his title.",
+  "line_to_ai": "An algorithm is a precise, step-by-step procedure, and the word comes from the Latin form of his name, Algoritmi. Every AI system is built from algorithms. Training a neural network runs gradient descent: compute the error, work out which way to nudge each weight, update, repeat, millions of times. Running a language model is also a fixed recipe of matrix multiplications. His algebra matters too, because an equation is solved by balancing both sides, and a network learns by adjusting unknowns until its outputs balance the data.",
+  "line_becomes": "The folds of his turban become a square of side x with two rectangles attached, completed into a larger square to solve x² + 10x = 39, which then unrolls into a flowchart loop of compute error, update weights, repeat (gradient descent).",
+  "think_about": "If a recipe of steps can solve a problem perfectly every time, does the machine following it understand the problem?",
+  "sources": [
+   {
+    "title": "Muhammad ibn Musa al-Khwarizmi (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi"
+   },
+   {
+    "title": "Al-Khwarizmi biography (MacTutor, University of St Andrews)",
+    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Al-Khwarizmi/"
+   },
+   {
+    "title": "The Compendious Book on Calculation by Completion and Balancing (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Al-Jabr"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Madrid - Ciudad Universitaria, Monumento a Muhammad al-Juarismi (cropped).jpg",
+   "license": "CC0 (modern statue; no authentic likeness exists)"
+  }
+ },
+ {
+  "slug": "euler",
+  "suit": "Mathematics",
+  "rank": "K",
+  "name": "Leonhard Euler",
+  "years": "1707–1783",
+  "born": "Basel, Switzerland",
+  "field": "Mathematics & Physics",
+  "known_for": "Graph theory, the number e, and much of modern mathematical notation",
+  "bio": "Euler was born in Basel and studied under Johann Bernoulli. He spent most of his career at the academies of St Petersburg and Berlin and is among the most productive mathematicians in history. He introduced notation still used today, including f(x) for a function, e, i and the use of π. He lost the sight of his right eye in 1738 and became almost totally blind from 1766, yet he kept working, dictating results and doing long calculations in his head. He died in St Petersburg in 1783.",
+  "big_idea": "The city of Königsberg had seven bridges joining four areas of land. Could you walk across every bridge exactly once? Euler saw that the shape of the map did not matter, only which areas were connected. He drew each area as a dot and each bridge as a line. A walk entering and leaving a dot uses two lines, so every dot except the start and finish needs an even number of lines. All four had an odd number, so the walk is impossible.",
+  "line_to_ai": "Euler's dots and lines became graph theory: nodes joined by edges. Graph neural networks learn directly on this structure. Each node holds a vector, and in every layer it sends messages along its edges and updates itself from its neighbours. This message passing is used to predict properties of molecules, where atoms are nodes and bonds are edges, and in Google DeepMind's GraphCast weather model. Knowledge graphs, which store facts as linked entities, also rest on Euler's idea.",
+  "line_becomes": "The curls of his wig become the four landmasses and seven bridges of Königsberg, which shrink into four dots with odd-numbered edges, then light up as a graph neural network passing glowing messages from node to node.",
+  "think_about": "Euler threw away every detail of the map except the connections. What gets lost when we turn the real world into a graph for an AI to learn from?",
+  "sources": [
+   {
+    "title": "Leonhard Euler (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Leonhard_Euler"
+   },
+   {
+    "title": "Seven Bridges of Königsberg (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Seven_Bridges_of_K%C3%B6nigsberg"
+   },
+   {
+    "title": "Euler biography (MacTutor, University of St Andrews)",
+    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Euler/"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Leonhard Euler - Jakob Emanuel Handmann (Kunstmuseum Basel).jpg",
+   "license": "Public domain"
+  }
+ },
+ {
+  "slug": "gauss",
+  "suit": "Mathematics",
+  "rank": "Q",
+  "name": "Carl Friedrich Gauss",
+  "years": "1777–1855",
+  "born": "Brunswick, Germany",
+  "field": "Mathematics, Astronomy & Physics",
+  "known_for": "Least squares and the normal (Gaussian) distribution",
+  "bio": "Gauss was born into a poor family in Brunswick. His talent was so clear that the Duke of Brunswick paid for his education. At 24 he published Disquisitiones Arithmeticae, a landmark in number theory. He went on to transform astronomy, surveying and the study of magnetism, and directed the Göttingen Observatory from 1807 until his death. He published only work he considered perfect, so many of his ideas were found in his notebooks after he died.",
+  "big_idea": "In 1801 astronomers lost sight of the dwarf planet Ceres behind the Sun's glare. From a handful of noisy observations, Gauss predicted where it would reappear, and Franz Xaver von Zach found it there. His tool was least squares: choose the curve that makes the sum of the squared errors as small as possible. Legendre published the method first, in 1805, which caused a priority dispute. Gauss went further and linked it to the bell-shaped normal distribution of errors.",
+  "line_to_ai": "Linear regression, often the first model taught in machine learning, is Gauss's least squares. Mean squared error, the loss function used to train many neural networks, is his sum of squared errors, and minimising it is exactly right when the noise follows his bell curve. Diffusion models, which generate images, go one step further: they add Gaussian noise to a picture step by step until it is pure static, then train a network to remove the noise, step by step, creating new images.",
+  "line_becomes": "The line of his cap becomes scattered observations of Ceres with a best-fit curve and little squares drawn on each error, which collapse into a bell curve whose noise floods a picture and then drains away as a diffusion model denoises it.",
+  "think_about": "Squaring errors punishes big mistakes much more than small ones. When might that be a good choice for an AI, and when might it be unfair?",
+  "sources": [
+   {
+    "title": "Carl Friedrich Gauss (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss"
+   },
+   {
+    "title": "Least squares: history (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Least_squares"
+   },
+   {
+    "title": "Gauss biography (MacTutor, University of St Andrews)",
+    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Gauss/"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Carl Friedrich Gauss 1840 by Jensen.jpg",
+   "license": "Public domain"
+  }
+ },
+ {
+  "slug": "leibniz",
+  "suit": "Mathematics",
+  "rank": "J",
+  "name": "Gottfried Wilhelm Leibniz",
+  "years": "1646–1716",
+  "born": "Leipzig, Germany",
+  "field": "Mathematics & Philosophy",
+  "known_for": "Calculus notation, binary arithmetic, and dreaming of a reasoning machine",
+  "bio": "Leibniz was a philosopher, diplomat, lawyer and librarian as well as a mathematician. He developed calculus independently of Isaac Newton and published it in 1684. A bitter priority dispute followed, and a Royal Society report sided with Newton, darkening Leibniz's last years. Historians now credit both men. He also built the Stepped Reckoner, a mechanical calculator that could multiply. He spent much of his career serving the dukes of Hanover, where he died in 1716.",
+  "big_idea": "Leibniz invented the notation for calculus we still use: dy/dx for a rate of change and the long S, ∫, for adding up infinitely many tiny pieces. His notation makes the chain rule look almost obvious: dz/dx = dz/dy × dy/dx. In 1703 he published an explanation of binary arithmetic, writing every number with only 0 and 1. He also dreamed of a calculus ratiocinator, a machine that could settle arguments by calculating.",
+  "line_to_ai": "Neural networks learn through backpropagation, which is the chain rule applied over and over. A network is a long chain of functions, and to know how much one weight affects the final error, you multiply the rates of change along the chain, layer by layer, exactly as dz/dx = dz/dy × dy/dx. Gradients are written in his notation. The computers that run this calculation store every number in his binary. His reasoning machine was a dream, not a design, but the idea is strikingly close.",
+  "line_becomes": "The curls of his wig become a chain of linked boxes labelled dz/dy and dy/dx, whose arrows reverse and flow backwards through the layers of a neural network as gradients (backpropagation), each box flickering between 0 and 1.",
+  "think_about": "Leibniz hoped a machine could settle any argument by calculation. Which kinds of disagreements could an AI help settle, and which never could be?",
+  "sources": [
+   {
+    "title": "Gottfried Wilhelm Leibniz (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz"
+   },
+   {
+    "title": "Leibniz biography (MacTutor, University of St Andrews)",
+    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Leibniz/"
+   },
+   {
+    "title": "Chain rule: history (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Chain_rule"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Christoph Bernhard Francke - Bildnis des Philosophen Leibniz (ca. 1695).jpg",
+   "license": "Public domain"
+  }
+ },
+ {
+  "slug": "brahmagupta",
+  "suit": "Mathematics",
+  "rank": "10",
+  "name": "Brahmagupta",
+  "years": "c. 598–c. 668",
+  "born": "Bhillamala (Bhinmal), Rajasthan, India",
+  "field": "Mathematics & Astronomy",
+  "known_for": "First rules for calculating with zero and negative numbers",
+  "bio": "Brahmagupta was an Indian astronomer and mathematician who lived in Bhillamala and later worked at Ujjain, a major centre for astronomy. In 628 CE, aged about 30, he wrote the Brahmasphutasiddhanta, a treatise in verse covering astronomy, algebra and geometry. In 665 he wrote a more practical astronomy handbook, the Khandakhadyaka. His work was later translated into Arabic and influenced scholars in Baghdad, including al-Khwarizmi. No portrait of him exists.",
+  "big_idea": "Brahmagupta treated zero as a number in its own right, not just an empty space. He gave rules using fortunes (positive numbers) and debts (negative numbers): a debt minus zero is a debt, a fortune times a debt is a debt, and a debt times a debt is a fortune. A number minus itself is zero. He also gave a clear description of the quadratic formula. Not every rule held up: he said zero divided by zero is zero, which mathematicians now leave undefined.",
+  "line_to_ai": "Every number inside a computer chip is stored using place value with zero. In binary, 0 and 1 are the only digits, and zero is what marks the empty places. Negative numbers are essential in AI: neural network weights are positive and negative, and a negative weight lets one signal cancel another. Chips store them in a format called two's complement. Modern AI chips such as GPUs perform trillions of these signed multiplications and additions every second, all following his rules.",
+  "line_becomes": "The line of his shoulder becomes a number line stretching left into debts and right into fortunes with zero glowing at the centre, which folds into rows of binary digits flowing through the multiply-and-add grid of a GPU.",
+  "think_about": "Brahmagupta got 0 ÷ 0 wrong, yet his work was still a huge step forward. How should we treat AI tools that are mostly right but sometimes confidently wrong?",
+  "sources": [
+   {
+    "title": "Brahmagupta (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Brahmagupta"
+   },
+   {
+    "title": "Brahmagupta biography (MacTutor, University of St Andrews)",
+    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Brahmagupta/"
+   },
+   {
+    "title": "Brahmasphutasiddhanta (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Br%C4%81hmasphu%E1%B9%ADasiddh%C4%81nta"
+   }
+  ],
+  "portrait": {
+   "commons_file": null,
+   "license": "Traced from a stylised line-drawing reference supplied by Daniel Budd. An imagined likeness: no portrait of Brahmagupta survives."
+  }
+ },
+ {
+  "slug": "boole",
+  "suit": "Mathematics",
+  "rank": "9",
+  "name": "George Boole",
+  "years": "1815–1864",
+  "born": "Lincoln, England",
+  "field": "Mathematics & Logic",
+  "known_for": "Boolean algebra: logic written as equations with 0 and 1",
+  "bio": "Boole was the son of a shoemaker in Lincoln and left school early. He taught himself Latin, Greek and advanced mathematics, and began teaching at 16 to support his family. He opened his own school at 19. Despite having no university degree, he was appointed in 1849 as the first professor of mathematics at Queen's College, Cork, in Ireland. His major books on logic appeared in 1847 and 1854. He died of pneumonia in 1864, aged 49.",
+  "big_idea": "Boole showed that logic could be done with algebra. In his 1854 book The Laws of Thought, statements are either true (1) or false (0), and they combine using AND, OR and NOT. For example, x AND y is 1 only when both are 1, which behaves like multiplication. Because true and false are just numbers, reasoning becomes calculation. In 1937, Claude Shannon showed in his master's thesis that electrical switching circuits obey Boole's algebra exactly.",
+  "line_to_ai": "Shannon's link turned Boole's algebra into logic gates, the switches inside every digital chip, including the GPUs that train AI. The connection runs deeper too. In 1943 Warren McCulloch and Walter Pitts modelled a neuron as a unit that fires or does not, and showed such neurons can compute Boolean functions like AND and OR. That model led to the perceptron and modern neural networks. Today's networks use continuous numbers rather than strict 0 and 1, but the idea started here.",
+  "line_becomes": "The line of his collar becomes a truth table of 0s and 1s that wires itself into AND, OR and NOT gates, which then grow dendrites and become a McCulloch–Pitts artificial neuron firing 1 or 0.",
+  "think_about": "Boole called his book The Laws of Thought. Is human thinking really just true and false combined by rules, or is something missing?",
+  "sources": [
+   {
+    "title": "George Boole (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/George_Boole"
+   },
+   {
+    "title": "A Symbolic Analysis of Relay and Switching Circuits (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/A_Symbolic_Analysis_of_Relay_and_Switching_Circuits"
+   },
+   {
+    "title": "Boole biography (MacTutor, University of St Andrews)",
+    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Boole/"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Portrait of George Boole.png",
+   "license": "Public domain"
+  }
+ },
+ {
+  "slug": "bayes",
+  "suit": "Mathematics",
+  "rank": "8",
+  "name": "Thomas Bayes",
+  "years": "c. 1701–1761",
+  "born": "London, England (possibly Hertfordshire)",
+  "field": "Probability & Theology",
+  "known_for": "Bayes' theorem: updating beliefs as new evidence arrives",
+  "bio": "Thomas Bayes was an English Presbyterian minister who served a chapel in Tunbridge Wells. He studied logic and theology at the University of Edinburgh, as Nonconformists were barred from Oxford and Cambridge. He was elected a Fellow of the Royal Society in 1742. His famous work was never published in his lifetime. After he died in 1761, his friend Richard Price edited it and presented it to the Royal Society in 1763. The only portrait said to show him may not be him.",
+  "big_idea": "Bayes' theorem tells you how to update a belief when you get new evidence. Start with a prior: how likely something seemed before. Then ask how likely the evidence would be if it were true. Combine them and you get a posterior: your updated belief. For example, a positive test for a rare disease may still mean you are probably healthy, because the disease was so unlikely to begin with. Pierre-Simon Laplace later developed the idea much further.",
+  "line_to_ai": "Bayes' theorem is the basis of probabilistic machine learning. Early spam filters used naive Bayes classifiers: each word shifts the probability that an email is spam, and the filter updates its belief word by word. Bayesian methods let AI systems express uncertainty rather than giving one confident answer, which matters in medicine and self-driving cars. Bayesian optimisation is used to tune the settings of large models, and Bayesian neural networks treat each weight as a probability distribution rather than a single number.",
+  "line_becomes": "The fold of his clerical collar becomes a wide prior bell curve that a beam of evidence narrows into a sharp posterior, which splits into the word-by-word probabilities of a naive Bayes spam filter.",
+  "think_about": "Should an AI always tell you how uncertain it is? Would you trust a doctor, or a chatbot, more or less if it said it was only 70% sure?",
+  "sources": [
+   {
+    "title": "Thomas Bayes (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Thomas_Bayes"
+   },
+   {
+    "title": "Bayes biography (MacTutor, University of St Andrews)",
+    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Bayes/"
+   },
+   {
+    "title": "Bayes' theorem (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Bayes%27_theorem"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Thomas Bayes.gif",
+   "license": "Public domain (identification as Bayes is doubtful)"
+  }
+ },
+ {
+  "slug": "noether",
+  "suit": "Mathematics",
+  "rank": "7",
+  "name": "Emmy Noether",
+  "years": "1882–1935",
+  "born": "Erlangen, Germany",
+  "field": "Mathematics & Mathematical Physics",
+  "known_for": "Noether's theorem linking symmetry and conservation laws; abstract algebra",
+  "bio": "Emmy Noether studied mathematics at Erlangen at a time when women were barely allowed to enrol. After her doctorate in 1907 she worked for seven years without pay. In 1915 David Hilbert and Felix Klein invited her to Göttingen, but the faculty objected to a woman lecturer, so for four years she taught courses listed under Hilbert's name. In 1933 the Nazi government dismissed her because she was Jewish. She moved to Bryn Mawr College in the United States, where she died in 1935.",
+  "big_idea": "Noether's theorem, proved in 1915 and published in 1918, says that every continuous symmetry of a physical system comes with a quantity that is conserved. If the laws of physics are the same today as tomorrow, energy is conserved. If they are the same here as over there, momentum is conserved. If they are the same in every direction, angular momentum is conserved. She also reshaped abstract algebra, studying structures like rings by the rules they obey rather than by specific numbers.",
+  "line_to_ai": "The link to AI is indirect but real. Geometric deep learning builds symmetry into neural networks using group theory, the mathematics of symmetry that Noether helped modernise. A convolutional network is translation equivariant: shift a cat in a photo and the features shift with it. Equivariant networks extend this to rotations and reflections, so models of molecules give the same answer however a molecule is turned. Researchers have even built Noether networks, which try to learn conserved quantities from video to improve predictions.",
+  "line_becomes": "The line of her hair becomes a circle spinning under rotation, which turns into a pendulum tracing a conserved-energy loop, which tiles into a grid of rotated kernels in an equivariant neural network.",
+  "think_about": "Noether did world-changing work while being unpaid and uncredited for years. Whose contributions to science and technology might still be going unrecognised today?",
+  "sources": [
+   {
+    "title": "Emmy Noether (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Emmy_Noether"
+   },
+   {
+    "title": "Noether's theorem (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Noether%27s_theorem"
+   },
+   {
+    "title": "Emmy Noether biography (MacTutor, University of St Andrews)",
+    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Noether_Emmy/"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Emmy Noether (3x4 cropped).jpg",
+   "license": "Public domain"
+  }
+ },
+ {
+  "slug": "ramanujan",
+  "suit": "Mathematics",
+  "rank": "6",
+  "name": "Srinivasa Ramanujan",
+  "years": "1887–1920",
+  "born": "Erode, Tamil Nadu, India",
+  "field": "Mathematics",
+  "known_for": "Astonishing infinite series, partitions and identities found largely by intuition",
+  "bio": "Ramanujan grew up in southern India and taught himself advanced mathematics, largely in isolation. He failed his college exams because he neglected subjects other than mathematics and worked as a clerk in Madras. In 1913 he wrote to G. H. Hardy at Cambridge, enclosing pages of results. Hardy brought him to England, where they worked together and Ramanujan became a Fellow of the Royal Society in 1918. He fell seriously ill, returned to India and died in 1920, aged 32, leaving notebooks of nearly 3,900 results.",
+  "big_idea": "In 1914 Ramanujan published infinite series for 1/π that converge astonishingly fast. Add more terms and you get closer and closer to π, but his best series gives about eight more correct digits with every single term. He often stated results without proof, guided by pattern and intuition, and mathematicians spent decades proving them. Improved versions of his series, such as the Chudnovsky formula, have been used to compute π to trillions of digits.",
+  "line_to_ai": "In 2021 a team at the Technion in Israel published the Ramanujan Machine in Nature. It is software that searches by computer for formulas, especially continued fractions, that match constants like π and e to many digits, then presents them as conjectures for humans to prove. Some have since been proven. It uses clever numerical search rather than a neural network, so it is automated discovery rather than deep learning, but it raises the same question as AI: can intuition be mechanised?",
+  "line_becomes": "The line of his collar becomes an infinite series spiralling inward on π, each term a shrinking arc, which resolves into a cascading continued fraction printed out by the Ramanujan Machine as a machine-generated conjecture.",
+  "think_about": "Ramanujan's results came from intuition he could not always explain. If a computer finds a formula that works but nobody knows why, is that real mathematics?",
+  "sources": [
+   {
+    "title": "Srinivasa Ramanujan (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Srinivasa_Ramanujan"
+   },
+   {
+    "title": "Generating conjectures on fundamental constants with the Ramanujan Machine (Nature, 2021)",
+    "url": "https://www.nature.com/articles/s41586-021-03229-4"
+   },
+   {
+    "title": "Ramanujan biography (MacTutor, University of St Andrews)",
+    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Ramanujan/"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Srinivasa Ramanujan - OPC - 1.jpg",
+   "license": "Public domain"
+  }
+ },
+ {
+  "slug": "markov",
+  "suit": "Mathematics",
+  "rank": "5",
+  "name": "Andrey Markov",
+  "years": "1856–1922",
+  "born": "Ryazan, Russia",
+  "field": "Mathematics & Probability",
+  "known_for": "Markov chains, and analysing Pushkin's poetry letter by letter",
+  "bio": "Markov was born in Ryazan and studied at St Petersburg University under Pafnuty Chebyshev, later becoming a professor there. He was known for his stubborn independence. In 1908 he refused to act as an agent of the government by monitoring students during unrest, and he lost his teaching duties. In 1912 he asked to be excommunicated from the Russian Orthodox Church. He returned to teaching after the 1917 February Revolution and died in Petrograd in 1922. He was also a strong chess player.",
+  "big_idea": "A Markov chain is a sequence where the next step depends only on where you are now, with fixed probabilities for each move. In 1913 Markov tested the idea on the first 20,000 letters of Pushkin's verse novel Eugene Onegin. He ignored meaning and labelled each letter as a vowel or consonant, then counted transitions. A vowel was much more likely to be followed by a consonant than by another vowel, so letters were not independent coin tosses. The chain captured the pattern.",
+  "line_to_ai": "Markov's idea of predicting the next symbol from what came before is a direct ancestor of language models. In 1948 Claude Shannon used Markov-style chains of letters and words to generate English-like text. N-gram language models, used in speech recognition and translation for decades, are Markov chains over words. Modern transformers such as GPT also predict the next token from probabilities, but they look back over thousands of earlier tokens, not just the last one, so they are far more than a simple Markov chain.",
+  "line_becomes": "The line of his beard becomes a strip of Cyrillic letters from Eugene Onegin tagged V and C, with two circles and arrows weighted by transition probabilities, which unfold into a modern model predicting the next token with attention reaching back over the text.",
+  "think_about": "Markov stripped the meaning out of a great poem and still found patterns. Can something that predicts the next word really understand what it is writing?",
+  "sources": [
+   {
+    "title": "Andrey Markov (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Andrey_Markov"
+   },
+   {
+    "title": "First Links in the Markov Chain (American Scientist, 2013)",
+    "url": "https://www.americanscientist.org/sites/americanscientist.org/files/201321152149545-2013-03Hayes.pdf"
+   },
+   {
+    "title": "Markov biography (MacTutor, University of St Andrews)",
+    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Markov/"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Andrei Markov.jpg",
+   "license": "Public domain"
+  }
+ },
+ {
+  "slug": "johnson",
+  "suit": "Mathematics",
+  "rank": "4",
+  "name": "Katherine Johnson",
+  "years": "1918–2020",
+  "born": "White Sulphur Springs, West Virginia, USA",
+  "field": "Mathematics & Aerospace",
+  "known_for": "Calculating orbital trajectories for NASA's first crewed spaceflights",
+  "bio": "Katherine Johnson finished high school at 14 and graduated from West Virginia State College at 18 with degrees in mathematics and French. In 1953 she joined the West Area Computing unit at Langley, a group of African American women mathematicians who worked under segregation. She worked at NACA and NASA for 33 years until 1986. She received the Presidential Medal of Freedom in 2015, and her story was told in the 2016 film Hidden Figures. She died in 2020, aged 101.",
+  "big_idea": "To send a spacecraft into orbit and bring it home, you must calculate its path precisely: when to launch, where it will be at each moment, and when to fire rockets to return. Johnson calculated the trajectory for Alan Shepard's flight in 1961, the first American in space. She also worked on paths that let the Apollo lunar module meet the command module orbiting the Moon. Her work combined geometry, the physics of gravity and painstaking numerical calculation.",
+  "line_to_ai": "In 1962 NASA used IBM electronic computers to calculate John Glenn's orbit. Astronauts did not yet trust them, and Glenn asked for Johnson to run the same equations by hand. Her numbers matched, and he flew. This is a story about verification, not a technique inside AI. Today, AI outputs need the same independent checking: researchers test models against known answers, and in high-stakes fields like medicine a human expert checks the result before anyone acts on it.",
+  "line_becomes": "The line of her glasses becomes an orbital ellipse around Earth with Glenn's capsule marked along it, which splits into two matching columns of numbers, one handwritten and one machine-printed, ending in a green tick beside an AI output (human verification).",
+  "think_about": "Glenn trusted a person over a machine in 1962. Today, when should we trust an AI's answer, and who should be responsible for checking it?",
+  "sources": [
+   {
+    "title": "Katherine Johnson Biography (NASA)",
+    "url": "https://www.nasa.gov/centers-and-facilities/langley/katherine-johnson-biography/"
+   },
+   {
+    "title": "Katherine Johnson (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Katherine_Johnson"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Katherine Johnson 1983.jpg",
+   "license": "Public domain (NASA)"
+  }
+ },
+ {
+  "slug": "mirzakhani",
+  "suit": "Mathematics",
+  "rank": "3",
+  "name": "Maryam Mirzakhani",
+  "years": "1977–2017",
+  "born": "Tehran, Iran",
+  "field": "Mathematics",
+  "known_for": "First woman to win the Fields Medal, for work on curved surfaces",
+  "bio": "Mirzakhani grew up in Tehran and won gold medals at the International Mathematical Olympiad in 1994 and 1995, the second with a perfect score. She studied at Sharif University and earned her PhD at Harvard in 2004 under Curtis McMullen. She became a professor at Stanford. In 2014 she was awarded the Fields Medal, the first woman and first Iranian to receive it, alongside Artur Avila, Manjul Bhargava and Martin Hairer. She died of cancer in 2017, aged 40.",
+  "big_idea": "Mirzakhani studied hyperbolic surfaces, shapes like a doughnut with several holes that curve like a saddle at every point. On such a surface, the shortest loops are called closed geodesics. Her PhD found a formula for how the number of simple loops, ones that never cross themselves, grows with length. She also studied moduli spaces, the space of all possible shapes such a surface can take, and how paths move through them. She often worked by sketching large drawings on paper.",
+  "line_to_ai": "The link to AI is indirect. Mirzakhani's work is pure mathematics and was not about machine learning. But hyperbolic geometry, the curved geometry she studied, is now used in some AI models. In 2017, Maximilian Nickel and Douwe Kiela introduced Poincaré embeddings, which place words or concepts inside a hyperbolic disc. Tree-like hierarchies, such as animal, mammal, dog, fit much better in hyperbolic space than in flat space, because there is exponentially more room towards the edge.",
+  "line_becomes": "The line of her hair becomes a saddle-shaped surface with several holes wrapped by non-crossing loops, which flattens into a Poincaré disc tiled with shrinking triangles where a tree of concepts branches towards the rim (hyperbolic embeddings).",
+  "think_about": "Mirzakhani's work was pure mathematics with no application in mind, yet related ideas now appear in AI. Should we fund research that has no obvious use?",
+  "sources": [
+   {
+    "title": "Maryam Mirzakhani (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Maryam_Mirzakhani"
+   },
+   {
+    "title": "Fields Medals 2014 (International Mathematical Union)",
+    "url": "https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2014"
+   },
+   {
+    "title": "Poincaré Embeddings for Learning Hierarchical Representations (Meta AI)",
+    "url": "https://ai.meta.com/research/publications/poincare-embeddings-for-learning-hierarchical-representations/"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Maryam Mirzakhani in Seoul 2014.jpg",
+   "license": "CC BY-SA 2.0 de"
+  }
+ },
+ {
+  "slug": "tao",
+  "suit": "Mathematics",
+  "rank": "2",
+  "name": "Terence Tao",
+  "years": "b. 1975",
+  "born": "Adelaide, South Australia, Australia",
+  "field": "Mathematics",
+  "known_for": "Fields Medallist now pioneering AI and proof assistants in mathematics",
+  "bio": "Terence Tao was born in Adelaide and showed exceptional talent early. At 13 he became the youngest gold medallist in International Mathematical Olympiad history. He completed degrees at Flinders University and a PhD at Princeton at 21, then joined the University of California, Los Angeles. In 2006 he was awarded the Fields Medal, alongside Andrei Okounkov, Grigori Perelman and Wendelin Werner. With Ben Green he proved that the prime numbers contain arithmetic progressions of any length.",
+  "big_idea": "Tao works across many areas, from prime numbers to the equations of fluids and waves. The Green–Tao theorem shows that you can always find prime numbers evenly spaced in a row, such as 3, 5, 7, or 5, 11, 17, 23, 29, and that such rows exist at every length, however long. Tao is also known for sharing mathematics openly on his blog and for organising large online collaborations where many people work on a problem together.",
+  "line_to_ai": "Since late 2023 Tao has used Lean, a proof assistant: software that checks every step of a proof so nothing can be wrong. In his Equational Theories Project (2024 to 2025), human volunteers, automated theorem provers and AI tools resolved about 22 million questions in algebra, with every answer verified in Lean. In 2025 he co-authored work with Google DeepMind testing AlphaEvolve, an AI system that searches for new mathematical constructions. He describes AI as an assistant, with humans still directing the work.",
+  "line_becomes": "The line of his shoulder becomes a row of evenly spaced primes on a number line, which stack into a tree of proof steps, each one ticked green by the Lean proof assistant as AI suggestions and human steps are checked together.",
+  "think_about": "If an AI helps prove a theorem, who deserves the credit, and does it matter if no human fully understands every step?",
+  "sources": [
+   {
+    "title": "Terence Tao (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Terence_Tao"
+   },
+   {
+    "title": "The equational theories project: a brief tour (Terence Tao's blog)",
+    "url": "https://terrytao.wordpress.com/2024/10/12/the-equational-theories-project-a-brief-tour/"
+   },
+   {
+    "title": "How Terry Tao Became an Evangelist for AI in Math (Quanta Magazine)",
+    "url": "https://www.quantamagazine.org/how-terry-tao-became-an-evangelist-for-ai-in-math-20260608/"
+   }
+  ],
+  "portrait": {
+   "commons_file": "File:Terence Tao at IPAM's Fireside Chat 2026 (50m16s) (cropped).jpg",
+   "license": "CC BY 4.0"
+  }
+ }
+]

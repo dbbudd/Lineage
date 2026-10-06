@@ -533,21 +533,27 @@
   "min_body": 40,
   "rdp": 0.6,
   "smooth": 5,
-  "hatch": false,
+  "hatch": true,
   "hatch_band": [
    0,
-   6
+   20
   ],
   "hatch_wmin": 0.0,
-  "wash_pct": 22,
-  "shade_density": 0.35,
-  "shade_core": 0.9,
-  "shade_sigma": 0.04,
-  "fill": 0.97,
-  "width": 1150,
+  "wash_pct": 40,
+  "shade_density": 0.25,
+  "shade_sigma": 0.03,
+  "fill": 0.95,
+  "width": 1200,
   "keep_fine": true,
-  "ink_thresh": 140,
-  "step": 2.0
+  "ink_thresh": 150,
+  "step": 2.0,
+  "hatch_wmax": 0.75,
+  "w_dark": 1.7,
+  "w_line": 0.3,
+  "hatch_spacing": 9.0,
+  "hatch_min_area": 1500,
+  "tremor": 1.6,
+  "tone_src": "src/papert_tone.png"
  },
  "kariko": {
   "src": "src/kariko.jpg",
@@ -733,12 +739,11 @@
   "hatch": true,
   "hatch_band": [
    0,
-   14
+   20
   ],
   "hatch_wmin": 0.0,
-  "wash_pct": 32,
-  "shade_density": 0.6,
-  "shade_core": 0.7,
+  "wash_pct": 40,
+  "shade_density": 0.25,
   "shade_sigma": 0.03,
   "fill": 0.93,
   "width": 1200,
@@ -746,7 +751,13 @@
   "ink_thresh": 150,
   "step": 2.0,
   "light": "right",
-  "hatch_wmax": 0.45
+  "hatch_wmax": 0.75,
+  "w_dark": 1.7,
+  "w_line": 0.3,
+  "hatch_spacing": 9.0,
+  "hatch_min_area": 1500,
+  "tremor": 1.6,
+  "tone_src": "src/lovelace_tone.png"
  },
  "al-khwarizmi": {
   "src": "src/al-khwarizmi.jpg",

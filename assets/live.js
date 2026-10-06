@@ -8,6 +8,7 @@
      init(S)        once, after layout          (set up state on S.st)
      layout(S)      after every resize          (S.box = idea area, S.P = portrait geometry)
      entry(S)  ->   [x, y] where the connector lands (defaults to the left-middle of S.box)
+     ctrl(S, from, to) -> [x, y]              optional control point that bends the connector
      draw(S, k, ft, dt) -> readout string       k: 0..1 reveal, ft: field time (speed-scaled), dt: seconds
      code(S)  ->    html for the code panel (use S.v(value) and S.c(comment))
      pointer(S, type, x, y)                     optional: 'down'|'move'|'up' in canvas pixels
@@ -154,7 +155,7 @@
       }
       SCENE.layout && SCENE.layout(S);
       const e = pts[pts.length - 1], hs = (SCENE.entry && SCENE.entry(S)) || [box.x, box.y + box.h * 0.5];
-      const mid = [(e[0] + hs[0]) / 2, (e[1] + hs[1]) / 2], ctrl = [mid[0], Math.min(e[1], hs[1]) - Math.abs(hs[0] - e[0]) * 0.15];
+      const mid = [(e[0] + hs[0]) / 2, (e[1] + hs[1]) / 2], ctrl = (SCENE.ctrl && SCENE.ctrl(S, e, hs)) || [mid[0], Math.min(e[1], hs[1]) - Math.abs(hs[0] - e[0]) * 0.15];
       conn = []; for (let k = 0; k <= 40; k++) { const u = k / 40, v = 1 - u; conn.push([v * v * e[0] + 2 * v * u * ctrl[0] + u * u * hs[0], v * v * e[1] + 2 * v * u * ctrl[1] + u * u * hs[1]]); }
     }
 

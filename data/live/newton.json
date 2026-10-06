@@ -4,7 +4,7 @@
   {
    "tag": "1687",
    "title": "A cannon on a mountain",
-   "text": "In a thought experiment published with the Principia, Newton imagined firing a cannon sideways from a very high mountain. A slow ball falls nearby. Each faster ball lands further away, until one falls so far that the curved ground drops away beneath it. It never lands. That is an orbit."
+   "text": "Newton realised that the pull that drops an apple also holds the Moon. In a thought experiment published with the Principia, he imagined firing a cannon sideways from a very high mountain. A slow ball falls nearby. Each faster ball lands further away, until one falls so far that the curved ground drops away beneath it. It never lands. That is an orbit."
   },
   {
    "tag": "the idea",
@@ -17,5 +17,5 @@
    "text": "Neural networks learn by gradient descent: find the slope of the error and nudge every weight downhill. Adding momentum, popularised for backpropagation in 1986, makes the rule look exactly like the cannonball's: velocity gets nudged by the slope, then position by velocity. The weights roll, overshoot and settle at the minimum."
   }
  ],
- "hint": "Slide the launch speed from 3 to 13 km/s and watch the shot fall back, circle the Earth, stretch into an ellipse and finally escape; then raise gravity and find the new orbit speed."
+ "hint": "Slide the launch speed from 3 to 13 km/s and watch the apple fall back, circle the Earth, stretch into an ellipse and finally escape; then raise gravity and find the new orbit speed."
 }

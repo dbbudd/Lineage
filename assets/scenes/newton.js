@@ -1,4 +1,4 @@
-// Isaac Newton — the cannon on the mountain (Principia, "A Treatise of the System of the World")
+// Isaac Newton — the apple he points at, fired from the cannon on the mountain (Principia, "A Treatise of the System of the World")
 // → falling around the Earth: v += a·dt with a = −GM r/|r|³ → the same update is gradient descent with momentum
 Lineage.scene({
   params: [
@@ -35,6 +35,23 @@ Lineage.scene({
     const u = S.p.v / 7.9;
     S.st.shot = { x: 0, y: 1, vx: u, vy: 0, t: 0, trail: [[0, 1]], n: 0, done: null, hold: 0, ang: 0 };
   },
+  // Newton's apple: outline dimpled at the top, stem and leaf (same shape as the card's glyph)
+  apple(S, x, y, s, o = {}) {
+    const pts = [];
+    for (let i = 0; i <= 60; i++) {
+      const t = -Math.PI / 2 + (2 * Math.PI * i) / 60;
+      const r = s * (1 - 0.24 * Math.exp(-(((t + Math.PI / 2) / 0.32) ** 2)) - 0.07 * Math.exp(-(((t - Math.PI / 2) / 0.3) ** 2)) - 0.24 * Math.exp(-(((t - 1.5 * Math.PI) / 0.32) ** 2)));
+      pts.push([x + r * Math.cos(t) * 1.06, y + r * Math.sin(t)]);
+    }
+    const col = o.color || S.C.accent, w = o.w ?? S.iw, a = o.alpha;
+    S.line(pts, { w, color: col, alpha: a, close: true, fill: o.fill || S.C.paper });
+    const tx = x, ty = y - s * 0.76;
+    S.line([[tx, ty], [tx + s * 0.05, ty - s * 0.35], [tx + s * 0.2, ty - s * 0.62]], { w: w * 0.9, color: col, alpha: a });
+    const ax = tx + s * 0.18, ay = ty - s * 0.3, bx = tx + s * 1.05, by = ty - s * 0.72, leaf = [];
+    for (let i = 0; i <= 12; i++) { const u = i / 12; leaf.push([ax + (bx - ax) * u, ay + (by - ay) * u - s * 0.28 * Math.sin(Math.PI * u)]); }
+    for (let i = 12; i >= 0; i--) { const u = i / 12; leaf.push([ax + (bx - ax) * u, ay + (by - ay) * u + s * 0.16 * Math.sin(Math.PI * u)]); }
+    S.line(leaf, { w: w * 0.8, color: col, alpha: a, close: true });
+  },
   init(S) { S.st.R = 0.66; this.ghosts(S); this.fire(S); S.st.gd = { w: -1.15, m: 0, hist: [], acc: 0, wait: 0 }; },
   reset(S) { this.fire(S); S.st.gd = { w: -1.15, m: 0, hist: [], acc: 0, wait: 0 }; },
   onParam(S, id) { if (id === "g") this.ghosts(S); if (id !== "speed") { this.fire(S); S.st.gd = { w: -1.15, m: 0, hist: [], acc: 0, wait: 0 }; } },
@@ -49,7 +66,9 @@ Lineage.scene({
     const cx = E.x + E.w * 0.5, cy = E.y + Math.max(r0 * 1.12 + S.fs * 1.2, E.h * 0.44);
     Object.assign(S.st, { E, B, Rt, r0, cx, cy, view: null });
   },
-  entry(S) { const { cx, cy, r0, R } = S.st; return [cx - r0 * R * 0.97, cy - r0 * R * 0.25]; },
+  ctrl(S, e, h) { const { cx, cy, r0 } = S.st; return S.narrow ? [cx + r0 * 1.6, cy - r0 * 0.2] : [e[0] + (h[0] - e[0]) * 0.12, h[1] + (e[1] - h[1]) * 0.12]; },   // rise from the fingertip, then arc onto the summit
+  // the portrait's line leaves Newton's pointing finger and lands on the apple waiting on the summit
+  entry(S) { const { cx, cy, r0 } = S.st, iw = S.iw; return [cx + r0 * 0.1 - iw * 2.9, cy - r0 - iw * 3.2]; },
   draw(S, k, ft, dt) {
     const st = S.st, { cx, cy, r0, R, E, B } = st, iw = S.iw, C = S.C, ctx = S.ctx, fs = S.fs;
     // the view zooms out smoothly so a long ellipse fits the panel
@@ -75,8 +94,9 @@ Lineage.scene({
     S.line(mt.slice(0, Math.max(2, Math.ceil(mt.length * k1))), { w: iw * 0.8, color: C.ink });
     // cannon
     if (k1 > 0.6) { const [mx, my] = P(0, 1), L = sc * 0.11; S.line([[mx - L * 0.35, my - iw * 0.4], [mx + L * 0.65, my - iw * 0.9]], { w: iw * 1.6, color: C.ink, alpha: (k1 - 0.6) / 0.4 }); S.dot(mx - L * 0.1, my, iw * 0.9, C.ink, (k1 - 0.6) / 0.4); }
+    if (k1 > 0.6 && (!live || st.shot.t < 0.02)) { const [mx, my] = P(0, 1); this.apple(S, mx + sc * 0.1, my - iw * 3.2, iw * 2.6, { alpha: (k1 - 0.6) / 0.4, w: iw * 0.8 }); }
     S.text("Earth", O[0], O[1] + fs * 0.35, { size: fs * 1.05, color: C.soft, alpha: k1 });
-    if (!S.narrow) S.text("cannon on a mountain", P(0, 1)[0] - fs * 0.6, P(0, 1)[1] - fs * 0.9, { size: fs * 0.85, align: "right", alpha: k1 });
+    if (!S.narrow) S.text("Newton\u2019s apple, fired from a mountain", P(0, 1)[0] + fs * 0.6, P(0, 1)[1] - iw * 3.2 - fs * 1.5, { size: fs * 0.85, align: "left", alpha: k1 });
 
     // ---- clip the trajectories to the drawing panel
     ctx.save(); ctx.beginPath(); ctx.rect(E.x - fs, E.y, E.w + fs * 2, E.h); ctx.clip();
@@ -87,7 +107,7 @@ Lineage.scene({
         if (n < 2) return;
         const pts = gh.pts.slice(0, n).map(p => P(p[0], p[1]));
         S.line(pts, { w: iw * 0.5, color: C.ink, dash: [iw * 1.2, iw * 1.6], alpha: 0.55 });
-        if (gh.end === "falls" && n === gh.pts.length) { const q = pts[pts.length - 1]; S.dot(q[0], q[1], iw * 0.8, C.ink, 0.7); }
+        if (gh.end === "falls" && n === gh.pts.length) { const q = pts[pts.length - 1], rr = Math.hypot(q[0] - O[0], q[1] - O[1]), s0 = iw * 1.6; this.apple(S, q[0] + (q[0] - O[0]) / rr * s0, q[1] + (q[1] - O[1]) / rr * s0, s0, { color: C.ink, w: iw * 0.5, alpha: 0.7 }); }
       });
       const og = st.orbitGhost.pts, n = Math.max(2, Math.floor(og.length * Math.min(1, Math.max(0, k2 * 1.4 - 0.4))));
       if (n > 2) S.line(og.slice(0, n).map(p => P(p[0], p[1])), { w: iw * 0.45, color: C.soft, alpha: 0.8 });
@@ -116,14 +136,14 @@ Lineage.scene({
         if (q && q !== tr[0]) st.escLab = q;
       } else st.escLab = null;
       const [bx, by] = P(sh.x, sh.y);
-      if (sh.done === "falls") { S.line([[bx - iw * 2, by - iw * 2], [bx + iw * 2, by + iw * 2]], { w: iw * 0.8, color: C.accent }); S.line([[bx - iw * 2, by + iw * 2], [bx + iw * 2, by - iw * 2]], { w: iw * 0.8, color: C.accent }); }
+      if (sh.done === "falls") { const rr = Math.hypot(bx - O[0], by - O[1]), s0 = iw * 2.4; this.apple(S, bx + (bx - O[0]) / rr * s0, by + (by - O[1]) / rr * s0, s0, { w: iw * 0.8 }); }
       else if (!sh.done) {
         // gravity points to the centre; velocity along the path
         const r = Math.hypot(sh.x, sh.y), gl = r0 * 0.3 * Math.min(1.4, S.p.g / (r * r));
         S.arrow(bx, by, bx - (sh.x / r) * gl, by + (sh.y / r) * gl, { w: iw * 0.7, color: C.ink, alpha: 0.85 * k2 });
         const sp = Math.hypot(sh.vx, sh.vy), vl = r0 * 0.28 * Math.min(1.6, sp);
         S.arrow(bx, by, bx + (sh.vx / sp) * vl, by - (sh.vy / sp) * vl, { w: iw * 0.7, color: C.accent, alpha: 0.85 * k2 });
-        S.dot(bx, by, iw * 1.5, C.ink);
+        this.apple(S, bx, by, iw * 2.6, { w: iw * 0.8 });
         if (k2 > 0.5 && sh.t < 1.2) {
           S.text("gravity", bx - (sh.x / r) * gl * 0.5 - fs * 0.4, by + (sh.y / r) * gl * 0.75 + fs * 0.3, { size: fs * 0.8, align: "right", alpha: k2 });
           S.text("velocity", bx + (sh.vx / sp) * vl, by - fs * 0.55, { size: fs * 0.8, color: C.accent, align: "left", alpha: k2 });
@@ -144,7 +164,7 @@ Lineage.scene({
     // ---- Newton's update rule, set beside the AI one
     const Rt = st.Rt, rx = Rt.x + Rt.w * 0.5, mfs = fs * (S.narrow ? 0.8 : 0.95), lh = mfs * 1.45;
     if (k2 > 0) {
-      S.text(S.narrow ? "the cannonball" : "the cannonball, stepped", rx, Rt.y, { size: fs * (S.narrow ? 0.85 : 1.1), weight: 500, alpha: k2 });
+      S.text(S.narrow ? "the apple" : "the apple, stepped", rx, Rt.y, { size: fs * (S.narrow ? 0.85 : 1.1), weight: 500, alpha: k2 });
       ["a = −GM·r/|r|³", "v += a·dt", "r += v·dt"].forEach((l, i) => S.text(l, rx, Rt.y + lh * (i + 1.15), { size: mfs, mono: true, italic: false, color: i === 1 ? C.accent : C.ink, alpha: k2 }));
     }
     // ---- AI beat: gradient descent with momentum in a loss bowl
@@ -185,7 +205,7 @@ Lineage.scene({
   },
   code(S) {
     const g = S.p.g, u = S.p.v;
-    return `${S.c("# Newton's cannon: gravity weakens as 1/r²")}
+    return `${S.c("# Newton's apple, fired from a mountain: gravity weakens as 1/r²")}
 GM = ${S.v((g).toFixed(2))} * GM_earth
 r  = (0, R_mountain)          ${S.c("# start on the summit")}
 v  = (${S.v(u.toFixed(1))}, 0)               ${S.c("# km/s, fired sideways")}

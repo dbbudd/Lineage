@@ -437,9 +437,14 @@ def portrait_path(cfg, debug_prefix=None):
     if cfg.get("end_top"):
         # start bottom-left (beside the card border) and finish at the crown, ready to flow into the idea
         start = np.array([w * cfg.get("start_u", 0.0), h * cfg.get("start_v", 1.0)])
-        cand = [(i, int(np.argmin(st[:, 1]))) for i, st in enumerate(keep) if len(st) > 2]
+        if cfg.get("end_at"):              # finish at a chosen point instead (e.g. a fingertip pointing at the idea)
+            tgt = np.array(cfg["end_at"], float) * [w, h]
+            score = lambda p: np.hypot(*(p - tgt).T)
+        else:
+            score = lambda p: p[..., 1]
+        cand = [(i, int(np.argmin(score(st)))) for i, st in enumerate(keep) if len(st) > 2]
         if cand:
-            i, t = min(cand, key=lambda it: keep[it[0]][it[1], 1])
+            i, t = min(cand, key=lambda it: score(keep[it[0]][it[1]]))
             st = keep[i]
             if t == 0:                     # top point is the stroke's start: walk it backwards to finish there
                 final = st[::-1]; rest = st[:0]

@@ -158,20 +158,48 @@
   "grabcut": true
  },
  "darwin": {
-  "src": "src/darwin.jpg",
+  "src": "src/darwin_trace.png",
   "crop": [
-   0.15,
-   0.0,
-   0.95,
-   0.7
+   0.06,
+   0.03,
+   0.98,
+   0.95
   ],
   "face": [
-   0.5,
-   0.29,
-   0.13,
-   0.11
+   0.525,
+   0.49,
+   0.19,
+   0.17
   ],
-  "grabcut": true
+  "lineart": true,
+  "grabcut": false,
+  "silhouette": false,
+  "skip_ratio": 60,
+  "min_face": 8,
+  "min_body": 40,
+  "rdp": 0.6,
+  "smooth": 5,
+  "hatch": true,
+  "hatch_band": [
+   0,
+   24
+  ],
+  "hatch_wmin": 0.0,
+  "wash_pct": 42,
+  "shade_density": 0.25,
+  "shade_sigma": 0.03,
+  "fill": 0.88,
+  "width": 1200,
+  "keep_fine": true,
+  "ink_thresh": 150,
+  "step": 2.0,
+  "hatch_wmax": 0.8,
+  "tone_src": "src/darwin_tone.png",
+  "w_dark": 1.7,
+  "w_line": 0.3,
+  "hatch_spacing": 9.0,
+  "hatch_min_area": 600,
+  "tremor": 1.6
  },
  "franklin": {
   "src": "src/franklin_ref.jpg",
@@ -294,20 +322,48 @@
   "grabcut": true
  },
  "lecun": {
-  "src": "src/lecun.jpg",
+  "src": "src/lecun_ref.jpg",
   "crop": [
-   0.05,
-   0.05,
-   1.0,
-   0.95
+   0.1,
+   0.0,
+   0.9,
+   0.86
   ],
   "face": [
+   0.52,
    0.53,
-   0.38,
    0.16,
-   0.13
+   0.17
   ],
-  "grabcut": true
+  "lineart": true,
+  "grabcut": false,
+  "silhouette": false,
+  "skip_ratio": 60,
+  "min_face": 8,
+  "min_body": 40,
+  "rdp": 0.6,
+  "smooth": 5,
+  "hatch": true,
+  "hatch_band": [
+   0,
+   20
+  ],
+  "hatch_wmin": 0.0,
+  "wash_pct": 42,
+  "shade_density": 0.25,
+  "shade_sigma": 0.03,
+  "fill": 0.85,
+  "width": 1200,
+  "keep_fine": true,
+  "ink_thresh": 150,
+  "step": 2.0,
+  "hatch_wmax": 0.8,
+  "tone_src": "src/lecun_tone.png",
+  "w_dark": 1.7,
+  "w_line": 0.3,
+  "hatch_spacing": 9.0,
+  "hatch_min_area": 900,
+  "tremor": 1.6
  },
  "noether": {
   "crop": [
@@ -1110,5 +1166,93 @@
   "fill": 0.93,
   "shade_density": 0.7,
   "shade_core": 0.45
+ },
+ "tu": {
+  "src": "src/tu_ref.jpg",
+  "crop": [
+   0.08,
+   0.02,
+   0.94,
+   1.0
+  ],
+  "face": [
+   0.49,
+   0.46,
+   0.2,
+   0.21
+  ],
+  "lineart": true,
+  "grabcut": false,
+  "silhouette": false,
+  "skip_ratio": 60,
+  "min_face": 8,
+  "min_body": 40,
+  "rdp": 0.6,
+  "smooth": 5,
+  "hatch": true,
+  "hatch_band": [
+   0,
+   24
+  ],
+  "hatch_wmin": 0.0,
+  "wash_pct": 42,
+  "shade_density": 0.25,
+  "shade_sigma": 0.03,
+  "fill": 0.95,
+  "width": 1200,
+  "keep_fine": true,
+  "ink_thresh": 150,
+  "step": 2.0,
+  "hatch_wmax": 0.65,
+  "tone_src": "src/tu_tone.png",
+  "w_dark": 1.7,
+  "w_line": 0.3,
+  "hatch_spacing": 9.0,
+  "hatch_min_area": 2500,
+  "tremor": 1.6
+ },
+ "berners-lee": {
+  "src": "src/berners-lee_ref.jpg",
+  "crop": [
+   0.08,
+   0.05,
+   0.92,
+   0.93
+  ],
+  "face": [
+   0.515,
+   0.572,
+   0.13,
+   0.184
+  ],
+  "lineart": true,
+  "grabcut": false,
+  "silhouette": false,
+  "skip_ratio": 60,
+  "min_face": 8,
+  "min_body": 40,
+  "rdp": 0.6,
+  "smooth": 5,
+  "hatch": true,
+  "hatch_band": [
+   0,
+   20
+  ],
+  "hatch_wmin": 0.0,
+  "wash_pct": 38,
+  "shade_density": 0.25,
+  "shade_sigma": 0.03,
+  "fill": 0.87,
+  "width": 1200,
+  "keep_fine": true,
+  "ink_thresh": 150,
+  "step": 2.0,
+  "hatch_wmax": 0.7,
+  "tone_src": "src/berners-lee_tone.png",
+  "w_dark": 1.7,
+  "w_line": 0.3,
+  "hatch_spacing": 9.0,
+  "hatch_min_area": 600,
+  "tremor": 1.6
  }
 }

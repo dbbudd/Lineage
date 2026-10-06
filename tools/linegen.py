@@ -389,6 +389,10 @@ def portrait_path(cfg, debug_prefix=None):
         if cfg.get("light") == "right": xx = 1 - xx      # lit from the right: core shadow falls down the left side
         core = np.clip(1 - dist / (w * 0.06), 0, 1) * body * np.clip((xx - 0.45) * 2.5, 0, 1)
         tone = np.clip(1 - (cfg.get("shade_density", 0.9) * dens + cfg.get("shade_core", 0.35) * core), 0, 1)
+        if cfg.get("tone_src"):           # a shaded tone map (see shade_lineart.py) gives real light and shadow
+            t2 = cv2.cvtColor(load_crop(cfg["tone_src"], cfg["crop"], w), cv2.COLOR_BGR2GRAY).astype(np.float32) / 255.0
+            t2 = cv2.resize(t2, (w, h))
+            tone = np.clip(t2 - cfg.get("shade_density", 0.9) * 0.35 * dens, 0, 1)
         gray = (tone * 255).astype(np.uint8)
         if cfg.get("mask_poly"):
             body = m                                   # hand-drawn silhouette keeps the figure, drops the scenery

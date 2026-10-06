@@ -478,23 +478,28 @@
   "hatch": true,
   "hatch_band": [
    0,
-   10
+   24
   ],
   "hatch_wmin": 0.0,
-  "wash_pct": 32,
-  "shade_density": 0.6,
-  "shade_core": 0.5,
+  "wash_pct": 42,
+  "shade_density": 0.25,
   "shade_sigma": 0.03,
   "fill": 0.95,
   "width": 1200,
   "keep_fine": true,
   "ink_thresh": 150,
   "step": 2.0,
-  "hatch_wmax": 0.45,
+  "hatch_wmax": 0.8,
   "end_at": [
    0.857,
    0.379
-  ]
+  ],
+  "tone_src": "src/newton_tone.png",
+  "w_dark": 1.7,
+  "w_line": 0.3,
+  "hatch_spacing": 9.0,
+  "hatch_min_area": 600,
+  "tremor": 1.6
  },
  "watt": {
   "crop": [

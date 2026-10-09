@@ -377,6 +377,12 @@ def portrait_path(cfg, debug_prefix=None):
     if cfg.get("lineart"):
         # the reference is already a line drawing: trace its own ink, and derive shadow from line density
         raw = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        # Reference sheets can include captions or explanatory diagrams around the portrait.
+        # Erase configured crop-relative rectangles before tracing, so the card keeps its own glyph.
+        for x0, y0, x1, y1 in cfg.get("erase", []):
+            xa, xb = sorted((int(round(x0 * w)), int(round(x1 * w))))
+            ya, yb = sorted((int(round(y0 * h)), int(round(y1 * h))))
+            raw[max(0, ya):min(h, yb), max(0, xa):min(w, xb)] = 255
         lines = (raw < cfg.get("ink_thresh", 160)).astype(np.uint8)
         if not cfg.get("keep_fine"): lines = cv2.morphologyEx(lines, cv2.MORPH_CLOSE, np.ones((3, 3), np.uint8))
         dens = cv2.GaussianBlur(lines.astype(np.float32), (0, 0), w * cfg.get("shade_sigma", 0.018))

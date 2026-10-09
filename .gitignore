@@ -1,5 +1,6 @@
 # generator scratch output
 tools/out/
+tools/.venv/
 __pycache__/
 .DS_Store
 tools/out_portraits.log

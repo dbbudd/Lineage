@@ -2,6 +2,7 @@
 def glyph(g):
     np, math = g.np, g.math
     x, y, w, h = g.box
+    y -= 5.0                                                        # leave a clear gap above the portrait's crown
     cy = y + h * 0.58; x0, x1 = x + 4.5, x + w - 0.5; cut = x + w * 0.56
     u = np.linspace(x0, x1, 300)
     for s in (-1, 1):                                                  # two strands, broken at the cut (staggered)

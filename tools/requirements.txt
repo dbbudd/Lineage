@@ -4,3 +4,4 @@ scikit-image
 numpy
 cairosvg
 qrcode
+pypdf

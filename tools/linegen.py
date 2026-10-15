@@ -155,7 +155,7 @@ def order_strokes(strokes, start=None):
                     improved = True
     return order
 
-def route_strokes(strokes, shape, W, start, off_cost=5.0, face_penalty=14.0, tone=None, skip_ratio=3.0, kinds=None, final=None):
+def route_strokes(strokes, shape, W, start, off_cost=5.0, face_penalty=14.0, tone=None, skip_ratio=3.0, kinds=None, final=None, nearest_only=False):
     """
     Order strokes AND build pen-travel between them with a geodesic search:
     travelling along ink already in the drawing is cheap (it retraces, invisibly),
@@ -182,7 +182,8 @@ def route_strokes(strokes, shape, W, start, off_cost=5.0, face_penalty=14.0, ton
     kinds = kinds if kinds is not None else [1] * len(S)
     for _ in range(len(S)):
         mcp = MCP_Geometric(cost)
-        cc, _ = mcp.find_costs([(cur[1], cur[0])])
+        targets = ends_i[~used].reshape(-1, 2)[:, ::-1].tolist() if nearest_only else None
+        cc, _ = mcp.find_costs([(cur[1], cur[0])], ends=targets, find_all_ends=not nearest_only)
         c_head = cc[ends_i[:, 0, 1], ends_i[:, 0, 0]]
         c_tail = cc[ends_i[:, 1, 1], ends_i[:, 1, 0]]
         c_head[used] = c_tail[used] = np.inf
@@ -203,8 +204,8 @@ def route_strokes(strokes, shape, W, start, off_cost=5.0, face_penalty=14.0, ton
         used[i] = True
         cur = np.clip(np.round(s[-1]).astype(int), 0, [w-1, h-1])
     if final is not None and len(final) > 1:        # finish on a chosen stroke (e.g. ending at the crown)
-        mcp = MCP_Geometric(cost); mcp.find_costs([(cur[1], cur[0])])
         tgt = np.clip(np.round(final[0]).astype(int), 0, [w-1, h-1])
+        mcp = MCP_Geometric(cost); mcp.find_costs([(cur[1], cur[0])], ends=[(tgt[1], tgt[0])] if nearest_only else None)
         travel = np.array(mcp.traceback((tgt[1], tgt[0])))[:, ::-1].astype(float)
         if len(travel) > 1: out.append(travel); okind.append(np.zeros(len(travel)))
         out.append(np.asarray(final, float)); okind.append(np.ones(len(final)))
@@ -404,7 +405,10 @@ def portrait_path(cfg, debug_prefix=None):
             body = m                                   # hand-drawn silhouette keeps the figure, drops the scenery
             dist = cv2.distanceTransform(body, cv2.DIST_L2, 5)
             core = np.clip(1 - dist / (w * 0.06), 0, 1) * body * np.clip((xx - 0.45) * 2.5, 0, 1)
-            tone = np.clip(1 - (cfg.get("shade_density", 0.9) * dens * body + cfg.get("shade_core", 0.35) * core), 0, 1)
+            if cfg.get("preserve_masked_tone") and cfg.get("tone_src"):
+                tone = np.where(body, tone, 1.0)
+            else:
+                tone = np.clip(1 - (cfg.get("shade_density", 0.9) * dens * body + cfg.get("shade_core", 0.35) * core), 0, 1)
             gray = (tone * 255).astype(np.uint8)
         lines = lines * body
         m = body
@@ -465,6 +469,7 @@ def portrait_path(cfg, debug_prefix=None):
     path = route_strokes(keep, (h, w), W, start=start, kinds=kinds, final=final,
                          off_cost=cfg.get("off_cost", 5.0), face_penalty=cfg.get("face_penalty", 14.0),
                          skip_ratio=cfg.get("skip_ratio", 3.0),
+                         nearest_only=cfg.get("nearest_only", False),
                          tone=cv2.GaussianBlur(gray, (0, 0), 4).astype(float) / 255.0)
     raw_k = route_strokes.kinds
     seg = np.hypot(*np.diff(path, axis=0).T); tcum = np.concatenate([[0], np.cumsum(seg)])

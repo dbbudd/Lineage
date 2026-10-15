@@ -29,7 +29,8 @@
   ],
   "portrait": {
    "commons_file": null,
-   "license": "Traced from a stylised line-drawing reference supplied by Daniel Budd."
+   "reference": "ISAAC NEWTON.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -61,8 +62,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Albert Einstein Head cleaned.jpg",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "ALBERT EINSTEIN.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -94,8 +96,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Marie Curie c. 1920s.jpg",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "MARIE CURIE.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -160,8 +163,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Ibn al-Haytham crop.jpg",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "IBAN AL-HAYTHAM.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified. A stylised historical likeness rather than a contemporary portrait."
   }
  },
  {
@@ -193,8 +197,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Santiago Ramón y Cajal (1852-1934) portrait (restored).jpg",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "SANTIAGO RAMÓN Y CAJAL.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -227,7 +232,8 @@
   ],
   "portrait": {
    "commons_file": null,
-   "license": "Traced from a stylised line-drawing reference supplied by Daniel Budd."
+   "reference": "ROSALIND FRANKLIN.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -259,8 +265,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Chien-shiung Wu (1912-1997) C.jpg",
-   "license": "No known copyright restrictions (Smithsonian Institution)"
+   "commons_file": null,
+   "reference": "CHIEN-SHIUNG WU.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -293,7 +300,8 @@
   ],
   "portrait": {
    "commons_file": null,
-   "license": "Traced from a stylised line-drawing reference supplied by Daniel Budd."
+   "reference": "TU YOUYOU.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -325,8 +333,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Jennifer Doudna by Christopher Michel in 2023 01.jpg",
-   "license": "CC BY-SA 4.0"
+   "commons_file": null,
+   "reference": "JENNIFER DOUDNA.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -358,8 +367,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Katalin Karikó by Christopher Michel in 2024 02.jpg",
-   "license": "CC BY-SA 4.0"
+   "commons_file": null,
+   "reference": "KATALIN KARIKÓ.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -391,8 +401,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:John J. Hopfield delivering his lecture at the 2024 Nobel Prize Lectures in Stockholm.jpg",
-   "license": "CC BY-SA 4.0"
+   "commons_file": null,
+   "reference": "JOHN HOPEFIELD.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -424,8 +435,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Sir CV Raman.JPG",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "CV Raman.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  }
 ]

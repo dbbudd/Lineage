@@ -2,6 +2,8 @@
 def glyph(g):
     np, math = g.np, g.math
     x, y, w, h = g.box
+    # Keep the lower bridge nodes above the portrait's long hair.
+    h *= 0.60
     P = lambda u, v: np.array([x + u * w, y + v * h])
     N = [P(0.55, 0.10), P(0.25, 0.42), P(0.82, 0.38), P(0.12, 0.88), P(0.48, 0.70), P(0.88, 0.88)]
     tree = [(0, 1), (0, 2), (1, 3), (1, 4), (2, 5)]

@@ -1,8 +1,10 @@
 # Tesla: rotating field (halo) → phasor arm → AC wave receding in perspective → rotary word vectors (RoPE)
 def glyph(g):
     np, math = g.np, g.math
-    c, r = g.head, g.r
     x, y, w, h = g.box
+    # Keep the rotating field in the idea area, clear of the reference portrait.
+    c = np.array([x + w * 0.27, y + h * 0.34])
+    r = min(w * 0.20, h * 0.23)
     vp = np.array([x + w, y + 2.0])
     d = (vp - c) / np.linalg.norm(vp - c); n = np.array([-d[1], d[0]])
     S = c + d * r * 1.18

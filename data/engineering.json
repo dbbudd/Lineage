@@ -24,8 +24,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Watt_James_von_Breda.jpg",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "JAMES WATT.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -57,8 +58,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Tesla_circa_1890.jpeg",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "NIKOLA TESLA.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   },
   "live": {
    "thesis": "The pen never lifts. It draws the man, circles into his rotating field, and runs out toward the way today's language models keep track of word order.",
@@ -111,8 +113,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Charles_Babbage_-_1860.jpg",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "CHARLES BABBAGE.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -144,8 +147,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:JohnvonNeumann-LosAlamos.gif",
-   "license": "Attribution (Los Alamos National Laboratory)"
+   "commons_file": null,
+   "reference": "JOHN VON NEUMANN.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -177,8 +181,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Jack_Kilby_(cropped).png",
-   "license": "CC BY-SA 4.0"
+   "commons_file": null,
+   "reference": "JACK KILBY.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -210,8 +215,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Hedy_Lamarr_Publicity_Photo_for_The_Heavenly_Body_1944.jpg",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "HEDY LAMARR.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -240,7 +246,8 @@
   ],
   "portrait": {
    "commons_file": null,
-   "license": "Traced from a stylised line-drawing reference supplied by Daniel Budd. An imagined likeness: no portrait of al-Jazari survives."
+   "reference": "ISMAIL AL-JAZARI.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified. An imagined likeness: no contemporary portrait survives."
   }
  },
  {
@@ -272,8 +279,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:LW_SCMU_1921_1078-001.jpg",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "JOSEPH-MARIE JACQUARD.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -305,8 +313,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Lynn_Conway_July_2006.jpg",
-   "license": "CC BY-SA 2.5"
+   "commons_file": null,
+   "reference": "LYNN CONWAY.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -338,8 +347,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Rudolf_Kalman.jpg",
-   "license": "CC BY-SA 2.0 de (Gert-Martin Greuel, Oberwolfach Photo Collection, 2009)"
+   "commons_file": null,
+   "reference": "RUDOLF E KÁLMÁN.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -367,8 +377,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Fazlur Khan (14396319747).jpg",
-   "license": "CC BY-SA 2.0 (Teresa Grau Ros, Flickr)"
+   "commons_file": null,
+   "reference": "FAZLUR RAHMAN KHAN.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -400,8 +411,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:181206-F-DT527-087_(cropped).jpg",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "GLADYS WEST.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -433,8 +445,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Radia_Perlman_2009.jpg",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "RADIA PERLMAN.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  }
 ]

@@ -2,6 +2,7 @@
 def glyph(g):
     np, math = g.np, g.math
     x, y, w, h = g.box
+    y -= 2.0  # Leave breathing room above the full hair crown.
     rng = np.random.default_rng(523)
     # a sprig of wormwood: stem with feathery leaflets
     s0 = np.array([x + 3.0, y + h - 3.5]); s1 = np.array([x + 7.0, y + 1.5])

@@ -2,7 +2,8 @@
 def glyph(g):
     np, math = g.np, g.math
     x, y, w, h = g.box
-    gx, gy, gw, gh = x + 3.0, y + 0.5, w - 3.5, h - 7.0
+    # Reserve a little more space below the shared roll for the portrait's hair.
+    gx, gy, gw, gh = x + 3.0, y + 0.5, w - 3.5, h - 10.0
     nc, nr = 9, 7
     cw, rh = gw / nc, gh / nr
     for i in range(nr + 1):

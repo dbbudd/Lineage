@@ -2,6 +2,7 @@
 def glyph(g):
     np, math = g.np, g.math
     x, y, w, h = g.box
+    y -= 2.5  # Keep the lowest dendrites clear of the complete hair silhouette.
     rng = np.random.default_rng(1906)
     soma = np.array([x + w * 0.36, y + h * 0.48])
     def tree(p, ang, L, d):

@@ -2,6 +2,7 @@
 def glyph(g):
     np, math = g.np, g.math
     x, y, w, h = g.box
+    y -= 4.0                                                        # keep mRNA and the ribosome above the hair
     my = y + h * 0.78; x0, x1 = x + 0.5, x + w - 0.5
     u = np.linspace(x0, x1, 300)
     strand = np.column_stack([u, my + 0.5 * np.sin((u - x0) * 1.3)])

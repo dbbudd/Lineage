@@ -4,6 +4,8 @@ Run from tools: python engineering_portraits.py path/to/slug-spec.json
 Specs contain slug, reference path, crop, face, figure polygon (original-image
 fractions), and optional tone seeds (original-image fractions plus tone).
 The optional group field selects source/output namespaces; default: engineering.
+Optional exclude_polygons remove caption/diagram ink within the outer figure,
+using original-image fractions, before both tracing and tone-map generation.
 """
 import json
 import shutil
@@ -15,6 +17,17 @@ import numpy as np
 from make_portraits import make
 
 HERE = Path(__file__).resolve().parent
+
+def isolate_figure(img, figure, exclude_polygons=()):
+    """Keep the figure and exclude overlaid ink without changing the input."""
+    h, w = img.shape[:2]
+    mask = np.zeros((h, w), np.uint8)
+    poly = np.array(figure, dtype=float) * [w, h]
+    cv2.fillPoly(mask, [poly.astype(np.int32)], 255)
+    for exclusion in exclude_polygons:
+        points = np.array(exclusion, dtype=float) * [w, h]
+        cv2.fillPoly(mask, [points.astype(np.int32)], 0)
+    return np.where(mask[..., None] > 0, img, 255).astype(np.uint8)
 
 def run(spec):
     slug = spec['slug']
@@ -29,10 +42,7 @@ def run(spec):
         shutil.copyfile(reference, original)
     img = cv2.imread(str(original))
     h, w = img.shape[:2]
-    mask = np.zeros((h, w), np.uint8)
-    poly = np.array(spec['figure']) * [w, h]
-    cv2.fillPoly(mask, [poly.astype(np.int32)], 255)
-    clean = np.where(mask[..., None] > 0, img, 255).astype(np.uint8)
+    clean = isolate_figure(img, spec['figure'], spec.get('exclude_polygons', []))
     trace = HERE / 'src' / f'{slug}_{group}_trace.png'
     tone = HERE / 'src' / f'{slug}_{group}_tone.png'
     cv2.imwrite(str(trace), clean)

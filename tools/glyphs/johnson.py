@@ -2,7 +2,7 @@
 def glyph(g):
     np, math = g.np, g.math
     x, y, w, h = g.box
-    E = np.array([max(x + 12.5, 45.5), y + h / 2 + 3.5]); R0 = 5.4
+    E = np.array([max(x + 12.5, 45.5) + 3.0, y + h / 2 + 3.5]); R0 = 5.4  # clear the portrait's outer curls
     g.circle(E, 2.6, g.lw * 1.2, g.ink, fill=g.soft)
     g.circle(E, R0, g.lw * 1.6, g.col)                 # the true orbit
     p = np.array([-1.0, 0.0]); v = np.array([0.0, -1.0]); hs = 0.55; pts = [p.copy()]

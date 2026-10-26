@@ -28,8 +28,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Madrid - Ciudad Universitaria, Monumento a Muhammad al-Juarismi (cropped).jpg",
-   "license": "CC0 (modern statue; no authentic likeness exists)"
+   "commons_file": null,
+   "reference": "MUHAMMAD IBN MUSA AL-KHWARIZMI.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -61,8 +62,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Leonhard Euler - Jakob Emanuel Handmann (Kunstmuseum Basel).jpg",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "LEONHARD EULER.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -94,8 +96,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Carl Friedrich Gauss 1840 by Jensen.jpg",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "CARL FRIEDRICH GAUSS.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -127,8 +130,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Christoph Bernhard Francke - Bildnis des Philosophen Leibniz (ca. 1695).jpg",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "GOTTFRIED WILHELM LEIBNIZ.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -161,7 +165,8 @@
   ],
   "portrait": {
    "commons_file": null,
-   "license": "Traced from a stylised line-drawing reference supplied by Daniel Budd. An imagined likeness: no portrait of Brahmagupta survives."
+   "reference": "BRAHMAGUPTA.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -193,8 +198,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Portrait of George Boole.png",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "GEORGE BOOLE.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -226,8 +232,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Thomas Bayes.gif",
-   "license": "Public domain (identification as Bayes is doubtful)"
+   "commons_file": null,
+   "reference": "THOMAS BAYES.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -259,8 +266,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Emmy Noether (3x4 cropped).jpg",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "EMMY NOETHER.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -292,8 +300,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Srinivasa Ramanujan - OPC - 1.jpg",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "SRINIVASA RAMANUJAN.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -325,8 +334,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Andrei Markov.jpg",
-   "license": "Public domain"
+   "commons_file": null,
+   "reference": "ANDREY MARKOV.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -354,8 +364,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Katherine Johnson 1983.jpg",
-   "license": "Public domain (NASA)"
+   "commons_file": null,
+   "reference": "KATHERINE JOHNSON.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -387,8 +398,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Maryam Mirzakhani in Seoul 2014.jpg",
-   "license": "CC BY-SA 2.0 de"
+   "commons_file": null,
+   "reference": "MARYAM MIRZAKHANI.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  },
  {
@@ -420,8 +432,9 @@
    }
   ],
   "portrait": {
-   "commons_file": "File:Terence Tao at IPAM's Fireside Chat 2026 (50m16s) (cropped).jpg",
-   "license": "CC BY 4.0"
+   "commons_file": null,
+   "reference": "TERENCE TAO.jpeg",
+   "license": "Traced from a stylised reference supplied by Daniel Budd; source usage rights have not been verified."
   }
  }
 ]

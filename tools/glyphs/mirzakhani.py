@@ -2,8 +2,8 @@
 def glyph(g):
     np, math = g.np, g.math
     x, y, w, h = g.box
-    L = max(x + 5.0, 38.0)
-    s = 7.0; sq = np.array([L, y + h - s - 1.5])
+    L = max(x + 3.0, 36.0)
+    s = 7.0; sq = np.array([L, y - 0.5])             # keep the square above the hair, not beside the eye
     g.rect(sq[0], sq[1], s, s, g.lw * 1.2, g.ink)
     zz = [(0.0, 0.3), (0.42, 1.0), (1.0, 0.45), (0.75, 0.0), (0.0, 0.62)]
     g.path([sq + np.array(p) * s for p in zz], 0.2, g.ink); g.dot(sq + np.array(zz[0]) * s, 0.5, g.ink)

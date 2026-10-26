@@ -2,7 +2,8 @@
 def glyph(g):
     np, math = g.np, g.math
     x, y, w, h = g.box
-    L = max(x + 5.0, 38.0); T = y + 1.5; sx, sy = 20.0, 18.0
+    # Keep the bridge diagram above the complete reference portrait's curls.
+    L = max(x + 5.0, 38.0); T = y - 4.5; sx, sy = 20.0, 18.0
     P = [np.array([L + (u - 0.24) / 1.0 * sx, T + v * sy]) for u, v in [(0.24, 0.5), (0.74, 0.07), (0.74, 0.93), (1.24, 0.5)]]
     def edge(a, b, bend, col, wd):
         a, b = P[a], P[b]; m = (a + b) / 2; d = b - a; n = np.array([-d[1], d[0]]) / np.linalg.norm(d)

@@ -3,6 +3,28 @@ import unittest
 import numpy as np
 from skimage.graph import MCP_Geometric
 from linegen import route_strokes
+from engineering_portraits import isolate_figure
+
+
+class FigureIsolationTests(unittest.TestCase):
+    def test_optional_exclusion_only_clears_target_ink(self):
+        source = np.zeros((100, 100, 3), np.uint8)
+        figure = [[.1,.1],[.9,.1],[.9,.9],[.1,.9]]
+        exclusion = [[[.4,.6],[.6,.6],[.6,.7],[.4,.7]]]
+        clean = isolate_figure(source, figure, exclusion)
+        self.assertTrue(np.all(clean[65,50] == 255))
+        self.assertTrue(np.all(clean[30,50] == 0))
+        self.assertTrue(np.all(clean[85,50] == 0))
+        self.assertTrue(np.all(clean[0,0] == 255))
+        self.assertTrue(np.all(source == 0))
+
+    def test_no_exclusions_preserves_legacy_figure(self):
+        source = np.full((100, 100, 3), 42, np.uint8)
+        figure = [[.1,.1],[.9,.1],[.9,.9],[.1,.9]]
+        a = isolate_figure(source, figure)
+        b = isolate_figure(source, figure, [])
+        np.testing.assert_array_equal(a, b)
+        self.assertTrue(np.all(a[50,50] == 42))
 
 
 class RoutingTests(unittest.TestCase):

@@ -1,0 +1,25 @@
+STOP WAITING FOR THE PERFECT APP
+Future of Learning · 14 November 2026
+
+Double-click “Start Presentation.command” to open the local browser deck.
+Keep this folder and its contents together.
+
+F              Full screen
+Right / Left   Next animation / previous freeze frame
+K              Pause or resume
+R              Replay the current scene
+G              Jump to any slide
+P              Presenter notes and audience window
+?              Help
+
+Move your mouse to reveal the controls. Timers hold at zero until you advance.
+The complete deck works locally with Wi-Fi turned off.
+
+README.md includes GitHub Pages upload instructions.
+TEST-RESULTS.md records the checks and browser test limits.
+
+TO ADD TO THE LINEAGE SITE
+Move the whole Workshop folder alongside the Lineage site’s index.html.
+Commit and push it with the rest of the site.
+Workshop address: https://dbbudd.github.io/Lineage/Workshop/
+See README.md for the folder layout.

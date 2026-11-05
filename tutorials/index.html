@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<html data-theme="light" data-tools="flint-gemini" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bring a Barrier, Leave With a Build — HKIS Teachers Teach Teachers</title>
+<meta content="The HKIS workshop Bring a Barrier, Leave With a Build: name a barrier in your classroom, then build a first version of a tool that removes it, in two AI tools." name="description"/>
+<link href="assets/course.css?v=2" rel="stylesheet"/>
+<link href="assets/workshop.css?v=2" rel="stylesheet"/>
+<link href="assets/magazine.css?v=2" rel="stylesheet"/>
+<script>if('scrollRestoration' in history)history.scrollRestoration='manual';</script>
+<!-- The reader's pair of tools, before the page draws, so the other pair's version never flashes up (workshop.js does the rest) -->
+
+</head>
+<body data-chapter="session" data-root="">
+
+<main class="main mag" role="main">
+<!-- ===== COVER ===== -->
+<section class="card cover" id="overview">
+<img alt="" aria-hidden="true" class="ribbon" src="images/mag/ribbon-cover.webp"/>
+<h1>Bring a Barrier, <br/>Leave With a Build</h1>
+<p class="cover-line" data-for="flint-gemini">Teachers Teach Teachers · 2 October 2026</p>
+
+<p class="dek">Every hard problem in your classroom is one that nobody has built a tool for, because nobody else knows it the way you do. Today you name one, turn it into a barrier you can design around, and build a first version of a tool that removes it. Twice, in two AI tools. No coding needed.</p>
+
+
+<div class="signin" data-for="flint-gemini">
+<p>Sign into both before we start.</p>
+<ul class="pills">
+<li><a class="pill pill-flint" href="flint.html#log-in">Flint<span class="sr-only">: how to sign in</span></a></li>
+<li><a class="pill pill-gemini" href="gemini.html#canvas">Gemini<span class="sr-only">: how to sign in</span></a></li>
+</ul>
+</div>
+
+
+<p class="kicker leave-k">You leave with</p>
+<ol class="leave">
+<li>A first version of a tool for one real barrier in your classroom. It won’t be finished. That’s the point.</li>
+<li>A loop you can run again on your own: Barrier, Sketch, Prompt, Build, Test.</li>
+<li>A Technology Coach to keep working with.</li>
+</ol>
+<ul aria-label="On this page" class="issue">
+<li aria-hidden="true" class="issue-k">Inside</li>
+<li><a href="#recursion">The idea</a></li>
+<li><a href="#watershed">Why now</a></li>
+<li><a href="#so-we-teach">So we teach</a></li>
+<li><a href="#the-question">The question</a></li>
+<li><a href="#the-loop">The loop</a></li>
+<li><a href="#warm-up">Nine steps</a></li>
+<li><a href="#next">Where this goes</a></li>
+</ul>
+</section>
+<!-- ===== THE IDEA (B01 to B03) ===== -->
+<section class="feature" id="recursion">
+<h2>The idea</h2>
+<div class="spread">
+<div aria-hidden="true" class="fern-art" data-fern="">
+<img alt="" class="ink-art" height="407" src="images/mag/fern.webp" width="640"/>
+</div>
+<div>
+<p class="d-xl tracked">Recursion</p>
+<span class="rule"></span>
+<p class="dek">Good tools are rarely right the first time. They take shape by going round again: make a version, watch what it does with the people it is for, and build the next one from there. The session opens on one word for this, <span class="term">recursion</span>, and shows it at work in nature and in AI before you run it yourself.</p>
+<p class="fern-note">No one drew this fern by hand. A computer applied four simple rules for moving a dot, 200,000 times, each time to the dot it had just made.</p>
+</div>
+</div>
+<div class="same-rule">
+<p class="d-l">The same rule, applied to its own output.</p>
+<ul class="plates">
+<li class="card plate">
+<div aria-hidden="true" class="plate-art">
+<svg focusable="false" viewbox="0 0 240 140">
+<path d="M4 57 L8 53 L11 46 L15 51 L18 57 L22 65 L26 68 L29 61 L33 56 L37 60 L40 71 L44 74 L48 63 L51 71 L55 65 L58 67 L62 59 L66 66 L69 67 L73 65 L76 69 L80 57 L84 53 L87 50 L91 53 L95 36 L98 30 L102 35 L106 31 L109 34 L113 39 L116 47 L120 45 L124 41 L127 40 L131 54 L134 56 L138 64 L142 63 L145 67 L149 84 L153 76 L156 76 L160 83 L164 79 L167 81 L171 83 L174 103 L178 110 L182 105 L185 103 L189 95 L192 98 L196 89 L200 77 L203 72 L207 59 L211 62 L214 71 L218 63 L222 66 L225 62 L229 62 L232 66 L236 57 L236 140 L4 140 Z" fill="currentColor" opacity="0.12"></path>
+<path d="M4 57 L8 53 L11 46 L15 51 L18 57 L22 65 L26 68 L29 61 L33 56 L37 60 L40 71 L44 74 L48 63 L51 71 L55 65 L58 67 L62 59 L66 66 L69 67 L73 65 L76 69 L80 57 L84 53 L87 50 L91 53 L95 36 L98 30 L102 35 L106 31 L109 34 L113 39 L116 47 L120 45 L124 41 L127 40 L131 54 L134 56 L138 64 L142 63 L145 67 L149 84 L153 76 L156 76 L160 83 L164 79 L167 81 L171 83 L174 103 L178 110 L182 105 L185 103 L189 95 L192 98 L196 89 L200 77 L203 72 L207 59 L211 62 L214 71 L218 63 L222 66 L225 62 L229 62 L232 66 L236 57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<p class="plate-t">A coastline.</p>
+<p class="plate-c">The same jagged shape, at every scale.</p>
+</li>
+<li class="card plate">
+<div aria-hidden="true" class="plate-art"><img alt="" class="ink-art" height="416" src="images/mag/lungs.webp" width="513"/></div>
+<p class="plate-t">A pair of lungs.</p>
+<p class="plate-c">An airway splits in two, again and again. About 23 rounds turn one windpipe into millions of tiny airways.</p>
+</li>
+<li class="card plate">
+<div aria-hidden="true" class="plate-art"><img alt="" class="ink-art" height="463" src="images/mag/brain-cell.webp" width="440"/></div>
+<p class="plate-t">A brain cell.</p>
+<p class="plate-c">Branches on branches, connecting with thousands of other cells.</p>
+</li>
+<li class="card plate plate-now">
+<div aria-hidden="true" class="plate-art"><img alt="" class="ink-art" height="377" src="images/mag/network.webp" width="526"/></div>
+<p class="plate-t">Now, AI.</p>
+<p class="plate-c">It makes a guess, measures how far off it was, adjusts its connections a little and goes round again, millions of times.</p>
+</li>
+</ul>
+</div>
+<blockquote class="pull">
+<p>Going round again doesn’t guarantee better. It makes things fit.</p>
+</blockquote>
+<ul class="fit">
+<li><p class="fit-k">A fern</p><p>regrows its fronds every year and turns them toward the light.</p></li>
+<li><p class="fit-k">Plants and animals</p><p>adapt over many generations to the places they live, and keep changing when those places change.</p></li>
+<li><p class="fit-k">An AI model</p><p>adapts to whatever it is scored on.</p></li>
+<li class="fit-you"><p class="fit-k">Your tool</p><p>adapts to whatever you test it with. That is why the loop ends in Test: today with a colleague, on Monday with the students it is for.</p></li>
+</ul>
+<div class="card statement">
+<img alt="" aria-hidden="true" class="ribbon" src="images/mag/ribbon-fall.webp"/>
+<p class="d-l">If the machine recurses on knowledge, the value isn’t in knowing.</p>
+<p class="statement-sub">What stays scarce is judgment, which decides what you test against: knowing which problem matters, and what a good answer looks like when you see one.</p>
+</div>
+</section>
+<!-- ===== WHY NOW (B04, B05) ===== -->
+<section class="feature" id="watershed">
+<h2>Why now</h2>
+<div class="mit">
+<div class="poster">
+<img alt="MIT" class="poster-logo" height="300" src="images/mit-logo.png" width="1270"/>
+<p class="poster-title">AI and education: A <span class="red">watershed</span> moment for MIT</p>
+<ul class="tabs">
+<li>AI-aware education</li>
+<li>People and community</li>
+<li>Continuous reflection</li>
+</ul>
+</div>
+<figure class="quote">
+<blockquote><p>“<mark>not an optional exercise</mark>”</p></blockquote>
+<figcaption>Sally Kornbluth, President, MIT <span>August 2026</span></figcaption>
+</figure>
+</div>
+<p class="aside">In August 2026, MIT’s president wrote to the whole university to introduce the final report of its committee on AI in teaching and learning. The three points are the report’s three areas of recommendation. The quoted line is the committee’s own, which she repeats in her letter.</p>
+<ul class="stats">
+<li><p class="stat-n">46%</p><p class="stat-l">use an LLM every day</p></li>
+<li><p class="stat-n">90%</p><p class="stat-l">worry they’re becoming over-reliant</p></li>
+<li class="stat-red"><p class="stat-n">25%</p><p class="stat-l">think MIT is preparing them to use AI</p></li>
+</ul>
+<p class="source">The Tech survey of MIT undergraduates, fall 2025: 659 students, in Appendix C.3 of the committee’s report. The red card is the gap.</p>
+<ul class="btn-row">
+<li><a class="m-btn" href="https://orgchart.mit.edu/letters/ai-and-education-watershed-moment-mit" rel="noopener noreferrer" target="_blank">Read the letter <span aria-hidden="true">↗</span></a></li>
+<li><a class="m-btn" href="https://aiandeducation.mit.edu/" rel="noopener noreferrer" target="_blank">Read the report <span aria-hidden="true">↗</span></a></li>
+</ul>
+</section>
+<!-- ===== SO WE TEACH (B05T, B07) ===== -->
+<section class="feature" id="so-we-teach">
+<h2>So we teach</h2>
+<ul class="tabs tabs-xl">
+<li>Thinking routines.</li>
+<li>Creativity.</li>
+</ul>
+<p class="teach-why">This is why we start with reflection: to find the problems worth solving.</p>
+<div class="split">
+<div class="split-a">
+<p class="split-k">Algorithmic</p>
+<svg aria-hidden="true" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 120 150">
+<rect height="20" rx="4" width="44" x="38" y="4"></rect>
+<path d="M60 24v12"></path>
+<path d="M60 36l18 16-18 16-18-16z"></path>
+<path d="M60 68v14"></path>
+<rect height="20" rx="4" width="44" x="38" y="82"></rect>
+<path d="M60 102v16"></path>
+<rect height="20" rx="4" width="44" x="38" y="118"></rect>
+<path d="M78 52h24v76H82"></path>
+</svg>
+<p>A known procedure. Follow the steps, get the answer.</p>
+<p class="split-eaten">AI has eaten this one.</p>
+</div>
+<div class="split-h">
+<p class="split-k">Heuristic</p>
+<svg aria-hidden="true" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 120 140">
+<path d="M71.3 97.1 C71.8 111.7 85.4 116.2 87.2 119.6 C89.0 122.9 93.8 126.2 82.1 117.3 C70.3 108.4 13.5 71.3 16.7 66.1 C19.8 61.0 87.4 93.3 100.8 86.7 C114.2 80.1 104.2 34.2 96.9 26.7 C89.6 19.2 62.6 33.0 57.2 41.6 C51.7 50.2 71.0 78.8 64.0 78.3 C57.0 77.7 19.3 31.9 15.2 38.3 C11.2 44.7 28.2 117.7 39.7 116.6 C51.3 115.6 79.2 35.1 84.4 31.9 C89.7 28.6 70.9 82.5 71.3 97.1"></path>
+</svg>
+<p>No procedure. Rules of thumb, judgment, trial. You know you’ve arrived when you look at it.</p>
+</div>
+</div>
+<p class="d-m center hard">Every hard problem in your classroom is on the right.</p>
+</section>
+<!-- ===== THE QUESTION (B06) ===== -->
+<section class="feature panel" id="the-question">
+<h2>The question</h2>
+<p class="d-xxl center question">What problems <br/>do you want <br/>to solve?</p>
+<p class="center question-credit">After Homa Tavangar: the question is no longer what you know, but what problems you want to solve.</p>
+</section>
+<!-- ===== THE LOOP (B05L) ===== -->
+<section class="feature" id="the-loop">
+<h2>The loop</h2>
+<div class="loop-wrap">
+<div class="loop" data-loop="">
+<div class="loop-ring">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 240 240">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="loop-gold-1" x1="40" x2="120" y1="94" y2="36">
+<stop class="loop-g0" offset="0"></stop>
+<stop class="loop-g1" offset="1"></stop>
+</lineargradient>
+</defs>
+<circle class="loop-track" cx="120" cy="120" r="84" transform="rotate(-90 120 120)"></circle>
+<path class="loop-gold" d="M40.1 94 A84 84 0 0 1 120 36" stroke="url(#loop-gold-1)"></path>
+<circle class="loop-dot" cx="120" cy="36" r="7" style="--i:0"></circle>
+<circle class="loop-dot" cx="199.9" cy="94" r="7" style="--i:1"></circle>
+<circle class="loop-dot" cx="169.4" cy="188" r="7" style="--i:2"></circle>
+<circle class="loop-dot" cx="70.6" cy="188" r="7" style="--i:3"></circle>
+<circle class="loop-dot" cx="40.1" cy="94" r="7" style="--i:4"></circle>
+</svg>
+<ol class="loop-st">
+<li class="st-1" style="--i:0"><a href="#barrier">Barrier</a></li>
+<li class="st-2" style="--i:1"><a href="#sketch">Sketch</a></li>
+<li class="st-3" style="--i:2"><a href="#prompt-spine">Prompt</a></li>
+<li class="st-4" style="--i:3"><a href="#build-01">Build</a></li>
+<li class="st-5" style="--i:4"><a href="#test-01">Test</a></li>
+</ol>
+</div>
+</div>
+<div>
+<p class="d-l">You go round it twice today.</p>
+<p class="dek" data-for="flint-gemini">First in Flint, then in Gemini. The ring is closed on purpose: what you learn in Test becomes the next barrier.</p>
+
+</div>
+</div>
+<p class="kicker agenda-k">The session in nine steps</p>
+<ol class="agenda">
+<li><a href="#warm-up"><span>Warm-up</span></a></li>
+<li><a href="#barrier"><span>Barrier, not deficit</span></a></li>
+<li><a href="#sketch"><span>Sketch it</span></a></li>
+<li><a href="#prompt-spine"><span>The prompt spine</span></a></li>
+<li><a href="#build-01"><span>Build 01</span></a></li>
+<li><a href="#test-01"><span>Test 01</span></a></li>
+<li><a href="#couldnt"><span>What it couldn’t do</span></a></li>
+<li><a href="#push"><span>Push it</span></a></li>
+<li><a href="#build-02"><span>Build 02</span></a></li>
+</ol>
+</section>
+<!-- ===== 1. WARM-UP (B08, B09) ===== -->
+<section class="step" data-track="" id="warm-up">
+<h2><span class="step-n">1<span class="sr-only">.</span></span> Warm-up</h2>
+<div class="rounds">
+<div class="board round">
+<div class="board-head">
+<p class="board-t">Round 1</p>
+<p class="time"><span class="big-n">45</span> seconds each</p>
+</div>
+<ol class="tabs tabs-n">
+<li>Write the most ridiculous word you can think of.</li>
+<li>Stand up. Find someone you don’t work with.</li>
+<li>Pitch a product with that name.</li>
+</ol>
+</div>
+<div class="board round round-2">
+<div class="board-head">
+<p class="board-t">Round 2</p>
+<p class="time"><span class="big-n">45</span> seconds each</p>
+</div>
+<ol class="tabs tabs-n">
+<li>Now write your real classroom problem. One sentence.</li>
+<li>New partner.</li>
+<li>Pitch each other a solution.</li>
+</ol>
+</div>
+</div>
+<div class="keep">
+<p class="kicker">Keep it</p>
+<p>Your real classroom problem, in one sentence. Every step that follows uses it.</p>
+</div>
+<p class="credit">Adapted from <em>Creative Hustle</em> by Olatunde Sobomehin and Sam Seidel.</p>
+</section>
+<!-- ===== 2. BARRIER, NOT DEFICIT (B10, B11) ===== -->
+<section class="step" data-track="" id="barrier">
+<h2><span class="step-n">2<span class="sr-only">.</span></span> Barrier, not deficit</h2>
+<div class="board reframe">
+<div class="reframe-from">
+<p class="kicker">Deficit</p>
+<p class="d-m faint">They can’t organise their writing.</p>
+</div>
+<div aria-hidden="true" class="reframe-arrow"></div>
+<div class="reframe-to">
+<p class="kicker">Barrier</p>
+<p class="d-m">The organising has to happen in their head at the same time as the writing.</p>
+</div>
+<span class="rule center"></span>
+<p class="reframe-coda">Same student. Different problem. Only one of them is yours to fix.</p>
+</div>
+<div class="card tmpl">
+<p class="kicker">Your turn</p>
+<p class="d-s"><span class="blank"><span class="sr-only">blank</span></span> can’t <span class="blank"><span class="sr-only">blank</span></span></p>
+<p class="d-s">The <span class="blank"><span class="sr-only">blank</span></span> has to happen at the same time as <span class="blank"><span class="sr-only">blank</span></span>.</p>
+</div>
+<p class="aside">A <span class="term">deficit</span> sentence points at the student. A <span class="term">barrier</span> sentence points at the task, and a task is something a tool can change.</p>
+</section>
+<!-- ===== 3. SKETCH IT (B11) ===== -->
+<section class="step" data-track="" id="sketch">
+<h2><span class="step-n">3<span class="sr-only">.</span></span> Sketch it</h2>
+<div class="card sketch">
+<p class="d-l">90 seconds.</p>
+<p class="sketch-sub">Boxes and arrows.</p>
+<ol class="tabs tabs-n">
+<li>What does the student see first?</li>
+<li>What can they do on it?</li>
+<li>What happens when they tap?</li>
+</ol>
+</div>
+<p class="aside">A rough sketch is fine: it is a thinking tool, not a design. Each answer fills a blank in the prompt spine. If you can’t answer one of the three, that is the useful thing to find out now.</p>
+</section>
+<!-- ===== 4. THE PROMPT SPINE (B13) ===== -->
+<section class="step" data-track="" id="prompt-spine">
+<h2><span class="step-n">4<span class="sr-only">.</span></span> The prompt spine</h2>
+<div class="prompt-card spine-board" data-copy="Build a single-screen tool for a Grade ___ student who ___. Show ___ first, then let them ___. Keep the language at ___. No sign-in.">
+<span class="prompt-label">Copy it, then fill the blanks</span>
+<p class="prompt-text spine">Build a single-screen tool for a Grade <span class="blank short"><span class="sr-only">blank</span></span> student who <span class="blank long"><span class="sr-only">blank</span></span>. Show <span class="blank"><span class="sr-only">blank</span></span> first, then let them <span class="blank"><span class="sr-only">blank</span></span>. Keep the language at <span class="blank"><span class="sr-only">blank</span></span>. <span class="nowrap">No sign-in.</span></p>
+</div>
+<ul class="key">
+<li><b>Grade <span class="blank short"><span class="sr-only">blank</span></span> student who <span class="blank"><span class="sr-only">blank</span></span></b> Who it is for, and the barrier, in your barrier sentence’s words.</li>
+<li><b>Show <span class="blank"><span class="sr-only">blank</span></span> first</b> The first thing on the screen, from your sketch.</li>
+<li><b>then let them <span class="blank"><span class="sr-only">blank</span></span></b> The one action, from your sketch.</li>
+<li><b>Keep the language at <span class="blank"><span class="sr-only">blank</span></span></b> The reading level. Often a grade or two below the class.</li>
+<li><b>No sign-in.</b> A guardrail: students open it and use it, with no account and no personal data.</li>
+</ul>
+<div class="callout callout-example">
+<p>Build a single-screen tool for a Grade 7 student who loses their place in a multi-step maths problem. Show the current step first, then let them tick it off. Keep the language at Grade 5. No sign-in.</p>
+</div>
+</section>
+<!-- ===== 5. BUILD 01 (B15) ===== -->
+<section class="step" data-track="" id="build-01">
+<h2><span class="step-n">5<span class="sr-only">.</span></span> Build 01</h2>
+<div class="board work">
+<div>
+<p class="board-t caps" data-for="flint-gemini">Build 01 <span class="pill pill-flint">Flint</span></p>
+
+<ul class="tabs">
+<li>One drives. One talks.</li>
+<li>Your v1 will be wrong. That’s the point.</li>
+</ul>
+<a class="spine-link" href="#prompt-spine">Your prompt spine <span aria-hidden="true">↑</span></a>
+</div>
+<p class="time"><span class="big-n">7</span> minutes</p>
+</div>
+<div class="support support-flint" data-for="flint-gemini">
+<p class="kicker">Help for this step</p>
+<p class="support-t">The Flint guide walks you through it.</p>
+<ul class="support-links">
+<li><a href="flint.html#log-in"><span class="sl-k">Exercise 1</span><span class="sl-t">Log in</span></a></li>
+<li><a href="flint.html#make"><span class="sl-k">Exercise 2</span><span class="sl-t">Make an interactive</span></a></li>
+<li><a href="flint.html#explainer"><span class="sl-k">Exercise 3</span><span class="sl-t">Make an explainer video</span></a></li>
+<li class="sl-go"><a href="https://app.flintk12.com" rel="noopener noreferrer" target="_blank"><span class="sl-k">app.flintk12.com</span><span class="sl-t">Open Flint <span aria-hidden="true">↗</span></span></a></li>
+</ul>
+</div>
+
+</section>
+<!-- ===== 6. TEST 01 (B16) ===== -->
+<section class="step" data-track="" id="test-01">
+<h2><span class="step-n">6<span class="sr-only">.</span></span> Test 01</h2>
+<div class="board work">
+<div>
+<p class="board-t caps" data-for="flint-gemini">Test 01 <span class="pill pill-flint">Flint</span></p>
+
+<ol class="tabs tabs-n">
+<li>Swap devices. They use it cold.</li>
+<li>You say nothing.</li>
+<li>Watch where they hesitate.</li>
+</ol>
+</div>
+<p class="time"><span class="big-n">3</span> minutes</p>
+</div>
+<p class="aside">Each place they hesitate is your next barrier. That is why the loop is a circle.</p>
+<div class="support support-flint" data-for="flint-gemini">
+<p class="kicker">Help for this step</p>
+<p class="support-t">Try it as a student, then share it with your class.</p>
+<ul class="support-links">
+<li><a href="flint.html#share"><span class="sl-k">Flint guide · Exercise 4</span><span class="sl-t">Turn it into an activity</span></a></li>
+</ul>
+</div>
+
+</section>
+<!-- ===== 7. WHAT IT COULDN'T DO (B17) ===== -->
+<section class="step panel" data-track="" id="couldnt">
+<h2><span class="step-n">7<span class="sr-only">.</span></span> What it couldn’t do</h2>
+<p class="d-l">With your partner: what did you want it to do that it wouldn’t?</p>
+<p class="dek">Say it out loud. The room’s answers go up on the board.</p>
+</section>
+<!-- ===== 8. PUSH IT (B17S, B18) ===== -->
+<section class="step" data-track="" id="push">
+<h2><span class="step-n">8<span class="sr-only">.</span></span> Push it</h2>
+<div class="push-grid">
+<ul class="scamper">
+<li><span class="sc-i">S</span>ubstitute</li>
+<li><span class="sc-i">C</span>ombine</li>
+<li class="off"><span class="sc-i">A</span>dapt</li>
+<li class="off"><span class="sc-i">M</span>odify</li>
+<li class="off"><span class="sc-i">P</span>ut to another use</li>
+<li><span class="sc-i">E</span>liminate</li>
+<li class="off"><span class="sc-i">R</span>everse</li>
+</ul>
+<div class="room">
+<div aria-hidden="true" class="room-screen"></div>
+<ul class="corners">
+<li>Substitute</li>
+<li>Combine</li>
+<li>Eliminate</li>
+<li class="push">Mine works, <br/>push it</li>
+</ul>
+<p class="room-t">Go to your corner. Change one thing.</p>
+</div>
+</div>
+<p class="aside"><span class="term">SCAMPER</span> is seven ways to change an idea. Today you use three. The fourth corner is for pairs whose tool already works.</p>
+<div class="support support-flint" data-for="flint-gemini">
+<p class="kicker">Help for this step</p>
+<p class="support-t">Prompts and videos that push a Flint build further.</p>
+<ul class="support-links">
+<li><a href="flint.html#share"><span class="sl-k">Flint guide</span><span class="sl-t">Prompts to push it</span></a></li>
+<li><a href="flint.html#further"><span class="sl-k">Flint guide</span><span class="sl-t">Videos to go further</span></a></li>
+</ul>
+</div>
+
+</section>
+<!-- ===== 9. BUILD 02 (B19, B20) ===== -->
+<section class="step" data-track="" id="build-02">
+<h2><span class="step-n">9<span class="sr-only">.</span></span> Build 02</h2>
+<div class="cancan" data-for="flint-gemini">
+<div>
+<p class="cc-t">Can’t <span class="pill pill-flint">Flint</span></p>
+<ul class="cc-list">
+<li>Custom logic.</li>
+<li>Multi-step.</li>
+<li>Behaviour you design.</li>
+</ul>
+</div>
+<div>
+<p class="cc-t">Can <span class="pill pill-gemini">Gemini</span></p>
+<ul class="tabs">
+<li>Custom logic.</li>
+<li>Multi-step.</li>
+<li>Behaviour you design.</li>
+</ul>
+</div>
+</div>
+<div class="board work work-02">
+<div>
+<p class="board-t caps" data-for="flint-gemini">Build 02 <span class="pill pill-gemini">Gemini</span></p>
+
+<ul class="tabs">
+<li>Same barrier. More ambition.</li>
+</ul>
+<p class="work-line">Nobody finishes this. You’re finding out if it’s buildable.</p>
+<a class="spine-link" href="#prompt-spine">Your prompt spine <span aria-hidden="true">↑</span></a>
+</div>
+<p class="time"><span class="big-n">8</span> minutes</p>
+</div>
+<div class="support support-gemini" data-for="flint-gemini">
+<p class="kicker">Help for this step</p>
+<p class="support-t">The Gemini guide walks you through it.</p>
+<ul class="support-links">
+<li><a href="gemini.html#canvas"><span class="sl-k">Exercise 1</span><span class="sl-t">Log in and open Canvas</span></a></li>
+<li><a href="gemini.html#build"><span class="sl-k">Exercise 2</span><span class="sl-t">Build from your prompt spine</span></a></li>
+<li><a href="gemini.html#three-words"><span class="sl-k">Three words</span><span class="sl-t">App, HTML, JavaScript</span></a></li>
+<li><a href="gemini.html#share"><span class="sl-k">Exercise 3</span><span class="sl-t">Test it, then share it</span></a></li>
+<li><a href="gemini.html#further"><span class="sl-k">Then</span><span class="sl-t">Push it further</span></a></li>
+<li class="sl-go"><a href="https://gemini.google.com" rel="noopener noreferrer" target="_blank"><span class="sl-k">gemini.google.com</span><span class="sl-t">Open Gemini <span aria-hidden="true">↗</span></span></a></li>
+</ul>
+</div>
+
+</section>
+<!-- ===== WHERE THIS GOES (B21, B14B, B22 to B25) ===== -->
+<section class="feature" id="next">
+<h2>Where this goes</h2>
+<div class="cases">
+<div class="case">
+<figure class="ipad-fig">
+<div class="ipad"><img alt="Margins on an iPad: an ELA 9 summary-writing essay with passages highlighted, beside a column of numbered feedback comments, each quoting the essay." height="965" loading="lazy" src="images/examples/margins-feedback.jpg" width="1400"/></div>
+<figcaption class="sr-only">Margins, on an iPad</figcaption>
+</figure>
+<p class="case-t">Margins</p>
+<p class="case-q">“I built this because I saw how ELA teachers struggled with grading workflows.” Built by the presenter, for one real problem.</p>
+<p class="case-meta"><span class="pill pill-red">On-device AI.</span> The writing never leaves the iPad.</p>
+</div>
+<div class="case">
+<figure class="ipad-fig">
+<div class="ipad"><img alt="The Biology reader on an iPad, open at its Body Index: a 3D model of the human body in the centre, with organs listed by body system on the right." height="965" loading="lazy" src="images/examples/biology-body-index.jpg" width="1400"/></div>
+<figcaption class="sr-only">The Biology reader, on an iPad</figcaption>
+</figure>
+<p class="case-t">Biology</p>
+<p class="case-q">An open biology course reader, also built by the presenter. This website is built from its template.</p>
+<p class="case-meta"><a class="pill pill-red" href="https://dbbudd.github.io/biology/" rel="noopener noreferrer" target="_blank">dbbudd.github.io/biology <span aria-hidden="true">↗</span></a></p>
+</div>
+</div>
+<p class="kicker rungs-k">The third rung</p>
+<ol class="rungs" data-for="flint-gemini">
+<li><a href="flint.html">Flint</a></li>
+<li><a href="gemini.html">Gemini</a></li>
+
+<li><a href="xcode.html">Xcode</a></li></ol>
+
+<p class="d-m rungs-t">The tool stops being the limit. <br/>You become the limit.</p>
+<div class="support go-further">
+<p class="kicker">Go further</p>
+<p class="support-t">Guides for the next rung, and for putting what you build in front of students.</p>
+<ul class="support-links" data-for="flint-gemini">
+
+
+<li><a href="shortcuts.html"><span class="sl-k">The other session</span><span class="sl-t">Apple Shortcuts</span></a></li>
+<li><a href="xcode.html"><span class="sl-k">Apple</span><span class="sl-t">Xcode</span></a></li>
+</ul>
+
+<p class="kicker go-k">Publish it</p>
+<ul class="support-links">
+<li><a href="github-pages.html"><span class="sl-k">A free website</span><span class="sl-t">GitHub Pages</span></a></li>
+<li><a href="vercel.html"><span class="sl-k">A web app</span><span class="sl-t">Vercel</span></a></li>
+<li><a href="app-store.html"><span class="sl-k">An iPad app</span><span class="sl-t">App Store</span></a></li>
+</ul>
+</div>
+<div class="again">
+<div class="loop" data-loop="">
+<div class="loop-ring">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 240 240">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="loop-gold-2" x1="40" x2="120" y1="94" y2="36">
+<stop class="loop-g0" offset="0"></stop>
+<stop class="loop-g1" offset="1"></stop>
+</lineargradient>
+</defs>
+<circle class="loop-track" cx="120" cy="120" r="84" transform="rotate(-90 120 120)"></circle>
+<path class="loop-gold" d="M40.1 94 A84 84 0 0 1 120 36" stroke="url(#loop-gold-2)"></path>
+<circle class="loop-dot" cx="120" cy="36" r="7" style="--i:0"></circle>
+<circle class="loop-dot" cx="199.9" cy="94" r="7" style="--i:1"></circle>
+<circle class="loop-dot" cx="169.4" cy="188" r="7" style="--i:2"></circle>
+<circle class="loop-dot" cx="70.6" cy="188" r="7" style="--i:3"></circle>
+<circle class="loop-dot" cx="40.1" cy="94" r="7" style="--i:4"></circle>
+</svg>
+<div aria-hidden="true" class="loop-centre fern-art" data-fern="24000" data-fern-tilt="upright">
+<img alt="" class="ink-art" height="407" src="images/mag/fern.webp" width="640"/>
+</div>
+<ol class="loop-st">
+<li class="st-1" style="--i:0">Barrier</li>
+<li class="st-2" style="--i:1">Sketch</li>
+<li class="st-3" style="--i:2">Prompt</li>
+<li class="st-4" style="--i:3">Build</li>
+<li class="st-5" style="--i:4">Test</li>
+</ol>
+</div>
+</div>
+<p class="d-l">You just ran this twice. Run it again Monday.</p>
+</div>
+<div class="panel next-panel">
+<p class="d-xxl center question">What problem <br/>do you want <br/>to solve <span class="yellow">next</span>?</p>
+</div>
+<div class="card close">
+<img alt="" aria-hidden="true" class="ribbon" src="images/mag/ribbon-close.webp"/>
+<p class="d-xl">This is just the beginning.</p>
+<span class="rule"></span>
+<p class="close-t">Keep working with your Technology Coach.</p>
+<ul class="btn-row" data-handouts="">
+<li><a class="m-btn solid" download="" href="handout/Bring-a-Barrier-handout-A3.pdf">A3 handout: Flint + Gemini <span aria-hidden="true">↓</span></a></li>
+</ul>
+</div>
+</section>
+</main>
+<script src="assets/toc.js?v=2"></script>
+<script src="assets/course.js?v=2"></script>
+<script src="assets/workshop.js?v=2"></script>
+<script src="assets/magazine.js?v=2"></script>
+</body>
+</html>

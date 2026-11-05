@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vercel: getting started — Bring a Barrier, Leave With a Build</title>
+<meta name="description" content="Why you might publish with Vercel instead of GitHub Pages, how to put a tool online by dragging in its folder, and how to connect GitHub so changes go live by themselves, with a preview link first.">
+<link rel="stylesheet" href="assets/course.css?v=2">
+<link rel="stylesheet" href="assets/workshop.css?v=2">
+<script>if('scrollRestoration' in history)history.scrollRestoration='manual';</script>
+</head>
+<body data-root="" data-chapter="vercel">
+
+<!-- A draft. Screenshots still to come are .shot-todo boxes; facts still to check carry a TBC tag.
+     Facts are from Vercel's own documentation (vercel.com/docs, pages last updated 14-18 September 2026, read
+     4 October 2026): the Hobby plan and its limits (/docs/plans/hobby); the fair use guidelines, which limit
+     Hobby to "non-commercial personal use" and define commercial use as any deployment used for anyone's
+     financial gain "including a paid employee or consultant writing the code" (/docs/limits/fair-use-guidelines);
+     Vercel Drop (/docs/drop, updated 16 June 2026: a file, folder or .zip dragged onto vercel.com/drop, team and
+     project name, Deploy, straight to production; no Git connection, so to update drop a folder onto the project in
+     the dashboard); production and preview deployments (/docs/deployments/environments); the GitHub integration and
+     its permissions (/docs/git/vercel-for-github); private repositories (/docs/git: a Hobby team cannot deploy a
+     private repository owned by a GitHub organisation); Deployment Protection, Vercel Authentication and Shareable
+     Links (a Hobby account gets one Shareable Link in total); Vercel Functions and environment variables. GitHub
+     Pages facts are from docs.github.com: static files only, a site up to 1 GB, soft limits of 100 GB a month and
+     10 builds an hour, and a repository that must be public on a free account. AI training: Vercel's changelog
+     "Updates to Terms of Service" (March 2026) says Hobby accounts are opted in by default, Pro (paid) opted out,
+     Enterprise opted out; opt out in Team Settings, Data Preferences.
+     Seen on screen on 4 October 2026, in the presenter's own new Hobby account (in the browser, one tab, closed
+     afterwards). First by looking only: the dashboard's "Deploy your first project" panel with Import Project; the
+     New Project page with Import Git Repository (GitHub, GitLab, Bitbucket, Origin; GitHub not yet connected);
+     vercel.com/drop ("Drop It. It's Live."); Settings > General, where Data Preferences > "Improve models with my
+     data" was ON; Settings > Deployment Protection > Settings, where "Default Protection for New Projects" had
+     Vercel Authentication OFF (but see below: the project that was then made had it ON); a "Secure Your Account with
+     2FA" page ("Set Up Authenticator App", "Skip securing my account") that appeared after pressing Create New.
+     Then, with the presenter's permission, ONE throwaway deploy: a one-file index.html uploaded on vercel.com/drop;
+     the next screen is "New Project" (Drop to Deploy: 1 file; Vercel Team; Project Name, pre-filled with a name
+     from the page title; Deploy); a "Congratulations! You just deployed a new project to <team>" page with a
+     preview, Next Steps and Continue to Project; then the project page: Production Deployment with Connect Git,
+     Instant Rollback, Visit; Deployment (a long address with the team name in it); Domains (a short address,
+     hkis-demo-green.vercel.app, because hkis-demo was presumably taken); Status Ready; Source: Vercel Drop; the line
+     "To update your Production Deployment, drop your project anywhere on this page, connect to git, or run vercel
+     --prod via the CLI"; a Production Checklist. The project's Settings > Deployment Protection had Vercel
+     Authentication ON, "Require Log In", Standard Protection. Checked from a browser that is not signed in to
+     Vercel: the short address opens the page; the long deployment address goes to "Log in to Vercel". The Share
+     box on the production deployment says "Choose who can comment on <domain>", with "Only people with access" and
+     "Publicly accessible" (nothing was chosen, and no Shareable Link was made). The project is still in the
+     presenter's account as hkis-demo; it was not deleted (deleting is left to the presenter).
+     Not yet seen: a preview deployment and its link, a Shareable Link, the Connect Git flow, the Create New menu.
+     The video "why" lines are written from the videos' descriptions, not from watching them. -->
+<main class="main" role="main">
+
+    <section id="overview">
+        <div class="chapter-eyebrow">App publishing · Getting started</div>
+        <h1>Vercel</h1>
+        <p class="lead">Vercel is a website host. You give it your tool’s files, and it gives you a web address that students can open on any device. Hand it a folder and it is live in a minute. Connect it to GitHub and every change you save goes live by itself, with a preview link first.</p>
+
+        <div class="chapter-meta"></div>
+
+        <div data-progression></div>
+
+        <div class="two-col">
+            <div>
+                <h4>Best for</h4>
+                <p>A tool you will keep changing, or one that needs a hidden key. A plain index.html works too. For a single page that rarely changes, <a href="github-pages.html">GitHub Pages</a> is simpler.</p>
+            </div>
+            <div>
+                <h4>Start here</h4>
+                <p><a href="https://vercel.com" target="_blank" rel="noopener noreferrer"><strong>vercel.com</strong></a><br>The free Hobby plan is enough to start. Read “What to know first” before you use it for school work.</p>
+            </div>
+        </div>
+
+        <div class="callout callout-note" data-label="Draft">
+            <p>This guide is a draft. Screenshots marked “to come” are still to be taken, and anything tagged <span class="tbc">TBC</span> still needs checking.</p>
+        </div>
+    </section>
+
+    <section id="why" data-kind="Orientation" data-time="4 min" data-track>
+        <h2>Why use Vercel?</h2>
+
+        <p>A tool on your laptop is only yours. For students to use it, its files have to sit on a computer that is always on, at a web address. That is what <em>publishing</em> means. <a href="github-pages.html">GitHub Pages</a> does it for free, and for a one-page tool it is the simplest way. Vercel does the same job, and four things more.</p>
+
+        <h3>What Vercel adds</h3>
+        <ul>
+            <li><strong>Try a change before students see it.</strong> Every change on a separate branch gets its own preview link, and the live version stays as it was until you are happy. GitHub Pages publishes one version at a time.</li>
+            <li><strong>Keep a secret.</strong> A tool that calls an AI service needs a key, and a key written into a web page can be read by anyone who opens it. On Vercel you keep the key in a setting, and write a small piece of code, called a <em>function</em>, that runs on Vercel’s computers and uses it. Visitors never see the key. GitHub Pages can only hand out files: it has nowhere to run code.</li>
+            <li><strong>Publish without GitHub, or keep your code private.</strong> You can drag a folder into your browser and be live, with no GitHub at all. And on a free GitHub account, GitHub Pages needs a public repository, while Vercel can publish from a private one in your own account.</li>
+            <li><strong>Grow without changing host.</strong> When a tool becomes a project with many files that must be built before it runs, such as one made with Next.js or Vite, Vercel recognises it and builds it for you. A plain page never needs this.</li>
+        </ul>
+
+        <h3>Vercel or GitHub Pages?</h3>
+        <table>
+            <thead>
+                <tr><th scope="col">Feature</th><th scope="col">GitHub Pages</th><th scope="col">Vercel (free Hobby plan)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>What it publishes</strong></td><td>HTML, CSS and JavaScript files</td><td>The same, plus code that runs on a server, and projects that need building</td></tr>
+                <tr><td><strong>How you publish</strong></td><td>Put the files in a GitHub repository</td><td>Drag a folder into your browser, or connect a GitHub repository</td></tr>
+                <tr><td><strong>Try a change first</strong></td><td>No: one version is live at a time</td><td>Yes: a preview link for every branch</td></tr>
+                <tr><td><strong>Keep a secret key</strong></td><td>No: there is no server to keep it on</td><td>Yes: as an environment variable</td></tr>
+                <tr><td><strong>Private source code</strong></td><td>Only with a paid GitHub plan</td><td>Yes, for a repository in your own account</td></tr>
+                <tr><td><strong>The rules</strong></td><td>Not for running a business</td><td>Non-commercial, personal use only</td></tr>
+                <tr><td><strong>Free limits</strong></td><td>A 1 GB site; about 100 GB of data a month</td><td>100 GB of data a month; 1 million requests</td></tr>
+            </tbody>
+        </table>
+
+        <div class="callout callout-key" data-label="Rule of thumb">
+            <p>One page that rarely changes: use GitHub Pages. Choose Vercel when you want to test changes first, need a secret key, want your code private, or your project has outgrown a few files.</p>
+        </div>
+
+        <h3>What to know first</h3>
+        <div class="callout callout-key" data-label="Free means personal use">
+            <p>Vercel’s free Hobby plan is for non-commercial, personal use only. Its <a href="https://vercel.com/docs/limits/fair-use-guidelines" target="_blank" rel="noopener noreferrer">fair use guidelines</a> call a site commercial if it is used for anyone’s financial gain, “including a paid employee or consultant writing the code”. A classroom tool sells nothing, but a paid employee writes it, so ask Vercel Support, and check with HKIS, before you rely on the free plan for school work. <span class="tbc">TBC</span></p>
+        </div>
+        <div class="callout callout-note" data-label="Your code and AI training">
+            <p>On the free plan, Vercel may use your code, and your chats with its own AI, to train AI models unless you opt out. Vercel says it removes names, emails, account details and keys first. To opt out, open <strong>Settings</strong>, choose <strong>General</strong>, scroll to <strong>Data Preferences</strong>, turn off <strong>Improve models with my data</strong>, and press <strong>Save</strong>. Do this before you upload anything that holds students’ work.</p>
+        </div>
+        <ul>
+            <li><strong>Public by default.</strong> Your live address is public: anyone with the link can open it. Vercel protects the other addresses, such as previews, with a login. Keep students’ names and personal information out of anything you publish.</li>
+            <li><strong>Hong Kong.</strong> Vercel has no list of supported regions, and its terms bar countries under trade sanctions. The presenter signed up and signed in from Hong Kong without a problem.</li>
+        </ul>
+    </section>
+
+    <section id="sign-up" data-kind="Practice" data-time="3 min" data-track>
+        <h2>Exercise 1: Sign up</h2>
+
+        <figure class="shot marked">
+            <div class="marked-wrap">
+                <img src="images/publishing/vercel-sign-up.jpg" alt="Vercel’s sign-up page: Your first deploy is just a sign-up away. It offers account sign-in options and a link to continue with email." loading="lazy">
+                <span class="marker" style="left:19.2%;top:58.0%" aria-hidden="true">2</span>
+            </div>
+            <figcaption><b>Figure 1</b> — Vercel’s sign-up page.</figcaption>
+        </figure>
+        <ol class="steps">
+            <li>Go to <a href="https://vercel.com" target="_blank" rel="noopener noreferrer"><strong>vercel.com</strong></a> and choose <strong>Sign Up</strong>.</li>
+            <li>Continue with <strong>GitHub</strong>, so Vercel can see your repositories later. Google, Apple or email work too: you can connect GitHub afterwards, in Exercise 4.</li>
+            <li>Vercel may ask you to secure your account with two-factor authentication. It recommends an authenticator app on your phone. Set one up, or choose <strong>Skip securing my account</strong>.</li>
+        </ol>
+    </section>
+
+    <section id="drop" data-kind="Practice" data-time="3 min" data-track>
+        <h2>Exercise 2: Put your tool online</h2>
+
+        <p>The quickest way is to drag your tool’s folder into your browser. You need no GitHub and nothing installed.</p>
+        <figure class="shot marked">
+            <div class="marked-wrap">
+                <img src="images/publishing/vercel-drop.jpg" width="740" height="215" alt="Vercel’s Drop to Deploy page. A globe icon, then the heading Drop It. It’s Live. Below it: Drag and drop a file, a folder, or .zip to deploy. Or choose a file or a folder. Then: No configuration. Your site goes live instantly." loading="lazy">
+                <span class="marker" style="left:87.6%;top:72.1%" aria-hidden="true">6</span>
+            </div>
+            <figcaption><b>Figure 2</b> — Vercel’s Drop page.</figcaption>
+        </figure>
+        <ol class="steps" style="counter-reset: step 3">
+            <li>Put your tool in a folder of its own, with its main file named <strong>index.html</strong>. A single file, or a .zip, works too.</li>
+            <li>Go to <a href="https://vercel.com/drop" target="_blank" rel="noopener noreferrer"><strong>vercel.com/drop</strong></a>.</li>
+            <li>Drag your folder onto the page. Or press <strong>folder</strong>, and choose it.</li>
+            <li>Choose your own account as the team, and type a name for the project, or keep the one Vercel suggests. The name becomes part of your web address.</li>
+            <li>Press <strong>Deploy</strong>.</li>
+        </ol>
+        <figure class="shot marked">
+            <div class="marked-wrap">
+                <img src="images/publishing/vercel-name.jpg" width="756" height="461" alt="Vercel’s New Project box after a file is dropped. Drop to Deploy: 1 file, 818 B, index.html. Choose where you want to create the project and give it a name. A Vercel Team menu, with a grey bar hiding the account name beside a Hobby label, and a Project Name box holding my-first-vercel-page. Below them, a black Deploy button." loading="lazy">
+                <span class="marker" style="left:92.1%;top:73.8%" aria-hidden="true">7</span>
+                <span class="marker" style="left:90.7%;top:88.1%" aria-hidden="true">8</span>
+            </div>
+            <figcaption><b>Figure 3</b> — Naming the project, then Deploy.</figcaption>
+        </figure>
+        <p>If your main file isn’t called index.html, Vercel asks which page people should see first. Pick yours from the <strong>Root (/)</strong> menu.</p>
+    </section>
+
+    <section id="live" data-kind="Practice" data-time="2 min" data-track>
+        <h2>Exercise 3: Open your link</h2>
+
+        <p>When it finishes, Vercel shows a Congratulations page. Press <strong>Continue to Project</strong> to see your project’s page.</p>
+        <figure class="shot marked">
+            <div class="marked-wrap">
+                <img src="images/publishing/vercel-project.jpg" width="1170" height="440" alt="A project page on Vercel. Production Deployment, with the buttons Connect Git and Instant Rollback and a black Visit button. A small picture of the page, then Deployment, a long address with part of it hidden by a grey bar; Domains, a short address, hkis-demo-green.vercel.app; Status, Ready; Created, just now, with the name hidden by a grey bar; and Source, View code and Vercel Drop." loading="lazy">
+                <span class="marker" style="left:63.1%;top:43.4%" aria-hidden="true">9</span>
+            </div>
+            <figcaption><b>Figure 4</b> — Your project’s page, with its address.</figcaption>
+        </figure>
+        <ol class="steps" style="counter-reset: step 8">
+            <li>Press <strong>Visit</strong>, or click the address under <strong>Domains</strong>. It starts with your project’s name and ends in <em>vercel.app</em>. If the plain name is taken, Vercel adds a word, as in <em>hkis-demo-green.vercel.app</em>.</li>
+            <li>Try your tool, then send that address to a colleague to test.</li>
+        </ol>
+        <div class="callout callout-key" data-label="Send the short address">
+            <p>Your project lists two kinds of address. The short one under <strong>Domains</strong> is public: anyone can open it. The long one under <strong>Deployment</strong>, with random letters in it, belongs to one version of your tool and is protected: visitors are asked to log in to Vercel. Always send the short one.</p>
+        </div>
+        <p>A new project starts with Vercel Authentication on, set to <strong>Standard Protection</strong>. That protects every address except your live one. You can check it in the project’s <strong>Settings</strong>, under <strong>Deployment Protection</strong>.</p>
+        <figure class="shot">
+            <img src="images/publishing/vercel-protection.jpg" width="1005" height="242" alt="The Vercel Authentication box in a project’s Deployment Protection settings. Visitors must be logged in to Vercel and a member of your team to view your deployments. A switch labelled Require Log In is on, beside a menu that reads Standard Protection." loading="lazy">
+            <figcaption><b>Figure 5</b> — Deployment Protection in a new project.</figcaption>
+        </figure>
+        <div class="callout callout-note">
+            <p>A dropped project has no link to GitHub, so saving a change somewhere else does not update it. To update it, drag the folder again, this time anywhere on the project’s page. For changes that publish themselves, go on to Exercise 4.</p>
+        </div>
+    </section>
+
+    <section id="import" data-kind="Practice" data-time="6 min" data-track>
+        <h2>Exercise 4: Connect GitHub</h2>
+
+        <p>If your tool will keep changing, put it in a GitHub <span class="term">repository</span> and connect Vercel to it. After that, every change you send to the repository is published by itself. The <a href="github-pages.html#account">GitHub Pages guide</a> shows how to make a repository and keep it up to date with GitHub Desktop.</p>
+        <p>Already put your tool online with Drop? On its project page, press <strong>Connect Git</strong> instead of importing it again. <span class="tbc">TBC</span></p>
+        <figure class="shot marked">
+            <div class="marked-wrap">
+                <img src="images/publishing/vercel-import.jpg" width="550" height="477" alt="The Deploy your first project panel on Vercel’s dashboard. Under a line about dragging and dropping, a list of four rows: Import Project, with a black Import button; Agent, with Create; Domain, with Add; and AI Gateway Key, with Create." loading="lazy">
+                <span class="marker" style="left:76.4%;top:45.9%" aria-hidden="true">11</span>
+            </div>
+            <figcaption><b>Figure 6</b> — Import Project on your dashboard.</figcaption>
+        </figure>
+        <figure class="shot marked">
+            <div class="marked-wrap">
+                <img src="images/publishing/vercel-providers.jpg" width="690" height="417" alt="Vercel’s Import Git Repository box. Select a Git provider to import an existing project from a Git Repository. Four buttons: GitHub, GitLab, Bitbucket and Origin. Below them, a link: Manage Login Connections." loading="lazy">
+                <span class="marker" style="left:21.2%;top:49.2%" aria-hidden="true">12</span>
+            </div>
+            <figcaption><b>Figure 7</b> — Choosing GitHub.</figcaption>
+        </figure>
+        <ol class="steps" style="counter-reset: step 10">
+            <li>On your dashboard, press <strong>Import</strong> next to <strong>Import Project</strong>. Once you have projects, choose <strong>Create New</strong> at the top right, or go straight to <a href="https://vercel.com/new" target="_blank" rel="noopener noreferrer"><strong>vercel.com/new</strong></a>. <span class="tbc">TBC</span></li>
+            <li>Under <strong>Import Git Repository</strong>, choose <strong>GitHub</strong>, and let Vercel see your repositories.</li>
+            <li>Find your tool’s repository and press <strong>Import</strong>. Not listed? Choose <strong>Configure GitHub App</strong>, and let Vercel see it.</li>
+            <li>Press <strong>Deploy</strong>. For a plain index.html, leave the settings as they are: Vercel chooses <strong>Other</strong>, and that works.</li>
+        </ol>
+        <div class="callout callout-key">
+            <p>Vercel’s GitHub app asks for wide permissions on the repositories you give it: it can read and change their code, pull requests and deployments. If GitHub offers a choice, pick <strong>Only select repositories</strong>, and choose just your tool’s. <span class="tbc">TBC</span></p>
+        </div>
+        <div class="callout callout-note">
+            <p>A private repository in your own GitHub account works on the free plan. One owned by a GitHub organisation does not: Vercel asks you to make it public, or to upgrade.</p>
+        </div>
+    </section>
+
+    <section id="change" data-kind="Practice" data-time="5 min" data-track>
+        <h2>Exercise 5: Change it, then preview it</h2>
+
+        <p>Send a change to the main branch, and Vercel puts it live. Send it to another branch instead, and Vercel makes a preview link, so you can test it before it replaces the live version.</p>
+        <figure class="shot">
+            <div class="shot-todo"><p class="todo-k">Screenshot to come</p><p class="todo-t">A project’s Deployments list, with the live version and a preview for a change, and the preview marked 16.</p></div>
+            <figcaption><b>Figure 8</b> — A preview, before it goes live.</figcaption>
+        </figure>
+        <ol class="steps" style="counter-reset: step 14">
+            <li>In GitHub Desktop, open the <strong>Current Branch</strong> menu and choose <strong>New Branch</strong>. Change your tool, commit, and publish the branch.</li>
+            <li>In Vercel, open your project, then <strong>Deployments</strong>. The newest one is your preview. Open it and test.</li>
+            <li>Happy? Merge the branch into <strong>main</strong>. Vercel then makes the change live.</li>
+        </ol>
+        <div class="callout callout-note">
+            <p>A preview link is protected like the long address in Exercise 3: a visitor is asked to log in to Vercel. To let a colleague test a preview without a login, make a Shareable Link: open the deployment, press <strong>Share</strong>, and choose the option that makes it public (Vercel’s documentation calls it <strong>Anyone with the link</strong>). The free plan allows one Shareable Link in total. <span class="tbc">TBC</span></p>
+        </div>
+    </section>
+
+    <section id="further" data-kind="Orientation" data-time="15 min" data-track>
+        <h2>Push it further</h2>
+
+        <p>Ideas for when your first tool is live.</p>
+        <div class="prompt-card">
+            <span class="prompt-label">Then push it</span>
+            <p class="prompt-text">My tool calls an AI service with an API key that is written into the page. Move that call into a function in an api folder, read the key from an environment variable called AI_KEY, and tell me where to add the key in Vercel.</p>
+            <p class="prompt-note">Not yet tested. <span class="tbc">TBC</span></p>
+        </div>
+        <div class="prompt-card">
+            <span class="prompt-label">Then push it</span>
+            <p class="prompt-text">Use your own web address: in your project, open Settings, then Domains, and choose Add Domain. You can bring one you own or buy one there.</p>
+        </div>
+        <div class="prompt-card">
+            <span class="prompt-label">Then push it</span>
+            <p class="prompt-text">Keep a project to yourself while you work on it: in the project’s Settings, open Deployment Protection, and change Standard Protection to All Deployments. Then even the short address asks for a Vercel login.</p>
+        </div>
+        <h3>Videos</h3>
+        <p>Each video loads only when you press play. The first is from Vercel itself. The others are from independent creators.</p>
+
+        <div class="video-list">
+            <div class="video-item"><div class="video" data-video="oIsf9zE-TRI" data-title="Deploying a simple website to Vercel (HTML, CSS, JavaScript)" data-source="Vercel" data-note="January 2024 · 7:33"></div><p class="video-why">Vercel deploys a plain HTML, CSS and JavaScript site from a template, then shows what happens when you push a change to Git (from 3:53). It is older than this guide, so some screens look different now.</p></div>
+
+            <div class="video-item"><div class="video" data-video="IPthPk4AtUs" data-title="How to use Vercel preview deployment Full Guide 2026" data-source="How To Solve Pro" data-note="April 2026 · 1:33"></div><p class="video-why">A short look at preview deployments: a live test version of your project for every update, and how to share it.</p></div>
+
+            <div class="video-item"><div class="video" data-video="LxKaV2jVCnY" data-title="How to Add Custom Domain to Vercel (Step-by-Step) 2026" data-source="Checkmark Academy" data-note="December 2025 · 2:30"></div><p class="video-why">Adding a domain you already own to a Vercel project, and setting its DNS records with the company you bought it from.</p></div>
+        </div>
+    </section>
+
+</main>
+
+<script src="assets/toc.js?v=2"></script>
+<script src="assets/course.js?v=2"></script>
+<script src="assets/workshop.js?v=2"></script>
+</body>
+</html>

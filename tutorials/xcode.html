@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Xcode: workshop agents — Bring a Barrier, Leave With a Build</title>
+<meta content="Open Xcode’s Intelligence settings and try the coding agent configured for this workshop." name="description"/>
+<link href="assets/course.css?v=2" rel="stylesheet"/>
+<link href="assets/workshop.css?v=2" rel="stylesheet"/>
+<script>if('scrollRestoration' in history)history.scrollRestoration='manual';</script>
+</head>
+<body data-chapter="xcode" data-root="">
+
+<main class="main" role="main">
+<section id="overview">
+<div class="chapter-eyebrow">Apple · Getting started</div>
+<h1>Xcode</h1>
+<p class="lead">Xcode is Apple’s app for making apps for iPhone, iPad and Mac. In this workshop, use the agent configured for the demonstration. This guide introduces the settings and a first test; the Hong Kong agent setup walkthrough will be added next.</p>
+<div class="chapter-meta"></div>
+<div data-progression=""></div>
+<div class="two-col">
+<div>
+<h4>Best for</h4>
+<p>Exploring how an agent can work with an app project.</p>
+</div>
+<div>
+<h4>Start here</h4>
+<p>Xcode on a Mac, with the workshop agent configured. Ask the presenter if that setup is not ready on your device.</p>
+</div>
+</div>
+
+
+<div class="callout callout-note" data-label="Setup guide to follow"><p>The provider-specific sign-in exercises have been removed. Detailed setup instructions for the workshop’s regional agents are the next tutorial update.</p></div></section>
+<section data-kind="Practice" data-time="2 min" data-track="" id="settings">
+<h2>Exercise 1: Open the Intelligence settings</h2>
+<figure class="shot"><img alt="The presenter’s Xcode Intelligence settings, with Grok and DeepSeek custom agents visible." height="982" loading="lazy" src="images/xcode/workshop-agents.png" width="1512"/><figcaption>The presenter’s configured workshop agents.</figcaption></figure>
+<ol class="steps">
+<li>Open <strong>Xcode</strong> from your Applications folder.</li>
+<li>Choose <strong>Xcode</strong>, then <strong>Settings…</strong> (or press ⌘ and the comma key).</li>
+<li>Choose <strong>Intelligence</strong> in the sidebar.</li>
+</ol>
+<p>The Coding Intelligence banner explains that third-party models can access project files and code. The presenter’s setup includes Grok and DeepSeek custom agents. Use the workshop’s configured agent for this demonstration.</p>
+</section>
+
+
+<section data-kind="Practice" data-time="3 min" data-track="" id="check">
+<h2>Exercise 2: Check that it works</h2>
+<figure class="shot">
+<div class="shot-todo"><p class="todo-k">Screenshot to come</p><p class="todo-t">The coding assistant open beside a project, with New Conversation and the choice of agent marked 10, and a short reply to the test prompt.</p></div>
+<figcaption><b>Figure 4</b> — Your first conversation.</figcaption>
+</figure>
+<ol class="steps" style="counter-reset: step 3">
+<li>Open any project. To make a practice one, choose <strong>File</strong>, then <strong>New</strong>, then <strong>Project…</strong>, and choose <strong>App</strong>.</li>
+<li>Open the coding assistant, choose New Conversation, and select the agent configured for this workshop.</li>
+<li>Send the message below.</li>
+</ol>
+<div class="prompt-card">
+<span class="prompt-label">A test message</span>
+<p class="prompt-text">Hello! Which AI model am I talking to, and what could you help me do in this project?</p>
+<p class="prompt-note">Not yet tested. <span class="tbc">TBC</span></p>
+</div>
+<div class="callout callout-key">
+<p>Once you connect an AI, it may read your project files and other information when it answers. To see what is shared, click <strong>About Intelligence in Xcode &amp; Privacy…</strong> in the Intelligence settings. Keep students’ names and personal information out of your projects.</p>
+</div>
+</section>
+<section data-kind="Orientation" data-time="20 min" data-track="" id="further">
+<h2>Push it further</h2>
+<p>Now ask your AI to build something. Change one thing at a time, and run the app after each change.</p>
+<div class="prompt-card">
+<span class="prompt-label">Then push it</span>
+<p class="prompt-text">Build a SwiftUI screen for a Grade 7 student who loses their place in a multi-step maths problem. Show the current step first, then let them tick it off. Keep the language at Grade 5.</p>
+<p class="prompt-note">Not yet tested. <span class="tbc">TBC</span></p>
+</div>
+<div class="prompt-card">
+<span class="prompt-label">Then push it</span>
+<p class="prompt-text">Explain what each part of the code does, in plain English.</p>
+</div>
+<ul>
+<li><strong>Run it.</strong> Choose an iPad from the run destination menu in the toolbar, then click <strong>Run</strong> (⌘R). Your app opens in an iPad simulator, in the Device Hub app.</li>
+<li><strong>Your own iPad.</strong> Sign in under <strong>Xcode</strong>, <strong>Settings…</strong>, <strong>Apple Accounts</strong>, connect the iPad and tap <strong>Trust</strong>, and turn on <strong>Developer Mode</strong> on the iPad. With a free Apple Account the app stops working after 7 days, and you run it again from Xcode.</li>
+<li><strong>Students.</strong> TestFlight can’t reach students’ school Apple Accounts. To put an app on HKIS iPads, make it a private app through Apple School Manager, or use the App Store.</li>
+</ul>
+<div class="resource-list">
+<a class="btn-external" href="app-store.html">
+<span aria-hidden="true" class="btn-external-icon">➜</span>
+<span><strong>Publish it on the App Store</strong><small>The App publishing guide, step by step, including a private app for HKIS</small></span>
+<span aria-hidden="true" class="btn-external-arrow">→</span>
+</a>
+<a class="btn-external" href="https://developer.apple.com/videos/play/wwdc2026/259/" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="btn-external-icon">➜</span>
+<span><strong>Xcode, agents, and you</strong><small>Apple’s own WWDC26 session, 22 minutes: using agents to explore, build and refine an app</small></span>
+<span aria-hidden="true" class="btn-external-arrow">↗</span>
+</a>
+</div>
+
+
+
+</section>
+</main>
+<script src="assets/toc.js?v=2"></script>
+<script src="assets/course.js?v=2"></script>
+<script src="assets/workshop.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Working material: full-size originals and notes kept on disk, never published.
+images/**/_originals/
+images/**/_*.md
+
+# Local editor and preview configuration
+.claude/

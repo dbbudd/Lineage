@@ -1,0 +1,208 @@
+/* =============================================================
+   WORKSHOP COMPONENTS
+   -------------------------------------------------------------
+   The few things this site needs that the Biology template does not
+   have. Colours come from the template's custom properties, so the
+   light, sepia and dark themes all keep working.
+
+     .prompt-card   a prompt to try, with a Copy button (workshop.js)
+     .spine         the prompt spine, with its blanks drawn as lines
+     figure.marked  a screenshot with numbered markers on the buttons
+     ol.steps       numbered steps that match those markers
+     .two-col       two short columns side by side (stack on phones)
+   ============================================================= */
+
+/* ===== PROMPT CARDS ===== */
+.prompt-card {
+    position: relative; container: prompt / inline-size;
+    margin: 1.25rem 0;
+    padding: 1rem 1.25rem 1rem 1.25rem;
+    border-left: 4px solid var(--red);
+    border-radius: 4px;
+    background: var(--bg-surface);
+}
+.prompt-card .prompt-label {
+    display: block;
+    margin: 0 0 0.35rem;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--red);
+}
+[data-theme="dark"] .prompt-card .prompt-label { color: var(--yellow); }
+.prompt-card .prompt-text { margin: 0; padding-right: 5.5rem; font-size: 1rem; line-height: 1.6; }
+/* A long label wraps before the Copy button instead of running under it */
+.prompt-card .prompt-label { padding-right: 5.5rem; }
+/* On a narrow card (a phone, or large text) the Copy button moves under the prompt, so the
+   label and the prompt can use the card's full width */
+@container prompt (max-width: 30rem) {
+    .prompt-card .prompt-label, .prompt-card .prompt-text { padding-right: 0; }
+    .prompt-card .prompt-copy { position: static; margin-top: 0.75rem; }
+}
+.prompt-card .prompt-note { margin: 0.5rem 0 0; font-size: 0.82rem; color: var(--text-secondary); }
+.prompt-copy {
+    position: absolute; top: 0.75rem; right: 0.75rem;
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    padding: 0.35rem 0.7rem; border-radius: 6px;
+    border: 1px solid var(--border); background: var(--bg);
+    color: var(--text); font: inherit; font-size: 0.78rem; font-weight: 600; cursor: pointer;
+}
+.prompt-copy:hover { border-color: var(--dark-blue); }
+[data-theme="dark"] .prompt-copy:hover { border-color: var(--light-teal); }
+.prompt-copy:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.prompt-copy.done { border-color: var(--light-teal); }
+
+/* ===== THE PROMPT SPINE ===== */
+.spine { font-size: 1.15rem; line-height: 2.1; }
+.spine .blank {
+    display: inline-block; min-width: 3.5em; height: 1.1em;
+    border-bottom: 3px solid var(--yellow); vertical-align: -0.15em;
+}
+.spine .blank.long { min-width: 9em; }
+.spine .blank.short { min-width: 2em; }
+
+/* ===== SCREENSHOTS WITH NUMBERED MARKERS =====
+   The markers sit on the buttons to press, and match the numbers in the
+   list of steps beside them. They are decoration for sighted readers: the
+   steps carry the same instructions as text, and the image has alt text. */
+figure.marked .marked-wrap { position: relative; container-type: inline-size; }
+figure.marked .marked-wrap img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 10px; background: #fff; }
+figure.marked .marker {
+    position: absolute; transform: translate(-50%, -50%);
+    display: flex; align-items: center; justify-content: center;
+    width: 1.9rem; height: 1.9rem; border-radius: 50%;
+    border: 2px solid #fff; background: var(--red); color: #fff;
+    font-size: 0.85rem; font-weight: 700; line-height: 1;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+}
+/* On a narrow screen a marker never grows past a small share of the picture's width, so
+   markers on buttons that sit close together, like the actions in a shortcut, never cover
+   each other. On a wide screen nothing changes: the rem size is the smaller one. */
+figure.marked .marker { width: min(1.9rem, 6.5cqi); height: min(1.9rem, 6.5cqi); font-size: min(0.85rem, 3cqi); }
+/* A tall screenshot (a phone, or a narrow window) at a width that keeps it on one screen.
+   <figure class="shot marked portrait"> — the markers stay on their buttons. */
+figure.shot.portrait .marked-wrap, figure.shot.portrait > img { max-width: 22rem; margin-inline: auto; }
+
+ol.steps { list-style: none; counter-reset: step; padding-left: 0; margin: 1rem 0 1.5rem; }
+ol.steps > li {
+    counter-increment: step; position: relative;
+    padding-left: 2.6rem; margin-bottom: 0.8rem; min-height: 1.9rem;
+}
+ol.steps > li::before {
+    content: counter(step);
+    position: absolute; left: 0; top: 0.05rem;
+    display: flex; align-items: center; justify-content: center;
+    width: 1.9rem; height: 1.9rem; border-radius: 50%;
+    background: var(--red); color: #fff; font-size: 0.85rem; font-weight: 700;
+}
+/* A list that continues the numbering: <ol class="steps" style="counter-reset: step 2"> starts at 3. */
+
+/* ===== TWO SHORT COLUMNS ===== */
+.two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem 1.5rem; margin: 1.25rem 0; }
+.two-col > div { padding: 1rem 1.25rem; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-surface); }
+.two-col h4 { margin: 0 0 0.4rem; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-secondary); }
+.two-col p:last-child, .two-col ul:last-child { margin-bottom: 0; }
+
+/* ===== VIDEO LIST =====
+   Two videos to a row on a wide screen, one on a phone. Each video keeps its
+   one-line "why" right under it. */
+.video-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.75rem 1.5rem; margin: 1.25rem 0 2rem; }
+.video-list .video { margin: 0 0 0.5rem; }
+.video-why { margin: 0; font-size: 0.88rem; line-height: 1.55; color: var(--text-secondary); }
+
+/* The template sets these small labels in the brand yellow, which is too faint
+   on the light and sepia pages (about 1.5:1). A dark gold passes WCAG AA on both;
+   the dark theme keeps the template's colour, which already passes. */
+:root:not([data-theme="dark"]) .video-meta .video-note,
+:root:not([data-theme="dark"]) .callout-example::before { color: #7a6000; }
+
+/* ===== LARGE TEXT ON A SMALL SCREEN =====
+   At the largest text size on a phone, a heading and its Complete button can no longer
+   share a row, and a long web address no longer fits on a line. They wrap instead of
+   running off the page: the button drops under the heading, and an address breaks where
+   it must. At normal sizes nothing here changes how a page looks. */
+.section-head { flex-wrap: wrap; row-gap: 0.4rem; }
+.section-head > h2 { flex: 1 1 12rem; }
+.main h1, .main h2, .main h3 { overflow-wrap: break-word; hyphens: auto; }
+.main p, .main li, .main td, .main figcaption { overflow-wrap: break-word; }
+.main a { overflow-wrap: anywhere; }
+
+/* A variable inside a prompt, drawn as Shortcuts draws it: a blue token */
+.token {
+    display: inline-block; padding: 0 0.45em; border-radius: 5px; line-height: 1.5;
+    background: rgba(20, 80, 158, 0.1); color: var(--blue); font-weight: 600;
+}
+[data-theme="dark"] .token { background: rgba(111, 168, 220, 0.16); color: #8fbde6; }
+.prompt-card .prompt-text.prompt-long { font-size: 0.95rem; }
+
+/* ===== THE HANDOUT MENU (toolbar, course.js) ===== */
+.ho-wrap { position: relative; }
+.ho-panel {
+    position: absolute; top: calc(100% + 8px); right: 0; z-index: 300; width: 280px; padding: 0.55rem;
+    border: 1px solid var(--border); border-radius: 10px; background: var(--bg); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);
+}
+.ho-panel[hidden] { display: none; }
+.ho-title { margin: 0.25rem 0.55rem 0.45rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+.ho-item {
+    display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+    padding: 0.6rem 0.65rem; border-radius: 8px; color: var(--text); font-size: 0.9rem; font-weight: 600; text-decoration: none;
+}
+a.ho-item:hover, a.ho-item:focus-visible { background: var(--bg-nav-hover); color: var(--text); text-decoration: none; }
+a.ho-item:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+.ho-kind { flex: none; font-size: 0.7rem; font-weight: 600; color: var(--text-secondary); }
+.ho-item.current .ho-name::after { content: " · your session"; font-weight: 500; color: var(--text-secondary); }
+.ho-soon { color: var(--text-secondary); cursor: default; }
+.ho-soon .soon-badge { margin-left: 0; }
+@media print { .ho-wrap { display: none !important; } }
+
+/* ===== SOON: a link to a page that is not open yet (workshop.js) ===== */
+a.is-soon, a.is-soon:hover { cursor: default; text-decoration: none; }
+.soon-badge {
+    display: inline-block; margin-left: 0.45em; padding: 0.2em 0.55em; vertical-align: middle;
+    border: 1px solid var(--border); border-radius: 999px; background: var(--bg);
+    font-size: 0.62rem; font-weight: 700; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+/* ===== PLACEHOLDERS: content still to come =====
+   A screenshot still to be taken, or a fact still to be checked, looks unfinished on
+   purpose, so it is easy to spot and never mistaken for the real thing. To find every
+   one, search the pages for "shot-todo" and "tbc".
+     <figure class="shot"><div class="shot-todo"><p class="todo-k">Screenshot to come</p>
+       <p class="todo-t">What it will show</p></div><figcaption>…</figcaption></figure>
+     <span class="tbc">TBC</span>   after any statement that still needs checking */
+.shot-todo {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.35rem;
+    aspect-ratio: 16 / 10; max-height: 22rem; margin-inline: auto; padding: 1.5rem; text-align: center;
+    border: 2px dashed var(--border); border-radius: 10px;
+    background: repeating-linear-gradient(-45deg, transparent 0 14px, rgba(87, 120, 153, 0.07) 14px 28px), var(--bg-surface);
+}
+.shot-todo.video-todo { aspect-ratio: 16 / 9; margin-bottom: 0.5rem; }
+.shot-todo .todo-k {
+    margin: 0; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red);
+}
+[data-theme="dark"] .shot-todo .todo-k { color: var(--light-red); }
+.shot-todo .todo-t { margin: 0; max-width: 30rem; font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary); }
+.tbc {
+    display: inline-block; padding: 0.05em 0.45em; border-radius: 4px; vertical-align: 0.1em;
+    background: var(--yellow); color: #002a42; font-size: 0.7em; font-weight: 700; letter-spacing: 0.06em; line-height: 1.4;
+}
+
+@media print {
+    .prompt-copy { display: none; }
+    .prompt-card .prompt-text { padding-right: 0; }
+    .prompt-card, .video-item, figure.marked { break-inside: avoid; }
+    /* A video's title is on its play button, which does not print: print it at
+       the top of the card instead of the template's "Video — see link". */
+    .video-embed[data-title]::before {
+        content: attr(data-title); display: block; padding: 0.75rem 1.1rem 0;
+        font-size: 0.95rem; font-weight: 700; color: #111;
+    }
+    .video-embed[data-title]::after { content: none; }
+}
+
+/* Screen-reader-only text (announcements for the Copy buttons) */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+/* The Handout button is a link (it downloads the PDF), but it sits with the toolbar
+   buttons: keep the themes' link colours and underline off it */
+#btn-handout, #btn-handout:hover, #btn-handout:visited { color: #fff; text-decoration: none; }

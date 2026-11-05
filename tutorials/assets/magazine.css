@@ -1,0 +1,656 @@
+/* =============================================================
+   MAGAZINE: the session page (index.html)
+   -------------------------------------------------------------
+   The session is laid out like a magazine. The film's boards are
+   rebuilt in HTML and CSS instead of shown as pictures, so every
+   word on them still works with Listen, Translate, Search, the
+   text-size control and the three themes.
+
+   Type: Playfair Display ("HKIS Display") for display type and
+   Montserrat ("HKIS Label") for small capitals, pills and buttons.
+   Both are self-hosted. Choosing the dyslexia-friendly font in the
+   Aa panel swaps both for OpenDyslexic (magazine.js sets data-font).
+
+   Everything is scoped to main.mag, so the tool pages are untouched.
+   ============================================================= */
+
+@font-face {
+    font-family: 'HKIS Display';
+    src: url('../vendor/fonts/hkis-display/playfair-display-variable.woff2') format('woff2');
+    font-weight: 400 900; font-style: normal; font-display: swap;
+}
+@font-face {
+    font-family: 'HKIS Display';
+    src: url('../vendor/fonts/hkis-display/playfair-display-italic-variable.woff2') format('woff2');
+    font-weight: 400 900; font-style: italic; font-display: swap;
+}
+@font-face {
+    font-family: 'HKIS Label';
+    src: url('../vendor/fonts/hkis-label/montserrat-variable.woff2') format('woff2');
+    font-weight: 100 900; font-style: normal; font-display: swap;
+}
+
+/* ===== TOKENS ===== */
+:root {
+    --m-display: 'HKIS Display', Georgia, 'Times New Roman', serif;
+    --m-label: 'HKIS Label', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+    --m-navy: #002a42;
+    --m-slate: #577899;
+    --m-ink: var(--m-navy);        /* display type and line art */
+    --m-soft: var(--m-slate);      /* secondary text, 4.6:1 on white */
+    --m-faint: #7d8fa3;            /* faded LARGE type only, 3.3:1 on white */
+    --m-red-text: var(--red);      /* red words; red fills stay var(--red) */
+    --m-paper: #ffffff;            /* boards and cards */
+    --m-tint: #f3f5f8;
+    --m-line: #c9d3dd;
+    --m-grid: rgba(87, 120, 153, 0.13);
+    --m-panel: var(--m-navy);
+    --m-shadow: 0 1px 2px rgba(0, 42, 66, 0.06), 0 10px 28px rgba(0, 42, 66, 0.08);
+    --m-radius: 14px;
+}
+[data-theme="sepia"] {
+    --m-soft: #46637f;             /* 5.3:1 on the sepia page */
+    --m-faint: #7a8a99;
+    --m-paper: #fbf5e6;
+    --m-tint: #efe5cb;
+    --m-line: #d4c6a8;
+    --m-grid: rgba(62, 47, 28, 0.08);
+    --m-shadow: 0 1px 2px rgba(62, 47, 28, 0.08), 0 10px 28px rgba(62, 47, 28, 0.08);
+}
+[data-theme="dark"] {
+    --m-ink: #e8eef4;
+    --m-soft: #a9bccd;
+    --m-faint: #7f91a3;
+    --m-red-text: var(--light-red);
+    --m-paper: #1b2026;
+    --m-tint: #20272f;
+    --m-line: #34404c;
+    --m-grid: rgba(255, 255, 255, 0.05);
+    --m-panel: #0b2a3f;
+    --m-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+[data-font="dyslexic"] {
+    --m-display: 'OpenDyslexic', 'Comic Sans MS', sans-serif;
+    --m-label: 'OpenDyslexic', 'Comic Sans MS', sans-serif;
+}
+
+/* ===== PAGE ===== */
+.mag > section { margin-bottom: clamp(3.5rem, 7vw, 5.5rem); container-type: inline-size; }
+.mag > section.step { margin-bottom: clamp(3rem, 6vw, 4.5rem); }
+.mag > section + section { border-top: 0; padding-top: 0; }
+.mag .section-head { margin-top: 0; }
+.mag h2 { margin-top: 0; padding-bottom: 0; border-bottom: 0; }
+.mag img { max-width: 100%; height: auto; }
+.mag a:focus-visible, .mag button:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 6px; }
+[data-theme="dark"] .mag a:focus-visible { outline-color: #6fa8dc; }
+
+/* Display type. Sizes are rem-based, so the Aa text size scales them too. Each is also
+   capped at a share of its section's width (cqi), so that at the largest text size, or in
+   OpenDyslexic, a single long word still fits on a phone instead of running off the page. */
+.mag .d-xxl, .mag .d-xl, .mag .d-l, .mag .d-m, .mag .d-s {
+    font-family: var(--m-display); font-weight: 700; color: var(--m-ink);
+    line-height: 1.1; letter-spacing: -0.005em; overflow-wrap: break-word; margin: 0;
+}
+.mag .d-xxl { font-size: min(clamp(2.3rem, 1.3rem + 4.4vw, 4.4rem), 12cqi); line-height: 1.05; }
+.mag .d-xl  { font-size: min(clamp(2rem, 1.2rem + 3.4vw, 3.6rem), 10.5cqi); }
+.mag .d-l   { font-size: min(clamp(1.6rem, 1.15rem + 2vw, 2.5rem), 9cqi); }
+.mag .d-m   { font-size: clamp(1.35rem, 1.1rem + 1.1vw, 1.9rem); line-height: 1.2; }
+.mag .d-s   { font-size: clamp(1.15rem, 1rem + 0.5vw, 1.4rem); line-height: 1.3; }
+.mag .tracked { text-transform: uppercase; letter-spacing: 0.08em; }
+[data-font="dyslexic"] .mag .tracked { letter-spacing: 0.02em; }
+[data-font="dyslexic"] .mag .d-xxl { font-size: min(clamp(2.3rem, 1.3rem + 4.4vw, 4.4rem), 10cqi); }
+[data-font="dyslexic"] .mag .cover h1 { font-size: min(clamp(2.4rem, 1.4rem + 4.4vw, 4.3rem), 9cqi); }
+[data-font="dyslexic"] .mag .tabs.tabs-xl > li { font-size: min(clamp(2rem, 1.35rem + 2.8vw, 3.2rem), 8cqi); }
+.mag .red { color: var(--m-red-text); }
+.mag .faint { color: var(--m-faint); }
+.mag .center { text-align: center; margin-left: auto; margin-right: auto; }
+
+.mag .kicker {
+    font-family: var(--m-label); font-weight: 800; font-size: 0.74rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--m-red-text);
+    margin: 0 0 0.75rem;
+}
+.mag .dek { font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem); line-height: 1.6; color: var(--text); margin: 0 0 1rem; }
+.mag .aside { font-size: 0.92rem; line-height: 1.6; color: var(--text-secondary); max-width: 38rem; }
+.mag .credit { font-size: 0.82rem; color: var(--text-secondary); margin-top: 1rem; }
+
+/* A short red rule, as under the title board */
+.mag .rule { display: block; width: 3rem; height: 3px; background: var(--red); border: 0; margin: 1.1rem 0; }
+.mag .rule.center { margin-left: auto; margin-right: auto; }
+
+/* ===== SECTION HEADINGS ===== */
+/* Features: the heading is a small red label with a rule running to the right */
+.mag .feature > .section-head, .mag .feature > h2 { margin-bottom: clamp(1.5rem, 3vw, 2.25rem); }
+.mag .feature h2 {
+    display: flex; align-items: center; gap: 0.9rem;
+    font-family: var(--m-label); font-weight: 800; font-size: 0.8rem; line-height: 1.3;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--m-red-text);
+}
+.mag .feature h2::after { content: ""; flex: 1; height: 2px; background: var(--red); }
+
+/* Steps: a big red numeral hanging before the title, and a rule under the row */
+.mag .step > .section-head, .mag .step > h2 {
+    margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 2px solid var(--m-ink);
+}
+.mag .step > .section-head > h2 { border-bottom: 0; padding-bottom: 0; margin-bottom: 0; flex: 1 1 12rem; }
+.mag .step > .section-head { flex-wrap: wrap; row-gap: 0.5rem; }
+.mag .step h2 {
+    display: flex; align-items: baseline; gap: 0.55em;
+    font-family: var(--m-display); font-weight: 700; color: var(--m-ink);
+    font-size: clamp(1.4rem, 1.15rem + 1.4vw, 2.2rem); line-height: 1.15; overflow-wrap: break-word;
+}
+.mag .step-n { flex: none; font-size: 1.5em; line-height: 0.8; color: var(--m-red-text); }
+
+/* Full-colour panels: a navy board, white type, yellow accents */
+.mag .panel {
+    background: var(--m-panel); color: #fff; border-radius: var(--m-radius);
+    padding: clamp(2rem, 6vw, 4rem) clamp(1.4rem, 6vw, 4rem);
+}
+.mag .panel .d-xxl, .mag .panel .d-xl, .mag .panel .d-l, .mag .panel .d-m { color: #fff; }
+.mag .panel h2, .mag .panel .step-n { color: var(--yellow); }
+.mag .panel.step h2 { color: #fff; }
+.mag .panel.step > .section-head, .mag .panel.step > h2 { border-bottom-color: rgba(255, 255, 255, 0.35); }
+.mag .panel.feature h2::after { background: var(--yellow); }
+.mag .panel p { color: rgba(255, 255, 255, 0.9); }
+.mag .panel a { color: #fff; }
+.mag .panel .copy-link, .mag .panel .complete-btn { color: #fff; border-color: rgba(255, 255, 255, 0.4); background: transparent; }
+.mag .panel .yellow { color: var(--yellow); }
+.mag .panel .d-l + .dek { margin-top: 1rem; }
+
+/* Cards and boards */
+.mag .card, .mag .board {
+    position: relative; background: var(--m-paper); border: 1px solid var(--m-line);
+    border-radius: var(--m-radius); box-shadow: var(--m-shadow);
+}
+.mag .board { border-top: 6px solid var(--red); padding: clamp(1.25rem, 3vw, 1.75rem); }
+
+/* ===== RIBBON TABS: the HKIS ribbon end, as a bullet ===== */
+.mag .tabs { list-style: none; padding: 0; margin: 0 0 1rem; }
+.mag .tabs > li { position: relative; padding-left: 2.1em; margin: 0 0 0.6em; }
+.mag .tabs > li::before {
+    content: ""; position: absolute; left: 0; top: 0.3em; width: 1.45em; height: 0.95em;
+    background: var(--red); clip-path: polygon(0 0, 100% 0, 78% 50%, 100% 100%, 0 100%);
+}
+.mag .tabs.tabs-n { counter-reset: tab; }
+.mag .tabs.tabs-n > li { counter-increment: tab; padding-left: 2.4em; }
+.mag .tabs.tabs-n > li::before {
+    content: counter(tab); top: 0.12em; width: 2.35em; height: 1.65em; padding-left: 0.55em;
+    font: 800 0.72em/1.65em var(--m-label); color: #fff;
+}
+.mag .tabs.board-lines > li { font-family: var(--m-label); font-weight: 700; font-size: 1rem; line-height: 1.45; color: var(--m-ink); }
+
+/* Pills: the tool names, as on the boards */
+.mag .pills { display: flex; flex-wrap: wrap; gap: 0.6rem; list-style: none; padding: 0; margin: 0; }
+.mag .pills > li { margin: 0; }
+.mag .pill {
+    display: inline-flex; align-items: center; gap: 0.4em; vertical-align: middle;
+    padding: 0.38em 1em; border-radius: 999px; border: 0;
+    font: 700 0.9rem/1.2 var(--m-label); letter-spacing: 0; text-transform: none;
+    color: #fff; background: var(--m-navy); text-decoration: none;
+}
+.mag .pill-gemini { background: var(--m-slate); }
+.mag .pill-red { background: var(--red); }
+[data-theme="dark"] .mag .pill-flint { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28); }
+.mag a.pill:hover { text-decoration: none; filter: brightness(1.18); }
+
+/* Buttons */
+.mag .m-btn {
+    display: inline-flex; align-items: center; gap: 0.5em; min-height: 2.75rem;
+    padding: 0.55rem 1.15rem; border-radius: 999px; border: 1.5px solid var(--m-ink);
+    font: 700 0.9rem/1.2 var(--m-label); color: var(--m-ink); background: transparent; text-decoration: none;
+}
+.mag .m-btn:hover { background: var(--m-tint); text-decoration: none; }
+.mag .m-btn.solid { background: var(--m-ink); color: var(--m-paper); }
+.mag .m-btn.solid:hover { filter: brightness(1.15); }
+.mag .btn-row { display: flex; flex-wrap: wrap; gap: 0.6rem; list-style: none; padding: 0; margin: 1.25rem 0 0; }
+.mag .btn-row > li { margin: 0; max-width: 100%; }
+.mag .m-btn { max-width: 100%; flex-wrap: wrap; }   /* at very large text, a long label wraps inside its button */
+
+/* Decorative ribbons: their cut ends always run off the edges of the card they sit in */
+.mag .ribbon { position: absolute; z-index: -1; pointer-events: none; user-select: none; max-width: none; }
+
+/* Navy line art from the film, recoloured for the dark theme */
+[data-theme="dark"] .mag .ink-art { filter: brightness(0) invert(0.9); }
+
+/* Grids reflow on their own when a reader enlarges the text: each column has a
+   minimum width in rem, so at 150% text two columns become one before anything
+   collides. (Media queries alone only react to the window, not the text size.) */
+.mag .spread, .mag .mit, .mag .loop-wrap, .mag .again, .mag .cases, .mag .rounds, .mag .push-grid {
+    display: grid; gap: clamp(1.5rem, 4vw, 3rem); align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--col, 18rem)), 1fr));
+}
+.mag .rounds { --col: 19rem; gap: 1.1rem; align-items: stretch; }
+.mag .mit { --col: 17rem; }
+.mag .loop-wrap, .mag .again { --col: 20rem; }
+.mag .push-grid { --col: 16rem; }
+.mag .cases { --col: 18rem; align-items: start; }
+
+/* ===== THE COVER ===== */
+.mag .cover {
+    overflow: hidden; isolation: isolate;
+    padding: clamp(5.5rem, 11vw, 7.75rem) clamp(1.4rem, 5vw, 3.5rem) clamp(1.75rem, 4vw, 2.75rem);
+}
+.mag .cover .head-actions { display: none; }
+.mag .cover .section-head { display: block; margin: 0; }
+.mag .cover .ribbon { top: -0.9rem; right: -9%; width: min(76%, 640px); transform: scaleX(-1); }
+.mag .cover h1 {
+    font-family: var(--m-display); font-weight: 700; color: var(--m-ink);
+    font-size: min(clamp(2.4rem, 1.4rem + 4.4vw, 4.3rem), 11cqi); line-height: 1.04; letter-spacing: -0.01em;
+    margin: 0;
+}
+.mag .cover-line {
+    display: flex; align-items: center; gap: 0.8rem; margin: 1rem 0 1.75rem;
+    font: 700 0.85rem/1.3 var(--m-label); color: var(--m-soft);
+}
+.mag .cover-line::before { content: ""; flex: none; width: 3rem; height: 3px; background: var(--red); }
+.mag .cover .dek { max-width: 34rem; }
+.mag .signin { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem; margin: 1.5rem 0 2.25rem; }
+.mag .signin > p { margin: 0; font: 700 0.92rem/1.3 var(--m-label); color: var(--m-ink); }
+/* What a device needs: a short checklist under the sign-in note. Each item is a small red label over one plain line. */
+.mag .needs { margin: -0.75rem 0 2.25rem; }
+.mag .needs-k { margin: 0 0 0.6rem; }
+.mag .needs > ul {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr)); gap: 1rem 1.75rem;
+    list-style: none; padding: 1rem 0 0; margin: 0; border-top: 1px solid var(--m-line);
+}
+.mag .needs > ul > li { margin: 0; font-size: 0.9rem; line-height: 1.5; }
+.mag .needs > ul > li > b {
+    display: block; margin-bottom: 0.15rem; font: 800 0.7rem/1.3 var(--m-label);
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--m-red-text);
+}
+.mag .leave-k { margin-top: 0; }
+.mag .leave {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: 1.25rem 1.75rem;
+    list-style: none; padding: 1.25rem 0 0; margin: 0; border-top: 1px solid var(--m-line); counter-reset: leave;
+}
+.mag .leave > li { counter-increment: leave; position: relative; margin: 0; padding-left: 2.2rem; font-size: 0.95rem; line-height: 1.5; }
+.mag .leave > li::before {
+    content: counter(leave); position: absolute; left: 0; top: -0.3rem;
+    font: 700 2rem/1 var(--m-display); color: var(--m-red-text);
+}
+.mag .issue {
+    display: flex; flex-wrap: wrap; gap: 0.35rem 1.4rem; list-style: none; padding: 1.1rem 0 0; margin: 1.75rem 0 0;
+    border-top: 1px solid var(--m-line); font: 700 0.8rem/1.4 var(--m-label);
+}
+.mag .issue > li { margin: 0; }
+.mag .issue a { color: var(--m-ink); text-decoration: none; border-bottom: 2px solid transparent; }
+.mag .issue a:hover { border-bottom-color: var(--red); }
+.mag .issue .issue-k { color: var(--m-red-text); letter-spacing: 0.14em; text-transform: uppercase; }
+
+/* The cover's switch between the session's two pairs of tools (workshop.js) */
+.mag .tools { margin: 1.5rem 0 0; }
+.mag .tools .kicker { margin-bottom: 0.5rem; }
+.mag .tools-switch {
+    display: inline-flex; flex-wrap: wrap; gap: 0.25rem; padding: 0.25rem;
+    border: 1.5px solid var(--m-line); border-radius: 1.6rem; background: var(--m-tint);
+}
+.mag .tools-switch button {
+    min-height: 2.6rem; padding: 0.5rem 1.05rem; border: 0; border-radius: 1.3rem;
+    font: 700 0.9rem/1.2 var(--m-label); color: var(--m-ink); background: transparent; cursor: pointer;
+}
+.mag .tools-switch button:hover { background: var(--m-paper); }
+.mag .tools-switch button[aria-pressed="true"] { background: var(--m-navy); color: #fff; }
+[data-theme="dark"] .mag .tools-switch button[aria-pressed="true"] { background: #e8eef4; color: #002a42; }
+.mag .tools ~ .signin { margin-top: 1.1rem; }
+
+/* The second tool of a pair is slate, as Gemini is; the first is navy, as Flint is */
+.mag .pill-r2 { background: var(--m-slate); }
+.mag .support-r2 .sl-go a { background: var(--m-slate); border-color: var(--m-slate); }
+/* A pill or button whose guide or handout is not ready yet */
+.mag .pill.is-soon { opacity: 0.75; }
+.mag .pill .soon-badge { margin-left: 0.35em; background: rgba(255, 255, 255, 0.2); border-color: transparent; color: #fff; }
+.mag .m-btn.is-soon { border-style: dashed; color: var(--text-secondary); cursor: default; }
+.mag .m-btn.is-soon:hover { background: transparent; }
+.mag .m-btn .soon-badge { margin-left: 0.2em; }
+
+/* ===== THE IDEA ===== */
+.mag .spread > div:last-child { container-type: inline-size; }
+.mag .spread .tracked { font-size: 2.2rem; font-size: min(3.4rem, 12.5cqi); white-space: nowrap; overflow-wrap: normal; }
+[data-font="dyslexic"] .mag .spread .tracked { font-size: min(3.4rem, 10.5cqi); }
+.mag .fern-art { position: relative; aspect-ratio: 16 / 11; color: var(--m-ink); }
+.mag .fern-art > img, .mag .fern-art > canvas { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.mag .fern-art.is-live > img { display: none; }
+.mag .fern-note { font-size: 0.85rem; line-height: 1.55; color: var(--text-secondary); margin: 1rem 0 0; }
+.mag .same-rule { margin: clamp(2.5rem, 6vw, 4rem) 0 0; }
+.mag .plates { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); gap: 0.9rem; list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.mag .plate { margin: 0; padding: 1rem 1rem 1.1rem; display: flex; flex-direction: column; }
+.mag .plate-art { height: 6.5rem; margin-bottom: 1rem; color: var(--m-ink); }
+.mag .plate-art > img, .mag .plate-art > svg { display: block; width: 100%; height: 100%; object-fit: contain; }
+.mag .plate-t { font: 700 1.15rem/1.25 var(--m-display); color: var(--m-ink); margin: 0 0 0.45rem; }
+.mag .plate-now .plate-t { color: var(--m-red-text); }
+.mag .plate-c { font-size: 0.84rem; line-height: 1.5; color: var(--text-secondary); margin: 0; }
+.mag .pull { margin: clamp(2.5rem, 6vw, 4rem) auto 1.75rem; padding: 0; border: 0; text-align: center; max-width: 30rem; }
+.mag .pull p {
+    font: italic 400 clamp(1.6rem, 1.1rem + 2.2vw, 2.5rem)/1.2 var(--m-display); color: var(--m-ink); margin: 0;
+}
+.mag .pull p::before { content: "\201C"; display: block; font: 700 3.2em/0.6 var(--m-display); color: var(--red); margin-bottom: 0.1em; }
+.mag .fit {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: 0 1.5rem;
+    list-style: none; padding: 0; margin: 0;
+}
+.mag .fit > li { margin: 0; padding: 0.9rem 0 0.75rem; border-top: 2px solid var(--m-ink); }
+.mag .fit > li.fit-you { border-top-color: var(--red); }
+.mag .fit-k { font: 800 0.72rem/1.3 var(--m-label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--m-soft); margin: 0 0 0.4rem; }
+.mag .fit-you .fit-k { color: var(--m-red-text); }
+.mag .fit p:not(.fit-k) { font-size: 0.93rem; line-height: 1.5; margin: 0; }
+.mag .statement {
+    overflow: hidden; isolation: isolate; margin-top: clamp(2.5rem, 6vw, 4rem);
+    padding: clamp(2.25rem, 7vw, 4.25rem) max(30%, 6rem) clamp(2.25rem, 7vw, 4.25rem) clamp(1.4rem, 5vw, 3rem);
+}
+.mag .statement .ribbon { top: -8%; right: -1%; height: 116%; width: auto; }
+.mag .statement-sub { margin: 1.25rem 0 0; font-size: 0.98rem; line-height: 1.6; color: var(--text-secondary); }
+
+/* ===== WHY NOW ===== */
+/* The letter as a paper poster: white paper in every theme, like a printed sheet */
+.mag .poster {
+    background: #fff; color: #002a42; border-top: 6px solid var(--red); border-radius: 4px;
+    padding: 1.5rem 1.6rem 1.3rem; box-shadow: var(--m-shadow); transform: rotate(-0.8deg); max-width: 27rem;
+}
+.mag .poster-logo { display: block; height: 1.9rem; width: auto; }
+.mag .poster-title { font: 700 1.5rem/1.2 var(--m-display); color: #002a42; margin: 1rem 0 1.1rem; }
+.mag .poster-title .red { color: var(--red); }
+.mag .poster .tabs > li { font: 700 0.9rem/1.4 var(--m-label); color: #002a42; }
+.mag .quote { margin: 0; }
+.mag .quote blockquote { margin: 0; padding: 0; border: 0; }
+.mag .quote blockquote p { font: 700 clamp(2rem, 1.3rem + 3vw, 3.2rem)/1.15 var(--m-display); color: var(--m-ink); margin: 0; }
+.mag .quote mark {
+    color: inherit; padding: 0 0.05em;
+    background: linear-gradient(transparent 52%, var(--yellow) 52%, var(--yellow) 94%, transparent 94%);
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+[data-theme="dark"] .mag .quote mark { background: var(--yellow); color: #002a42; }
+.mag .quote figcaption { margin-top: 1rem; font: 700 0.88rem/1.4 var(--m-label); color: var(--m-ink); font-style: normal; }
+.mag .quote figcaption span { display: block; font-weight: 600; color: var(--m-soft); }
+.mag .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: 0.9rem; list-style: none; padding: 0; margin: clamp(2.25rem, 5vw, 3.25rem) 0 0.75rem; }
+.mag .stats > li { margin: 0; padding: 1.1rem 1.2rem 1.25rem; background: var(--m-tint); border-top: 6px solid var(--m-ink); border-radius: 4px; }
+.mag .stats > li.stat-red { border-top-color: var(--red); }
+.mag .stat-n { font: 700 clamp(2.5rem, 1.9rem + 2.4vw, 3.6rem)/1 var(--m-display); color: var(--m-ink); margin: 0 0 0.5rem; }
+.mag .stat-red .stat-n { color: var(--m-red-text); }
+.mag .stat-l { font: 600 0.88rem/1.35 var(--m-label); color: var(--text); margin: 0; }
+.mag .source { font-size: 0.8rem; line-height: 1.5; color: var(--m-soft); margin: 0; }
+
+/* ===== SO WE TEACH ===== */
+.mag .tabs.tabs-xl > li { font: 700 clamp(2rem, 1.35rem + 2.8vw, 3.2rem)/1.1 var(--m-display); font-size: min(clamp(2rem, 1.35rem + 2.8vw, 3.2rem), 9.5cqi); color: var(--m-ink); padding-left: 1.45em; margin-bottom: 0.25em; }
+.mag .tabs.tabs-xl > li::before { top: 0.24em; width: 1em; height: 0.66em; }
+.mag .teach-why { font: 700 1rem/1.5 var(--m-label); color: var(--m-ink); margin: 1rem 0 0; padding-top: 1rem; border-top: 1px solid var(--m-line); max-width: 32rem; }
+.mag .split { display: grid; grid-template-columns: 1fr 1fr; margin: clamp(2.5rem, 6vw, 3.75rem) 0 1.5rem; text-align: center; }
+.mag .split > div { padding: 0 clamp(0.6rem, 3vw, 2rem); container-type: inline-size; min-width: 0; }
+.mag .split > div + div { border-left: 2px solid var(--m-line); }
+.mag .split-k { font: 800 0.8rem/1.3 var(--m-label); font-size: min(0.8rem, 7.5cqi); letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 0.5rem; color: var(--m-ink); }
+.mag .split-a { color: var(--m-soft); }
+.mag .split-h { color: var(--m-ink); }
+.mag .split-a .split-k { color: var(--m-soft); }
+.mag .split p { margin-left: auto; margin-right: auto; max-width: 17rem; font-size: 0.95rem; line-height: 1.5; overflow-wrap: break-word; }
+.mag .split svg { display: block; width: 100%; max-width: min(8.5rem, 70cqi); height: 9rem; margin: 1rem auto; }
+.mag .split-eaten { font: 700 0.9rem/1.4 var(--m-label); color: var(--m-ink); }
+
+/* ===== THE LOOP ===== */
+.mag .loop { position: relative; width: min(100%, 24rem); margin: 0 auto; container-type: inline-size; }
+/* The ring takes 60% of the loop's width; the labels around it are sized to the loop too,
+   so ring and labels grow and shrink together and always leave each other room. */
+.mag .loop-ring { position: relative; width: 60%; aspect-ratio: 1; margin: 13% auto 15%; }
+.mag .loop-ring > svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.mag .loop-track { fill: none; stroke: var(--m-ink); stroke-width: 6; }
+.mag .loop-gold { fill: none; stroke-width: 6; stroke-linecap: round; }   /* its stroke is the ring's own gradient */
+.mag .loop-g0 { stop-color: var(--m-ink); }
+.mag .loop-g1 { stop-color: var(--yellow); }
+.mag .loop-dot { fill: var(--m-paper); stroke: var(--m-ink); stroke-width: 3; }
+.mag .loop-st { list-style: none; padding: 0; margin: 0; }
+.mag .loop-st > li {
+    position: absolute; margin: 0; white-space: nowrap;
+    font: 700 1.1rem/1.2 var(--m-display); font-size: min(1.15rem, 5.4cqi); color: var(--m-ink);
+}
+.mag .loop-st a { color: inherit; text-decoration: none; border-bottom: 2px solid transparent; }
+.mag .loop-st a:hover { border-bottom-color: var(--red); }
+/* Station i sits at -90 + 72i degrees on a ring of radius 35%; each label sits just outside its dot */
+.mag .loop-st .st-1 { left: 50%; top: 15%; transform: translate(-50%, calc(-100% - 0.75rem)); }
+.mag .loop-st .st-2 { left: 89%; top: 39.2%; transform: translateY(-50%); }
+.mag .loop-st .st-3 { left: 72%; top: 83%; }
+.mag .loop-st .st-4 { right: 72%; top: 83%; }
+.mag .loop-st .st-5 { right: 89%; top: 39.2%; transform: translateY(-50%); }
+.mag .loop-centre { position: absolute; inset: 24%; }
+.mag .loop-centre.fern-art { aspect-ratio: auto; }
+.mag .agenda {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr)); gap: 0.45rem 1rem;
+    list-style: none; padding: 1.1rem 0 0; margin: clamp(2rem, 5vw, 3rem) 0 0; border-top: 2px solid var(--m-ink); counter-reset: agenda;
+}
+.mag .agenda > li { counter-increment: agenda; margin: 0; font: 700 0.86rem/1.35 var(--m-label); }
+.mag .agenda a { display: flex; align-items: baseline; gap: 0.5rem; color: var(--m-ink); text-decoration: none; }
+.mag .agenda a::before { content: counter(agenda); font: 700 1.35rem/1 var(--m-display); color: var(--m-red-text); min-width: 0.8em; }
+.mag .agenda a:hover span { text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 2px; }
+
+@media (prefers-reduced-motion: no-preference) {
+    .mag .loop.will-draw .loop-track { stroke-dasharray: 528; stroke-dashoffset: 528; }
+    .mag .loop.will-draw .loop-gold, .mag .loop.will-draw .loop-dot, .mag .loop.will-draw .loop-st > li { opacity: 0; }
+    .mag .loop.is-drawing .loop-track { animation: loop-draw 1.5s cubic-bezier(0.45, 0, 0.25, 1) forwards; }
+    .mag .loop.is-drawing .loop-dot, .mag .loop.is-drawing .loop-st > li { animation: loop-in 0.35s ease-out forwards; animation-delay: calc(var(--i) * 0.3s); }
+    .mag .loop.is-drawing .loop-gold { animation: loop-in 0.5s ease-out 1.3s forwards; }
+}
+@keyframes loop-draw { to { stroke-dashoffset: 0; } }
+@keyframes loop-in { to { opacity: 1; } }
+
+/* ===== THE STEPS ===== */
+.mag .step > p, .mag .step > .aside { max-width: 40rem; }
+.mag .board-head { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 0.5rem 1rem; margin-bottom: 1.1rem; }
+.mag .board-t { font: 700 clamp(1.6rem, 1.25rem + 1.4vw, 2.1rem)/1.1 var(--m-display); color: var(--m-ink); margin: 0; }
+.mag .board-t.caps { text-transform: uppercase; letter-spacing: 0.04em; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.8rem; margin-bottom: 1rem; }
+[data-font="dyslexic"] .mag .board-t.caps { letter-spacing: 0; }
+.mag .time { margin: 0; text-align: center; flex: none; font: 600 0.8rem/1.3 var(--m-label); color: var(--m-ink); }
+/* Playfair's numerals hang below the line (3, 4, 5, 7, 9), so the number keeps room under it for its unit */
+.mag .time .big-n { display: block; font: 700 clamp(2.9rem, 2.3rem + 2.4vw, 4.1rem)/1 var(--m-display); padding-bottom: 0.22em; }
+.mag .round-2 .board-t, .mag .round-2 .big-n, .mag .work-02 .board-t, .mag .work-02 .big-n { color: var(--m-red-text); }
+.mag .round .tabs > li { font: 700 0.95rem/1.45 var(--m-label); color: var(--m-ink); }
+.mag .keep {
+    display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 0.25rem 1rem;
+    margin: 1.25rem 0 0; padding: 1rem 1.25rem; border: 2px dashed var(--m-line); border-radius: var(--m-radius);
+}
+.mag .keep p { margin: 0; }
+.mag .keep .kicker { margin: 0; }
+
+.mag .reframe { text-align: center; padding: clamp(1.75rem, 5vw, 3rem) clamp(1.1rem, 4vw, 2.5rem); }
+.mag .reframe .kicker { color: var(--m-soft); }
+.mag .reframe-to .kicker { color: var(--m-ink); }
+.mag .reframe .d-m { max-width: 22ch; margin: 0 auto; }
+.mag .reframe-arrow { position: relative; width: 2px; height: 2.4rem; margin: 1.1rem auto; background: var(--m-line); }
+.mag .reframe-arrow::after {
+    content: ""; position: absolute; left: 50%; bottom: -2px; transform: translateX(-50%);
+    border: 7px solid transparent; border-top: 9px solid var(--m-line); border-bottom: 0;
+}
+.mag .reframe-coda { font: 700 1.15rem/1.4 var(--m-display); color: var(--m-ink); margin: 0 auto; max-width: 24ch; }
+.mag .tmpl { margin-top: 1.25rem; padding: clamp(1.25rem, 3vw, 1.75rem); }
+.mag .tmpl .d-s { margin: 0.25rem 0; }
+.mag .blank {
+    display: inline-block; width: 2.6em; height: 0.3em; margin: 0 0.15em; vertical-align: 0.12em;
+    background: var(--yellow); border-radius: 1px;
+}
+.mag .blank.short { width: 1.4em; }
+.mag .blank.long { width: 4.6em; }
+
+.mag .sketch {
+    padding: clamp(1.5rem, 4vw, 2.25rem);
+    background-color: var(--m-paper);
+    background-image: linear-gradient(var(--m-grid) 1px, transparent 1px), linear-gradient(90deg, var(--m-grid) 1px, transparent 1px);
+    background-size: 22px 22px; background-position: -1px -1px;
+}
+.mag .sketch-sub { font: 700 1rem/1.4 var(--m-label); color: var(--m-ink); margin: 0.4rem 0 1.25rem; }
+.mag .sketch .tabs > li { font: 700 clamp(1.05rem, 0.95rem + 0.5vw, 1.25rem)/1.4 var(--m-label); color: var(--m-ink); }
+
+/* The prompt spine, as the dotted board (a .prompt-card, so workshop.js gives it a Copy button) */
+.mag .prompt-card.spine-board {
+    text-align: center; padding: 1.1rem clamp(1rem, 4vw, 2.5rem) 2rem;
+    background: var(--m-paper); border: 2px dotted var(--m-soft); border-radius: var(--m-radius);
+}
+/* The label sits top left, 1.25rem from the edge, beside the Copy button; its min-height keeps
+   the spine below the button, so the spine starts where it always did. On a narrow card the
+   button moves under the spine (workshop.css) and the label takes the card's full width. */
+.mag .spine-board .prompt-label {
+    text-align: left; min-height: 2.1rem; padding-right: 6rem;
+    margin: 0 0 0.2rem calc(1.25rem - clamp(1rem, 4vw, 2.5rem));
+}
+@container prompt (max-width: 30rem) {
+    .mag .spine-board .prompt-label { min-height: 0; padding-right: 0; margin-bottom: 1rem; }
+}
+.mag .spine-board .prompt-text {
+    padding-right: 0; margin: 0 auto; max-width: 30ch;
+    font: 700 clamp(1.25rem, 1rem + 1.1vw, 1.75rem)/1.75 var(--m-display); color: var(--m-ink);
+}
+.mag .spine-board .spine .blank { display: inline-block; height: 0.32em; min-width: 0; border: 0; background: var(--yellow); vertical-align: 0.1em; }
+.mag .key { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 0.6rem 1.5rem; list-style: none; padding: 0; margin: 1.5rem 0; }
+.mag .key > li { margin: 0; padding-left: 0.9rem; border-left: 3px solid var(--yellow); font-size: 0.9rem; line-height: 1.5; }
+.mag .key b { display: block; font: 700 0.86rem/1.4 var(--m-label); color: var(--m-ink); }
+
+/* Working boards: Build 01, Test 01, Build 02 */
+.mag .work { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem 2rem; }
+.mag .work > div { flex: 1 1 17rem; min-width: 0; }
+.mag .work .tabs { margin-bottom: 0.25rem; }
+.mag .work .tabs > li { font: 700 1rem/1.45 var(--m-label); color: var(--m-ink); }
+.mag .work-line { font: 700 1.2rem/1.35 var(--m-display); color: var(--m-ink); margin: 0.75rem 0 0; }
+.mag .spine-link {
+    display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1rem;
+    padding-left: 0.7rem; border-left: 3px solid var(--yellow);
+    font: 700 0.82rem/1.3 var(--m-label); color: var(--m-ink); text-decoration: none;
+}
+.mag .spine-link:hover { text-decoration: underline; }
+
+/* Where the help is: buttons into the tool guides */
+.mag .support { margin-top: 1.1rem; padding: 1.1rem 1.15rem 1.2rem; background: var(--m-tint); border-radius: var(--m-radius); }
+.mag .support .kicker { margin-bottom: 0.2rem; }
+.mag .support-t { font: 700 1.05rem/1.35 var(--m-label); color: var(--m-ink); margin: 0 0 0.85rem; }
+.mag .support-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 10.5rem), 1fr)); gap: 0.6rem; list-style: none; padding: 0; margin: 0; }
+.mag .support-links > li { margin: 0; }
+.mag .support-links a {
+    display: flex; flex-direction: column; justify-content: center; gap: 0.15rem; height: 100%; min-height: 3.6rem;
+    padding: 0.65rem 0.9rem; border-radius: 10px; border: 1.5px solid var(--m-line); background: var(--m-paper);
+    color: var(--m-ink); text-decoration: none;
+}
+.mag .support-links a:hover { border-color: var(--m-ink); }
+.mag .sl-k { font: 700 0.68rem/1.3 var(--m-label); letter-spacing: 0.1em; text-transform: uppercase; color: var(--m-soft); }
+.mag .sl-t { font: 700 0.95rem/1.3 var(--m-label); }
+.mag .support-links .sl-go a { background: var(--m-navy); border-color: var(--m-navy); color: #fff; }
+.mag .support-gemini .sl-go a { background: var(--m-slate); border-color: var(--m-slate); }
+.mag .support-links .sl-go .sl-k { color: rgba(255, 255, 255, 0.85); text-transform: none; letter-spacing: 0; font-size: 0.78rem; }
+.mag .sl-k, .mag .sl-t { overflow-wrap: anywhere; }
+.mag .support-links .sl-go a:hover { filter: brightness(1.15); }
+[data-theme="dark"] .mag .support-links .sl-go a { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25); }
+
+/* SCAMPER and the corners of the room */
+.mag .scamper { list-style: none; padding: 0; margin: 0; }
+.mag .scamper > li { margin: 0; font: 700 clamp(1.3rem, 1.1rem + 0.8vw, 1.65rem)/1.3 var(--m-display); color: var(--m-ink); }
+.mag .scamper .sc-i { color: var(--m-red-text); }
+.mag .scamper .off, .mag .scamper .off .sc-i { color: var(--m-faint); }
+.mag .room { padding: 0.9rem; border: 3px solid var(--m-ink); border-radius: var(--m-radius); container-type: inline-size; min-width: 0; }
+.mag .room-screen { width: 45%; height: 6px; margin: -0.35rem auto 0.9rem; background: var(--m-ink); border-radius: 3px; }
+.mag .corners { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; list-style: none; padding: 0; margin: 0; }
+.mag .corners > li {
+    display: grid; place-items: center; min-height: 5.5rem; margin: 0; padding: 0.75rem; text-align: center;
+    background: var(--m-navy); color: #fff; border-radius: 6px; font: 700 1.1rem/1.2 var(--m-display); font-size: min(1.3rem, 6.6cqi);
+}
+[data-font="dyslexic"] .mag .corners > li { font-size: min(1.3rem, 4.9cqi); }
+.mag .corners > li.push { background: var(--red); }
+[data-theme="dark"] .mag .corners > li { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2); }
+.mag .room-t { font: 700 0.9rem/1.4 var(--m-label); color: var(--m-ink); text-align: center; margin: 0.9rem 0 0; }
+
+/* Can't / Can */
+.mag .cancan { display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 1.1rem; }
+.mag .cancan > div { padding: 0 clamp(0.75rem, 3vw, 1.75rem); }
+.mag .cancan > div:first-child { padding-left: 0; }
+.mag .cancan > div + div { border-left: 2px solid var(--m-line); }
+.mag .cc-t { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; font: 700 clamp(1.5rem, 1.2rem + 1.2vw, 2rem)/1.1 var(--m-display); color: var(--m-ink); margin: 0 0 1rem; }
+.mag .cc-list { list-style: none; padding: 0; margin: 0; }
+.mag .cc-list > li { font: 700 0.95rem/1.45 var(--m-label); color: var(--m-faint); margin: 0 0 0.6em; padding-left: 2.1em; }
+.mag .cancan .tabs > li { font: 700 0.95rem/1.45 var(--m-label); color: var(--m-red-text); }
+
+/* ===== WHERE THIS GOES ===== */
+.mag .case { margin: 0; }
+.mag .ipad {
+    padding: 3.2%; background: #15181c; border-radius: 22px;
+    box-shadow: inset 0 0 0 2px #2c3138, var(--m-shadow);
+}
+.mag .ipad img { display: block; width: 100%; border-radius: 6px; }
+.mag .case figcaption { margin-top: 1rem; font-size: 0.92rem; font-style: normal; color: var(--text); }
+.mag .case-t { display: block; font: 700 1.6rem/1.15 var(--m-display); color: var(--m-ink); margin-bottom: 0.35rem; }
+.mag .case-q { display: block; color: var(--text-secondary); margin-bottom: 0.75rem; }
+.mag .case-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; font: 700 0.85rem/1.4 var(--m-label); color: var(--m-ink); }
+.mag .case-meta .pill { white-space: normal; overflow-wrap: anywhere; }
+.mag .rungs { container-type: inline-size; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.3fr); align-items: end; gap: 0.75rem; list-style: none; padding: 0; margin: clamp(2.75rem, 6vw, 4rem) 0 0; }
+.mag .rungs > li {
+    margin: 0; padding-bottom: 0.6rem; border-bottom: 6px solid var(--m-ink);
+    font: 700 clamp(1.3rem, 1.1rem + 1vw, 1.8rem)/1.2 var(--m-display); color: var(--m-ink);
+}
+.mag .rungs > li:nth-child(2) { margin-bottom: 3.5rem; border-bottom-color: var(--m-slate); }
+.mag .rungs > li:nth-child(3) { margin-bottom: 7rem; border-bottom-color: var(--red); display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.mag .rungs .pill { background: transparent; color: var(--m-ink); box-shadow: inset 0 0 0 1.5px var(--m-ink); font-size: min(0.82rem, 3.3cqi); padding: 0.32em 0.75em; white-space: normal; text-align: center; }
+.mag .rungs > li { min-width: 0; overflow-wrap: break-word; }
+.mag .rungs-t { text-align: right; margin: 1.25rem 0 0; }
+.mag .rungs a { color: inherit; text-decoration: none; }
+.mag .rungs a:hover { text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 2px; }
+.mag .rungs a.pill:hover { text-decoration: none; box-shadow: inset 0 0 0 2px var(--red); }
+/* The guides beyond the session, and the ways to publish */
+.mag .go-further { margin-top: clamp(2rem, 5vw, 3rem); }
+.mag .go-further .go-k { margin: 1.25rem 0 0.6rem; }
+/* A guide that is not open yet: a dashed card with a Soon tag, not a button */
+.mag .support-links a.is-soon { position: relative; border-style: dashed; background: transparent; padding-right: 3.6rem; }
+.mag .support-links a.is-soon:hover { border-color: var(--m-line); }
+.mag .support-links a.is-soon .sl-t { color: var(--text-secondary); }
+.mag .support-links a.is-soon .soon-badge { position: absolute; top: 0.6rem; right: 0.6rem; margin: 0; }
+.mag .rungs a.is-soon { opacity: 0.7; }
+.mag .rungs a.pill.is-soon:hover { box-shadow: inset 0 0 0 1.5px var(--m-ink); }
+.mag .rungs .soon-badge { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; padding: 0; border: 0; }
+.mag .again { margin-top: clamp(3rem, 7vw, 4.5rem); }
+.mag .next-panel { margin-top: clamp(3rem, 7vw, 4.5rem); text-align: center; }
+.mag .close {
+    overflow: hidden; isolation: isolate; margin-top: 1.25rem;
+    padding: clamp(2.25rem, 6vw, 3.75rem) clamp(1.4rem, 5vw, 3.25rem) clamp(5rem, 12vw, 7rem);
+}
+.mag .close .ribbon { right: -14%; bottom: -26%; width: min(78%, 620px); }
+.mag .close-t { font: 700 1rem/1.4 var(--m-label); color: var(--m-ink); margin: 0; }
+
+/* Small layout helpers used once each */
+/* The big questions break where the boards break them (<br> in the page) */
+.mag .question { max-width: none; }
+.mag .loop-wrap .d-l ~ .dek, .mag .again .d-l ~ .dek { margin-top: 0.9rem; }
+.mag .nowrap { white-space: nowrap; }
+.mag .question-credit { margin: 1.5rem auto 0; max-width: 34rem; font-size: 0.9rem; line-height: 1.55; }
+.mag .hard { max-width: 22ch; }
+.mag .agenda-k { margin: clamp(2.5rem, 6vw, 3.5rem) 0 0; }
+.mag .agenda-k + .agenda { margin-top: 0.75rem; }
+.mag .rungs-k { margin: clamp(3rem, 7vw, 4.5rem) 0 0; }
+.mag .rungs-k ~ .rungs { margin-top: 1.25rem; }
+.mag .ipad-fig { margin: 0 0 1rem; }
+.mag .case p { margin: 0 0 0.6rem; }
+
+/* On a narrow card a ribbon would run behind the words (it scales with the card's height),
+   so the card keeps a red edge instead. A container query, so this also happens when a
+   reader's larger text makes the card narrow for its words. */
+@container (max-width: 34rem) {
+    .mag .statement .ribbon, .mag .close .ribbon { display: none; }
+    .mag .statement { padding-right: clamp(1.4rem, 5vw, 3rem); border-left: 6px solid var(--red); }
+    .mag .close { padding-bottom: clamp(2.25rem, 6vw, 3.75rem); border-bottom: 6px solid var(--red); }
+}
+
+/* ===== SMALLER SCREENS ===== */
+@media (max-width: 760px) {
+    .mag .poster { transform: none; }
+}
+@media (max-width: 560px) {
+    .mag .split svg { height: 6.5rem; }
+    .mag .cancan { grid-template-columns: 1fr; }
+    .mag .cancan > div { padding: 0; }
+    .mag .cancan > div + div { border-left: 0; border-top: 2px solid var(--m-line); margin-top: 1rem; padding-top: 1rem; }
+    .mag .rungs > li:nth-child(2) { margin-bottom: 2.25rem; }
+    .mag .rungs > li:nth-child(3) { margin-bottom: 4.5rem; }
+    .mag .keep { grid-template-columns: 1fr; }
+}
+
+/* ===== PRINT ===== */
+@media print {
+    .mag .panel { background: none; color: #002a42; border: 2px solid #002a42; }
+    .mag .panel .d-xxl, .mag .panel .d-xl, .mag .panel .d-l, .mag .panel .d-m, .mag .panel p, .mag .panel h2, .mag .panel .yellow { color: #002a42; }
+    .mag .ribbon, .mag .support { display: none; }
+    .mag .card, .mag .board, .mag .poster { box-shadow: none; transform: none; }
+    .mag .board, .mag .plate, .mag .stats > li, .mag .case, .mag .loop, .mag .room { break-inside: avoid; }
+    /* a ring that has not scrolled into view yet still prints whole */
+    .mag .loop.will-draw .loop-track, .mag .loop .loop-track { stroke-dasharray: none; stroke-dashoffset: 0; animation: none; }
+    .mag .loop.will-draw .loop-gold, .mag .loop.will-draw .loop-dot, .mag .loop.will-draw .loop-st > li { opacity: 1; animation: none; }
+    .mag .panel.feature h2::after { background: #002a42; }
+}

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Pages: getting started — Bring a Barrier, Leave With a Build</title>
+<meta name="description" content="A guide to publishing a classroom tool as a free website with GitHub Pages, and keeping it up to date with GitHub Desktop.">
+<link rel="stylesheet" href="assets/course.css?v=2">
+<link rel="stylesheet" href="assets/workshop.css?v=2">
+<script>if('scrollRestoration' in history)history.scrollRestoration='manual';</script>
+</head>
+<body data-root="" data-chapter="github-pages">
+
+<!-- Finished on 5 October 2026: no screenshot or video is still to come, and no fact is tagged TBC. Figure 4 is the
+     presenter's own screenshot of GitHub Desktop, cropped to the window, with the profile photo beside the Summary box
+     hidden; it shows the commit step (the bar at the top still says Fetch origin, where Push origin appears after a
+     commit; GitHub's documentation says Push origin is in the repository bar at the top). The three videos were
+     checked as embeddable on 5 October 2026 and are described from their own descriptions, not from watching them.
+     Facts: GitHub Pages is static hosting, a free account needs a public repository, a site may be up to 1 GB
+     (docs.github.com). If a screenshot or fact is added later, mark it with .shot-todo or a TBC tag as on the other guides. -->
+<main class="main" role="main">
+
+    <section id="overview">
+        <div class="chapter-eyebrow">App publishing · Getting started</div>
+        <h1>GitHub Pages</h1>
+        <p class="lead">GitHub Pages publishes a website straight from a GitHub <span class="term">repository</span>, free, at an address like <em>yourname.github.io/your-tool</em>. This website is published with it.</p>
+
+        <div class="chapter-meta"></div>
+
+        <div data-progression></div>
+
+        <div class="two-col">
+            <div>
+                <h4>Best for</h4>
+                <p>A single-screen tool, or a small site made of HTML files, like the ones Gemini makes.</p>
+            </div>
+            <div>
+                <h4>Start here</h4>
+                <p><a href="https://github.com" target="_blank" rel="noopener noreferrer"><strong>github.com</strong></a><br>A free account is enough for a public site.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="account" data-kind="Practice" data-track>
+        <h2>Exercise 1: Make an account and a repository</h2>
+
+        <figure class="shot marked">
+            <div class="marked-wrap">
+                <img src="images/publishing/github-new-repository.jpg" alt="GitHub’s Create a new repository page. The owner is dbbudd, and the repository name box holds maths-steps, with a green note: maths-steps is available. Below, under Configuration, Choose visibility is set to Public." loading="lazy">
+                <span class="marker" style="left:96.8%;top:38.5%" aria-hidden="true">2</span>
+                <span class="marker" style="left:80.8%;top:91.8%" aria-hidden="true">3</span>
+            </div>
+            <figcaption><b>Figure 1</b> — Making a repository. Its name becomes part of your link: this one would be <em>dbbudd.github.io/maths-steps</em>.</figcaption>
+        </figure>
+        <ol class="steps">
+            <li>Sign up at github.com, or sign in.</li>
+            <li>Press <strong>+</strong> at the top, then <strong>New repository</strong>. Give it a short name: it becomes part of your link.</li>
+            <li>Leave it <strong>Public</strong>, turn on <strong>Add README</strong>, and press <strong>Create repository</strong>.</li>
+        </ol>
+    </section>
+
+    <section id="upload" data-kind="Practice" data-track>
+        <h2>Exercise 2: Upload your tool</h2>
+
+        <p>Your tool needs a file called <code>index.html</code>. Copy its code from the AI tool (in Gemini Canvas: <strong>Share &amp; export</strong>, then <strong>Copy contents</strong>). On a Mac, paste it into TextEdit, choose <strong>Format</strong>, then <strong>Make Plain Text</strong>, and save it as index.html. When TextEdit asks, choose <strong>Use .html</strong>.</p>
+        <figure class="shot marked">
+            <div class="marked-wrap">
+                <img src="images/publishing/github-upload.jpg" alt="GitHub’s upload page: a large box that says Drag files here to add them to your repository, or choose your files. Below it, a Commit changes form and a green Commit changes button." loading="lazy">
+                <span class="marker" style="left:26.4%;top:24.6%" aria-hidden="true">5</span>
+                <span class="marker" style="left:6.8%;top:95.5%" aria-hidden="true">6</span>
+            </div>
+            <figcaption><b>Figure 2</b> — The upload page. Drag your files into the box, then commit them.</figcaption>
+        </figure>
+        <ol class="steps" style="counter-reset: step 3">
+            <li>In your repository, choose <strong>Add file</strong>, then <strong>Upload files</strong>.</li>
+            <li>Drag in <code>index.html</code>, and anything it uses, such as pictures.</li>
+            <li>Press <strong>Commit changes</strong>.</li>
+        </ol>
+    </section>
+
+    <section id="publish" data-kind="Practice" data-track>
+        <h2>Exercise 3: Turn on Pages</h2>
+
+        <figure class="shot marked">
+            <div class="marked-wrap">
+                <img src="images/publishing/github-pages-settings.jpg" alt="The Pages settings of this website’s own repository. At the top: Your site is live at https://dbbudd.github.io/workshop-vibe/. Under Build and deployment, the source is Deploy from a branch, and the branch is main, in the / (root) folder, with a Save button. Pages is selected in the settings menu on the left." loading="lazy">
+                <span class="marker" style="left:10.9%;top:95.6%" aria-hidden="true">7</span>
+                <span class="marker" style="left:43.7%;top:58.4%" aria-hidden="true">8</span>
+                <span class="marker" style="left:25.4%;top:38.3%" aria-hidden="true">9</span>
+            </div>
+            <figcaption><b>Figure 3</b> — The Pages settings for this website. Once Pages is on, the top of this page shows your link.</figcaption>
+        </figure>
+        <ol class="steps" style="counter-reset: step 6">
+            <li>Open <strong>Settings</strong>, then <strong>Pages</strong>.</li>
+            <li>Under <strong>Build and deployment</strong>, choose <strong>Deploy from a branch</strong>, then <strong>main</strong> and <strong>/ (root)</strong>, and press <strong>Save</strong>.</li>
+            <li>Wait a few minutes (it can take up to 10), then refresh. Your link appears at the top of the page, with <strong>Visit site</strong>.</li>
+        </ol>
+    </section>
+
+    <section id="share" data-kind="Practice" data-track>
+        <h2>Exercise 4: Open it and share it</h2>
+
+        <p>Open your link and try the tool, then share the link with students or colleagues.</p>
+        <div class="callout callout-note">
+            <p>Your site is public: anyone with the link can open it. Keep students’ names and personal information out of anything you publish.</p>
+        </div>
+        <p>To change your tool, upload the new file over the old one, or use GitHub Desktop (Exercise 5). The site updates by itself, within about 10 minutes.</p>
+    </section>
+
+    <section id="desktop" data-kind="Practice" data-track>
+        <h2>Exercise 5: Keep it up to date with GitHub Desktop</h2>
+
+        <p>Uploading in the browser is quickest for one file. When your tool has several files, or you change it often, GitHub Desktop is easier. You keep the tool in a folder on your computer, change it there, and send each change to GitHub as a <span class="term">commit</span>. When you <span class="term">push</span>, your site updates by itself.</p>
+        <figure class="shot marked">
+            <div class="marked-wrap">
+                <img src="images/publishing/github-desktop.jpg" width="994" height="719" alt="GitHub Desktop with a repository open. A dark bar at the top shows the current repository, the current branch, main, and a Fetch origin button. On the left, a list of 87 changed files with tick boxes, then a Summary box, a Description box and a blue button, Commit 87 files to main. On the right, the lines that changed in the selected file." loading="lazy">
+                <span class="marker" style="left:21.3%;top:74.8%" aria-hidden="true">13</span>
+                <span class="marker" style="left:21.2%;top:97.6%" aria-hidden="true">13</span>
+                <span class="marker" style="left:65.9%;top:7.1%" aria-hidden="true">14</span>
+            </div>
+            <figcaption><b>Figure 4</b> — GitHub Desktop with changes waiting. Write a summary and press the blue Commit button (13). Then press Push origin (14), which appears in the bar at the top, where it says Fetch origin here.</figcaption>
+        </figure>
+        <ol class="steps" style="counter-reset: step 9">
+            <li>Install <a href="https://desktop.github.com" target="_blank" rel="noopener noreferrer"><strong>GitHub Desktop</strong></a>, free for Mac and Windows, and sign in with your GitHub account.</li>
+            <li>Choose <strong>File</strong>, then <strong>Clone Repository</strong>, and pick your tool’s repository. Choose where its folder goes on your computer.</li>
+            <li>Change the files in that folder, or ask your coding agent to change them.</li>
+            <li>Back in GitHub Desktop, type a short summary of what you changed, and press <strong>Commit 1 file to main</strong>. The number is how many files you changed.</li>
+            <li>Press <strong>Push origin</strong>. Your site updates within about 10 minutes.</li>
+        </ol>
+        <div class="callout callout-note">
+            <p>If your tool started in a folder on your computer, such as one your coding agent made, add that folder instead of cloning: choose <strong>File</strong>, then <strong>Add Local Repository</strong>. If GitHub Desktop says it isn’t a repository yet, choose <strong>create a repository</strong>. Then press <strong>Publish repository</strong>, and untick <strong>Keep this code private</strong>: Pages on a free account needs a public repository.</p>
+        </div>
+    </section>
+
+    <section id="further" data-kind="Orientation" data-track>
+        <h2>Push it further</h2>
+
+        <p>Ideas for when your first site works.</p>
+        <div class="prompt-card">
+            <span class="prompt-label">Then push it</span>
+            <p class="prompt-text">Add a second page, and link to it from the first.</p>
+        </div>
+        <div class="prompt-card">
+            <span class="prompt-label">Then push it</span>
+            <p class="prompt-text">Use your own web address: in Settings, then Pages, type it under Custom domain and press Save.</p>
+            <p class="prompt-note">Your domain provider needs a matching record. Then tick Enforce HTTPS.</p>
+        </div>
+        <div class="prompt-card">
+            <span class="prompt-label">Then push it</span>
+            <p class="prompt-text">Ask your coding agent to help publish your next tool.</p>
+        </div>
+        <h3>Videos</h3>
+        <p>Each video loads only when you press play. They are from independent creators, not from GitHub.</p>
+
+        <div class="video-list">
+            <div class="video-item"><div class="video" data-video="GOzB22H4dEI" data-title="How to Publish a Webpage on GitHub Pages (Step-by-Step Guide)" data-source="Coding with Murat" data-note="June 2025 · 4:58"></div><p class="video-why">Five minutes on the same steps as Exercises 1 to 3: make a repository, add an index.html, turn on Pages and get a public address.</p></div>
+
+            <div class="video-item"><div class="video" data-video="ZD7lC4SznDs" data-title="Using GitHub Desktop to Commit Files (Clip 12): Gentle Introduction to Git and GitHub" data-source="Deborah Kurata" data-note="November 2022 · 7:39"></div><p class="video-why">Committing changes and pushing them to GitHub with GitHub Desktop, as in Exercise 5. It is older than this guide, so the app may look a little different now.</p></div>
+
+            <div class="video-item"><div class="video" data-video="jz-NL6rhLtM" data-title="How to Add a Custom Domain to GitHub Pages (2026 Complete Guide)" data-source="Noah Does Coding" data-note="January 2026 · 11:51"></div><p class="video-why">Connecting a domain you already own: the Pages settings, the DNS records at the company you bought it from (it uses Namecheap), and turning on HTTPS.</p></div>
+        </div>
+    </section>
+
+</main>
+
+<script src="assets/toc.js?v=2"></script>
+<script src="assets/course.js?v=2"></script>
+<script src="assets/workshop.js?v=2"></script>
+</body>
+</html>

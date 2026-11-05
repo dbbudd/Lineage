@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The App Store: getting started — Bring a Barrier, Leave With a Build</title>
+<meta name="description" content="A guide to publishing an app made in Xcode: the Apple Developer Program, App Store Connect, TestFlight and App Review.">
+<link rel="stylesheet" href="assets/course.css?v=2">
+<link rel="stylesheet" href="assets/workshop.css?v=2">
+<script>if('scrollRestoration' in history)history.scrollRestoration='manual';</script>
+</head>
+<body data-root="" data-chapter="app-store">
+
+<!-- Finished on 5 October 2026: no screenshot or video is still to come, and no fact is tagged TBC.
+     Checked against Apple's developer documentation, October 2026 (developer.apple.com/help): enrolment,
+     fee waivers, D-U-N-S, New App fields, Distribute App, TestFlight testers, Add for Review, private
+     distribution through Apple School Manager. The three videos were checked as embeddable on 5 October 2026
+     and are described from their own descriptions, not from watching them; none is from Apple.
+     If a screenshot or fact is added later, mark it with .shot-todo or a TBC tag as on the other guides. -->
+<main class="main" role="main">
+
+    <section id="overview">
+        <div class="chapter-eyebrow">App publishing · Getting started</div>
+        <h1>App Store</h1>
+        <p class="lead">To put an app on the App Store, you join the Apple Developer Program, upload a build from Xcode to <span class="term">App Store Connect</span>, test it with <span class="term">TestFlight</span>, and send it to App Review.</p>
+
+        <div class="chapter-meta"></div>
+
+        <div data-progression></div>
+
+        <div class="two-col">
+            <div>
+                <h4>Best for</h4>
+                <p>An app made in Xcode that students or colleagues install on their own iPads and iPhones.</p>
+            </div>
+            <div>
+                <h4>Start here</h4>
+                <p><a href="https://developer.apple.com/programs/" target="_blank" rel="noopener noreferrer"><strong>developer.apple.com/programs</strong></a><br>Membership is US$99 a year. A school that enrols as an organisation can ask for a fee waiver, for free apps.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="join" data-kind="Practice" data-track>
+        <h2>Exercise 1: Join the Apple Developer Program</h2>
+
+        <figure class="shot marked">
+            <div class="marked-wrap">
+                <img src="images/publishing/apple-enrol.jpg" alt="The Apple Developer Program’s Become a member page: you can enroll as an individual or enroll your organization. A blue Start your enrollment button." loading="lazy">
+                <span class="marker" style="left:41.8%;top:81.8%" aria-hidden="true">1</span>
+            </div>
+            <figcaption><b>Figure 1</b> — The Apple Developer Program’s enrolment page.</figcaption>
+        </figure>
+        <ol class="steps">
+            <li>Choose <strong>Start your enrollment</strong>, sign in with your Apple Account, and enrol as yourself or for the school. Enrolling the school needs a D-U-N-S Number and someone with the authority to sign for it.</li>
+            <li>Apple checks your details. Then you agree to the licence agreement and pay, or ask for a fee waiver.</li>
+        </ol>
+        <div class="callout callout-note">
+            <p>Enrolling the school also needs a work email on the school’s domain and a public website. A D-U-N-S Number is free, but allow about a week to get one. If you enrol as yourself instead, your own name shows on the App Store as the seller.</p>
+        </div>
+    </section>
+
+    <section id="connect" data-kind="Practice" data-track>
+        <h2>Exercise 2: Create the app in App Store Connect</h2>
+
+        <figure class="shot marked">
+            <div class="marked-wrap">
+                <img src="images/publishing/app-store-connect-apps.jpg" alt="App Store Connect’s Apps page, with a blue + button beside the word Apps, and one app: Barriers: UDL Reflection, iOS 1.0, Ready for Distribution." loading="lazy">
+                <span class="marker" style="left:17.7%;top:29.5%" aria-hidden="true">3</span>
+            </div>
+            <figcaption><b>Figure 2</b> — App Store Connect. Your apps are listed here, and the + button adds a new one. This is the presenter’s own app, Barriers: UDL Reflection.</figcaption>
+        </figure>
+        <ol class="steps" style="counter-reset: step 2">
+            <li>In App Store Connect, open <strong>Apps</strong> and press <strong>+</strong>.</li>
+            <li>Choose <strong>New App</strong>. Fill in the platform, name, primary language, bundle ID and SKU (your own code for the app), and press <strong>Create</strong>.</li>
+        </ol>
+    </section>
+
+    <section id="testflight" data-kind="Practice" data-track>
+        <h2>Exercise 3: Upload a build and test it with TestFlight</h2>
+
+        <figure class="shot marked">
+            <div class="marked-wrap">
+                <img src="images/publishing/testflight.jpg" alt="The TestFlight tab for Barriers: UDL Reflection in App Store Connect. iOS Builds lists three uploaded builds of version 1.0, each Ready to Submit, with columns for invites, installs, sessions, crashes and feedback. On the left, under Testers, Internal Testing has a + button." loading="lazy">
+                <span class="marker" style="left:37.1%;top:58.3%" aria-hidden="true">6</span>
+                <span class="marker" style="left:17.5%;top:63.1%" aria-hidden="true">7</span>
+            </div>
+            <figcaption><b>Figure 3</b> — TestFlight in App Store Connect. Builds you upload from Xcode appear here, and Internal Testing is where you add testers.</figcaption>
+        </figure>
+        <ol class="steps" style="counter-reset: step 4">
+            <li>In Xcode, choose <strong>Product</strong>, then <strong>Archive</strong>.</li>
+            <li>Choose <strong>Distribute App</strong>, then <strong>TestFlight &amp; App Store</strong>, and press <strong>Distribute</strong>. The build appears in App Store Connect.</li>
+            <li>In <strong>TestFlight</strong>, add testers and send them an invitation.</li>
+        </ol>
+        <div class="callout callout-note">
+            <p>Internal testers are up to 100 people on your developer team. Anyone else is an external tester, and the first build for them has a short TestFlight review. Builds expire after 90 days. School Apple Accounts from Apple School Manager can’t be testers, so test with colleagues’ own Apple Accounts.</p>
+        </div>
+        <div class="callout callout-key">
+            <p>Test with a colleague before students, the same way as Test 01: say nothing, and watch where they hesitate.</p>
+        </div>
+    </section>
+
+    <section id="review" data-kind="Practice" data-track>
+        <h2>Exercise 4: Send it to App Review</h2>
+
+        <figure class="shot marked">
+            <div class="marked-wrap">
+                <img src="images/publishing/app-store-page.jpg" alt="The Distribution tab for Barriers: UDL Reflection: iOS App Version 1.0, with Previews and Screenshots showing iPad screenshots of the app. In the sidebar, under App Store and Trust and Safety: App Privacy, App Accessibility, and Ratings and Reviews." loading="lazy">
+                <span class="marker" style="left:49.3%;top:40.0%" aria-hidden="true">8</span>
+                <span class="marker" style="left:12.0%;top:71.9%" aria-hidden="true">8</span>
+            </div>
+            <figcaption><b>Figure 4</b> — An app’s page in App Store Connect. The screenshots, description and privacy details you fill in here are what people see on the App Store.</figcaption>
+        </figure>
+        <ol class="steps" style="counter-reset: step 7">
+            <li>Fill in the App Store page: the description, screenshots, privacy details, a privacy policy link and the age rating.</li>
+            <li>Under <strong>Build</strong>, press <strong>+</strong>, choose your build, and press <strong>Done</strong>, then <strong>Save</strong>. Press <strong>Add for Review</strong>, then <strong>Submit for Review</strong>. Apple reviews most apps within 24 hours.</li>
+            <li>When it is approved, press <strong>Release This Version</strong>, unless you chose to release it automatically.</li>
+        </ol>
+        <div class="callout callout-note">
+            <p>An app only for HKIS can be private instead of on the public App Store. In <strong>Pricing and Availability</strong>, choose <strong>Private</strong>, and enter HKIS’s Apple School Manager Organization ID. It still goes through App Review, and you can’t change the choice after it is approved. HKIS then puts it on iPads. Ask your Technology Coach.</p>
+        </div>
+    </section>
+
+    <section id="further" data-kind="Orientation" data-track>
+        <h2>Push it further</h2>
+
+        <p>Ideas for when your first app is in testing.</p>
+        <div class="prompt-card">
+            <span class="prompt-label">Then push it</span>
+            <p class="prompt-text">Write the privacy details before you build, so you only collect what you need.</p>
+        </div>
+        <div class="prompt-card">
+            <span class="prompt-label">Then push it</span>
+            <p class="prompt-text">Ask your chatbot to draft your App Store description, then make it yours.</p>
+        </div>
+        <div class="prompt-card">
+            <span class="prompt-label">Then push it</span>
+            <p class="prompt-text">Share it privately inside HKIS, through Apple School Manager, instead of on the public App Store.</p>
+        </div>
+        <h3>Videos</h3>
+        <p>Each video loads only when you press play. They are from independent creators, not from Apple.</p>
+
+        <div class="video-list">
+            <div class="video-item"><div class="video" data-video="IcBkwgDe1IY" data-title="How to Create an Apple Developer Account for Your Organization: A Detailed Guide" data-source="Choicely" data-note="December 2024 · 5:07"></div><p class="video-why">Setting up an Apple Developer account for an organisation, the route for a school (Exercise 1). It is older than this guide, so Apple’s pages may look different now.</p></div>
+
+            <div class="video-item"><div class="video" data-video="x0d8Jx3HvdI" data-title="TestFlight &amp; Xcode: Upload, Distribute, and Beta Test Your iOS App In Under 10 Minutes! (2025)" data-source="Noah Does Coding" data-note="May 2025 · 7:56"></div><p class="video-why">The whole TestFlight round in eight minutes (Exercise 3): turn TestFlight on in App Store Connect, upload a build from Xcode, and add internal and external testers.</p></div>
+
+            <div class="video-item"><div class="video" data-video="c9HLIGu8TLo" data-title="App Store Review Guidelines: Avoid These Common Mistakes" data-source="Samik Choudhury" data-note="December 2025 · 6:20"></div><p class="video-why">Before you press Submit for Review (Exercise 4): where Apple’s review guidelines are, and the usual reasons for rejection, such as crashes, broken links, placeholder content and privacy policy rules.</p></div>
+        </div>
+    </section>
+
+</main>
+
+<script src="assets/toc.js?v=2"></script>
+<script src="assets/course.js?v=2"></script>
+<script src="assets/workshop.js?v=2"></script>
+</body>
+</html>

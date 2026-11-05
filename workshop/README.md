@@ -88,3 +88,5 @@ the playback adapter, launcher, and interface templates. Existing October/Keynot
 exports are preserved. The browser package is a separate export.
 
 See `TEST-RESULTS.md` for actual verification and remaining browser test limits.
+
+The B00 title and arrival loop include a tutorials QR and readable address: https://dbbudd.github.io/Lineage/tutorials/

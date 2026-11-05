@@ -23,7 +23,7 @@
 (function () {
     'use strict';
 
-    const ASSET_V = 2;     // bump when shipping changes to assets/ (and the ?v= on every page)
+    const ASSET_V = 3;     // bump when shipping changes to assets/ (and the ?v= on every page)
     const COURSE  = window.COURSE || { title: 'Course', chapters: [], glossary: {} };
     const ROOT    = document.body.dataset.root || '';
     const CHAP_ID = document.body.dataset.chapter || null;
@@ -194,12 +194,12 @@
         if (pairs) return Object.keys(pairs).map(id => ({ id, label: pairs[id].label, file: pairs[id].handout }));
         return COURSE.handout ? [{ id: '', label: '', file: COURSE.handout }] : [];
     }
-    const HANDOUT_ICON = '<span class="tb-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M4.5 16v3.5h15V16"/></svg></span><span class="tb-label">Handout</span>';
+    const HANDOUT_ICON = `<span class="tb-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M4.5 16v3.5h15V16"/></svg></span><span class="tb-label">${esc(COURSE.handoutLabel || "Handout")}</span>`;
     // One handout: the button downloads it. More than one: the button opens a short menu.
     function handoutButton() {
         const list = handoutList();
         if (list.length < 2) {
-            return `<a class="tb tb-tool tb-accent" id="btn-handout" href="${ROOT}${(list[0] || {}).file || 'handout/'}" download aria-label="Download the A3 handout (PDF)" title="Download the A3 handout to print (PDF)">${HANDOUT_ICON}</a>`;
+            return `<a class="tb tb-tool tb-accent" id="btn-handout" href="${ROOT}${(list[0] || {}).file || 'handout/'}" download aria-label="Download the earlier workshop handout (PDF)" title="Earlier workshop handout; use Workshop flow for the current session">${HANDOUT_ICON}</a>`;
         }
         const items = list.map(h => h.file
             ? `<a class="ho-item" href="${ROOT}${esc(h.file)}" download data-pair="${esc(h.id)}"><span class="ho-name">${esc(h.label)}</span><span class="ho-kind">A3 · PDF</span></a>`
@@ -250,7 +250,7 @@
             html += '<div class="nav-reference">';
             html += '<div class="nav-section-label">Take it with you</div>' +
                     handouts.map(h => {
-                        const label = 'A3 handout' + (h.label ? ': ' + h.label : '');
+                        const label = (COURSE.handoutLabel || 'A3 handout') + (h.label ? ': ' + h.label : '');
                         return h.file ? navItem(`${ROOT}${h.file}`, '', label + ' (PDF)', '', false)
                                       : navItem(null, '', label, 'Soon', false);
                     }).join('');

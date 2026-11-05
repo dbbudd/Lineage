@@ -1,0 +1,33 @@
+/* The live workshop flow: text and instructions in the existing reading shell. */
+@font-face{font-family:'HKIS Display';src:url('../vendor/fonts/hkis-display/playfair-display-variable.woff2') format('woff2');font-weight:400 900;font-display:swap}
+@font-face{font-family:'HKIS Label';src:url('../vendor/fonts/hkis-label/montserrat-variable.woff2') format('woff2');font-weight:100 900;font-display:swap}
+.flow{--flow-display:'HKIS Display',Georgia,serif;--flow-label:'HKIS Label',system-ui,sans-serif}
+[data-font='dyslexic'] .flow{--flow-display:'OpenDyslexic',sans-serif;--flow-label:'OpenDyslexic',sans-serif}
+[data-font='serif'] .flow{--flow-display:Georgia,serif;--flow-label:Georgia,serif}
+.flow .flow-eyebrow{font-size:.82rem;font-weight:700;letter-spacing:.035em;color:var(--text-secondary);margin:0 0 1rem}
+.flow h1{font-family:var(--flow-display);font-size:clamp(2.05rem,3.6vw,3.5rem);line-height:1.12;letter-spacing:-.025em;color:var(--text);margin:0 0 1rem;max-width:18ch}
+.flow .head-h1{align-items:flex-start;gap:.5rem}.flow .head-h1 h1{flex:1 1 20rem;min-width:0}
+.flow .flow-subtitle{font-size:1.15rem;line-height:1.5;color:var(--text-secondary);margin:0 0 1.5rem}
+.flow p,.flow li{line-height:1.75}.flow ol{padding-left:1.5rem}.flow li+li{margin-top:.5rem}
+.flow .flow-note{font-size:.9rem;line-height:1.65;color:var(--text-secondary)}
+.flow .flow-stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin:2rem 0 1.25rem;padding:1.5rem 0;border-block:1px solid var(--border)}
+.flow .flow-stages p{font-size:.86rem;line-height:1.55;margin:.65rem 0 0;color:var(--text-secondary)}
+.flow .flow-stages .workshop-pill{font-family:var(--flow-label)}
+.flow .flow-links{display:flex;flex-wrap:wrap;column-gap:1.25rem;row-gap:.55rem;font-size:.9rem}
+.flow>section.flow-step{padding-top:2.2rem;margin-bottom:2.5rem}
+.flow .flow-step h2{display:flex;align-items:baseline;gap:.7rem;font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.3;font-family:var(--flow-display);margin:0;min-width:0;overflow-wrap:anywhere}
+.flow .flow-step .section-head{align-items:flex-start;gap:.6rem;margin-bottom:1rem}.flow .section-head h2{flex:1 1 16rem}
+.flow .flow-number{font-family:var(--flow-label);font-size:.65em;font-weight:800;color:var(--red);flex:none}
+[data-theme='dark'] .flow .flow-number{color:var(--light-red)}
+.flow .flow-labels{display:flex;flex-wrap:wrap;gap:.5rem;margin:.9rem 0 1.25rem}
+.flow .flow-guide{font-weight:650;margin-top:1rem}
+.flow .flow-question{font-family:var(--flow-display);font-size:1.45rem;line-height:1.45;margin:1.75rem 0 0;color:var(--text)}
+.flow .flow-example{padding-left:1.2rem;border-left:3px solid #577899;margin:1.5rem 0}
+.flow dl dt{font-weight:750;margin:1rem 0 .2rem}.flow dl dd{padding:0;border:0;margin:0 0 .8rem;line-height:1.7}
+.flow .flow-moves{display:grid;grid-template-columns:max-content 1fr;gap:.8rem 1rem;margin:1.5rem 0}.flow .flow-moves dt,.flow .flow-moves dd{margin:0;line-height:1.7}
+.flow .flow-guide-list{display:grid;grid-template-columns:max-content 1fr;gap:1.1rem 1.25rem;align-items:start;margin:1.75rem 0}.flow .flow-guide-list dt,.flow .flow-guide-list dd{margin:0}
+.flow .flow-guide-list dt .workshop-pill{margin-top:.15rem}.flow .flow-resources{font-size:.95rem}
+.flow .prompt-card{margin:1.5rem 0}.flow .prompt-text{font-size:1rem;line-height:1.8}
+.flow a:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+@media(max-width:760px){.flow .flow-stages{grid-template-columns:1fr;gap:1.15rem}.flow .flow-stages>div{display:flex;align-items:center;flex-wrap:wrap;gap:.65rem 1rem}.flow .flow-stages p{margin:0}.flow .flow-moves,.flow .flow-guide-list{grid-template-columns:1fr;gap:.2rem}.flow .flow-moves dd,.flow .flow-guide-list dd{margin-bottom:1rem}.flow .flow-moves dt,.flow .flow-guide-list dt{margin-top:.5rem}.flow h1{font-size:2.2rem}.flow .flow-step h2{font-size:1.45rem}}
+@media print{.flow .flow-links a[href*='workshop/']{display:none}.flow .flow-step{break-inside:avoid}.flow .flow-stages{grid-template-columns:repeat(3,1fr)}}

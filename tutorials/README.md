@@ -1,22 +1,29 @@
-# Workshop tutorials
+# Future of Learning workshop tutorials
 
-Participant guides for the Future of Learning workshop, hosted with the Lineage site:
-https://dbbudd.github.io/Lineage/tutorials/index.html
+**Stop Waiting for the Perfect App: Vibe Code It Together**
+Building private classroom tools with AI that works where you teach
 
-Apple Shortcuts, Flint K12, Gemini and Xcode remain in the tool navigation, alongside
-GitHub Pages, Vercel and App Store publishing guides. The ChatGPT and Claude Code
-pages and links have been removed from this workshop. Their original source and
-independent Git history are backed up outside the Lineage repository.
+https://dbbudd.github.io/Lineage/tutorials/
 
-The Xcode page now provides an orientation and test for the presenter's configured
-workshop agent. The detailed regional-agent setup guide will be the next update.
-Other tutorial content and the original session outline can be revised separately.
+The first page is a text-led workshop flow, aligned with the presentation in
+`../workshop/`. It follows the warm-ups, barrier, Automate demonstration, sketch,
+prompt spine, WebApp build/test, SCAMPER, Agents and continued iteration.
 
-This folder contains static HTML, CSS and JavaScript. It is committed through the
-parent Lineage repository. Do not initialise a second Git repository here.
+Stage pills use the presentation labels and colours: Automate (navy), WebApp
+(slate) and Agents (red). Tool names are separate. Flint remains an extra guide;
+GitHub Pages, Vercel and App Store remain publishing references.
 
-`assets/toc.js` defines navigation, guide summaries and tracked section counts.
-`assets/course.js` provides the reading tools; assets use version 2 after this change.
-The reading controls, themes and image/video behaviour are preserved.
+The Xcode guide is an orientation and configured-agent test. Detailed regional
+agent setup and separate Copilot and DeepSeek guides remain to be written.
+The existing PDF is labelled **Earlier handout**; the first page holds the current
+flow and timings. ChatGPT and Claude Code are removed from the participant guides.
 
-For a local preview, serve the Lineage folder and open /tutorials/index.html.
+This is a static folder of the parent Lineage repository. Do not initialise a
+second Git repository here. Navigation, glossary and tracked counts are defined
+in `assets/toc.js`. Shared reading tools live in `assets/course.js`;
+`assets/flow.css` and `assets/flow.js` style the text-led homepage. Assets use
+version 3 after this revision. Theme, font size, dyslexic font, Focus, Listen,
+Translate, search and completion controls remain available.
+
+The original magazine homepage, previous guides and the copied independent Git
+history are archived outside the Lineage repository in the HyperFrames project.

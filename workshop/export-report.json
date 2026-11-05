@@ -2,14 +2,14 @@
   {
     "id": "B00",
     "frames": 120,
-    "bytes": 427360,
-    "sha256": "14a5ab77d6d1b2c167ed37c911516d4142c84ae58cd63a4b63baf1f631a7355a"
+    "bytes": 397297,
+    "sha256": "f961494d4b14d08b25c349f9dd4ff0fdf1ff7a4e1d6eaa9505db006c1008c582"
   },
   {
     "id": "B01",
     "frames": 270,
-    "bytes": 2914106,
-    "sha256": "60511d30511c5155ba3bbd234b3623e71892e6e9a71030a3ae446a05b2ae8f28"
+    "bytes": 2921165,
+    "sha256": "6a92fc6a0eaaa8bbc45db3c8c529681c5e110abc742394feb044509de53eb666"
   },
   {
     "id": "B02a",

@@ -18,9 +18,12 @@
     return {index:active, id:slides[active]?.id, mode, blocked,
       playing:!!v && !v.paused && !v.ended, time:v?.currentTime || 0,
       duration:slides[active]?.duration || 0, muted:v?.muted ?? true,
-      posterVisible:active >= 0 && !poster(active).hidden, buffering:!curtain.hidden};
+      posterVisible:active >= 0 && !poster(active).hidden,
+      posterReady:active >= 0 && poster(active).complete && poster(active).naturalWidth===1920,
+      buffering:!curtain.hidden};
   }
   function visible(i) {
+    preparePoster(i);
     roots.forEach((el,n) => {
       const yes = n === i;
       el.style.opacity = yes ? '1' : '0';
@@ -28,8 +31,14 @@
       el.style.pointerEvents = yes ? 'auto' : 'none';
     });
   }
+  function preparePoster(i) {
+    if(i<0 || i>=slides.length)return;
+    const image=poster(i);
+    if(image.getAttribute('src')!==image.dataset.src)image.src=image.dataset.src;
+  }
   function prepare(i) {
     if(i < 0 || i >= slides.length) return;
+    preparePoster(i);
     const v = video(i);
     if(!v.getAttribute('src')) { v.src = v.dataset.src; v.load(); }
   }
@@ -39,6 +48,7 @@
       poster(active).hidden = true;
       curtain.hidden = true;
       notify();
+      prepare(active+1);
     };
     if(v.requestVideoFrameCallback) v.requestVideoFrameCallback(show);
     else if(v.readyState >= 2) show();
@@ -63,15 +73,16 @@
     } else curtain.hidden=true;
     roots.forEach((el,n) => { video(n).pause(); poster(n).hidden = false; });
     active = i; mode = intent; blocked = false; visible(i);
+    poster(i).loading='eager';poster(i).fetchPriority='high';
     const v = video(i); v.loop = false; v.muted = !slides[i].timer || muted;
     prepare(i);
     if(intent === 'arrival') {
       v.src = 'media/arrival-loop.mp4'; v.loop = true; v.muted = true;
       v.currentTime = 0; play(v,token);
-    } else if(intent === 'play' || intent === 'restore') {
+    } else if(intent === 'play' || intent === 'resume' || intent === 'restore') {
       if(v.getAttribute('src') !== v.dataset.src) { v.src = v.dataset.src; v.load(); }
-      try { v.currentTime = intent === 'restore' ? restoreTime : 0; } catch {}
-      if(intent === 'play') play(v,token);
+      try { v.currentTime = intent === 'restore' || intent === 'resume' ? restoreTime : 0; } catch {}
+      if(intent === 'play' || intent === 'resume') play(v,token);
       else {
         const restore = () => {
           if(token !== generation) return;
@@ -83,7 +94,7 @@
       }
     }
     // Fetch only neighbouring media, rather than all five long activities.
-    prepare(i+1);
+    if(intent==='hold' || intent==='restore')prepare(i+1);
     roots.forEach((el,n) => {
       if(Math.abs(n-i)>1 && video(n).getAttribute('src')) {
         video(n).removeAttribute('src'); video(n).load();
@@ -99,13 +110,14 @@
   }
   function replay(muted=false) { activate(active,'play',0,muted); }
   roots.forEach((el,i) => {
+    poster(i).addEventListener('load',()=>{if(i===active)notify();});
     const v = video(i);
     v.addEventListener('ended', () => {
       if(i !== active) return;
       if(i === 0 && mode === 'play') return activate(0,'arrival');
       mode = 'hold'; poster(i).hidden = false; notify();
     });
-    v.addEventListener('playing', () => {if(i===active) {reveal(v,generation);notify();}});
+    v.addEventListener('playing', () => {if(i===active) {if(mode==='hold')mode='play';reveal(v,generation);notify();}});
     for(const name of ['pause','volumechange','timeupdate']) v.addEventListener(name, () => {if(i===active) notify();});
     v.addEventListener('error', () => {
       if(i===active && v.getAttribute('src')) parent.postMessage({source:'folhk-deck',type:'media-error',id:slides[i].id},location.origin);
@@ -120,6 +132,9 @@
     parent.postMessage({source:'hf-preview',type:'timeline',durationInFrames:slides.length*300,
       scenes:slides.map((s,i) => ({id:s.sceneId,start:i*10,duration:10}))},location.origin);
   }
+  // Publish as soon as the timeline exists; remote media may delay window.load.
+  postTimeline();
+  window.addEventListener('DOMContentLoaded',postTimeline,{once:true});
   window.addEventListener('load', () => {postTimeline();setTimeout(postTimeline,300);});
   let lastPointer=0;
   document.addEventListener('pointermove',()=>{

@@ -1,6 +1,7 @@
 /* Pinned HyperFrames 0.8.81 controls + direction-aware clip playback. */
 (() => {
   'use strict';
+  if(location.protocol==='file:') return;
   const deck=document.querySelector('hyperframes-slideshow');
   const player=deck.querySelector('hyperframes-player');
   const data=window.DECK;
@@ -10,7 +11,7 @@
   const overview=document.querySelector('#overview');
   const help=document.querySelector('#help');
   const blocked=document.querySelector('#blocked');
-  let controller, previous=-1, holdNext=true, lastState=null, timer, opening=false;
+  let controller, offController, rebinding=false, previous=-1, holdNext=true, lastState=null, timer, opening=false;
   const api=() => player.iframeElement?.contentWindow?.deckMedia;
   const audience=() => new URLSearchParams(location.search).get('mode')==='audience';
   function activity() {
@@ -23,7 +24,13 @@
     try {sessionStorage.setItem('folhk-presentation-position',JSON.stringify({id:state.id,time:state.time,mode:state.mode}));} catch {}
   }
   function change() {
+    if(rebinding)return;
     const i=current();
+    // Repeated presenter-position syncs must not stop a playing clip.
+    if(i===previous) {
+      if(holdNext) {holdNext=false;api()?.activate(i,'hold',0,audience() || deck.muted);}
+      return;
+    }
     const intent=holdNext || audience() || i<=previous ? 'hold':'play';
     holdNext=false;
     if(!audience()) api()?.activate(i,intent,0,deck.muted);
@@ -34,7 +41,7 @@
     overview.querySelectorAll('button[data-index]').forEach(b => b.setAttribute('aria-current',String(+b.dataset.index===i)));
     activity();
   }
-  function goto(i) {holdNext=true;controller.goToSlide(i);overview.close();deck.focus();}
+  function goto(i) {refreshController();holdNext=true;controller.goToSlide(i);overview.close();deck.focus();}
   function command(key) {
     if(!controller) return;
     activity();
@@ -45,10 +52,29 @@
     if(k==='?') {help.open?help.close():help.showModal();activity();}
     if(k==='b') deck.classList.toggle('blacked-out');
   }
+  function refreshController() {
+    const next=deck.controller;
+    if(!next || !api())return false;
+    if(next===controller)return true;
+    // The standalone player can replace its controller when scene metadata
+    // arrives after an initial timeout. Follow the live instance, not a stale one.
+    const saved=controller ? api().state() : null;
+    offController?.();controller=next;offController=controller.onChange(change);
+    if(saved?.index>=0) {
+      rebinding=true;
+      try {controller.goToSlide(saved.index);} finally {rebinding=false;}
+      previous=saved.index;
+      api().activate(saved.index,saved.mode==='arrival'?'arrival':saved.playing?'resume':saved.mode==='hold'?'hold':'restore',saved.time,deck.muted);
+    }
+    return true;
+  }
+  function watchController() {
+    refreshController();
+    setTimeout(watchController,100);
+  }
   function connect() {
-    if(!deck.controller || !api()) {setTimeout(connect,80);return;}
-    controller=deck.controller;
-    controller.onChange(change);
+    if(!refreshController()) {setTimeout(connect,80);return;}
+    document.querySelector('#loading-stage').textContent='Preparing the opening slide…';
     const requested=decodeURIComponent(location.hash.slice(1));
     const index=data.slides.findIndex(s=>s.id.toLowerCase()===requested.toLowerCase());
     opening=index<0&&!audience();
@@ -62,9 +88,9 @@
           api()?.activate(index,'restore',saved.time,deck.muted);
       } catch {}
     }
-    if(!opening)document.body.classList.add('ready');
     deck.focus();activity();
-    window.presentation={goto, command, getState:()=>api()?.state(),controller};
+    window.presentation={goto, command, getState:()=>api()?.state(),get controller(){return controller;}};
+    watchController();
   }
   pause.addEventListener('click',()=>{api()?.toggle();deck.focus();});
   document.querySelector('#replay').addEventListener('click',()=>{api()?.replay(deck.muted);deck.focus();});
@@ -77,6 +103,7 @@
     dialog.addEventListener('close',()=>{deck.focus();activity();});
   }
   document.addEventListener('keydown',e=>{
+    refreshController();
     if(e.target.matches('input,textarea,[contenteditable=true]'))return;
     if(e.metaKey || e.ctrlKey || e.altKey)return;
     if(e.repeat && ['ArrowRight','ArrowLeft',' '].includes(e.key)) {e.preventDefault();e.stopImmediatePropagation();return;}
@@ -101,7 +128,7 @@
     }
     if(e.data.type!=='state')return;
     lastState=e.data.state;
-    if(!opening || !lastState.posterVisible || lastState.blocked) {
+    if((!opening && lastState.posterReady) || !lastState.posterVisible || lastState.blocked) {
       opening=false;document.body.classList.add('ready');
     }
     pause.textContent=lastState.playing?'Pause':'Play';

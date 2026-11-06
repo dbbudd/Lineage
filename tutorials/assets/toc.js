@@ -2,7 +2,7 @@
 window.COURSE = {
     "title": "Stop Waiting for the Perfect App",
     "subtitle": "Building private classroom tools with AI that works where you teach",
-    "handout": "handout/Bring-a-Barrier-handout-A3.pdf",
+    "handout": "handout/Future-of-Learning-handout-A3.pdf",
     "voiceRoot": "https://dbbudd.github.io/biology/",
     "units": [
         {
@@ -195,5 +195,5 @@ window.COURSE = {
         "Push": "To send your commits from your computer to GitHub, so the repository, and any site published from it, has your changes.",
         "Apple Intelligence": "Apple’s AI, built into recent iPhones, iPads and Macs. A smaller model runs on the device itself; larger ones run on Apple’s servers, called Private Cloud Compute."
     },
-    "handoutLabel": "Earlier handout"
+    "handoutLabel": "A3 handout"
 };

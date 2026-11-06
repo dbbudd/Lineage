@@ -23,7 +23,7 @@
 (function () {
     'use strict';
 
-    const ASSET_V = 3;     // bump when shipping changes to assets/ (and the ?v= on every page)
+    const ASSET_V = 4;     // bump when shipping changes to assets/ (and the ?v= on every page)
     const COURSE  = window.COURSE || { title: 'Course', chapters: [], glossary: {} };
     const ROOT    = document.body.dataset.root || '';
     const CHAP_ID = document.body.dataset.chapter || null;
@@ -199,7 +199,7 @@
     function handoutButton() {
         const list = handoutList();
         if (list.length < 2) {
-            return `<a class="tb tb-tool tb-accent" id="btn-handout" href="${ROOT}${(list[0] || {}).file || 'handout/'}" download aria-label="Download the earlier workshop handout (PDF)" title="Earlier workshop handout; use Workshop flow for the current session">${HANDOUT_ICON}</a>`;
+            return `<a class="tb tb-tool tb-accent" id="btn-handout" href="${ROOT}${(list[0] || {}).file || 'handout/'}" download aria-label="Download the current workshop handout (PDF)" title="Two-sided A3 handout: Automate, WebApp and Agents">${HANDOUT_ICON}</a>`;
         }
         const items = list.map(h => h.file
             ? `<a class="ho-item" href="${ROOT}${esc(h.file)}" download data-pair="${esc(h.id)}"><span class="ho-name">${esc(h.label)}</span><span class="ho-kind">A3 · PDF</span></a>`

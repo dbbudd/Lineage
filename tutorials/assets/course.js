@@ -23,7 +23,7 @@
 (function () {
     'use strict';
 
-    const ASSET_V = 4;     // bump when shipping changes to assets/ (and the ?v= on every page)
+    const ASSET_V = 7;     // bump when shipping changes to assets/ (and the ?v= on every page)
     const COURSE  = window.COURSE || { title: 'Course', chapters: [], glossary: {} };
     const ROOT    = document.body.dataset.root || '';
     const CHAP_ID = document.body.dataset.chapter || null;

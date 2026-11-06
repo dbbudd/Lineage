@@ -611,8 +611,8 @@
       "frames": 120,
       "duration": 4.0,
       "timer": false,
-      "media": "media/47-b20c.mp4",
-      "poster": "posters/47-b20c.png",
+      "media": "media/47-b20c.mp4?v=20261106-privacy",
+      "poster": "posters/47-b20c.png?v=20261106-privacy",
       "notes": "B20c · Agents · DeepSeek\nIntroduce Agents using DeepSeek.\n[Supplied DeepSeek Harness screenshot: Margins app running in the simulator beside the agent conversation.]\n\n▶ Click: Margins."
     },
     {
@@ -624,8 +624,8 @@
       "frames": 180,
       "duration": 6.0,
       "timer": false,
-      "media": "media/48-b21.mp4",
-      "poster": "posters/48-b21.png",
+      "media": "media/48-b21.mp4?v=20261106-privacy",
+      "poster": "posters/48-b21.png?v=20261106-privacy",
       "notes": "B21 · Margins\nOne example of where this goes.\nThis is Margins. I built this because I saw how ELA teachers struggled with grading workflows.\nThe AI runs on the iPad itself. The writing never leaves the iPad.\n\n▶ Click: the third rung."
     },
     {

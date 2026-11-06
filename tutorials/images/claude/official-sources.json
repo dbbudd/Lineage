@@ -1,0 +1,22 @@
+[
+  {
+    "file": "official-chat-prompt.png",
+    "sourcePage": "https://support.claude.com/en/articles/8114491-get-started-with-claude",
+    "imageURL": "https://downloads.intercomcdn.com/i/o/lupk8zyo/1916208578/2cf2ea52f1f884084b57983a8805/image.png?expires=1793931300&signature=c0622dc3b50b6dde970cfb12a0833c0730c82cbaba2fe82fa2eabfd1f87ee0e7&req=dSkmEMt%2BlYRYUfMW1HO4zV2J7CzDt4aC9crMELaMZPx8hG5AzFMele7bLngi%0AQWJxGCBTtnQAC8bmcKM%3D%0A",
+    "credit": "Anthropic / Claude Help Center",
+    "retrieved": "2026-11-06",
+    "width": 1442,
+    "height": 334,
+    "sha256": "dfcf533748614d183e2cd8add8c9bb904521c22d772bc8bd77321bb7af6dec49"
+  },
+  {
+    "file": "official-code-review.png",
+    "sourcePage": "https://claude.com/resources/articles/preview-review-and-merge-with-claude-code",
+    "imageURL": "https://assets.claude.com/75aa0f90a062a60b0cb99fd1ee6ea1b2daf5ee65.png",
+    "credit": "Anthropic / Claude",
+    "retrieved": "2026-11-06",
+    "width": 2400,
+    "height": 1600,
+    "sha256": "3bd3dd73879a655f6bb1ada07edb5d8a3407cb6c65a5d9cb52b4dc08a8276f2f"
+  }
+]

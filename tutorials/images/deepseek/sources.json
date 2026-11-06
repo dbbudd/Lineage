@@ -1,0 +1,48 @@
+[
+  {
+    "file": "official-desktop.webp",
+    "sourcePage": "https://www.deepseek.com/en/download/",
+    "imageURL": "https://www.deepseek.com/images/download/desktop-en-1066.webp",
+    "credit": "DeepSeek",
+    "retrieved": "2026-11-06",
+    "width": 1066,
+    "height": 720,
+    "sha256": "3a7300c6a22aa1ac9b0e9095b3cc4efec382d0f0374511f5e6e87424f5c54a63"
+  },
+  {
+    "file": "official-plugins.webp",
+    "sourcePage": "https://www.deepseek.com/en/harness/",
+    "imageURL": "https://www.deepseek.com/harness/images/feat-plugins-en.webp",
+    "credit": "DeepSeek",
+    "retrieved": "2026-11-06",
+    "width": 2590,
+    "height": 1619,
+    "sha256": "bd8b4f698246a548e07f982294849364c9f87cced83d46f4dd0d6d9783b5e24e"
+  },
+  {
+    "file": "workshop-margins.png",
+    "source": "Presenter-supplied Deepseek.png, used in workshop B20c",
+    "credit": "Daniel Budd",
+    "width": 1556,
+    "height": 1011,
+    "sha256": "07d45ca5217bc1762013562855c17088dc170e67a7ed2b4c16977e6bb7ce0f4e",
+    "privacyRedacted": "2026-11-06",
+    "redactions": [
+      "Personal workspace and chat list",
+      "Profile and notification card",
+      "Account/usage badge",
+      "Local preview URL path",
+      "App bundle identifier"
+    ]
+  },
+  {
+    "file": "official-models.png",
+    "sourcePage": "https://deepseek-harness.github.io/deepseek-harness/en/guide/providers",
+    "imageURL": "https://deepseek-harness.github.io/deepseek-harness/assets/providers-models-page.Bgrr8yE2.png",
+    "credit": "DeepSeek Harness documentation",
+    "retrieved": "2026-11-06",
+    "width": 1600,
+    "height": 850,
+    "sha256": "77c6e0fa8b182d80b1b7b16311867c6a077deb1f5c8fac9b69ed828abd12568f"
+  }
+]

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT: extra guide — Stop Waiting for the Perfect App</title>
+<meta name="description" content="An optional ChatGPT guide under More to explore: use your prompt spine to build, preview and refine an HTML classroom tool. Originally tested in October 2026.">
+<link rel="stylesheet" href="assets/course.css?v=7">
+<link rel="stylesheet" href="assets/workshop.css?v=7">
+<script>if('scrollRestoration' in history)history.scrollRestoration='manual';</script>
+</head>
+<body data-root="" data-chapter="chatgpt">
+
+<!-- A draft. Screenshots still to come are .shot-todo boxes; facts still to check carry a TBC tag.
+     The guide uses the ChatGPT app for Mac, as the presenter asked.
+     TESTED IN THE REAL APP on 3 October 2026 (ChatGPT for Mac 26.908, macOS 27, Hong Kong time, an account
+     showing "Rejoin Plus", so probably no paid plan): new chat, Chat chosen at the top of the window, the
+     prompt below. Result:
+     - ChatGPT first answered "This is an app-building request that requires creating a runnable HTML
+       artifact; Work mode is the appropriate environment", with a card: Continue in ChatGPT Work / Stay in
+       Chat, and a countdown (about 30 seconds) on Stay in Chat. When the countdown ended, ChatGPT carried
+       on in Chat and built the file. Work mode can read and change files in a folder on the Mac, so the
+       guide says to stay in Chat.
+     - It built maths_step_helper.html and showed it as a card ("Open preview of maths_step_helper.html").
+       Clicking the card opens a preview pane beside the chat (a built-in browser with a tab, Reload and
+       "Open in external browser"). The tool worked: a Grade 7 stickers problem, "Step 1 of 4", a progress bar,
+       a big "I finished this step" button and "Start again".
+     - The card has a "Download file" button (found in the app's accessibility labels; not pressed, so the
+       saved file's name is unconfirmed). The chat has two "Share" buttons (not pressed): they share the chat.
+     - A vague follow-up ("Make the buttons bigger for small hands.") got one line of words and no file.
+       "Update the HTML file with bigger buttons and give me the new file." first showed the Work card again
+       ("Work mode is required for file editing/delivery"), then, after the countdown, built a NEW file,
+       maths_step_helper_updated.html, in Chat.
+     - Not what the app's code suggested: there is no Preview / Code / Download code / Share code block row
+       on this kind of answer. Those belong to a code block shown in the chat itself.
+     From OpenAI's pages (help.openai.com, chatgpt.com/pricing, learn.chatgpt.com): Hong Kong is not on the
+     supported-countries list; the Mac app needs macOS 14 or later; ChatGPT Sites is for paid plans and must
+     not target children under 13; ChatGPT for Teachers is for US K-12 staff only. -->
+<main class="main" role="main">
+
+    <section id="overview">
+        <div class="chapter-eyebrow">More to explore</div>
+        <div class="guide-pills"><span class="workshop-pill extra-pill">Extra guide</span></div>
+        <h1>ChatGPT</h1>
+        <p class="lead">ChatGPT is OpenAI’s assistant. In the ChatGPT app for Mac, it writes your tool from the prompt spine as an HTML file, and shows it running in a preview beside the chat. You try it, ask for changes, and publish the file with GitHub Pages so students can open it. This is an optional extension beyond the main workshop flow.</p>
+
+        <p class="guide-context">The live workshop follows Automate → WebApp → Agents, using Apple Shortcuts, Gemini, Xcode, Copilot and DeepSeek. This extra guide offers another builder to explore where ChatGPT is supported and permitted.</p>
+
+        <div class="chapter-meta"></div>
+
+        <div data-progression></div>
+
+        <div class="two-col">
+            <div>
+                <h4>Best for</h4>
+                <p>An optional build of the same barrier, to compare with your first version. <strong>Same prompt spine, a different builder.</strong></p>
+            </div>
+            <div>
+                <h4>Start here</h4>
+                <p>The <a href="https://chatgpt.com/download" target="_blank" rel="noopener noreferrer"><strong>ChatGPT app</strong></a> for Mac, on macOS 14 or later.<br>The original October test used an account without an active paid plan. Check the features available to your account.</p>
+            </div>
+        </div>
+
+        <div class="callout callout-key" data-label="Check first">
+            <p>Hong Kong is not on <a href="https://help.openai.com/en/articles/7947663-chatgpt-supported-countries" target="_blank" rel="noopener noreferrer">OpenAI’s supported-countries list</a>. Access from an unsupported location may lead to an account being blocked or suspended. Check regional availability and your school’s access rules before using this optional guide.</p>
+        </div>
+
+        <div class="callout callout-note" data-label="Draft">
+            <p>This restored guide was last tested in the ChatGPT app for Mac on <strong>3 October 2026</strong>. Screens and account features may differ. Anything tagged <span class="tbc">TBC</span> still needs checking.</p>
+        </div>
+    </section>
+
+    <section id="log-in" data-kind="Practice" data-time="3 min" data-track>
+        <h2>Exercise 1: Get the app and sign in</h2>
+
+        <ol class="steps">
+            <li>Go to <a href="https://chatgpt.com/download" target="_blank" rel="noopener noreferrer"><strong>chatgpt.com/download</strong></a>, choose <strong>Download for macOS</strong>, and open the app.</li>
+            <li>Sign in with your ChatGPT account.</li>
+        </ol>
+        <div class="callout callout-note">
+            <p>On a personal account, OpenAI can use your chats to train its models. To stop this, open <strong>Settings</strong>, then <strong>Data controls</strong>, and turn off <strong>Improve the model for everyone</strong>. A <strong>Temporary chat</strong> stays out of history and model training while it remains temporary. Saving it converts it to a regular chat. See <a href="https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt" target="_blank" rel="noopener noreferrer">OpenAI’s data-controls guidance</a>.</p>
+        </div>
+    </section>
+
+    <section id="build" data-kind="Practice" data-time="6 min" data-track>
+        <h2>Exercise 2: Build from your prompt spine</h2>
+
+        <p>Fill in the prompt spine from the session with your own barrier. Here it is filled in for one barrier, as an example. It is the same example used in the Gemini guide, so you can compare what the two builders make.</p>
+
+        <figure class="shot marked">
+            <div class="marked-wrap">
+                <img src="images/chatgpt/new-chat.jpg" width="1060" height="640" alt="A new chat in the ChatGPT app. At the top is a switch with two choices, Chat and Work, and Chat is chosen. In the middle, the greeting What’s on the agenda today?, and a message box that says Message ChatGPT, with a plus button, a model menu that says Auto, a microphone and a send button." loading="lazy">
+                <span class="marker" style="left:34.4%;top:5.6%" aria-hidden="true">3</span>
+                <span class="marker" style="left:90.7%;top:87.8%" aria-hidden="true">4</span>
+            </div>
+            <figcaption><b>Figure 1</b> — A new chat. Choose Chat at the top, then paste your prompt in the message box.</figcaption>
+        </figure>
+
+        <ol class="steps" style="counter-reset: step 2">
+            <li>Choose <strong>New chat</strong>. At the top of the window, choose <strong>Chat</strong>, not Work.</li>
+            <li>Paste your prompt spine, and send it.</li>
+            <li>ChatGPT may say that building an app belongs in Work, and show a card with <strong>Stay in Chat</strong> and <strong>Continue in Work</strong>. Choose <strong>Stay in Chat</strong>: Work lets ChatGPT read and change files in a folder on your Mac. If you wait, the button counts down, and ChatGPT carries on in Chat.</li>
+            <li>After about a minute, ChatGPT shows your tool as an HTML file, in a card. Click the card, and the tool opens beside the chat. Try it as a student would.</li>
+        </ol>
+        <div class="prompt-card">
+            <span class="prompt-label">The prompt spine, filled in</span>
+            <p class="prompt-text">Build a single-screen tool for a Grade 7 student who loses their place in a multi-step maths problem. Show the current step first, then let them tick it off. Keep the language at Grade 5. No sign-in. Put it all in one HTML file.</p>
+            <p class="prompt-note">We tested this prompt in the ChatGPT app for Mac on 3 October 2026.</p>
+        </div>
+
+        <figure class="shot marked">
+            <div class="marked-wrap">
+                <img src="images/chatgpt/chat-and-preview.jpg" width="1316" height="924" alt="The ChatGPT app. On the left, the chat: the prompt, then ChatGPT’s answer, Built the single-screen maths step helper as one self-contained HTML file, with a list of what it includes, and a card for a file called maths_step_helper.html. On the right, a preview pane showing the tool running. It is called Maths Step Helper, with the heading One step at a time. A problem: Mia has 24 stickers and gives 6 stickers to each friend; how many friends can get stickers? A progress bar reads Step 1 of 4. Step 1 says Write the numbers you need. A big green button says I finished this step, and a grey one says Start again." loading="lazy">
+                <span class="marker" style="left:38%;top:76.2%" aria-hidden="true">6</span>
+            </div>
+            <figcaption><b>Figure 2</b> — Your tool, running in the preview beside the chat. Notice what ChatGPT added that the prompt never asked for: its own example problem, a progress bar and four steps. Testing is how you find out whether they suit your students.</figcaption>
+        </figure>
+    </section>
+
+    <section id="share" data-kind="Practice" data-time="4 min" data-track>
+        <h2>Exercise 3: Test it, then publish it</h2>
+
+        <ol class="steps" style="counter-reset: step 6">
+            <li>Test it as in Test 01: hand it to a colleague, say nothing, and watch where they hesitate. Each hesitation is your next request.</li>
+            <li>To try it in your own browser, press <strong>Open in external browser</strong>, at the top right of the preview pane.</li>
+            <li>When it works, point at the file card and press <strong>Download file</strong>. Rename the file <code>index.html</code>, and publish it with GitHub Pages. Students then open it from a link, with no sign-in. <span class="tbc">TBC</span></li>
+        </ol>
+        <div class="resource-list">
+            <a class="btn-external" href="github-pages.html">
+                <span class="btn-external-icon" aria-hidden="true">&#10140;</span>
+                <span><strong>Publish it with GitHub Pages</strong><small>The App publishing guide, step by step: upload your index.html and turn on Pages</small></span>
+                <span class="btn-external-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+        </div>
+        <div class="callout callout-note">
+            <p>The <strong>Share</strong> buttons share the chat as a link, not your tool, and anyone with the link can read the chat. Keep students’ names and personal information out of your prompts.</p>
+        </div>
+    </section>
+
+    <section id="further" data-kind="Orientation" data-time="20 min" data-track>
+        <h2>Push it further</h2>
+
+        <p>Change one thing at a time. Ask for the new file in so many words: in our test, “Make the buttons bigger for small hands” got one line of reply and no file, while the first request below got a new file. Each change makes a new file, such as <code>maths_step_helper_updated.html</code>. Click its card to preview it. ChatGPT may show the Work card again for a change: choose Stay in Chat, or wait.</p>
+        <div class="prompt-card">
+            <span class="prompt-label">Then push it</span>
+            <p class="prompt-text">Update the HTML file with bigger buttons for small hands, and give me the new file.</p>
+            <p class="prompt-note">We tested this one.</p>
+        </div>
+        <div class="prompt-card">
+            <span class="prompt-label">Then push it</span>
+            <p class="prompt-text">Update the HTML file with a button that reads each step aloud, and give me the new file.</p>
+        </div>
+        <div class="prompt-card">
+            <span class="prompt-label">Then push it</span>
+            <p class="prompt-text">Update the HTML file to remove anything a Grade 7 student wouldn’t need, and give me the new file.</p>
+        </div>
+        <div class="prompt-card">
+            <span class="prompt-label">Then push it</span>
+            <p class="prompt-text">Explain what each part of the file does, in plain English.</p>
+        </div>
+        <p>Work mode keeps your files in a folder on your Mac and changes them there. It is more powerful, and it can change files, so try it in a new, empty folder. <span class="tbc">TBC</span> On a paid plan, <strong>ChatGPT Sites</strong> can publish a tool at its own link. Its terms say a site must not be aimed at children under 13, so keep it for tools for colleagues or older students.</p>
+        <h3>Videos</h3>
+        <p>Each video loads only when you press play. The first is from OpenAI. The others are from independent creators.</p>
+
+        <div class="video-list">
+            <div class="video-item"><div class="video" data-video="8zH_O74hZBw" data-title="Build and publish web apps directly in ChatGPT" data-source="OpenAI" data-note="July 2026 · 1:43"></div><p class="video-why">In under two minutes: describe a web app, try the first version, ask for changes in plain language, and publish it. It shows ChatGPT Sites, which needs a paid plan, so some screens differ from the file and preview in this guide.</p></div>
+
+            <div class="video-item"><div class="video" data-video="ehCPBF5Hve8" data-title="ChatGPT Sites for Teachers: I built 6 sites to test." data-source="The DEEP Education Network" data-note="August 2026 · 19:45"></div><p class="video-why">A teacher builds six school sites with ChatGPT Sites, including a class home page, a revision companion, a parent information hub, an event page and a staff induction hub. It is a different route from GitHub Pages, and it needs a paid plan, as the note above says.</p></div>
+
+            <div class="video-item"><div class="video" data-video="MtrSccrG6QI" data-title="5 ChatGPT Privacy Settings You MUST Change" data-source="Benjy Bodner" data-note="December 2025 · 5:58"></div><p class="video-why">Six minutes on the settings this guide mentions: turning off “Improve the model for everyone” (from 0:23) and Temporary chat (from 3:04), plus memory and hiding sensitive details in a prompt.</p></div>
+        </div>
+    </section>
+
+</main>
+
+<script src="assets/toc.js?v=7"></script>
+<script src="assets/course.js?v=7"></script>
+<script src="assets/workshop.js?v=7"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+MEDIA & INFORMATION TECHNOLOGY
+Parent Coffee · 18 November 2026 · HS504
+
+Double-click “Start Presentation.command” to open the local browser deck.
+Keep this folder and its contents together.
+
+F              Full screen
+Right / Left   Next animation / previous freeze frame
+K              Pause or resume
+R              Replay the current scene
+G              Jump to any slide
+P              Presenter notes and audience window
+?              Help
+
+Every scene plays its animation once, then holds still for you to talk over.
+There are 31 click-steps. Nothing advances on its own.
+The deck works locally with Wi-Fi turned off.
+
+QR destination: https://dbbudd.github.io/Lineage/parents/
